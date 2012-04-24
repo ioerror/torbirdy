@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>castironthunderbirdclub@torproject.org</em:id>
+    <em:version>0.0.1</em:version>
+    <em:type>2</em:type>
+    <em:iconURL="chrome://castironthunderbirdclub/skin/images/tor.png" >
+
+    <em:targetApplication>
+    <!-- Thunderbird -->
+    <Description>
+      <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
+      <em:minVersion>3.1</em:minVersion>
+      <em:maxVersion>3.3.*</em:maxVersion>
+    </Description>
+    </em:targetApplication>
+
+    <!-- front-end metadata -->
+    <em:name>Torbutton Birdy</em:name>
+    <em:description>This extension forces all connections to be made over the Tor anonymity network</em:description>
+    <em:creator>ioerror</em:creator>
+    <em:homepageURL>https://www.torproject.org/</em:homepageURL>
+
+  </Description>
+</RDF>
