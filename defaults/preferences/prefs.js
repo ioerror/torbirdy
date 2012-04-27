@@ -23,3 +23,11 @@ pref("mail.smtpserver.default.hello_argument", "localhost");
 pref("mail.html_compose", false);
 pref("mail.identity.default.compose_html", false);
 pref("mail.default_html_action", 1)
+
+
+// https://lists.torproject.org/pipermail/tor-talk/2011-September/021398.html
+// "Towards a Tor-safe Mozilla Thunderbird"
+// These options enable a warning that tagnaq suggests
+pref("network.protocol-handler.warn-external.http", true);
+pref("network.protocol-handler.warn-external.https", true);
+
