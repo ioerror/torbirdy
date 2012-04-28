@@ -67,4 +67,4 @@ pref("mail.inline_attachments", false);
 
 // We hope the user has Enigmail and if so, we believe these improve security
 pref("extensions.enigmail.addHeaders", false);
-pref("extensions.enigmail.agentAdditionalParam", "--no-emit-version --no-comments --display-charset utf-8 --keyserver-options http-proxy=http://127.0.0.1:8118 --keyserver hkp://pool.sks-keyservers.net:11371");
+pref("extensions.enigmail.agentAdditionalParam", "--no-emit-version --no-comments --display-charset utf-8 --keyserver-options http-proxy=http://127.0.0.1:8118 --keyserver hkps://zimmermann.mayfirst.org:11372");
