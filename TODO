@@ -2,6 +2,7 @@ Automatically load the default prefs.js
 Override the defaults by reading the env for specific vars
 Enhance the privacy of the emails
 Protect against all kinds of HTML issues
+Support Tor's prop 171
 Add new TODO items
 
 These bugs must be fixed in Thunderbird:

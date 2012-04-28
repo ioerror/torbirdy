@@ -10,6 +10,9 @@ pref("network.proxy.socks_version", 5);
 pref("network.proxy.no_proxies_on", "localhost, 127.0.0.1");
 pref("network.proxy.type", 1);
 
+// Assume that the local Tor supports Prop 171
+// How can we set a username and password for the network.proxy.socks property?
+
 // Override the user agent (empty string).
 pref("general.useragent.override", "");
 
