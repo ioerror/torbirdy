@@ -31,7 +31,7 @@ pref("general.useragent.override", "");
 pref("app.update.enabled", false);
 
 // Prevent hostname leaks.
-pref("mail.smtpserver.default.hello_argument", "localhost");
+pref("mail.smtpserver.default.hello_argument", "127.0.0.1");
 
 // Disable HTML email composing.
 pref("mail.html_compose", false);
@@ -49,6 +49,8 @@ pref("network.protocol-handler.warn-external.https", true);
 pref("extensions.enigmail.addHeaders", false);
 pref("extensions.enigmail.useDefaultComment", true);
 pref("extensions.enigmail.agentAdditionalParam", "--no-emit-version");
+pref("extensions.enigmail.mimeHashAlgorithm", 5);
+
 
 // Disallow cookies.
 pref("network.cookie.cookieBehavior", 2);
