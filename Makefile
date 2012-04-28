@@ -1,2 +1,2 @@
 make-xpi:
-	zip -r ../torbuttonthunderbird.xpi *
+	zip -r ../torbutton-birdy.xpi *
