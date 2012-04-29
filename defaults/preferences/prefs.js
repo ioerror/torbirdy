@@ -60,6 +60,8 @@ pref("mailnews.reply_header_type", 1);
 pref("mailnews.reply_header_authorwrote", "%s");
 pref("mailnews.send_plaintext_flowed", false);
 pref("mailnews.display.prefer_plaintext", true);
+pref("mailnews.display.disallow_mime_handlers", 1);
+pref("mailnews.display.html_as", 1);
 pref("rss.display.prefer_plaintext", true);
 pref("mail.inline_attachments", false);
 
