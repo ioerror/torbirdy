@@ -36,7 +36,7 @@ pref("mail.smtpserver.default.hello_argument", "127.0.0.1");
 // Disable HTML email composing.
 pref("mail.html_compose", false);
 pref("mail.identity.default.compose_html", false);
-pref("mail.default_html_action", 1)
+pref("mail.default_html_action", 1);
 pref("mailnews.wraplength", 72);
 
 // https://lists.torproject.org/pipermail/tor-talk/2011-September/021398.html
@@ -50,9 +50,6 @@ pref("extensions.enigmail.addHeaders", false);
 pref("extensions.enigmail.useDefaultComment", true);
 pref("extensions.enigmail.agentAdditionalParam", "--no-emit-version --no-comments --hidden-recipient --display-charset utf-8 --keyserver-options http-proxy=http://127.0.0.1:8118 --keyserver hkp://2eghzlv2wwcq7u7y.onion");
 pref("extensions.enigmail.mimeHashAlgorithm", 5);
-
-// Disallow cookies.
-pref("network.cookie.cookieBehavior", 2);
 
 // Suggestions from the JAP team on how they'd configure thunderbird
 // http://anonymous-proxy-servers.net/en/help/thunderbird.html
