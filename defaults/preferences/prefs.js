@@ -45,12 +45,11 @@ pref("mailnews.wraplength", 72);
 pref("network.protocol-handler.warn-external.http", true);
 pref("network.protocol-handler.warn-external.https", true);
 
-// Enigmail specific preferences.
+// We hope the user has Enigmail and if so, we believe these improve security.
 pref("extensions.enigmail.addHeaders", false);
 pref("extensions.enigmail.useDefaultComment", true);
-pref("extensions.enigmail.agentAdditionalParam", "--no-emit-version");
+pref("extensions.enigmail.agentAdditionalParam", "--no-emit-version --no-comments --hidden-recipient --display-charset utf-8 --keyserver-options http-proxy=http://127.0.0.1:8118 --keyserver hkp://2eghzlv2wwcq7u7y.onion");
 pref("extensions.enigmail.mimeHashAlgorithm", 5);
-
 
 // Disallow cookies.
 pref("network.cookie.cookieBehavior", 2);
@@ -67,6 +66,3 @@ pref("mailnews.display.prefer_plaintext", true);
 pref("rss.display.prefer_plaintext", true);
 pref("mail.inline_attachments", false);
 
-// We hope the user has Enigmail and if so, we believe these improve security
-pref("extensions.enigmail.addHeaders", false);
-pref("extensions.enigmail.agentAdditionalParam", "--no-emit-version --no-comments --hidden-recipient --display-charset utf-8 --keyserver-options http-proxy=http://127.0.0.1:8118 --keyserver hkp://2eghzlv2wwcq7u7y.onion");
