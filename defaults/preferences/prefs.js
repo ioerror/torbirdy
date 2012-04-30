@@ -48,7 +48,9 @@ pref("network.protocol-handler.warn-external.https", true);
 // We hope the user has Enigmail and if so, we believe these improve security.
 pref("extensions.enigmail.addHeaders", false);
 pref("extensions.enigmail.useDefaultComment", true);
-pref("extensions.enigmail.agentAdditionalParam", "--no-emit-version --no-comments --hidden-recipient --display-charset utf-8 --keyserver-options http-proxy=http://127.0.0.1:8118 --keyserver hkp://2eghzlv2wwcq7u7y.onion");
+// XXX: TODO --hidden-recipient should be used for each person but perhaps
+// --throw-keyids will be an OK stopgap?
+pref("extensions.enigmail.agentAdditionalParam", "--no-emit-version --no-comments --throw-keyids --display-charset utf-8 --keyserver-options http-proxy=http://127.0.0.1:8118 --keyserver hkp://2eghzlv2wwcq7u7y.onion");
 pref("extensions.enigmail.mimeHashAlgorithm", 5);
 
 // Suggestions from the JAP team on how they'd configure thunderbird
