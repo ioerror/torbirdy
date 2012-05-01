@@ -67,3 +67,5 @@ pref("mailnews.display.html_as", 1);
 pref("rss.display.prefer_plaintext", true);
 pref("mail.inline_attachments", false);
 
+// Don't convert to our local date - this may matter in a reply, etc
+pref("mailnews.display.original_date", true);
