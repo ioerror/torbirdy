@@ -6,5 +6,6 @@ window.addEventListener("load", function(e) {
 
 function startup() {
   var myPanel = document.getElementById("my-panel");
-  myPanel.label = "Tor enabled";
+  myPanel.label = "Tor Enabled";
+  myPanel.style.color = "red";
 }
