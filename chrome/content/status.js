@@ -9,3 +9,11 @@ function startup() {
   myPanel.label = "Tor Enabled";
   myPanel.style.color = "red";
 }
+
+function onClickHandler(event) {
+    switch(event.which) {
+        case 1:
+            alert("Go to Tools > Add-ons to disable Torbutton for Thunderbird.");
+            break;
+    }
+}
