@@ -11,9 +11,9 @@ function startup() {
 }
 
 function onClickHandler(event) {
-    switch(event.which) {
-        case 1:
-            alert("Go to Tools > Add-ons to disable Torbutton for Thunderbird.");
-            break;
-    }
+  switch(event.which) {
+    case 1:
+      alert("Torbutton for Thunderbird is currently enabled and is helping protect your anonymity.\n\nTo disable Torbutton, go to Tools > Add-ons.");
+      break;
+}
 }
