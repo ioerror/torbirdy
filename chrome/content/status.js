@@ -6,5 +6,14 @@ window.addEventListener("load", function(e) {
 
 function startup() {
   var myPanel = document.getElementById("my-panel");
-  myPanel.label = "Tor enabled";
+  myPanel.label = "Tor Enabled";
+  myPanel.style.color = "red";
+}
+
+function onClickHandler(event) {
+    switch(event.which) {
+        case 1:
+            alert("Go to Tools > Add-ons to disable Torbutton for Thunderbird.");
+            break;
+    }
 }
