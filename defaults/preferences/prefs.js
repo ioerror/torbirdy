@@ -69,3 +69,6 @@ pref("mail.inline_attachments", false);
 
 // Don't convert to our local date - this may matter in a reply, etc
 pref("mailnews.display.original_date", true);
+
+// Proxy bypass issues - disable them below:
+pref("network.websocket.enabled", false);
