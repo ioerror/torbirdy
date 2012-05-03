@@ -72,3 +72,28 @@ pref("mailnews.display.original_date", true);
 
 // Proxy bypass issues - disable them below:
 pref("network.websocket.enabled", false);
+pref("webgl.disabled", true);
+
+// Likely privacy violations
+pref("toolkit.telemetry.enabled", false);
+pref("network.prefetch-next", false);
+pref("network.http.spdy.enabled", false);
+
+// https://blog.torproject.org/blog/experimental-defense-website-traffic-fingerprinting
+// https://trac.torproject.org/projects/tor/ticket/3914
+pref("network.http.pipelining", true);
+pref("network.http.pipelining.ssl", true);
+pref("network.http.proxy.pipelining", true);
+pref("network.http.pipelining.maxrequests", 12);
+
+// misc security prefs
+pref("security.OCSP.enabled", 1);
+ // Default is always false for OCSP - it's broken crap
+pref("security.OCSP.require", false);
+pref("security.enable_tls_session_tickets", false);
+pref("security.enable_ssl3", false);
+pref("security.warn_entering_weak", true);
+pref("security.warn_submit_insecure", true);
+pref("security.ssl.enable_false_start", true);
+pref("security.ssl.require_safe_negotiation", true);
+pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
