@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
-<overlay id="castironthunderbirdclub-extension-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<overlay id="castironthunderbirdclub-compose-overlay"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
   <script type="application/javascript" src="chrome://castironthunderbirdclub/content/composeoverlay.js" />
+
 </overlay>

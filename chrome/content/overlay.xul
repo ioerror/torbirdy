@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
-<overlay id="castironthunderbirdclub-extension-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<overlay id="castironthunderbirdclub-extension-overlay"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
   <script type="application/javascript" src="chrome://castironthunderbirdclub/content/overlay.js" />
   <statusbar id="status-bar">
-      <statusbarpanel id="my-panel" label="" onclick="onClickHandler(event)"/> <!-- This turns into "Tor enabled" when installed -->
- </statusbar>
+      <statusbarpanel id="my-panel" label="" onclick="onClickHandler(event)" />
+  </statusbar>
+
 </overlay>
