@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<overlay id="castironthunderbirdclub-emailwizard-overlay"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/javascript" src="chrome://castironthunderbirdclub/content/emailwizard.js" />
+
+</overlay>
