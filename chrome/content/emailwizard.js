@@ -17,7 +17,6 @@ function disableAutoWizard() {
   var result = currentConfig.copy();
   replaceVariables(result, realname, email, password);
   result.rememberPassword = remember_password && !! password;
-  replaceVariables(result, realname, email, password);
 
   var newAccount = createAccountInBackend(result);
 
