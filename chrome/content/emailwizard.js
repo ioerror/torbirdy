@@ -14,11 +14,10 @@ function disableAutoWizard() {
   currentConfig.incoming.hostname = ".%EMAILDOMAIN%";
   currentConfig.outgoing.hostname = ".%EMAILDOMAIN%";
 
-  var result = currentConfig.copy();
-  replaceVariables(result, realname, email, password);
-  result.rememberPassword = remember_password && !! password;
+  replaceVariables(currentConfig, realname, email, password);
+  currentConfig.rememberPassword = remember_password && !! password;
 
-  var newAccount = createAccountInBackend(result);
+  var newAccount = createAccountInBackend(currentConfig);
 
   // From comm-release/mailnews/base/prefs/content/accountcreation/emailWizard.js : onAdvancedSetup().
   var windowManager = Cc["@mozilla.org/appshell/window-mediator;1"]
