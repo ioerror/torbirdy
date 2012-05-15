@@ -27,8 +27,8 @@ pref("network.proxy.ftp_port", 8118);
 // Override the user agent (empty string).
 pref("general.useragent.override", "");
 
-// Disable automatic updates.
-pref("app.update.enabled", false);
+// Enable automatic updates.
+pref("app.update.enabled", true);
 
 // Prevent hostname leaks.
 pref("mail.smtpserver.default.hello_argument", "127.0.0.1");
