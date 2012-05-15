@@ -7,17 +7,17 @@ function disableAutoWizard() {
   alert("Torbutton has disabled Thunderbird's auto-configuration wizard to protect your anonymity.\n" +
       "\nPlease configure your account manually.");
 
-  var currentConfig = new AccountConfig();
-  currentConfig.incoming.type = "imap";
-  currentConfig.incoming.username = "%EMAILLOCALPART%";
-  currentConfig.outgoing.username = "%EMAILLOCALPART%";
-  currentConfig.incoming.hostname = ".%EMAILDOMAIN%";
-  currentConfig.outgoing.hostname = ".%EMAILDOMAIN%";
+  var config = new AccountConfig();
+  config.incoming.type = "imap";
+  config.incoming.username = "%EMAILLOCALPART%";
+  config.outgoing.username = "%EMAILLOCALPART%";
+  config.incoming.hostname = "imap.%EMAILDOMAIN%";
+  config.outgoing.hostname = "smtp.%EMAILDOMAIN%";
 
-  replaceVariables(currentConfig, realname, email, password);
-  currentConfig.rememberPassword = remember_password && !! password;
+  replaceVariables(config, realname, email, password);
+  config.rememberPassword = remember_password && !!password;
 
-  var newAccount = createAccountInBackend(currentConfig);
+  var newAccount = createAccountInBackend(config);
 
   // From comm-release/mailnews/base/prefs/content/accountcreation/emailWizard.js : onAdvancedSetup().
   var windowManager = Cc["@mozilla.org/appshell/window-mediator;1"]
@@ -34,3 +34,12 @@ function disableAutoWizard() {
   }
   window.close();
 }
+
+function onKeyEnter(event) {
+  var keycode = event.keyCode;
+  if (keycode == 13) {
+    disableAutoWizard();
+  }
+}
+
+window.addEventListener("keypress", onKeyEnter, true);

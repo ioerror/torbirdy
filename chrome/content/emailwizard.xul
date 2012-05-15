@@ -7,5 +7,4 @@
   <button id="next_button"
       oncommand="disableAutoWizard();" />
 
-
 </overlay>
