@@ -1,4 +1,9 @@
 function startup() {
+  // Set the time zone to UTC.
+  var env = Components.classes["@mozilla.org/process/environment;1"].
+                            getService(Components.interfaces.nsIEnvironment);
+  env.set('TZ', 'UTC');
+
   var myPanel = document.getElementById("my-panel");
   myPanel.label = "Tor Enabled";
   myPanel.style.color = "green";
