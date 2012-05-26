@@ -1,2 +1,2 @@
 make-xpi:
-	zip -r ../torbutton-birdy.xpi *
+	zip -r ../torbirdy.xpi *
