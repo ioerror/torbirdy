@@ -44,6 +44,9 @@ pref("mailnews.wraplength", 72);
 // These options enable a warning that tagnaq suggests.
 pref("network.protocol-handler.warn-external.http", true);
 pref("network.protocol-handler.warn-external.https", true);
+pref("network.protocol-handler.warn-external.ftp", true);
+pref("network.protocol-handler.warn-external.file", true);
+pref("network.protocol-handler.warn-external-default", true);
 
 // We hope the user has Enigmail and if so, we believe these improve security.
 pref("extensions.enigmail.addHeaders", false);
