@@ -20,7 +20,7 @@
     <!-- front-end metadata -->
     <em:name>TorBirdy</em:name>
     <em:description>This extension forces all connections to be made over the Tor anonymity network</em:description>
-    <em:creator>ioerror</em:creator>
+    <em:creator>ioerror &amp; Sukhbir Singh</em:creator>
     <em:homepageURL>https://www.torproject.org/</em:homepageURL>
 
   </Description>
