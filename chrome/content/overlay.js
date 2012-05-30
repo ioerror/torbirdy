@@ -1,7 +1,7 @@
 function startup() {
   // Set the time zone to UTC.
-  var env = Components.classes["@mozilla.org/process/environment;1"].
-                            getService(Components.interfaces.nsIEnvironment);
+  var env = Components.classes["@mozilla.org/process/environment;1"]
+                            .getService(Components.interfaces.nsIEnvironment);
   env.set('TZ', 'UTC');
 
   var prefs = Components.classes["@mozilla.org/preferences-service;1"]
