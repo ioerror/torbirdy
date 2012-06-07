@@ -7,4 +7,21 @@
   <button id="next_button"
       oncommand="disableAutoWizard();" />
 
+    <groupbox id="initialSettings">
+      <hbox align="center">
+        <label value="Protocol:"
+               class="autoconfigLabel"
+               accesskey="o"
+               control="protocol" />
+        <menulist id="protocol">
+          <menupopup>
+            <menuitem label="IMAP"
+                      value="imap" />
+            <menuitem label="POP"
+                      value="pop3" />
+          </menupopup>
+       </menulist>
+    </hbox>
+    </groupbox>
+
 </overlay>

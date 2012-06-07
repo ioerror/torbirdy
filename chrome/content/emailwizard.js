@@ -3,15 +3,24 @@ function disableAutoWizard() {
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
   var remember_password = document.getElementById("remember_password").checked;
+  var protocol = document.getElementById("protocol").value;
 
   alert("Torbutton has disabled Thunderbird's auto-configuration wizard to protect your anonymity.\n" +
       "\nPlease configure your account manually.");
 
   var config = new AccountConfig();
-  config.incoming.type = "imap";
+  config.incoming.type = protocol;
   config.incoming.username = "%EMAILLOCALPART%";
   config.outgoing.username = "%EMAILLOCALPART%";
-  config.incoming.hostname = "imap.%EMAILDOMAIN%";
+
+  if (protocol === "imap") {
+    config.incoming.hostname = "imap.%EMAILDOMAIN%";
+  }
+
+  if (protocol === "pop3") {
+    config.incoming.hostname = "pop.%EMAILDOMAIN%";
+  }
+
   config.outgoing.hostname = "smtp.%EMAILDOMAIN%";
 
   replaceVariables(config, realname, email, password);
