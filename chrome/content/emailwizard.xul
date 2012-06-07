@@ -15,10 +15,10 @@
                control="protocol" />
         <menulist id="protocol">
           <menupopup>
-            <menuitem label="IMAP"
-                      value="imap" />
             <menuitem label="POP"
                       value="pop3" />
+            <menuitem label="IMAP"
+                      value="imap" />
           </menupopup>
        </menulist>
     </hbox>
