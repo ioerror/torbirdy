@@ -7,12 +7,15 @@
   <button id="next_button"
       oncommand="disableAutoWizard();" />
 
-    <groupbox id="initialSettings">
-      <hbox align="center">
+  <vbox id="mastervbox" class="mastervbox" flex="1">
+    <groupbox id="protocolBox" insertafter="initialSettings">
+
+      <hbox align="center" pack="start">
         <label value="Protocol:"
                class="autoconfigLabel"
                accesskey="o"
                control="protocol" />
+
         <menulist id="protocol">
           <menupopup>
             <menuitem label="POP"
@@ -20,8 +23,10 @@
             <menuitem label="IMAP"
                       value="imap" />
           </menupopup>
-       </menulist>
-    </hbox>
+        </menulist>
+
+      </hbox>
     </groupbox>
+  </vbox>
 
 </overlay>
