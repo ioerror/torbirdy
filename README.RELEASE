@@ -1,0 +1,91 @@
+#             Magical TorBirdy Release Process Incantations
+#
+#   "May this part of my job one day be replaced by a small shell script"
+#
+#  This is adapted from Mike Perry's Torbutton release notes
+#
+
+#. Decide the version number.
+
+   export VERSION="0.0.4"
+   vim ./src/install.rdf # edit <em:version> tag to reflect version
+
+#. Test upgrades of candidate XPI in latest Thunderbird/Iceweasel/etc product matrix
+
+   # TODO: Currently manual
+
+#. Generate changelog from git shortlog
+
+   # TODO: Currently manual
+
+#. tx noise: https://svn.torproject.org/svn/translation/trunk/documentation/howto.txt
+
+# XXX TODO: i18n/l10n this project!
+
+#. Tag the release:
+
+   git tag -u 0xD81D840E -s ${VERSION}
+   git push --tags
+
+#. Create the .xpi
+
+   cd /tmp/
+   git clone git://github.com/ioerror/torbirdy.git torbirdy-release
+   cd torbirdy-release
+   git tag -v ${VERSION}
+   git checkout -b tag-${VERSION} ${VERSION}
+   make
+
+#. SHA1 + Sign the .xpi
+
+   gpg -abs ../torbirdy-${VERSION}.xpi
+   sha1sum ../torbirdy-${VERSION}.xpi
+
+#. Upload .xpi to website
+
+   chmod 664 ../torbirdy-${VERSION}.xpi*
+   scp ../torbirdy-${VERSION}.xpi* vescum:/srv/www-master.torproject.org/htdocs/dist/torbirdy/
+   scp ../torbirdy-${VERSION}.xpi  vescum:/srv/www-master.torproject.org/htdocs/dist/torbirdy/torbirdy-current.xpi
+   scp ../torbirdy-${VERSION}.xpi.asc vescum:/srv/www-master.torproject.org/htdocs/dist/torbirdy/torbirdy-current.xpi.asc
+
+#. Update update.rdf
+
+   cd website-svn
+   vim ./include/versions.wmi   # Add sha1 and version
+   vim ./torbirdy/update.rdf   # Add <li> and <description> w/ sha1 and version
+
+#. Sign the new update.rdf.
+
+   # Key creation based on these instructions:
+   # Command line: http://blog.techno-barje.fr/post/2009/10/08/How-to-setup-a-mozilla-extension-update-server/
+   # Gui: https://www.binaryturf.com/steps-release-extension-firefox-3/
+
+   # TODO: Process currently manual due to offline signing.
+   # No need to fear the reaper, man. We can do online signing if we just put
+   # our minds to it: https://trac.torproject.org/projects/tor/ticket/6011
+
+   # Special note: I was unable to update an already signed
+   # copy of the update.rdf for a new release. We probably need to 
+   # keep the unsigned version around as input? See the root directory 
+   # of the torbutton.git for a copy.
+   ./mccoy-cli.x86/mccoy -profile ./.mozilla/mccoy/*.default/ -signRDF update-unsigned.rdf -key Torbutton
+
+   # Copy the signed update.rdf into place in the website svn
+
+#. Update website
+
+   torsocks svn up .
+   torsocks svn commit .
+
+   torsocks ssh vescum "/home/mirroradm/bin/trigger-mirrors"
+
+#. Test firefox autoupdate
+
+   # Wait for mirrors to sync first.. Pester phobos/weasel/helix/Sebastian for
+   # website push + dist chown + mirror update.
+   # TODO: Currently manual
+
+#. Announce on tor-talk
+
+   # FIXME: May need eventual minor improvements
+   echo "Troll food." | mail tor-talk@lists.torproject.org -s "Feed the trolls"
