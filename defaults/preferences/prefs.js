@@ -2,6 +2,9 @@
   Default preference values for Torbutton for Thunderbird.
 */
 
+pref("extensions.torbirdy.protected", false);
+
+/*
 // Network settings.
 pref("network.proxy.socks_remote_dns", true);
 pref("network.proxy.socks", "127.0.0.1");
@@ -98,3 +101,4 @@ pref("security.warn_submit_insecure", true);
 pref("security.ssl.enable_false_start", true);
 pref("security.ssl.require_safe_negotiation", true);
 pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
+*/
