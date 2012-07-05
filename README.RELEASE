@@ -23,7 +23,10 @@
 # XXX TODO: i18n/l10n this project!
 
 #. Tag the release:
+# The easy way:
+   make git-tag
 
+# The hard way:
    git tag -u 0xD81D840E -s ${VERSION}
    git push --tags
 
