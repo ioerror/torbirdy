@@ -7,6 +7,10 @@ make-xpi:
 git-tag:
 	git tag -u 0xD81D840E -s $(VERSION)
 
+git-push:
+	git push --tags
+	git push
+
 sign-release:
 	gpg -u 0xD81D840E -abs ../torbirdy-${VERSION}.xpi$
 	sha1sum ../torbirdy-${VERSION}.xpi$
