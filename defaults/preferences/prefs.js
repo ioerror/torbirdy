@@ -24,7 +24,7 @@ pref("network.proxy.ftp", "127.0.0.1");
 pref("network.proxy.ftp_port", 8118);
 
 // Assume that the local Tor supports Prop 171
-// How can we set a username and password for the network.proxy.socks property?
+// How can we set a unique l/p for the network.proxy.socks property?
 // XXX TODO
 
 // Override the user agent (empty string).
