@@ -4,8 +4,8 @@
 <dialog id="castironthunderbirdclub-prefs-dialog" 
         xmlns:html="http://www.w3.org/1999/xhtml" 
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	windowtype="torbirdy:prefs-dialog"
-        title="Choose an anonymisation service"
+        windowtype="torbirdy:prefs-dialog"
+        title="Choose an anonymization service"
         buttons="accept,cancel"
         buttonlabelaccept="Save"
         buttonlabelcancel="Cancel"
@@ -16,16 +16,16 @@
         
    <!-- Include javascript code -->
    <script type="application/x-javascript" 
-          src="chrome://castironthunderbirdclub/content/dialogs/prefs-dialog.js"></script>
+           src="chrome://castironthunderbirdclub/content/dialogs/prefs-dialog.js"></script>
   
    <box align="center">
-       <label value="Coose an anonymisation service;"/>
-       <menulist id="AnonService" width="160px">
-       <menupopup>
-           <menuitem label="Tor" />
-           <menuitem label="JonDo" /> 
-       </menupopup>
-       </menulist>
+     <label value="Choose an anonymization service"/>
+     <menulist id="AnonService" width="160px">
+     <menupopup>
+       <menuitem label="Tor" />
+       <menuitem label="JonDo" /> 
+     </menupopup>
+     </menulist>
    </box>
    
 </dialog>
