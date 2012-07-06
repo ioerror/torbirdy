@@ -34,13 +34,13 @@ function onAccept() {
       myprefsHandler.setIntPref("network.proxy.socks_port", 9050);
       myprefsHandler.setIntPref("network.proxy.ssl_port", 8118);
       myprefsHandler.setIntPref("network.proxy.http_port", 8118);
-      myPanel.label = "Tor Enabled";
+      myPanel.label = "TorBirdy Enabled:   Tor";
   } else {
       // Set proxies for JonDo
       myprefsHandler.setIntPref("network.proxy.socks_port", 4001);
       myprefsHandler.setIntPref("network.proxy.ssl_port", 4001);
       myprefsHandler.setIntPref("network.proxy.http_port", 4001);
-      myPanel.label = "JonDo Enabled";
+      myPanel.label = "TorBirdy:     Disabled!";$
   }
 }
 
