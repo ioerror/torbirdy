@@ -21,7 +21,7 @@ function startup() {
       myPanel.style.color = "green";
     }
   } else {
-    myPanel.label = "TorBirdy Disabled!";
+      myPanel.label = "TorBirdy:     Disabled!";
     myPanel.style.color = "red";
   }
 }
