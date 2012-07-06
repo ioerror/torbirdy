@@ -16,7 +16,7 @@
         
    <!-- Include javascript code -->
    <script type="application/x-javascript" 
-           src="chrome://castironthunderbirdclub/content/dialogs/prefs-dialog.js"></script>
+           src="chrome://castironthunderbirdclub/content/prefs-dialog.js"></script>
   
    <box align="center">
      <label value="Choose an anonymization service"/>
