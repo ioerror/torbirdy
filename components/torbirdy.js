@@ -152,4 +152,7 @@ TorBirdy.prototype = {
 
 }
 
-var NSGetFactory = XPCOMUtils.generateNSGetFactory([TorBirdy]);
+if (XPCOMUtils.generateNSGetFactory)
+    var NSGetFactory = XPCOMUtils.generateNSGetFactory([TorBirdy]);
+else
+    var NSGetModule = XPCOMUtils.generateNSGetModule([TorBirdy]);

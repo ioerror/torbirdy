@@ -7,7 +7,7 @@
   <button id="next_button"
       oncommand="disableAutoWizard();" />
 
-  <vbox id="mastervbox" class="mastervbox" flex="1">
+  <vbox id="mastervbox" flex="1">
     <groupbox id="protocolBox" insertafter="initialSettings">
 
       <hbox align="center" pack="start">
