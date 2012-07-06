@@ -24,7 +24,7 @@ function onAccept() {
     var win = Cc['@mozilla.org/appshell/window-mediator;1'].
          getService(Ci.nsIWindowMediator).
          getMostRecentWindow('mail:3pane'); 
-		  
+      
     var myPanel = win.document.getElementById("my-panel");
   
     var AnonService = document.getElementById('AnonService').selectedIndex; 
@@ -36,13 +36,13 @@ function onAccept() {
         myprefsHandler.setIntPref("network.proxy.socks_port", 9050);
         myprefsHandler.setIntPref("network.proxy.ssl_port", 8118);
         myprefsHandler.setIntPref("network.proxy.http_port", 8118);
-	myPanel.label = "Tor Enabled";
+  myPanel.label = "Tor Enabled";
     } else {
         // Set Pory for JonDo 
-	myprefsHandler.setIntPref("network.proxy.socks_port", 4001);
+  myprefsHandler.setIntPref("network.proxy.socks_port", 4001);
         myprefsHandler.setIntPref("network.proxy.ssl_port", 4001);
         myprefsHandler.setIntPref("network.proxy.http_port", 4001);
-	myPanel.label = "JonDo Enabled";
+  myPanel.label = "JonDo Enabled";
     }
         
 }
