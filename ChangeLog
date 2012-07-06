@@ -1,0 +1,5 @@
+0.0.9 Fri, 06 Jul 2012
+  Added ChangeLog to document feature progress
+  Implemented basic preferences window
+    Patch by Karsten N from JonDos
+    Supports configuring Thunderbird for Tor or JonDos on the usual ports
