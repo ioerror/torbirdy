@@ -41,7 +41,7 @@ TorBirdy.prototype = {
   // This is a hack to cause Thunderbird to instantiate us asap!
   _xpcom_categories: [{ category: "profile-after-change"}, ],
   observe: function(subject, topic, data) {
-    dump("TorBirdy observes: " + topic + "\n");
+    // dump("TorBirdy observes: " + topic + "\n");
     return;
   },
 
