@@ -14,14 +14,14 @@ function startup() {
   {
     if (prefs.getIntPref("extensions.torbirdy.proxy") == 0) 
     {
-      myPanel.label = "Tor Enabled";
+      myPanel.label = "TorBirdy Enabled:   Tor";
       myPanel.style.color = "green";
     } else {
-      myPanel.label = "JonDo Enabled";
+      myPanel.label = "TorBirdy Enabled: JonDo";
       myPanel.style.color = "green";
     }
   } else {
-    myPanel.label = "Tor Disabled!";
+    myPanel.label = "TorBirdy Disabled!";
     myPanel.style.color = "red";
   }
 }
