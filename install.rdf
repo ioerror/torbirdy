@@ -4,7 +4,7 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
     <em:id>castironthunderbirdclub@torproject.org</em:id>
-    <em:version>0.0.8</em:version>
+    <em:version>0.0.9</em:version>
     <em:type>2</em:type>
     <em:iconURL>chrome://castironthunderbirdclub/skin/images/tor.png</em:iconURL>
 
@@ -22,6 +22,6 @@
     <em:description>This extension forces all connections to be made over the Tor anonymity network</em:description>
     <em:creator>Jacob Appelbaum &amp; Sukhbir Singh</em:creator>
     <em:homepageURL>https://www.torproject.org/</em:homepageURL>
-    <em:optionsURL>chrome://castironthunderbirdclub/content/dialogs/prefs-dialog.xul</em:optionsURL>
+    <em:optionsURL>chrome://castironthunderbirdclub/content/prefs-dialog.xul</em:optionsURL>
   </Description>
 </RDF>
