@@ -22,6 +22,6 @@
     <em:description>This extension forces all connections to be made over the Tor anonymity network</em:description>
     <em:creator>Jacob Appelbaum &amp; Sukhbir Singh</em:creator>
     <em:homepageURL>https://www.torproject.org/</em:homepageURL>
-
+    <em:optionsURL>chrome://castironthunderbirdclub/content/dialogs/prefs-dialog.xul</em:optionsURL>
   </Description>
 </RDF>

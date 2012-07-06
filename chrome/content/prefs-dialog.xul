@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<dialog id="castironthunderbirdclub-prefs-dialog" 
+        xmlns:html="http://www.w3.org/1999/xhtml" 
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	windowtype="torbirdy:prefs-dialog"
+        title="Choose an anonymisation service"
+        buttons="accept,cancel"
+        buttonlabelaccept="Save"
+        buttonlabelcancel="Cancel"
+        
+        onload="onLoad();"
+        ondialogaccept="onAccept();"
+        >
+        
+   <!-- Include javascript code -->
+   <script type="application/x-javascript" 
+          src="chrome://castironthunderbirdclub/content/dialogs/prefs-dialog.js"></script>
+  
+   <box align="center">
+       <label value="Coose an anonymisation service;"/>
+       <menulist id="AnonService" width="160px">
+       <menupopup>
+           <menuitem label="Tor" />
+           <menuitem label="JonDo" /> 
+       </menupopup>
+       </menulist>
+   </box>
+   
+</dialog>

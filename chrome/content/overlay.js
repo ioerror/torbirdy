@@ -12,8 +12,14 @@ function startup() {
   var myPanel = document.getElementById("my-panel");
   if (prefs.getBoolPref("extensions.torbirdy.protected"))
   {
-    myPanel.label = "Tor Enabled";
-    myPanel.style.color = "green";
+    if (prefs.getIntPref("extensions.torbirdy.proxy") == 0) 
+    {
+      myPanel.label = "Tor Enabled";
+      myPanel.style.color = "green";
+    } else {
+      myPanel.label = "JonDo Enabled";
+      myPanel.style.color = "green";
+    }
   } else {
     myPanel.label = "Tor Disabled!";
     myPanel.style.color = "red";
