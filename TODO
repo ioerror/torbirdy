@@ -11,3 +11,8 @@ Required reading:
   https://lists.torproject.org/pipermail/tor-talk/2011-September/021398.html
 
 Mixmaster/MixMinion integration - eg: "write anonymous email" button
+
+Add Jondo support (port 4001 by default)
+
+Open Tickets for TorBirdy:
+ https://trac.torproject.org/projects/tor/query?status=accepted&status=assigned&status=needs_review&status=new&status=reopened&component=TorBirdy&order=priority&col=id&col=summary&col=component&col=status&col=type&col=priority&col=milestone&report=27
