@@ -21,6 +21,10 @@ function disableAutoWizard() {
     config.incoming.hostname = "pop.%EMAILDOMAIN%";
   }
 
+  // Default to SSL/TLS for both outgoing and incoming servers.
+  config.incoming.socketType = 2;
+  config.outgoing.socketType = 2;
+
   config.outgoing.hostname = "smtp.%EMAILDOMAIN%";
 
   replaceVariables(config, realname, email, password);
