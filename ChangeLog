@@ -1,3 +1,8 @@
+0.0.10 XXX
+  Don't check for messages on start up
+  Now includes patch in source for upstream date header modifications
+    Apply patches/date.patch to a custom Thunderbird compile
+
 0.0.9 Fri, 06 Jul 2012
   Added ChangeLog to document feature progress
   Implemented basic preferences window
