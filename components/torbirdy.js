@@ -149,8 +149,11 @@ TorBirdy.prototype = {
     this.prefs.setBoolPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
     this.prefs.setBoolPref("extensions.torbirdy.protected", true);
 
-    // disable Thunderbird's 'Get new account' wizard
+    // Disable Thunderbird's 'Get new account' wizard
     this.prefs.setBoolPref("mail.provider.enabled", false);
+
+    // Don't check for new messages on startup
+    this.prefs.setBoolPref("mail.startup.enabledMailCheckOnce", false);
   },
 
 }

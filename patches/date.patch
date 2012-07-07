@@ -20,7 +20,7 @@ diff --git a/mailnews/compose/src/nsMsgCompUtils.cpp b/mailnews/compose/src/nsMs
 -  PR_ExplodeTime(PR_Now(), PR_LocalTimeParameters, &now);
 -  int gmtoffset = (now.tm_params.tp_gmt_offset + now.tm_params.tp_dst_offset) / 60;
 +  bool remove_date;
-+  prefs->GetBoolPref("mailnews.remove_date_header", &remove_date);
++  prefs->GetBoolPref("mailnews.local_date_header_generation", &remove_date);
  
 -  /* Use PR_FormatTimeUSEnglish() to format the date in US English format,
 -     then figure out what our local GMT offset is, and append it (since
@@ -30,7 +30,7 @@ diff --git a/mailnews/compose/src/nsMsgCompUtils.cpp b/mailnews/compose/src/nsMs
 -  PR_FormatTimeUSEnglish(buffer_tail, 100,
 -               "Date: %a, %d %b %Y %H:%M:%S ",
 -               &now);
-+  if (!remove_date) 
++  if (remove_date)
 +  {
 +    PRExplodedTime now;
 +    PR_ExplodeTime(PR_Now(), PR_LocalTimeParameters, &now);
