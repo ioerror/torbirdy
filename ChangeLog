@@ -2,6 +2,8 @@
   Don't check for messages on start up
   Now includes patch in source for upstream date header modifications
     Apply patches/date.patch to a custom Thunderbird compile
+  Use SSL/TLS by default for both outgoing and incoming servers
+  Disable 'Get new account' from loading at startup
 
 0.0.9 Fri, 06 Jul 2012
   Added ChangeLog to document feature progress
