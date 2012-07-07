@@ -19,7 +19,7 @@ diff --git a/mailnews/compose/src/nsMsgCompUtils.cpp b/mailnews/compose/src/nsMs
 -  PRExplodedTime now;
 -  PR_ExplodeTime(PR_Now(), PR_LocalTimeParameters, &now);
 -  int gmtoffset = (now.tm_params.tp_gmt_offset + now.tm_params.tp_dst_offset) / 60;
-+  bool local_date_header;
++  bool local_date_header = true;
 +  prefs->GetBoolPref("mailnews.local_date_header_generation", &local_date_header);
  
 -  /* Use PR_FormatTimeUSEnglish() to format the date in US English format,
