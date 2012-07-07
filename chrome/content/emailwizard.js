@@ -51,4 +51,9 @@ function onKeyEnter(event) {
   }
 }
 
+function onLoad(event) {
+  document.getElementById('provisioner_button').setAttribute('disabled', 'true');
+}
+
 window.addEventListener("keypress", onKeyEnter, true);
+window.addEventListener("load", onLoad, true);
