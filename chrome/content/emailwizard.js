@@ -10,20 +10,29 @@ function disableAutoWizard() {
 
   var config = new AccountConfig();
   config.incoming.type = protocol;
+
   config.incoming.username = "%EMAILLOCALPART%";
   config.outgoing.username = "%EMAILLOCALPART%";
 
   if (protocol === "imap") {
     config.incoming.hostname = "imap.%EMAILDOMAIN%";
+    config.incoming.port = 993;
   }
 
   if (protocol === "pop3") {
     config.incoming.hostname = "pop.%EMAILDOMAIN%";
+    config.incoming.port = 995;
   }
 
   // Default to SSL/TLS for both outgoing and incoming servers.
   config.incoming.socketType = 2;
   config.outgoing.socketType = 2;
+
+  // Default the outgoing SMTP port.
+  config.outgoing.port = 465;
+
+  // Don't check for new messages at startup.
+  config.incoming.loginAtStartup = false;
 
   config.outgoing.hostname = "smtp.%EMAILDOMAIN%";
 
