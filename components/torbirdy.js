@@ -126,6 +126,8 @@ TorBirdy.prototype = {
 
     // Likely privacy violations
     this.prefs.setBoolPref("toolkit.telemetry.enabled", false);
+    this.prefs.setBoolPref("toolkit.telemetry.promoted", false);
+    this.prefs.setIntPref("toolkit.telemetry.promoted", 2);
     this.prefs.setBoolPref("network.prefetch-next", false);
     this.prefs.setBoolPref("network.http.spdy.enabled", false);
 
