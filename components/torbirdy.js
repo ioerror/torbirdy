@@ -23,10 +23,14 @@ function TorBirdy() {
   this.prefs = Cc["@mozilla.org/preferences-service;1"]
                   .getService(Ci.nsIPrefBranch);
 
+  this.acctMgr = Cc["@mozilla.org/messenger/account-manager;1"]
+                  .getService(Ci.nsIMsgAccountManager);
+
   this.setPrefs();
+  this.setAccountPrefs();
+
   dump("TorBirdy registered!\n");
   
-
 }
 
 TorBirdy.prototype = {
@@ -124,9 +128,13 @@ TorBirdy.prototype = {
     this.prefs.setBoolPref("network.websocket.enabled", false);
     this.prefs.setBoolPref("webgl.disabled", true);
 
-    // Likely privacy violations
+    // Disable Telemetry.
     this.prefs.setBoolPref("toolkit.telemetry.enabled", false);
-    this.prefs.setIntPref("toolkit.telemetry.prompted", 2);
+    if(this.prefs.prefHasUserValue("toolkit.telemetry.prompted")) {
+      this.prefs.setIntPref("toolkit.telemetry.prompted", 2);
+    }
+
+    // Likely privacy violations
     this.prefs.setBoolPref("network.prefetch-next", false);
     this.prefs.setBoolPref("network.http.spdy.enabled", false);
 
@@ -155,11 +163,23 @@ TorBirdy.prototype = {
 
     // Don't check for new messages on startup
     this.prefs.setBoolPref("mail.startup.enabledMailCheckOnce", false);
+
+  },
+
+  // Iterate through all accounts and disable automatic checking of emails.
+  setAccountPrefs: function() {
+    var accounts = this.acctMgr.accounts;
+    for (var i = 0; i < accounts.Count(); i++) {
+      var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
+      account.downloadOnBiff = false;
+      account.loginAtStartUp = false;
+      account.doBiff = false;
+    }
   },
 
 }
 
 if (XPCOMUtils.generateNSGetFactory)
-    var NSGetFactory = XPCOMUtils.generateNSGetFactory([TorBirdy]);
+  var NSGetFactory = XPCOMUtils.generateNSGetFactory([TorBirdy]);
 else
-    var NSGetModule = XPCOMUtils.generateNSGetModule([TorBirdy]);
+  var NSGetModule = XPCOMUtils.generateNSGetModule([TorBirdy]);

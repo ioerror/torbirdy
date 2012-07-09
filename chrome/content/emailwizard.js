@@ -31,9 +31,6 @@ function disableAutoWizard() {
   // Default the outgoing SMTP port.
   config.outgoing.port = 465;
 
-  // Don't check for new messages at startup.
-  config.incoming.loginAtStartup = false;
-
   config.outgoing.hostname = "smtp.%EMAILDOMAIN%";
 
   replaceVariables(config, realname, email, password);
