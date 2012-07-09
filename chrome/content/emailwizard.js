@@ -28,6 +28,10 @@ function disableAutoWizard() {
   config.incoming.socketType = 2;
   config.outgoing.socketType = 2;
 
+  // Set default values to disable automatic email fetching.
+  config.incoming.loginAtStartup = false;
+  config.incoming.downloadOnBiff = false;
+
   // Default the outgoing SMTP port.
   config.outgoing.port = 465;
 
@@ -37,6 +41,14 @@ function disableAutoWizard() {
   config.rememberPassword = remember_password && !!password;
 
   var newAccount = createAccountInBackend(config);
+
+  // Set check_new_mail to false. We can't do this through the account setup, so let's do it here.
+  const checkNewMail = 'mail.server.%serverkey%.check_new_mail';
+  const serverkey = newAccount.incomingServer.key;
+  var prefs = Cc["@mozilla.org/preferences-service;1"]
+                .getService(Ci.nsIPrefBranch);
+  var checkNewMailPref = checkNewMail.replace("%serverkey%", serverkey);
+  prefs.setBoolPref(checkNewMailPref, false);
 
   // From comm-release/mailnews/base/prefs/content/accountcreation/emailWizard.js : onAdvancedSetup().
   var windowManager = Cc["@mozilla.org/appshell/window-mediator;1"]
@@ -51,7 +63,9 @@ function disableAutoWizard() {
                       { server: newAccount.incomingServer,
                         selectPage: "am-server.xul" });
   }
+
   window.close();
+
 }
 
 function onKeyEnter(event) {
