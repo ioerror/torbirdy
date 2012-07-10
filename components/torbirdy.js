@@ -161,6 +161,10 @@ TorBirdy.prototype = {
     // Disable Thunderbird's 'Get new account' wizard
     this.prefs.setBoolPref("mail.provider.enabled", false);
 
+    // Don't ask to be the default client.
+    this.prefs.setBoolPref("mail.shell.checkDefaultClient", false);
+    this.prefs.setBoolPref("mail.shell.checkDefaultMail", false);
+
   },
 
   // Iterate through all accounts and disable automatic checking of emails.
