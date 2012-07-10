@@ -161,9 +161,6 @@ TorBirdy.prototype = {
     // Disable Thunderbird's 'Get new account' wizard
     this.prefs.setBoolPref("mail.provider.enabled", false);
 
-    // Don't check for new messages on startup
-    this.prefs.setBoolPref("mail.startup.enabledMailCheckOnce", false);
-
   },
 
   // Iterate through all accounts and disable automatic checking of emails.
