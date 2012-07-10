@@ -65,7 +65,6 @@ function disableAutoWizard() {
   }
 
   window.close();
-
 }
 
 function onKeyEnter(event) {
