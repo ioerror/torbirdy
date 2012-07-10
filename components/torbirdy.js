@@ -15,6 +15,7 @@ WARN=5;
 const SERVICE_CTRID = "@torproject.org/torbirdy;1";
 const SERVICE_ID    = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}"); // As defined in chrome.manifest
 const SERVICE_NAME  = "Main TorBirdy component";
+const TORBIRDY_UUID = "{3550f703-e582-4d05-9a08-453d09bdfdc6}";
 
 // Constructor for component init
 function TorBirdy() {
@@ -25,6 +26,10 @@ function TorBirdy() {
 
   this.acctMgr = Cc["@mozilla.org/messenger/account-manager;1"]
                   .getService(Ci.nsIMsgAccountManager);
+
+  Components.utils.import("resource://gre/modules/AddonManager.jsm");
+  this.onDisabling = this.onUninstalling;
+  AddonManager.addAddonListener(this);
 
   this.setPrefs();
   this.setAccountPrefs();
@@ -47,6 +52,13 @@ TorBirdy.prototype = {
   observe: function(subject, topic, data) {
     // dump("TorBirdy observes: " + topic + "\n");
     return;
+  },
+
+  onUninstalling: function(addon, needsRestart) {
+    if (addon.id.toUpperCase() == TORBIRDY_UUID) {
+      this._uninstall = true;
+
+      }
   },
 
   setPrefs: function() {
@@ -141,6 +153,7 @@ TorBirdy.prototype = {
     this.prefs.setBoolPref("network.http.pipelining.ssl", true);
     this.prefs.setBoolPref("network.http.proxy.pipelining", true);
     this.prefs.setIntPref("network.http.pipelining.maxrequests", 12);
+    this.prefs.setIntPref("network.http.sendRefererHeader", 0);
 
     // misc security prefs
     this.prefs.setIntPref("security.OCSP.enabled", 1);
@@ -153,7 +166,6 @@ TorBirdy.prototype = {
     this.prefs.setBoolPref("security.ssl.enable_false_start", true);
     this.prefs.setBoolPref("security.ssl.require_safe_negotiation", true);
     this.prefs.setBoolPref("security.ssl.treat_unsafe_negotiation_as_broken", true);
-    this.prefs.setBoolPref("extensions.torbirdy.protected", true);
 
     // Disable Thunderbird's 'Get new account' wizard
     this.prefs.setBoolPref("mail.provider.enabled", false);
@@ -162,6 +174,29 @@ TorBirdy.prototype = {
     this.prefs.setBoolPref("mail.shell.checkDefaultClient", false);
     this.prefs.setBoolPref("mail.shell.checkDefaultMail", false);
 
+    this.prefs.setBoolPref("geo.enabled", false);
+    this.prefs.setBoolPref("javascript.enabled", false);
+
+    // DOM specific.
+    this.prefs.setBoolPref("dom.storage.enabled", false);
+    this.prefs.setBoolPref("dom.ipc.plugins.java.enabled", false);
+    this.prefs.setBoolPref("dom.disable_image_src_set", true);
+
+    // Disable media files.
+    this.prefs.setBoolPref("media.webm.enabled", false);
+    this.prefs.setBoolPref("media.wave.enabled", false);
+    this.prefs.setBoolPref("media.ogg.enabled", false);
+
+    this.prefs.setBoolPref("mailnews.message_display.allow_plugins", false);
+
+    this.prefs.setBoolPref("layout.css.visited_links_enabled", false);
+    this.prefs.setBoolPref("gfx.downloadable_fonts.enabled", false);
+
+    // Disable remote images.
+    this.prefs.setIntPref("permissions.default.image", 2);
+
+    // Now enabled TorBirdy.
+    this.prefs.setBoolPref("extensions.torbirdy.protected", true);
   },
 
   // Iterate through all accounts and disable automatic checking of emails.
@@ -177,7 +212,4 @@ TorBirdy.prototype = {
 
 }
 
-if (XPCOMUtils.generateNSGetFactory)
-  var NSGetFactory = XPCOMUtils.generateNSGetFactory([TorBirdy]);
-else
-  var NSGetModule = XPCOMUtils.generateNSGetModule([TorBirdy]);
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([TorBirdy]);
