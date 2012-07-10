@@ -130,9 +130,6 @@ TorBirdy.prototype = {
 
     // Disable Telemetry.
     this.prefs.setBoolPref("toolkit.telemetry.enabled", false);
-    if(this.prefs.prefHasUserValue("toolkit.telemetry.prompted")) {
-      this.prefs.setIntPref("toolkit.telemetry.prompted", 2);
-    }
 
     // Likely privacy violations
     this.prefs.setBoolPref("network.prefetch-next", false);
