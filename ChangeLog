@@ -8,8 +8,8 @@
   For already configured email acccounts, disable automatic email fetching
   For accounts created through the manual account configuration, disable
   automatic email fetching
-  We now no longer support Thunderbird versions < 5.0
-  Add preliminary support for resetting user preferences
+  Add preliminary support for resetting user preferences (only in Thunderbird
+  > 5.0)
   Various privacy fixes as suggested by Karsten N
 
 0.0.9 Fri, 06 Jul 2012
