@@ -47,6 +47,7 @@ function TorBirdy() {
 
   if (this.is_tb5) {
     Components.utils.import("resource://gre/modules/AddonManager.jsm");
+    this.onEnabling = this.onOperationCancelled;
     this.onDisabling = this.onUninstalling;
     AddonManager.addAddonListener(this);
   } else {
@@ -77,12 +78,19 @@ TorBirdy.prototype = {
   },
 
   onUninstalling: function(addon, needsRestart) {
-    dump(addon.id);
     if (addon.id == TORBIRDY_ID) {
+      dump("Nooo! TorBirdy uninstall requested\n");
       this._uninstall = true;
-      dump("Nooo! TorBirdy uninstall requested");
-
+      this.resetUserPrefs();
       }
+  },
+
+  onOperationCancelled: function(addon) {
+    if (addon.id == TORBIRDY_ID) {
+      dump("Uninstall requested cancelled. Yayay!\n");
+      this._uninstall = false;
+      this.setPrefs();
+    }
   },
 
   observe: function(subject, topic, data) {
@@ -91,17 +99,118 @@ TorBirdy.prototype = {
 
       if (subject.id == TORBIRDY_ID) {
         if (data == "item-uninstalled" || data == "item-disabled") {
-          dump("Nooo! TorBirdy uninstall requested");
+          dump("Nooo! TorBirdy uninstall requested\n");
           this._uninstall = true;
+          this.resetUserPrefs();
         } else if (data == "item-cancel-action") {
+          dump("Uninstall requested cancelled. Yayay!\n");
           this._uninstall = false;
-        }
-      } else if (topic == "quit-application-granted") {
-        if (this._uninstall) {
-
+          this.setPrefs();
         }
       }
     }
+  },
+
+  resetUserPrefs: function() {
+    dump("Resetting user preferences to default\n");
+
+    this.prefs.clearUserPref("network.proxy.socks_remote_dns");
+    this.prefs.clearUserPref("network.proxy.socks");
+    this.prefs.clearUserPref("network.proxy.socks_port");
+    this.prefs.clearUserPref("network.proxy.socks_version");
+    this.prefs.clearUserPref("network.proxy.no_proxies_on");
+    this.prefs.clearUserPref("network.proxy.type");
+    this.prefs.clearUserPref("network.proxy.failover_timeout");
+
+    this.prefs.clearUserPref("network.proxy.ssl");
+    this.prefs.clearUserPref("network.proxy.ssl_port");
+    this.prefs.clearUserPref("network.proxy.http");
+    this.prefs.clearUserPref("network.proxy.http_port");
+    this.prefs.clearUserPref("network.proxy.ftp");
+    this.prefs.clearUserPref("network.proxy.ftp_port");
+
+    this.prefs.clearUserPref("general.useragent.override");
+
+    this.prefs.clearUserPref("app.update.enabled");
+
+    this.prefs.clearUserPref("mail.smtpserver.default.hello_argument");
+
+    this.prefs.clearUserPref("mail.html_compose");
+    this.prefs.clearUserPref("mail.identity.default.compose_html");
+    this.prefs.clearUserPref("mail.default_html_action");
+    this.prefs.clearUserPref("mailnews.wraplength");
+
+    this.prefs.clearUserPref("network.protocol-handler.warn-external.http");
+    this.prefs.clearUserPref("network.protocol-handler.warn-external.https");
+    this.prefs.clearUserPref("network.protocol-handler.warn-external.ftp");
+    this.prefs.clearUserPref("network.protocol-handler.warn-external.file");
+    this.prefs.clearUserPref("network.protocol-handler.warn-external-default");
+
+    this.prefs.clearUserPref("extensions.enigmail.addHeaders");
+    this.prefs.clearUserPref("extensions.enigmail.useDefaultComment");
+
+    this.prefs.clearUserPref("extensions.enigmail.agentAdditionalParam");
+    this.prefs.clearUserPref("extensions.enigmail.mimeHashAlgorithm");
+
+    this.prefs.clearUserPref("network.cookie.cookieBehavior");
+    this.prefs.clearUserPref("mailnews.start_page.enabled");
+    this.prefs.clearUserPref("mailnews.send_default_charset");
+    this.prefs.clearUserPref("mailnews.send_plaintext_flowed");
+    this.prefs.clearUserPref("mailnews.display.prefer_plaintext");
+    this.prefs.clearUserPref("mailnews.display.disallow_mime_handlers");
+    this.prefs.clearUserPref("mailnews.display.html_as");
+    this.prefs.clearUserPref("rss.display.prefer_plaintext");
+    this.prefs.clearUserPref("mail.inline_attachments");
+
+    this.prefs.clearUserPref("mailnews.display.original_date");
+
+    this.prefs.clearUserPref("network.websocket.enabled");
+    this.prefs.clearUserPref("webgl.disabled");
+
+    this.prefs.clearUserPref("toolkit.telemetry.enabled");
+
+    this.prefs.clearUserPref("network.prefetch-next");
+    this.prefs.clearUserPref("network.http.spdy.enabled");
+
+    this.prefs.clearUserPref("network.http.pipelining");
+    this.prefs.clearUserPref("network.http.pipelining.ssl");
+    this.prefs.clearUserPref("network.http.proxy.pipelining");
+    this.prefs.clearUserPref("network.http.pipelining.maxrequests");
+    this.prefs.clearUserPref("network.http.sendRefererHeader");
+
+    this.prefs.clearUserPref("security.OCSP.enabled");
+    this.prefs.clearUserPref("security.OCSP.require");
+    this.prefs.clearUserPref("security.enable_tls_session_tickets");
+    this.prefs.clearUserPref("security.enable_ssl3");
+    this.prefs.clearUserPref("security.warn_entering_weak");
+    this.prefs.clearUserPref("security.warn_submit_insecure");
+    this.prefs.clearUserPref("security.ssl.enable_false_start");
+    this.prefs.clearUserPref("security.ssl.require_safe_negotiation");
+    this.prefs.clearUserPref("security.ssl.treat_unsafe_negotiation_as_broken");
+
+    this.prefs.clearUserPref("mail.provider.enabled");
+
+    this.prefs.clearUserPref("mail.shell.checkDefaultClient");
+    this.prefs.clearUserPref("mail.shell.checkDefaultMail");
+
+    this.prefs.clearUserPref("geo.enabled");
+    this.prefs.clearUserPref("javascript.enabled");
+
+    this.prefs.clearUserPref("dom.storage.enabled");
+    this.prefs.clearUserPref("dom.ipc.plugins.java.enabled");
+    this.prefs.clearUserPref("dom.disable_image_src_set");
+
+    this.prefs.clearUserPref("media.webm.enabled");
+    this.prefs.clearUserPref("media.wave.enabled");
+    this.prefs.clearUserPref("media.ogg.enabled");
+
+    this.prefs.clearUserPref("mailnews.message_display.allow_plugins");
+
+    this.prefs.clearUserPref("layout.css.visited_links_enabled");
+    this.prefs.clearUserPref("gfx.downloadable_fonts.enabled");
+
+    this.prefs.clearUserPref("permissions.default.image");
+    this.prefs.clearUserPref("extensions.torbirdy.protected");
   },
 
   setPrefs: function() {
