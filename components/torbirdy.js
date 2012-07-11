@@ -15,6 +15,7 @@ WARN=5;
 const SERVICE_CTRID = "@torproject.org/torbirdy;1";
 const SERVICE_ID    = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}"); // As defined in chrome.manifest
 const SERVICE_NAME  = "Main TorBirdy component";
+const TORBIRDY_UUID = "{3550f703-e582-4d05-9a08-453d09bdfdc6}";
 
 // Constructor for component init
 function TorBirdy() {
@@ -25,6 +26,10 @@ function TorBirdy() {
 
   this.acctMgr = Cc["@mozilla.org/messenger/account-manager;1"]
                   .getService(Ci.nsIMsgAccountManager);
+
+  Components.utils.import("resource://gre/modules/AddonManager.jsm");
+  this.onDisabling = this.onUninstalling;
+  AddonManager.addAddonListener(this);
 
   this.setPrefs();
   this.setAccountPrefs();
@@ -47,6 +52,13 @@ TorBirdy.prototype = {
   observe: function(subject, topic, data) {
     // dump("TorBirdy observes: " + topic + "\n");
     return;
+  },
+
+  onUninstalling: function(addon, needsRestart) {
+    if (addon.id.toUpperCase() == TORBIRDY_UUID) {
+      this._uninstall = true;
+
+      }
   },
 
   setPrefs: function() {
