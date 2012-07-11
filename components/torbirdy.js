@@ -15,21 +15,43 @@ WARN=5;
 const SERVICE_CTRID = "@torproject.org/torbirdy;1";
 const SERVICE_ID    = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}"); // As defined in chrome.manifest
 const SERVICE_NAME  = "Main TorBirdy component";
-const TORBIRDY_UUID = "{3550f703-e582-4d05-9a08-453d09bdfdc6}";
+const TORBIRDY_ID = "castironthunderbirdclub@torproject.org";
 
 // Constructor for component init
 function TorBirdy() {
 
+  this._uninstall = false;
   this.wrappedJSObject = this;
+
   this.prefs = Cc["@mozilla.org/preferences-service;1"]
                   .getService(Ci.nsIPrefBranch);
 
   this.acctMgr = Cc["@mozilla.org/messenger/account-manager;1"]
                   .getService(Ci.nsIMsgAccountManager);
 
-  Components.utils.import("resource://gre/modules/AddonManager.jsm");
-  this.onDisabling = this.onUninstalling;
-  AddonManager.addAddonListener(this);
+  var observerService = Cc["@mozilla.org/observer-service;1"]
+                           .getService(Ci.nsIObserverService);
+  observerService.addObserver(this, "quit-application-granted", false);
+
+  var appInfo = Cc["@mozilla.org/xre/app-info;1"]
+                   .getService(Ci.nsIXULAppInfo);
+  var versionChecker = Cc["@mozilla.org/xpcom/version-comparator;1"]
+                          .getService(Ci.nsIVersionComparator);
+
+  if (versionChecker.compare(appInfo.version, "5.0") >= 0) {
+    this.is_tb5 = true;
+  }
+  else {
+    this.is_tb5 = false;
+  }
+
+  if (this.is_tb5) {
+    Components.utils.import("resource://gre/modules/AddonManager.jsm");
+    this.onDisabling = this.onUninstalling;
+    AddonManager.addAddonListener(this);
+  } else {
+    observerService.addObserver(this, "em-action-requested", false);
+  }
 
   this.setPrefs();
   this.setAccountPrefs();
@@ -55,10 +77,31 @@ TorBirdy.prototype = {
   },
 
   onUninstalling: function(addon, needsRestart) {
-    if (addon.id.toUpperCase() == TORBIRDY_UUID) {
+    dump(addon.id);
+    if (addon.id == TORBIRDY_ID) {
       this._uninstall = true;
+      dump("Nooo! TorBirdy uninstall requested");
 
       }
+  },
+
+  observe: function(subject, topic, data) {
+    if (topic == "em-action-requested") {
+      subject.QueryInterface(Ci.nsIUpdateItem);
+
+      if (subject.id == TORBIRDY_ID) {
+        if (data == "item-uninstalled" || data == "item-disabled") {
+          dump("Nooo! TorBirdy uninstall requested");
+          this._uninstall = true;
+        } else if (data == "item-cancel-action") {
+          this._uninstall = false;
+        }
+      } else if (topic == "quit-application-granted") {
+        if (this._uninstall) {
+
+        }
+      }
+    }
   },
 
   setPrefs: function() {
