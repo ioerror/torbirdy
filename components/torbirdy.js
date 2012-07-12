@@ -160,7 +160,6 @@ const PREFERENCES = {
 
 // Constructor for component init
 function TorBirdy() {
-
   this._uninstall = false;
   this.wrappedJSObject = this;
 
@@ -199,7 +198,6 @@ function TorBirdy() {
   this.setAccountPrefs();
 
   dump("TorBirdy registered!\n");
-  
 }
 
 TorBirdy.prototype = {
@@ -253,7 +251,6 @@ TorBirdy.prototype = {
   },
 
   resetUserPrefs: function() {
-
     dump("Resetting user preferences to default\n");
     for (var each in PREFERENCES) {
       this.prefs.clearUserPref(each);
