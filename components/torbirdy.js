@@ -73,11 +73,11 @@ const PREFERENCES = {
   // XXX: TODO --hidden-recipient should be used for each person but perhaps
   // --throw-keyids will be an OK stopgap?
   "extensions.enigmail.agentAdditionalParam": "--no-emit-version " +
-                                               "--no-comments " +
-                                               "--throw-keyids " +
-                                               "--display-charset utf-8 " +
-                                               "--keyserver-options http-proxy=http://127.0.0.1:8118 " +
-                                               "--keyserver hkp://2eghzlv2wwcq7u7y.onion",
+                                              "--no-comments " +
+                                              "--throw-keyids " +
+                                              "--display-charset utf-8 " +
+                                              "--keyserver-options http-proxy=http://127.0.0.1:8118 " +
+                                              "--keyserver hkp://2eghzlv2wwcq7u7y.onion",
   "extensions.enigmail.mimeHashAlgorithm": 5,
 
   // Suggestions from the JAP team on how they'd configure thunderbird
