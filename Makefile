@@ -17,9 +17,9 @@ sign-release:
 
 push-release:
 	chmod 664 ../torbirdy-${VERSION}.xpi*$
-	scp ../torbirdy-${VERSION}.xpi* vescum:/srv/www-master.torproject.org/htdocs/dist/torbirdy/$
-	scp ../torbirdy-${VERSION}.xpi vescum:/srv/www-master.torproject.org/htdocs/dist/torbirdy/torbirdy-current.xpi$
-	scp ../torbirdy-${VERSION}.xpi.asc vescum:/srv/www-master.torproject.org/htdocs/dist/torbirdy/torbirdy-current.xpi.asc$
+	scp ../torbirdy-${VERSION}.xpi* vescum.torproject.org:/srv/www-master.torproject.org/htdocs/dist/torbirdy/$
+	scp ../torbirdy-${VERSION}.xpi vescum.torproject.org:/srv/www-master.torproject.org/htdocs/dist/torbirdy/torbirdy-current.xpi$
+	scp ../torbirdy-${VERSION}.xpi.asc vescum.torproject.org:/srv/www-master.torproject.org/htdocs/dist/torbirdy/torbirdy-current.xpi.asc$
 	
 release: sign-release push-release
 	

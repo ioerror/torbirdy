@@ -5,7 +5,7 @@
   Use SSL/TLS by default for both outgoing and incoming servers
   Disable 'Get new account' from loading at startup
   Set default server ports
-  For already configured email acccounts, disable automatic email fetching
+  For already configured email accounts, disable automatic email fetching
   For accounts created through the manual account configuration, disable
   automatic email fetching
   Added support for resetting user preferences on extension uninstall
