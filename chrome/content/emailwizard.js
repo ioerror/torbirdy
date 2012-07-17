@@ -5,7 +5,7 @@ function disableAutoWizard() {
   var remember_password = document.getElementById("remember_password").checked;
   var protocol = document.getElementById("protocol").value;
 
-  alert("Torbutton has disabled Thunderbird's auto-configuration wizard to protect your anonymity.\n" +
+  alert("TorBirdy has disabled Thunderbird's auto-configuration wizard to protect your anonymity.\n" +
       "\nPlease configure your account manually.");
 
   var config = new AccountConfig();

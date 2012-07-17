@@ -40,7 +40,7 @@ function onAccept() {
       myprefsHandler.setIntPref("network.proxy.socks_port", 4001);
       myprefsHandler.setIntPref("network.proxy.ssl_port", 4001);
       myprefsHandler.setIntPref("network.proxy.http_port", 4001);
-      myPanel.label = "TorBirdy:     Disabled!";$
+      myPanel.label = "TorBirdy:     Disabled!";
   }
 }
 
