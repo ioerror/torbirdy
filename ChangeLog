@@ -1,4 +1,4 @@
-0.0.10 XXX
+0.0.10 Thu, 12 Jul 2012
   Don't check for messages on start up
   Now includes patch in source for upstream date header modifications
     Apply patches/date.patch to a custom Thunderbird compile
