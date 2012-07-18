@@ -6,8 +6,6 @@ function startup() {
 
   var prefs = Components.classes["@mozilla.org/preferences-service;1"]
                     .getService(Components.interfaces.nsIPrefBranch);
-  prefs.setIntPref("mailnews.reply_header_type", 1);
-  prefs.setCharPref("mailnews.reply_header_authorwrote", "%s");
 
   var myPanel = document.getElementById("my-panel");
   if (prefs.getBoolPref("extensions.torbirdy.protected"))
