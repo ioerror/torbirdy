@@ -26,6 +26,10 @@ function send_event_handler(event) {
     var to_field = gMsgCompose.compFields.to;
     var subject_field = gMsgCompose.compFields.subject;
 
+    // When a message is forwarded or replied-to, remove the references header.
+    // See https://trac.torproject.org/projects/tor/ticket/6392
+    gMsgCompose.compFields.references = '';
+
     try {
       var editor = GetCurrentEditor();
       var body = editor.outputToString('text/plain', 4);
