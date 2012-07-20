@@ -77,8 +77,9 @@ const PREFERENCES = {
 
   // Disable proxy bypass issue.
   "network.websocket.enabled": false,
-
+  // No cookies are allowed.
   "network.cookie.cookieBehavior": 2,
+  // Disable link prefetching.
   "network.prefetch-next": false,
 
   /*
@@ -88,16 +89,20 @@ const PREFERENCES = {
   "security.OCSP.enabled": 1,
   // Default is always false for OCSP - it's broken crap
   "security.OCSP.require": false,
-
-
+  // Disable TLS Session Ticket.
+  // See https://trac.torproject.org/projects/tor/ticket/4099
   "security.enable_tls_session_tickets": false,
+  // Enable SSL3.
   "security.enable_ssl3": false,
-
+  // Display a dialog warning the user when entering an insecure site from a secure one.
   "security.warn_entering_weak": true,
+  // Display a dialog warning the user when submtting a form to an insecure site.
   "security.warn_submit_insecure": true,
-
+  // Enable SSL FalseStart.
   "security.ssl.enable_false_start": true,
+  // Reject all connection attempts to servers using the old SSL/TLS protocol.
   "security.ssl.require_safe_negotiation": true,
+  // Warn when connecting to a server that uses an old protocol version.
   "security.ssl.treat_unsafe_negotiation_as_broken": true,
 
   /*
