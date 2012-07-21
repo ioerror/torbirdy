@@ -1,0 +1,48 @@
+# HG changeset patch
+# Parent 0adc48d4d858a9547c4c97935fb3972d5b450600
+# User Sukhbir Singh <sukhbir.in@gmail.com>
+Added support for setting a custom message-ID
+
+
+diff --git a/mailnews/compose/src/nsMsgCompUtils.cpp b/mailnews/compose/src/nsMsgCompUtils.cpp
+--- a/mailnews/compose/src/nsMsgCompUtils.cpp
++++ b/mailnews/compose/src/nsMsgCompUtils.cpp
+@@ -1116,18 +1116,36 @@ msg_generate_message_id (nsIMsgIdentity 
+   }
+ 
+   if (!isValidHost(host))
+   /* If we couldn't find a valid host name to use, we can't generate a
+      valid message ID, so bail, and let NNTP and SMTP generate them. */
+     return 0;
+ 
+   GenerateGlobalRandomBytes((unsigned char *) &salt, sizeof(salt));
+-  return PR_smprintf("<%lX.%lX@%s>",
+-           (unsigned long) now, (unsigned long) salt, host);
++
++  bool custom_message_id = false;
++  char *message_id = nsnull;
++
++  nsCOMPtr<nsIPrefBranch> prefs(do_GetService(NS_PREFSERVICE_CONTRACTID));
++
++  prefs->GetBoolPref("mailnews.custom_message_id", &custom_message_id);
++  prefs->GetCharPref("mailnews.header.custom_message_id", &message_id);
++
++  if (!custom_message_id)
++  { 
++    return PR_smprintf("<%lX.%lX@%s>",
++              (unsigned long) now, (unsigned long) salt, host);
++  } 
++  else 
++  {
++    return PR_smprintf("<%s.%lX@%s>",
++              message_id, (unsigned long) salt, host);
++  }
++
+ }
+ 
+ 
+ inline static bool is7bitCharset(const nsCString& charset)
+ {
+   // charset name is canonical (no worry about case-sensitivity)
+   return charset.EqualsLiteral("HZ-GB-2312") ||
+          Substring(charset, 0, 8).EqualsLiteral("ISO-2022-");

@@ -1,0 +1,70 @@
+# HG changeset patch
+# Parent ec138f1fcabf10f11ba4a4ba662cba34ab625691
+# User Sukhbir Singh <sukhbir.in@gmail.com>
+Added support for removing the Date header
+
+
+diff --git a/mailnews/compose/src/nsMsgCompUtils.cpp b/mailnews/compose/src/nsMsgCompUtils.cpp
+--- a/mailnews/compose/src/nsMsgCompUtils.cpp
++++ b/mailnews/compose/src/nsMsgCompUtils.cpp
+@@ -364,36 +364,42 @@ mime_generate_headers (nsMsgCompFields *
+     if (deliver_mode == MSG_SaveAsTemplate) {
+       const char *pStr = fields->GetTemplateName();
+       pStr = pStr ? pStr : "";
+       ENCODE_AND_PUSH("X-Template: ", false, pStr, charset, usemime);
+     }
+ #endif /* SUPPORT_X_TEMPLATE_NAME */
+   }
+ 
+-  PRExplodedTime now;
+-  PR_ExplodeTime(PR_Now(), PR_LocalTimeParameters, &now);
+-  int gmtoffset = (now.tm_params.tp_gmt_offset + now.tm_params.tp_dst_offset) / 60;
++  bool local_date_header = true;
++  prefs->GetBoolPref("mailnews.local_date_header_generation", &local_date_header);
+ 
+-  /* Use PR_FormatTimeUSEnglish() to format the date in US English format,
+-     then figure out what our local GMT offset is, and append it (since
+-     PR_FormatTimeUSEnglish() can't do that.) Generate four digit years as
+-     per RFC 1123 (superceding RFC 822.)
+-   */
+-  PR_FormatTimeUSEnglish(buffer_tail, 100,
+-               "Date: %a, %d %b %Y %H:%M:%S ",
+-               &now);
++  if (local_date_header)
++  {
++    PRExplodedTime now;
++    PR_ExplodeTime(PR_Now(), PR_LocalTimeParameters, &now);
++    int gmtoffset = (now.tm_params.tp_gmt_offset + now.tm_params.tp_dst_offset) / 60;
+ 
+-  buffer_tail += PL_strlen (buffer_tail);
+-  PR_snprintf(buffer_tail, buffer + size - buffer_tail,
+-        "%c%02d%02d" CRLF,
+-        (gmtoffset >= 0 ? '+' : '-'),
+-        ((gmtoffset >= 0 ? gmtoffset : -gmtoffset) / 60),
+-        ((gmtoffset >= 0 ? gmtoffset : -gmtoffset) % 60));
+-  buffer_tail += PL_strlen (buffer_tail);
++    /* Use PR_FormatTimeUSEnglish() to format the date in US English format,
++       then figure out what our local GMT offset is, and append it (since
++       PR_FormatTimeUSEnglish() can't do that.) Generate four digit years as
++       per RFC 1123 (superceding RFC 822.)
++     */
++    PR_FormatTimeUSEnglish(buffer_tail, 100,
++                 "Date: %a, %d %b %Y %H:%M:%S ",
++                 &now);
++
++    buffer_tail += PL_strlen (buffer_tail);
++    PR_snprintf(buffer_tail, buffer + size - buffer_tail,
++          "%c%02d%02d" CRLF,
++          (gmtoffset >= 0 ? '+' : '-'),
++          ((gmtoffset >= 0 ? gmtoffset : -gmtoffset) / 60),
++          ((gmtoffset >= 0 ? gmtoffset : -gmtoffset) % 60));
++    buffer_tail += PL_strlen (buffer_tail);
++  }
+ 
+   if (pFrom && *pFrom)
+   {
+     ENCODE_AND_PUSH("From: ", true, pFrom, charset, usemime);
+   }
+ 
+   if (pReplyTo && *pReplyTo)
+   {
