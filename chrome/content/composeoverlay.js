@@ -5,8 +5,8 @@ function getRandom() {
   return Math.random();
 }
 
-function alphaNumRandom() {
-  var inChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+function atextRandom() {
+  var inChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+-=_";
   var randomString = '';
   for (var i = 0; i < 10; i++) {
     var num = Math.floor(Math.random() * inChars.length);
@@ -68,15 +68,14 @@ function send_event_handler(event) {
 
     var hash = ch.finish(false);
     var pref_hash = [toHexString(hash.charCodeAt(i)) for (i in hash)].join("").slice(0, 40);
-
-    // Introduce more randomness.
-    var randomString = alphaNumRandom();
-    var message_id = pref_hash + randomString;
-
     // Randomize characters to upper case and lower case.
     var choices = [true, false];
-    message_id = [choices[Math.floor(Math.random() * choices.length)] ?
-                        e.toUpperCase() : e.toLowerCase() for each (e in message_id.split(""))].join("");
+    pref_hash = [choices[Math.floor(Math.random() * choices.length)] ?
+                        e.toUpperCase() : e.toLowerCase() for each (e in pref_hash.split(""))].join("");
+
+    // Introduce more randomness.
+    var randomString = atextRandom();
+    var message_id = pref_hash + randomString;
 
     // Set the preference to use the custom generated header ID.
     prefs.setCharPref("mailnews.header.custom_message_id", message_id);
