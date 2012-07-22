@@ -1,0 +1,25 @@
+# HG changeset patch
+# Parent 5f659702021e2d505c40ac4d452e80fe0b7be590
+# User Sukhbir Singh <sukhbir.in@gmail.com>
+Set the default preferences for the patches (https://bugzilla.mozilla.org/show_bug.cgi?id=776397)
+
+
+diff --git a/mailnews/mailnews.js b/mailnews/mailnews.js
+--- a/mailnews/mailnews.js
++++ b/mailnews/mailnews.js
+@@ -812,8 +812,15 @@ pref("mail.smtp.qos", 0);
+ pref("mail.nntp.qos", 0);
+ 
+ // default value for IMAP4
+ // in a DSCP environment this should be 56 (0x38, or AF13), ibid.
+ pref("mail.imap.qos", 0);
+ 
+ // PgpMime Addon
+ pref("mail.pgpmime.addon_url", "https://addons.mozilla.org/addon/enigmail/");
++
++// Send emails with the Date header. 
++// If set to false, the Date header will be inserted by the MSA (RFC 4409/RFC 6409).
++pref("mailnews.local_date_header_generation", true);
++
++// Allow a custom message-ID to be set through an extension.
++pref("mailnews.custom_message_id", false);
