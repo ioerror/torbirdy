@@ -131,6 +131,7 @@ const PREFERENCES = {
   // Wrap a line at this 72 characters.
   "mailnews.wraplength": 72,
   // When replying to a message, set to: '%s wrote'.
+  // https://lists.torproject.org/pipermail/tor-talk/2012-May/024395.html
   "mailnews.reply_header_type": 1,
   "mailnews.reply_header_authorwrote": "%s",
 
