@@ -153,7 +153,8 @@ const PREFERENCES = {
   "mail.shell.checkDefaultMail": false,
   // Disable inline attachments.
   "mail.inline_attachments": false,
-
+  // Do not IDLE (disable push mail).
+  "mail.server.default.use_idle": false,
   /*
     Enigmail
   */
