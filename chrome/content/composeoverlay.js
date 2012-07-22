@@ -36,7 +36,6 @@ function send_event_handler(event) {
     var to_field = gMsgCompose.compFields.to;
     var cc_field = gMsgCompose.compFields.cc;
     var subject_field = gMsgCompose.compFields.subject;
-    alert(cc_field);
 
     // When a message is forwarded, remove the references header.
     // See https://trac.torproject.org/projects/tor/ticket/6392
