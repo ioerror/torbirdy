@@ -5,6 +5,16 @@ function getRandom() {
   return Math.random();
 }
 
+function alphaNumRandom() {
+  var inChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  var randomString = '';
+  for (var i = 0; i < 10; i++) {
+    var num = Math.floor(Math.random() * inChars.length);
+    randomString += inChars.substring(num, num+1);
+  }
+  return randomString;
+}
+
 function toHexString(charCode) {
   return ("0" + charCode.toString(16)).slice(-2);
 }
@@ -26,9 +36,11 @@ function send_event_handler(event) {
     var to_field = gMsgCompose.compFields.to;
     var subject_field = gMsgCompose.compFields.subject;
 
-    // When a message is forwarded or replied-to, remove the references header.
+    // When a message is forwarded, remove the references header.
     // See https://trac.torproject.org/projects/tor/ticket/6392
-    gMsgCompose.compFields.references = '';
+    if (gMsgCompose.type === 3 || gMsgCompose.type === 4) {
+      gMsgCompose.compFields.references = '';
+    }
 
     try {
       var editor = GetCurrentEditor();
@@ -54,10 +66,19 @@ function send_event_handler(event) {
     ch.update(data, data.length);
 
     var hash = ch.finish(false);
-    var pref_hash = [toHexString(hash.charCodeAt(i)) for (i in hash)].join("").slice(0, 20);
+    var pref_hash = [toHexString(hash.charCodeAt(i)) for (i in hash)].join("").slice(0, 40);
+
+    // Introduce more randomness.
+    var randomString = alphaNumRandom();
+    var message_id = pref_hash + '-' + randomString;
+
+    // Randomize characters to upper case and lower case.
+    var choices = [true, false];
+    message_id = [choices[Math.floor(Math.random() * choices.length)] ?
+                        e.toUpperCase() : e.toLowerCase() for each (e in message_id.split(""))].join("");
 
     // Set the preference to use the custom generated header ID.
-    prefs.setCharPref("mailnews.header.custom_message_id", pref_hash);
+    prefs.setCharPref("mailnews.header.custom_message_id", message_id);
   }
 }
 
