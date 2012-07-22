@@ -34,7 +34,9 @@ function send_event_handler(event) {
       return;
 
     var to_field = gMsgCompose.compFields.to;
+    var cc_field = gMsgCompose.compFields.cc;
     var subject_field = gMsgCompose.compFields.subject;
+    alert(cc_field);
 
     // When a message is forwarded, remove the references header.
     // See https://trac.torproject.org/projects/tor/ticket/6392
@@ -51,7 +53,7 @@ function send_event_handler(event) {
     }
 
     // Generate an 'email' and append a random number. The SHA512 hash of this email will be used later.
-    var mail = to_field + '\n' + subject_field + '\n\n' + body + getRandom();
+    var mail = to_field + cc_field + subject_field + body + getRandom();
 
     var converter = Cc["@mozilla.org/intl/scriptableunicodeconverter"]
                         .createInstance(Ci.nsIScriptableUnicodeConverter);
@@ -70,7 +72,7 @@ function send_event_handler(event) {
 
     // Introduce more randomness.
     var randomString = alphaNumRandom();
-    var message_id = pref_hash + '-' + randomString;
+    var message_id = pref_hash + randomString;
 
     // Randomize characters to upper case and lower case.
     var choices = [true, false];
