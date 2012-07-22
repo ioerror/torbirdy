@@ -37,6 +37,7 @@ diff --git a/mailnews/compose/src/nsMsgCompUtils.cpp b/mailnews/compose/src/nsMs
 +    return PR_smprintf("<%s@%s>",
 +             message_id, host);
 +  }
++
  }
  
  
