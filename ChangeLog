@@ -1,3 +1,8 @@
+0.0.11
+  Implemented an algorithm to generate time-independent message-ID
+  Disable push email
+  Remove the 'Reference' and 'In-Reply-To' headers when forwarding a message
+
 0.0.10 Thu, 12 Jul 2012
   Don't check for messages on start up
   Now includes patch in source for upstream date header modifications
