@@ -10,16 +10,25 @@ function startup() {
   var myPanel = document.getElementById("my-panel");
   if (prefs.getBoolPref("extensions.torbirdy.protected"))
   {
-    if (prefs.getIntPref("extensions.torbirdy.proxy") == 0) 
+    var type = prefs.getIntPref("extensions.torbirdy.proxy");
+    myPanel.style.color = "green";
+    // Tor.
+    if (type === 0)
     {
-      myPanel.label = "TorBirdy Enabled:   Tor";
-      myPanel.style.color = "green";
-    } else {
-      myPanel.label = "TorBirdy Enabled: JonDo";
-      myPanel.style.color = "green";
+      myPanel.label = "TorBirdy Enabled:    Tor";
+    }
+    // JonDo.
+    if (type === 1)
+    {
+      myPanel.label = "TorBirdy Enabled:    JonDo";
+    }
+    // Custom.
+    if (type === 2)
+    {
+      myPanel.label = "TorBirdy Enabled:    Custom Proxy";
     }
   } else {
-      myPanel.label = "TorBirdy:     Disabled!";
+    myPanel.label = "TorBirdy:     Disabled!";
     myPanel.style.color = "red";
   }
 }

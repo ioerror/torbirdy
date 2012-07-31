@@ -16,6 +16,7 @@ const SERVICE_CTRID = "@torproject.org/torbirdy;1";
 const SERVICE_ID    = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
 const SERVICE_NAME  = "Main TorBirdy component";
 const TORBIRDY_ID   = "castironthunderbirdclub@torproject.org";
+const PREF_BRANCH   = "extensions.torbirdy.custom.";
 
 // Default preference values for TorBirdy.
 const PREFERENCES = {
@@ -223,6 +224,8 @@ const PREFERENCES = {
   // Disable remote images.
   "permissions.default.image": 2,
 
+  // Type of proxy is set to Tor by default.
+
   // All preferences have been set: now enable TorBirdy.
   "extensions.torbirdy.protected": true,
 }
@@ -234,6 +237,10 @@ function TorBirdy() {
 
   this.prefs = Cc["@mozilla.org/preferences-service;1"]
                   .getService(Ci.nsIPrefBranch);
+
+  var torbirdyPref = Cc["@mozilla.org/preferences-service;1"]
+                         .getService(Ci.nsIPrefService).getBranch(PREF_BRANCH);
+  this.customPrefs = torbirdyPref.getChildList("", {});
 
   this.acctMgr = Cc["@mozilla.org/messenger/account-manager;1"]
                   .getService(Ci.nsIMsgAccountManager);
@@ -324,9 +331,34 @@ TorBirdy.prototype = {
     for (var each in PREFERENCES) {
       this.prefs.clearUserPref(each);
     }
+    for (var i = 0; i < this.customPrefs.length; i++) {
+      this.prefs.clearUserPref(PREF_BRANCH + this.customPrefs[i]);
+    }
+    // Other misc. preferences.
+    this.prefs.clearUserPref("extensions.torbirdy.proxy");
+    this.prefs.clearUserPref("extensions.torbirdy.proxy.type");
   },
 
   setPrefs: function() {
+    // If custom values are set for specific preferences, override the defaults with them.
+    // For each preference, get the type and then set the property.
+    for (var i = 0; i < this.customPrefs.length; i++) {
+      var typePref = this.prefs.getPrefType(this.customPrefs[i]);
+      // String.
+      if (typePref === 32) {
+        var value = this.prefs.getCharPref(PREF_BRANCH + this.customPrefs[i]);
+      }
+      // Int.
+      if (typePref === 64) {
+        var value = this.prefs.getIntPref(PREF_BRANCH + this.customPrefs[i]);
+      }
+      // Bool.
+      if (typePref === 128) {
+        var value = this.prefs.getBoolPref(PREF_BRANCH + this.customPrefs[i]);
+      }
+      PREFERENCES[this.customPrefs[i]] = value;
+    }
+
     for (var each in PREFERENCES) {
       if (typeof PREFERENCES[each] === "boolean") {
         this.prefs.setBoolPref(each, PREFERENCES[each]);

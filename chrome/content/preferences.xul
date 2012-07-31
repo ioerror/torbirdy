@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<dialog id="castironthunderbirdclub-preferences-dialog"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        title="TorBirdy Preferences"
+        persist="screenX screenY width height"
+        buttons="accept,cancel"
+        buttonlabelaccept="Save"
+        buttonlabelcancel="Cancel"
+        
+        ondialogaccept="onAccept();"
+        onload="onLoad()">
+        
+   <script type="application/x-javascript"
+       src="chrome://castironthunderbirdclub/content/preferences.js"></script>
+
+   <tabbox>
+
+     <tabs>
+       <tab label="Proxy Settings" />
+       <!-- <tab label="Privacy Settings" /> -->
+     </tabs>
+
+     <tabpanels>
+
+       <!-- Proxy Settings -->
+       <tabpanel>
+         <vbox>
+
+         <radiogroup id="proxy-settings" oncommand="checkSetting();" >
+
+             <radio id="default-settings" label="Use the recommended proxy settings for TorBirdy" selected="true" accesskey="r" />
+
+             <radio id="anon-settings" label="Choose an anonymization service" accesskey="s"/>
+             <grid class="indent" flex="1">
+               <columns>
+                 <column />
+               </columns>
+               <rows>
+
+                 <row align="center">
+                   <hbox align="center" pack="start">
+                     <menulist id="anonservice">
+                       <menupopup>
+                         <menuitem label="JonDo" selected="true" />
+                       </menupopup>
+                     </menulist>
+                   </hbox>
+                 </row>
+
+               </rows>
+             </grid>
+
+             <radio id="custom-settings" label="Use custom proxy settings" accesskey="c" />
+
+             <grid class="indent" flex="1">
+               <columns>
+                 <column/>
+                 <column flex="1" />
+               </columns>
+               <rows>
+
+                 <row align="center">
+                   <hbox align="center" pack="end">
+                     <label value="SOCKS Host: " control="socks-host" accesskey="C" />
+                     <textbox id="socks-host" flex="1" disabled="true" />
+                     <label value="Port: " control="socks-port" accesskey="t" />
+                     <textbox id="socks-port" value="0" type="number" min="0" max="65535" size="5" disabled="true" />
+                   </hbox>
+                 </row>
+
+               </rows>
+             </grid>
+
+           </radiogroup>
+
+           </vbox>
+         </tabpanel>
+
+         <!-- Privacy Settings
+         <tabpanel>
+           <vbox align="center">
+             <checkbox label="Check for new messages at startup" />
+           </vbox>
+         </tabpanel>
+         -->
+
+       </tabpanels>
+
+   </tabbox>
+   
+</dialog>
