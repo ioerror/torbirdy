@@ -32,8 +32,8 @@ function onAccept() {
     myPanel.label = "TorBirdy Enabled:    Tor";
   }
   
+  // Anonymization service.
   if (anonService === 1) {
-    // Set custom proxies.
     var anonType = document.getElementById('anon-settings').selectedIndex;
     if (anonType === 0 || typeof anonType === "undefined") {
       // First set the preferences immediately.
@@ -49,6 +49,7 @@ function onAccept() {
     prefs.setIntPref(PREF_BRANCH + 'proxy.type', anonType);
   }
 
+  // Custom proxy.
   if (anonService === 2) {
     var socks_host = document.getElementById('socks-host').value;
     var socks_port = document.getElementById('socks-port').value;
@@ -65,7 +66,6 @@ function onAccept() {
 
 function onLoad() {
   // Load the preference values.
-  // Proxy.
   var anonService = prefs.getIntPref(PREF_BRANCH + 'proxy');
   document.getElementById('proxy-settings').selectedIndex = anonService;
 
@@ -80,7 +80,7 @@ function onLoad() {
 
     document.getElementById('socks-host').value = socks_host;
     document.getElementById('socks-port').value = socks_port;
-
+    // Enable the settings.
     document.getElementById('socks-host').disabled = false;
     document.getElementById('socks-port').disabled = false;
   }
