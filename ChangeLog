@@ -2,6 +2,8 @@
   Implemented an algorithm to generate time-independent message-ID
   Disable push email
   Remove the 'Reference' and 'In-Reply-To' headers when forwarding a message
+  Implemented a preference setting for TorBirdy
+  Add support for setting custom proxy settings
 
 0.0.10 Thu, 12 Jul 2012
   Don't check for messages on start up
