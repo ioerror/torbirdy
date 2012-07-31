@@ -15,6 +15,14 @@ function setDefaultPrefs() {
   prefs.setIntPref("network.proxy.socks_port", 9050);
   prefs.setIntPref("network.proxy.ssl_port", 8118);
   prefs.setIntPref("network.proxy.http_port", 8118);
+  // Override all other preferences.
+}
+
+function clearCustomPrefs() {
+  var customPrefs = torbirdyPref.getChildList("", {});
+  for (var i = 0; i < customPrefs.length; i++) {
+    prefs.clearUserPref(CUSTOM_BRANCH + customPrefs[i]);
+  }
 }
 
 function onAccept() {
@@ -29,6 +37,7 @@ function onAccept() {
   if (anonService === 0) {
     // Set proxies for Tor.
     setDefaultPrefs();
+    clearCustomPrefs();
     myPanel.label = "TorBirdy Enabled:    Tor";
   }
   

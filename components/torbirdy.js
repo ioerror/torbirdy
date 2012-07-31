@@ -224,8 +224,6 @@ const PREFERENCES = {
   // Disable remote images.
   "permissions.default.image": 2,
 
-  // Type of proxy is set to Tor by default.
-
   // All preferences have been set: now enable TorBirdy.
   "extensions.torbirdy.protected": true,
 }
