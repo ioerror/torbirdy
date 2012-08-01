@@ -28,11 +28,9 @@
        <!-- Proxy Settings -->
        <tabpanel>
          <vbox>
-
-         <radiogroup id="proxy-settings" oncommand="checkSetting();" >
+           <radiogroup id="proxy-settings" oncommand="checkSetting();" >
 
              <radio id="default-settings" label="Use the recommended proxy settings for TorBirdy" selected="true" accesskey="r" />
-
              <radio id="anon-settings" label="Choose an anonymization service" accesskey="s"/>
              <grid class="indent" flex="1">
                <columns>
@@ -40,15 +38,15 @@
                </columns>
                <rows>
 
-                 <row align="center">
-                   <hbox align="center" pack="start">
-                     <menulist id="anonservice" disabled="true">
-                       <menupopup>
-                         <menuitem label="JonDo" selected="true" />
-                       </menupopup>
-                     </menulist>
-                   </hbox>
-                 </row>
+               <row align="center">
+                 <hbox align="center" pack="start">
+                   <menulist id="anonservice" disabled="true">
+                     <menupopup>
+                       <menuitem label="JonDo" selected="true" />
+                     </menupopup>
+                   </menulist>
+                 </hbox>
+               </row>
 
                </rows>
              </grid>
@@ -62,27 +60,27 @@
                </columns>
                <rows>
 
-                 <row align="center">
-                   <hbox align="center" pack="end">
-                     <label value="SOCKS Host: " control="socks-host" accesskey="C" />
-                     <textbox id="socks-host" flex="1" disabled="true" />
-                     <label value="Port: " control="socks-port" accesskey="t" />
-                     <textbox id="socks-port" value="0" type="number" min="0" max="65535" size="5" disabled="true" />
-                   </hbox>
-                 </row>
+               <row align="center">
+                 <hbox align="center" pack="end">
+                   <label value="SOCKS Host: " control="socks-host" accesskey="C" />
+                   <textbox id="socks-host" flex="1" disabled="true" />
+                   <label value="Port: " control="socks-port" accesskey="t" />
+                   <textbox id="socks-port" value="0" type="number" min="0" max="65535" size="5" disabled="true" />
+                 </hbox>
+               </row>
 
                </rows>
              </grid>
 
            </radiogroup>
 
-           </vbox>
-         </tabpanel>
+         </vbox>
+       </tabpanel>
 
        <!-- Privacy Settings -->
        <tabpanel>
 
-        <vbox>
+       <vbox>
          <groupbox>
            <caption label="Global" />
 
@@ -90,39 +88,36 @@
              <checkbox label="Enable push email support for IMAP accounts" accesskey="p" id="idle" />
            </hbox>
 
-
-           </groupbox>
+         </groupbox>
 
            <separator class="groove-thin" orient="horizontal" />
 
            <groupbox>
              <caption label="Account-Specific" />
+               <grid flex="1">
+                 <columns>
+                   <column />
+                 </columns>
 
-             <grid flex="1">
-               <columns>
-                 <column />
-               </columns>
+                 <rows>
+                   <row align="center">
+                     <hbox align="center">
+                       <label value="Choose an account: " accesskey="C" />
+                       <menulist id="mail-accounts" oncommand="selectMailAccount();">
+                         <menupopup>
+                         </menupopup>
+                       </menulist>
+                     </hbox>
+                   </row>
 
-           <rows>
-             <row align="center">
-               <hbox align="center">
-                 <label value="Choose an account: " accesskey="C" />
-                 <menulist id="mail-accounts" oncommand="selectMailAccount();">
-                   <menupopup>
-                   </menupopup>
-                 </menulist>
-               </hbox>
-             </row>
+                 </rows>
+               </grid>
+           </groupbox>
 
-           </rows>
-         </grid>
-       </groupbox>
        </vbox>
 
        </tabpanel>
-
      </tabpanels>
-
    </tabbox>
    
 </dialog>
