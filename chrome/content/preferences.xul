@@ -39,7 +39,7 @@
                <rows>
 
                <row align="center">
-                 <hbox align="center" pack="start">
+                 <hbox align="center">
                    <menulist id="anonservice" disabled="true">
                      <menupopup>
                        <menuitem label="JonDo" selected="true" />
@@ -61,7 +61,7 @@
                <rows>
 
                <row align="center">
-                 <hbox align="center" pack="end">
+                 <hbox align="center">
                    <label value="SOCKS Host: " control="socks-host" accesskey="C" />
                    <textbox id="socks-host" flex="1" disabled="true" />
                    <label value="Port: " control="socks-port" accesskey="t" />
@@ -94,9 +94,10 @@
 
            <groupbox>
              <caption label="Account-Specific" />
-               <grid flex="1">
+               <grid>
                  <columns>
-                   <column />
+                   <column flex="1"/>
+                   <column flex="2"/>
                  </columns>
 
                  <rows>

@@ -196,6 +196,6 @@ function onLoad() {
     }
     mailAccounts.selectedIndex = 0;
   } else {
-    document.createElement('label').label = 'No mail accounts found.';
+    document.getElementById('mail-accounts').disabled = true;
   }
 }
