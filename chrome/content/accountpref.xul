@@ -16,15 +16,26 @@
 
    <vbox>
      <label id="account-name" style="font-weight: bold" />
+
      <grid class="indent" flex="1">
        <columns>
-         <column />
+         <column flex="2" />
        </columns>
 
        <rows>
+
          <row>
-           <checkbox label="Check for new messages at startup" id="check-startup" accesskey="S" />
+           <checkbox label="Check for new messages at startup" id="check-startup" accesskey="C" />
          </row>
+
+         <row>
+           <hbox align="center">
+             <checkbox label="Check for new messages every" id="check-new" oncommand="onToggleCheck();" accesskey="y" control="check-minutes" />
+             <textbox id="check-minutes" type="number" size="2" value="0" />
+             <label value="minutes" />
+           </hbox>
+         </row>
+
        </rows>
 
      </grid>
