@@ -10,8 +10,8 @@
         buttonlabelaccept="Save"
         buttonlabelcancel="Cancel"
         
-        ondialogaccept="onAccept();"
-        onload="onLoad()">
+        ondialogaccept="return onAccept();"
+        onload="return onLoad();">
         
    <script type="application/x-javascript"
        src="chrome://castironthunderbirdclub/content/preferences.js"></script>
@@ -20,7 +20,7 @@
 
      <tabs>
        <tab label="Proxy Settings" />
-       <!-- <tab label="Privacy Settings" /> -->
+       <tab label="Privacy Settings" />
      </tabs>
 
      <tabpanels>
@@ -42,7 +42,7 @@
 
                  <row align="center">
                    <hbox align="center" pack="start">
-                     <menulist id="anonservice">
+                     <menulist id="anonservice" disabled="true">
                        <menupopup>
                          <menuitem label="JonDo" selected="true" />
                        </menupopup>
@@ -79,15 +79,49 @@
            </vbox>
          </tabpanel>
 
-         <!-- Privacy Settings
-         <tabpanel>
-           <vbox align="center">
-             <checkbox label="Check for new messages at startup" />
-           </vbox>
-         </tabpanel>
-         -->
+       <!-- Privacy Settings -->
+       <tabpanel>
 
-       </tabpanels>
+        <vbox>
+         <groupbox>
+           <caption label="Global" />
+
+           <hbox align="center">
+             <checkbox label="Enable push email support for IMAP accounts" accesskey="p" id="idle" />
+           </hbox>
+
+
+           </groupbox>
+
+           <separator class="groove-thin" orient="horizontal" />
+
+           <groupbox>
+             <caption label="Account-Specific" />
+
+             <grid flex="1">
+               <columns>
+                 <column />
+               </columns>
+
+           <rows>
+             <row align="center">
+               <hbox align="center">
+                 <label value="Choose an account: " accesskey="C" />
+                 <menulist id="mail-accounts" oncommand="selectMailAccount();">
+                   <menupopup>
+                   </menupopup>
+                 </menulist>
+               </hbox>
+             </row>
+
+           </rows>
+         </grid>
+       </groupbox>
+       </vbox>
+
+       </tabpanel>
+
+     </tabpanels>
 
    </tabbox>
    
