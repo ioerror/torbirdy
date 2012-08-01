@@ -8,7 +8,7 @@
       oncommand="disableAutoWizard();" />
 
   <vbox id="mastervbox" flex="1">
-    <groupbox id="protocolBox" insertafter="initialSettings">
+    <groupbox id="protocolBox" class="indent" insertafter="initialSettings">
 
       <hbox align="center" pack="start">
         <label value="Protocol:"
