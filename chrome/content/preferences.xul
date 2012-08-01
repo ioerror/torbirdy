@@ -16,109 +16,100 @@
    <script type="application/x-javascript"
        src="chrome://castironthunderbirdclub/content/preferences.js"></script>
 
-   <tabbox>
+  <tabbox>
 
-     <tabs>
-       <tab label="Proxy Settings" />
-       <tab label="Privacy Settings" />
-     </tabs>
+    <tabs>
+      <tab label="Proxy Settings"/>
+      <tab label="Privacy Settings"/>
+    </tabs>
 
-     <tabpanels>
+    <tabpanels>
 
-       <!-- Proxy Settings -->
-       <tabpanel>
-         <vbox>
-           <radiogroup id="proxy-settings" oncommand="checkSetting();" >
+      <!-- Proxy Settings -->
+      <tabpanel>
+        <vbox>
 
-             <radio id="default-settings" label="Use the recommended proxy settings for TorBirdy" selected="true" accesskey="r" />
-             <radio id="anon-settings" label="Choose an anonymization service" accesskey="s"/>
-             <grid class="indent" flex="1">
-               <columns>
-                 <column />
-               </columns>
-               <rows>
+          <radiogroup id="proxy-settings" oncommand="checkSetting();">
+            <radio accesskey="r" id="default-settings" label="Use the recommended proxy settings for TorBirdy" selected="true"/>
+            <radio accesskey="s" id="anon-settings" label="Choose an anonymization service"/>
 
-               <row align="center">
-                 <hbox align="center">
-                   <menulist id="anonservice" disabled="true">
-                     <menupopup>
-                       <menuitem label="JonDo" selected="true" />
-                     </menupopup>
-                   </menulist>
-                 </hbox>
-               </row>
+            <grid class="indent" flex="1">
+              <columns>
+                <column/>
+              </columns>
+              <rows>
+                <row align="center">
+                  <hbox align="center">
+                    <menulist disabled="true" id="anonservice">
+                      <menupopup>
+                        <menuitem label="JonDo" selected="true"/>
+                      </menupopup>
+                    </menulist>
+                  </hbox>
+                </row>
+              </rows>
+            </grid>
 
-               </rows>
-             </grid>
+            <radio accesskey="c" id="custom-settings" label="Use custom proxy settings"/>
+            <grid class="indent" flex="1">
+              <columns>
+                <column/>
+                <column flex="1"/>
+              </columns>
+              <rows>
+                <row align="center">
+                  <hbox align="center">
+                    <label accesskey="C" control="socks-host" value="SOCKS Host: "/>
+                    <textbox disabled="true" flex="1" id="socks-host"/>
+                    <label accesskey="t" control="socks-port" value="Port: "/>
+                    <textbox disabled="true" id="socks-port" max="65535" min="0" size="5" type="number" value="0"/>
+                  </hbox>
+                </row>
+              </rows>
+            </grid>
+          </radiogroup>
 
-             <radio id="custom-settings" label="Use custom proxy settings" accesskey="c" />
+        </vbox>
+      </tabpanel>
 
-             <grid class="indent" flex="1">
-               <columns>
-                 <column/>
-                 <column flex="1" />
-               </columns>
-               <rows>
+      <!-- Privacy Settings -->
+      <tabpanel>
+        <vbox>
 
-               <row align="center">
-                 <hbox align="center">
-                   <label value="SOCKS Host: " control="socks-host" accesskey="C" />
-                   <textbox id="socks-host" flex="1" disabled="true" />
-                   <label value="Port: " control="socks-port" accesskey="t" />
-                   <textbox id="socks-port" value="0" type="number" min="0" max="65535" size="5" disabled="true" />
-                 </hbox>
-               </row>
+          <groupbox>
+            <caption label="Global"/>
+            <hbox align="center">
+              <checkbox accesskey="p" id="idle" label="Enable push email support for IMAP accounts"/>
+            </hbox>
+          </groupbox>
 
-               </rows>
-             </grid>
+          <separator class="groove-thin" orient="horizontal"/>
 
-           </radiogroup>
+          <groupbox>
+            <caption label="Account-Specific"/>
+            <grid>
+              <columns>
+                <column flex="1"/>
+                <column flex="2"/>
+              </columns>
+              <rows>
+                <row align="center">
+                  <hbox align="center">
+                    <label accesskey="C" value="Choose an account: "/>
+                    <menulist id="mail-accounts" oncommand="selectMailAccount();">
+                      <menupopup></menupopup>
+                    </menulist>
+                  </hbox>
+                </row>
+              </rows>
+            </grid>
+          </groupbox>
 
-         </vbox>
-       </tabpanel>
+        </vbox>
+      </tabpanel>
 
-       <!-- Privacy Settings -->
-       <tabpanel>
+    </tabpanels>
 
-       <vbox>
-         <groupbox>
-           <caption label="Global" />
-
-           <hbox align="center">
-             <checkbox label="Enable push email support for IMAP accounts" accesskey="p" id="idle" />
-           </hbox>
-
-         </groupbox>
-
-           <separator class="groove-thin" orient="horizontal" />
-
-           <groupbox>
-             <caption label="Account-Specific" />
-               <grid>
-                 <columns>
-                   <column flex="1"/>
-                   <column flex="2"/>
-                 </columns>
-
-                 <rows>
-                   <row align="center">
-                     <hbox align="center">
-                       <label value="Choose an account: " accesskey="C" />
-                       <menulist id="mail-accounts" oncommand="selectMailAccount();">
-                         <menupopup>
-                         </menupopup>
-                       </menulist>
-                     </hbox>
-                   </row>
-
-                 </rows>
-               </grid>
-           </groupbox>
-
-       </vbox>
-
-       </tabpanel>
-     </tabpanels>
-   </tabbox>
+  </tabbox>
    
 </dialog>
