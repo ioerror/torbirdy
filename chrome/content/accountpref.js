@@ -23,6 +23,7 @@ function onLoad() {
   } else {
     dobiff.checked = false;
     biffminutes.disabled = true;
+    biffminutes.value = account.biffMinutes;
   }
 }
 
