@@ -285,17 +285,13 @@ TorBirdy.prototype = {
 
   // This is a hack to cause Thunderbird to instantiate us ASAP!
   _xpcom_categories: [{ category: "profile-after-change"}, ],
-  observe: function(subject, topic, data) {
-    // dump("TorBirdy observes: " + topic + "\n");
-    return;
-  },
 
   onUninstalling: function(addon, needsRestart) {
     if (addon.id == TORBIRDY_ID) {
       dump("Nooo! TorBirdy uninstall requested\n");
       this._uninstall = true;
       this.resetUserPrefs();
-      }
+    }
   },
 
   onOperationCancelled: function(addon) {
@@ -335,6 +331,7 @@ TorBirdy.prototype = {
     // Other misc. preferences.
     this.prefs.clearUserPref("extensions.torbirdy.proxy");
     this.prefs.clearUserPref("extensions.torbirdy.proxy.type");
+    this.prefs.clearUserPref("extensions.torbirdy.first_run");
   },
 
   setPrefs: function() {
@@ -370,15 +367,20 @@ TorBirdy.prototype = {
     }
   },
 
-  // Iterate through all accounts and disable automatic checking of emails.
+  // For only the first run, after that the user can configure the account if need be:
+  //    Iterate through all accounts and disable automatic checking of emails.
   setAccountPrefs: function() {
-    var accounts = this.acctMgr.accounts;
-    for (var i = 0; i < accounts.Count(); i++) {
-      var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
-      account.downloadOnBiff = false;
-      account.loginAtStartUp = false;
-      account.doBiff = false;
+    if (this.prefs.getBoolPref("extensions.torbirdy.first_run")) {
+      dump("TorBirdy running for the first time. Setting account preferences\n");
+      var accounts = this.acctMgr.accounts;
+      for (var i = 0; i < accounts.Count(); i++) {
+        var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
+        account.downloadOnBiff = false;
+        account.loginAtStartUp = false;
+        account.doBiff = false;
+      }
     }
+    this.prefs.setBoolPref("extensions.torbirdy.first_run", false);
   },
 
 }
