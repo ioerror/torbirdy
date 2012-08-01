@@ -156,6 +156,7 @@ const PREFERENCES = {
   "mail.inline_attachments": false,
   // Do not IDLE (disable push mail).
   "mail.server.default.use_idle": false,
+
   /*
     Enigmail
   */
@@ -371,7 +372,6 @@ TorBirdy.prototype = {
   //    Iterate through all accounts and disable automatic checking of emails.
   setAccountPrefs: function() {
     if (this.prefs.getBoolPref("extensions.torbirdy.first_run")) {
-      dump("TorBirdy running for the first time. Setting account preferences\n");
       var accounts = this.acctMgr.accounts;
       for (var i = 0; i < accounts.Count(); i++) {
         var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;

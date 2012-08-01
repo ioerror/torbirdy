@@ -144,9 +144,6 @@ function onAccept() {
 }
 
 function onLoad() {
-  alert("WARNING: Changing the advanced settings of TorBirdy is NOT recommended.\n\n" +
-      "You should only continue if you are sure of what you are doing.");
-
   /*
    PROXY
   */
