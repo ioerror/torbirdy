@@ -185,15 +185,17 @@ function onLoad() {
 
   // Load the email accounts.
   var accounts = getAccount();
+  var mailAccounts = document.getElementById('mail-accounts');
   if (accounts.length !== 0) {
-    var mailAccounts = document.getElementById('mail-accounts');
     mailAccounts.appendItem('...', 'select-account');
     for (var i = 0; i < accounts.length; i++) {
       mailAccounts.appendItem(accounts[i].prettyName, accounts[i].username, accounts[i].type.toUpperCase());
     }
     mailAccounts.selectedIndex = 0;
   } else {
-    document.getElementById('mail-accounts').disabled = true;
+      mailAccounts.disabled = true;
+      mailAccounts.appendItem('No email accounts found');
+      mailAccounts.selectedIndex = 0;
   }
 }
 
