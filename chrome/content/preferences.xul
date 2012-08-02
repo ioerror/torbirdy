@@ -32,7 +32,7 @@
         <vbox>
 
           <radiogroup id="proxy-settings" oncommand="checkSetting();">
-            <radio accesskey="r" id="default-settings" label="Use the recommended proxy settings for TorBirdy" selected="true"/>
+            <radio accesskey="r" id="default-settings" label="Use the recommended proxy settings for TorBirdy (Tor)" selected="true"/>
             <radio accesskey="s" id="anon-settings" label="Choose an anonymization service"/>
 
             <grid class="indent" flex="1">

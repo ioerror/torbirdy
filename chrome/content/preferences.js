@@ -144,12 +144,37 @@ function onAccept() {
 }
 
 function onLoad() {
+  // Make sure the user really wants to change these settings.
+  var warnPrompt = prefs.getBoolPref("extensions.torbirdy.warn");
+  if (warnPrompt) {
+    var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
+                            .getService(Ci.nsIPromptService);
+    var check = {value: true};
+    var result = prompts.confirmCheck(null, "TorBirdy Advanced Settings",
+                                            "Please note that changing the advanced settings of TorBirdy is NOT recommended.\n\n" +
+                                            "You should only continue if you are sure of what you are doing.",
+                                            "Show this warning next time",
+                                            check);
+    if (!result) {
+      window.close();
+    } else {
+      if (!check.value) {
+        prefs.setBoolPref("extensions.torbirdy.warn", false);
+      }
+    }
+  }
+
   /*
    PROXY
   */
   // Load the preference values.
   var anonService = prefs.getIntPref(PREF_BRANCH + 'proxy');
   document.getElementById('proxy-settings').selectedIndex = anonService;
+
+  if (anonService === 0) {
+    document.getElementById('socks-host').value = '127.0.0.1';
+    document.getElementById('socks-port').value = '9050';
+  }
 
   if (anonService === 1) {
     var anonType = prefs.getIntPref(PREF_BRANCH + 'proxy.type');
