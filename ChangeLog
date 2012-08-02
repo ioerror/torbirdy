@@ -1,9 +1,13 @@
 0.0.11
-  Implemented an algorithm to generate time-independent message-ID
-  Disable push email
+  Implemented an algorithm to generate time-independent message-ID (apply
+  the patches in patches/ to a custom Thunderbird build)
   Remove the 'Reference' and 'In-Reply-To' headers when forwarding a message
-  Implemented a preference setting for TorBirdy
-  Add support for setting custom proxy settings
+  Implemented a preference setting for TorBirdy with support for adjusting:
+	  proxy settings
+	  account-specific settings
+  Show check.torproject.org on startup
+  Disable push email for IMAP
+  Various other stability fixes
 
 0.0.10 Thu, 12 Jul 2012
   Don't check for messages on start up
