@@ -8,6 +8,8 @@
         persist="screenX screenY width height"
         buttonlabelaccept="Save"
 
+        buttonaccesskeyaccept="S"
+
         onload="return onLoad();"
         ondialogaccept="return onAccept();">
 

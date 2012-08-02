@@ -47,7 +47,7 @@ const PREFERENCES = {
   "network.proxy.socks_remote_dns": true,
 
   // Anything that would cause another proxy type to be used, we'll make them
-  // fail closed with the following - if it can fail closed, that is!
+  // fail closed with the following - if it can fail close, that is!
   "network.proxy.ssl": "127.0.0.1",
   "network.proxy.ssl_port": 8118,
   "network.proxy.http": "127.0.0.1",

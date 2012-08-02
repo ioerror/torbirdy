@@ -6,10 +6,12 @@
         xmlns:html="http://www.w3.org/1999/xhtml"
         title="TorBirdy Preferences"
         persist="screenX screenY width height"
-        buttons="accept,cancel"
+        buttons="accept,cancel,extra1"
         buttonlabelaccept="Save"
         buttonlabelcancel="Cancel"
+        buttonlabelextra1="Test Settings"
         
+        ondialogextra1="return testSettings();"
         ondialogaccept="return onAccept();"
         onload="return onLoad();">
         

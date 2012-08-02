@@ -76,7 +76,7 @@ function selectMailAccount() {
     window.openDialog("chrome://castironthunderbirdclub/content/accountpref.xul",
                      "AccountPrefWindow",
                      "chrome, dialog, centerscreen, modal",
-                     account[sAccount]);
+                     account[sAccount]).focus();
     }
   mailaccount.selectedIndex = 0;
 }
@@ -195,4 +195,33 @@ function onLoad() {
   } else {
     document.getElementById('mail-accounts').disabled = true;
   }
+}
+
+function testSettings() {
+  onAccept();
+  // Temporarily disable the fail closed HTTP and SSL proxies.
+  var http = "network.proxy.http";
+  var http_port = "network.proxy.http_port";
+  var ssl = "network.proxy.ssl";
+  var ssl_port = "network.proxy.ssl_port";
+
+  var chttp = prefs.getCharPref(http);
+  var chttp_port = prefs.getIntPref(http_port);
+  var cssl = prefs.getCharPref(ssl);
+  var cssl_port = prefs.getIntPref(ssl_port);
+
+  prefs.setCharPref(http, "");
+  prefs.setCharPref(ssl, "");
+  prefs.setIntPref(http_port, 0);
+  prefs.setIntPref(ssl_port, 0);
+
+  Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator).
+                getMostRecentWindow("mail:3pane").
+                document.getElementById("tabmail").
+                openTab("contentTab", {contentPage: "https://check.torproject.org/"});
+
+  prefs.setCharPref(http, chttp);
+  prefs.setCharPref(ssl, cssl);
+  prefs.setIntPref(http_port, chttp_port);
+  prefs.setIntPref(ssl_port, cssl_port);
 }
