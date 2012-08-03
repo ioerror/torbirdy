@@ -16,6 +16,7 @@ const SERVICE_CTRID = "@torproject.org/torbirdy;1";
 const SERVICE_ID    = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
 const SERVICE_NAME  = "Main TorBirdy component";
 const TORBIRDY_ID   = "castironthunderbirdclub@torproject.org";
+const PREF_BRANCH   = "extensions.torbirdy.custom.";
 
 // Default preference values for TorBirdy.
 const PREFERENCES = {
@@ -46,7 +47,7 @@ const PREFERENCES = {
   "network.proxy.socks_remote_dns": true,
 
   // Anything that would cause another proxy type to be used, we'll make them
-  // fail closed with the following - if it can fail closed, that is!
+  // fail closed with the following - if it can fail close, that is!
   "network.proxy.ssl": "127.0.0.1",
   "network.proxy.ssl_port": 8118,
   "network.proxy.http": "127.0.0.1",
@@ -155,6 +156,7 @@ const PREFERENCES = {
   "mail.inline_attachments": false,
   // Do not IDLE (disable push mail).
   "mail.server.default.use_idle": false,
+
   /*
     Enigmail
   */
@@ -235,6 +237,10 @@ function TorBirdy() {
   this.prefs = Cc["@mozilla.org/preferences-service;1"]
                   .getService(Ci.nsIPrefBranch);
 
+  var torbirdyPref = Cc["@mozilla.org/preferences-service;1"]
+                         .getService(Ci.nsIPrefService).getBranch(PREF_BRANCH);
+  this.customPrefs = torbirdyPref.getChildList("", {});
+
   this.acctMgr = Cc["@mozilla.org/messenger/account-manager;1"]
                   .getService(Ci.nsIMsgAccountManager);
 
@@ -280,17 +286,13 @@ TorBirdy.prototype = {
 
   // This is a hack to cause Thunderbird to instantiate us ASAP!
   _xpcom_categories: [{ category: "profile-after-change"}, ],
-  observe: function(subject, topic, data) {
-    // dump("TorBirdy observes: " + topic + "\n");
-    return;
-  },
 
   onUninstalling: function(addon, needsRestart) {
     if (addon.id == TORBIRDY_ID) {
       dump("Nooo! TorBirdy uninstall requested\n");
       this._uninstall = true;
       this.resetUserPrefs();
-      }
+    }
   },
 
   onOperationCancelled: function(addon) {
@@ -324,9 +326,36 @@ TorBirdy.prototype = {
     for (var each in PREFERENCES) {
       this.prefs.clearUserPref(each);
     }
+    for (var i = 0; i < this.customPrefs.length; i++) {
+      this.prefs.clearUserPref(PREF_BRANCH + this.customPrefs[i]);
+    }
+    // Other misc. preferences.
+    this.prefs.clearUserPref("extensions.torbirdy.proxy");
+    this.prefs.clearUserPref("extensions.torbirdy.proxy.type");
+    this.prefs.clearUserPref("extensions.torbirdy.first_run");
+    this.prefs.clearUserPref("extensions.torbirdy.warn");
   },
 
   setPrefs: function() {
+    // If custom values are set for specific preferences, override the defaults with them.
+    // For each preference, get the type and then set the property.
+    for (var i = 0; i < this.customPrefs.length; i++) {
+      var typePref = this.prefs.getPrefType(this.customPrefs[i]);
+      // String.
+      if (typePref === 32) {
+        var value = this.prefs.getCharPref(PREF_BRANCH + this.customPrefs[i]);
+      }
+      // Int.
+      if (typePref === 64) {
+        var value = this.prefs.getIntPref(PREF_BRANCH + this.customPrefs[i]);
+      }
+      // Bool.
+      if (typePref === 128) {
+        var value = this.prefs.getBoolPref(PREF_BRANCH + this.customPrefs[i]);
+      }
+      PREFERENCES[this.customPrefs[i]] = value;
+    }
+
     for (var each in PREFERENCES) {
       if (typeof PREFERENCES[each] === "boolean") {
         this.prefs.setBoolPref(each, PREFERENCES[each]);
@@ -340,15 +369,19 @@ TorBirdy.prototype = {
     }
   },
 
-  // Iterate through all accounts and disable automatic checking of emails.
+  // For only the first run, after that the user can configure the account if need be:
+  //    Iterate through all accounts and disable automatic checking of emails.
   setAccountPrefs: function() {
-    var accounts = this.acctMgr.accounts;
-    for (var i = 0; i < accounts.Count(); i++) {
-      var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
-      account.downloadOnBiff = false;
-      account.loginAtStartUp = false;
-      account.doBiff = false;
+    if (this.prefs.getBoolPref("extensions.torbirdy.first_run")) {
+      var accounts = this.acctMgr.accounts;
+      for (var i = 0; i < accounts.Count(); i++) {
+        var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
+        account.downloadOnBiff = false;
+        account.loginAtStartUp = false;
+        account.doBiff = false;
+      }
     }
+    this.prefs.setBoolPref("extensions.torbirdy.first_run", false);
   },
 
 }

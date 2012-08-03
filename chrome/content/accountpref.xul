@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<dialog id="castironthunderbirdclub-account-pref"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        buttons="accept,cancel"
+        title="Account Configuration"
+        persist="screenX screenY width height"
+        buttonlabelaccept="Save"
+
+        buttonaccesskeyaccept="S"
+
+        onload="return onLoad();"
+        ondialogaccept="return onAccept();">
+
+   <script type="application/x-javascript"
+     src="chrome://castironthunderbirdclub/content/accountpref.js"></script>
+
+   <vbox>
+     <label id="account-name" style="font-weight: bold" />
+
+     <grid class="indent" flex="1">
+       <columns>
+         <column flex="2" />
+       </columns>
+
+       <rows>
+
+         <row>
+           <checkbox label="Check for new messages at startup" id="check-startup" accesskey="C" />
+         </row>
+
+         <row>
+           <hbox align="center">
+             <checkbox label="Check for new messages every" id="check-new" oncommand="onToggleCheck();" accesskey="y" control="check-minutes" />
+             <textbox id="check-minutes" type="number" size="2" value="0" />
+             <label value="minutes" />
+           </hbox>
+         </row>
+
+       </rows>
+
+     </grid>
+   </vbox>
+
+</dialog>

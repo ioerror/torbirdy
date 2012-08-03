@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<dialog id="castironthunderbirdclub-preferences-dialog"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        title="TorBirdy Preferences"
+        persist="screenX screenY width height"
+        buttons="accept,cancel,extra1"
+        buttonlabelaccept="Save"
+        buttonlabelcancel="Cancel"
+        buttonlabelextra1="Test Settings"
+        
+        ondialogextra1="return testSettings();"
+        ondialogaccept="return onAccept();"
+        onload="return onLoad();">
+        
+   <script type="application/x-javascript"
+       src="chrome://castironthunderbirdclub/content/preferences.js"></script>
+
+  <tabbox>
+
+    <tabs>
+      <tab label="Proxy Settings"/>
+      <tab label="Privacy Settings"/>
+    </tabs>
+
+    <tabpanels>
+
+      <!-- Proxy Settings -->
+      <tabpanel>
+        <vbox>
+
+          <radiogroup id="proxy-settings" oncommand="checkSetting();">
+            <radio accesskey="r" id="default-settings" label="Use the recommended proxy settings for TorBirdy (Tor)" selected="true"/>
+            <radio accesskey="s" id="anon-settings" label="Choose an anonymization service"/>
+
+            <grid class="indent" flex="1">
+              <columns>
+                <column/>
+              </columns>
+              <rows>
+                <row align="center">
+                  <hbox align="center">
+                    <menulist disabled="true" id="anonservice">
+                      <menupopup>
+                        <menuitem label="JonDo" selected="true"/>
+                      </menupopup>
+                    </menulist>
+                  </hbox>
+                </row>
+              </rows>
+            </grid>
+
+            <radio accesskey="c" id="custom-settings" label="Use custom proxy settings"/>
+            <grid class="indent" flex="1">
+              <columns>
+                <column/>
+                <column flex="1"/>
+              </columns>
+              <rows>
+                <row align="center">
+                  <hbox align="center">
+                    <label accesskey="C" control="socks-host" value="SOCKS Host: "/>
+                    <textbox disabled="true" flex="1" id="socks-host"/>
+                    <label accesskey="t" control="socks-port" value="Port: "/>
+                    <textbox disabled="true" id="socks-port" max="65535" min="0" size="5" type="number" value="0"/>
+                  </hbox>
+                </row>
+              </rows>
+            </grid>
+          </radiogroup>
+
+        </vbox>
+      </tabpanel>
+
+      <!-- Privacy Settings -->
+      <tabpanel>
+        <vbox>
+
+          <groupbox>
+            <caption label="Global"/>
+            <hbox align="center">
+              <checkbox accesskey="p" id="idle" label="Enable push email support for IMAP accounts"/>
+            </hbox>
+          </groupbox>
+
+          <separator class="groove-thin" orient="horizontal"/>
+
+          <groupbox>
+            <caption label="Account-Specific"/>
+            <grid>
+              <columns>
+                <column flex="1"/>
+                <column flex="2"/>
+              </columns>
+              <rows>
+                <row align="center">
+                  <hbox align="center">
+                    <label accesskey="C" value="Choose an account: "/>
+                    <menulist id="mail-accounts" oncommand="selectMailAccount();">
+                      <menupopup></menupopup>
+                    </menulist>
+                  </hbox>
+                </row>
+              </rows>
+            </grid>
+          </groupbox>
+
+        </vbox>
+      </tabpanel>
+
+    </tabpanels>
+
+  </tabbox>
+   
+</dialog>
