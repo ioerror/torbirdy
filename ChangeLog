@@ -3,9 +3,9 @@
   the patches in patches/ to a custom Thunderbird build)
   Remove the 'Reference' and 'In-Reply-To' headers when forwarding a message
   Implemented a preference setting for TorBirdy with support for adjusting:
-	  proxy settings
-	  account-specific settings
-  Support for testing proxy settings: check.torproject.org
+    proxy settings
+    account-specific settings
+  Support for testing proxy settings: https://check.torproject.org
   Disable push email for IMAP
   Various other stability fixes
 
