@@ -5,7 +5,7 @@
   Implemented a preference setting for TorBirdy with support for adjusting:
 	  proxy settings
 	  account-specific settings
-  Show check.torproject.org on startup
+  Support for testing proxy settings: check.torproject.org
   Disable push email for IMAP
   Various other stability fixes
 
