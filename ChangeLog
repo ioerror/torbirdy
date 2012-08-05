@@ -1,4 +1,4 @@
-0.0.11
+0.0.11, 04 Aug 2012
   Implemented an algorithm to generate time-independent message-ID (apply
   the patches in patches/ to a custom Thunderbird build)
   Remove the 'Reference' and 'In-Reply-To' headers when forwarding a message
