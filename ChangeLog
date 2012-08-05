@@ -1,3 +1,6 @@
+0.0.12,
+  Add Screenshots directory
+
 0.0.11, 04 Aug 2012
   Implemented an algorithm to generate time-independent message-ID (apply
   the patches in patches/ to a custom Thunderbird build)
