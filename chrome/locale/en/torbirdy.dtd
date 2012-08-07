@@ -1,0 +1,36 @@
+<!ENTITY torbirdy.accountprefs.title "Account Configuration">
+<!ENTITY torbirdy.accountprefs.startup.label "Check for new messages at startup">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Check for new messages every">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "minutes">
+<!ENTITY torbirdy.accountprefs.cancel.button "Cancel">
+<!ENTITY torbirdy.accountprefs.save.button "Save">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "TorBirdy Preferences">
+<!ENTITY torbirdy.prefs.save.button "Save">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Cancel">
+<!ENTITY torbirdy.prefs.extra1.button "Test Settings">
+<!ENTITY torbirdy.prefs.extra1.key "t">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy Settings">
+<!ENTITY torbirdy.prefs.privacy.label "Privacy Settings">
+<!ENTITY torbirdy.prefs.recommended.text "Use the recommended proxy settings for TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Choose an anonymization service">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "Use custom proxy settings">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Host: ">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Port: ">
+<!ENTITY torbirdy.prefs.socks_port.key "t">
+<!ENTITY torbirdy.prefs.global "Global">
+<!ENTITY torbirdy.prefs.imap.label "Enable push email support for IMAP accounts">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.account_specific "Account-Specific">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Choose an account: ">
+
+
