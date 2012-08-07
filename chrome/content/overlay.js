@@ -8,6 +8,7 @@ function startup() {
                     .getService(Components.interfaces.nsIPrefBranch);
 
   var myPanel = document.getElementById("my-panel");
+  var strbundle = document.getElementById("strings");
   if (prefs.getBoolPref("extensions.torbirdy.protected"))
   {
     var type = prefs.getIntPref("extensions.torbirdy.proxy");
@@ -15,20 +16,20 @@ function startup() {
     // Tor.
     if (type === 0)
     {
-      myPanel.label = "TorBirdy Enabled:    Tor";
+      myPanel.label = strbundle.getString("torbirdy.enabled.tor");
     }
     // JonDo.
     if (type === 1)
     {
-      myPanel.label = "TorBirdy Enabled:    JonDo";
+      myPanel.label = strbundle.getString("torbirdy.enabled.jondo");
     }
     // Custom.
     if (type === 2)
     {
-      myPanel.label = "TorBirdy Enabled:    Custom Proxy";
+      myPanel.label = strbundle.getString("torbirdy.enabled.custom");
     }
   } else {
-    myPanel.label = "TorBirdy:     Disabled!";
+    myPanel.label = strbundle.getString("torbirdy.enabled.disabled");
     myPanel.style.color = "red";
   }
 }
