@@ -13,6 +13,9 @@ var torbirdyPref = Cc["@mozilla.org/preferences-service;1"]
 var acctMgr = Cc["@mozilla.org/messenger/account-manager;1"]
                   .getService(Ci.nsIMsgAccountManager);
 
+var bundles = Cc["@mozilla.org/intl/stringbundle;1"]
+                      .getService(Ci.nsIStringBundleService);
+var strbundle = bundles.createBundle("chrome://castironthunderbirdclub/locale/torbirdy.properties");
 
 function setDefaultPrefs() {
   prefs.setCharPref("network.proxy.socks", "127.0.0.1");
@@ -94,7 +97,7 @@ function onAccept() {
     // Set proxies for Tor.
     setDefaultPrefs();
     clearCustomPrefs();
-    myPanel.label = "TorBirdy Enabled:    Tor";
+    myPanel.label = strbundle.GetStringFromName("torbirdy.enabled.tor");
   }
   
   // Anonymization service.
@@ -109,7 +112,7 @@ function onAccept() {
       prefs.setIntPref(CUSTOM_BRANCH + "network.proxy.socks_port", 4001);
       prefs.setIntPref(CUSTOM_BRANCH + "network.proxy.ssl_port", 4001);
       prefs.setIntPref(CUSTOM_BRANCH + "network.proxy.http_port", 4001);
-      myPanel.label = "TorBirdy Enabled:    JonDo";
+      myPanel.label = strbundle.GetStringFromName("torbirdy.enabled.jondo");
     }
     prefs.setIntPref(PREF_BRANCH + 'proxy.type', anonType);
   }
@@ -124,7 +127,7 @@ function onAccept() {
     // Later use.
     prefs.setCharPref(CUSTOM_BRANCH + "network.proxy.socks", socks_host);
     prefs.setIntPref(CUSTOM_BRANCH + "network.proxy.socks_port", socks_port);
-    myPanel.label = "TorBirdy Enabled:    Custom Proxy";
+    myPanel.label = strbundle.GetStringFromName("torbirdy.enabled.custom");
   }
   prefs.setIntPref(PREF_BRANCH + 'proxy', anonService);
 
@@ -146,14 +149,14 @@ function onAccept() {
 function onLoad() {
   // Make sure the user really wants to change these settings.
   var warnPrompt = prefs.getBoolPref("extensions.torbirdy.warn");
+
   if (warnPrompt) {
     var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
                             .getService(Ci.nsIPromptService);
     var check = {value: true};
-    var result = prompts.confirmCheck(null, "TorBirdy Advanced Settings",
-                                            "Please note that changing the advanced settings of TorBirdy is NOT recommended.\n\n" +
-                                            "You should only continue if you are sure of what you are doing.",
-                                            "Show this warning next time",
+    var result = prompts.confirmCheck(null, strbundle.GetStringFromName('torbirdy.email.advanced.title'),
+                                            strbundle.GetStringFromName('torbirdy.email.advanced'),
+                                            strbundle.GetStringFromName('torbirdy.email.advanced.nextwarning'),
                                             check);
     if (!result) {
       window.close();

@@ -19,7 +19,7 @@
         ondialogaccept="return onAccept();"
         onload="return onLoad();">
         
-   <script type="application/x-javascript"
+  <script type="application/x-javascript"
        src="chrome://castironthunderbirdclub/content/preferences.js"></script>
 
   <tabbox>
