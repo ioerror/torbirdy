@@ -5,12 +5,15 @@ function disableAutoWizard() {
   var remember_password = document.getElementById("remember_password").checked;
   var protocol = document.getElementById("protocol").value;
 
-  var prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
-                                .getService(Components.interfaces.nsIPromptService);
+  var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
+                                .getService(Ci.nsIPromptService);
 
-  prompts.alert(null, "TorBirdy", "TorBirdy has disabled Thunderbird's auto-configuration wizard to protect your anonymity.\n" +
-                          "\nThe recommended security settings for '" + email + "' have been set.\n" +
-                          "\nYou can now configure the other account settings manually.");
+  var bundles = Cc["@mozilla.org/intl/stringbundle;1"]
+                          .getService(Ci.nsIStringBundleService);
+  var strings = bundles.createBundle("chrome://castironthunderbirdclub/locale/torbirdy.properties");
+  var emailPrompt = strings.formatStringFromName("torbirdy.email.prompt", [email], 1);
+  var extName = strings.GetStringFromName("torbirdy.name");
+  prompts.alert(null, extName, emailPrompt);
 
   var config = new AccountConfig();
   config.incoming.type = protocol;
@@ -67,7 +70,6 @@ function disableAutoWizard() {
                       { server: newAccount.incomingServer,
                         selectPage: "am-server.xul" });
   }
-
   window.close();
 }
 

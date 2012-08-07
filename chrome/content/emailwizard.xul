@@ -4,6 +4,10 @@
 
   <script type="application/javascript" src="chrome://castironthunderbirdclub/content/emailwizard.js" />
 
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="strings" src="chrome://castironthunderbirdclub/locale/torbirdy.properties"/>
+  </stringbundleset>
+
   <button id="next_button"
       oncommand="disableAutoWizard();" />
 
