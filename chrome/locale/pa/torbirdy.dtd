@@ -1,0 +1,34 @@
+<!ENTITY torbirdy.accountprefs.title "ਅਕਾਊਂਟ ਸੰਰਚਨਾ">
+<!ENTITY torbirdy.accountprefs.startup.label "ਸ਼ੁਰੂ ਕਰਨ ਸਮੇਂ ਨਵੇਂ ਸੁਨੇਹੇ ਲਈ ਚੈੱਕ ਕਰੋ">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "ਨਵੇਂ ਸੁਨੇਹੇ ਦੀ ਹਰ">
+<!ENTITY torbirdy.accountprefs.minutes.key "k">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "ਮਿੰਟ ਬਾਅਦ ਜਾਂਚ ਕਰੋ">
+<!ENTITY torbirdy.accountprefs.cancel.button "ਰੱਦ ਕਰੋ">
+<!ENTITY torbirdy.accountprefs.save.button "ਠੀਕ ਹੈ">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "ਮੇਰੀ ਪਸੰਦ">
+<!ENTITY torbirdy.prefs.save.button "ਠੀਕ ਹੈ">
+<!ENTITY torbirdy.prefs.save.key "S">
+<!ENTITY torbirdy.prefs.cancel.button "ਰੱਦ ਕਰੋ">
+<!ENTITY torbirdy.prefs.extra1.button "ਟੇਸਟ ਸੈਟਿੰਗ">
+<!ENTITY torbirdy.prefs.extra1.key "T">
+<!ENTITY torbirdy.prefs.proxy.label "ਪਰਾਕਸੀ ਸੈਟਿੰਗ">
+<!ENTITY torbirdy.prefs.privacy.label "ਪਰਾਈਵੇਸੀ ਸੈਟਿੰਗ">
+<!ENTITY torbirdy.prefs.recommended.text "ਟੌਰਬਰਡੀ ਲਈ ਆਖੀ ਹੋਈ ਪਰਾਕਸੀ ਸੈਟਿੰਗ ਵਰਤੋ ਕਰੋ (ਟੌਰ)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "ਗੁਪਤ ਸਰਵਿਸ ਚੁਣ ਕਰੋ">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "ਖੁਦ ਪਰਾਕਸੀ ਸੈਟਿੰਗ ਦਿਓ">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS ਹੋਸਟ: " >
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "ਪੋਰਟ">
+<!ENTITY torbirdy.prefs.socks_port.key "t">
+<!ENTITY torbirdy.prefs.global "ਗਲੋਬਲ">
+<!ENTITY torbirdy.prefs.imap.label "IMAP ਅਕਾਊਂਟ ਵਾਸਤੇ ਪੁਸ਼ ਈਮੇਲ ਚਾਲੂ ਕਰੋ ">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.account_specific "ਅਕਾਊਂਟ-ਵਿਸ਼ਿਸ਼ਟ">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "ਅਕਾਊਂਟ ਚੁਣੋ">
