@@ -27,8 +27,10 @@
 <!ENTITY torbirdy.prefs.socks_port.label "Port: ">
 <!ENTITY torbirdy.prefs.socks_port.key "t">
 <!ENTITY torbirdy.prefs.global "Global">
-<!ENTITY torbirdy.prefs.imap.label "Enable push email support for IMAP accounts">
+<!ENTITY torbirdy.prefs.imap.label "Enable push email support for IMAP accounts [default: disabled]">
 <!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "Select last accessed mail folder on startup [default: disabled, select Local Folders]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.account_specific "Account-Specific">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Choose an account: ">

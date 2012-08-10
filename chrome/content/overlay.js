@@ -1,14 +1,18 @@
 (function initOverlayWindow() {
-  function selectFolderOnInit(initialUri) {
-    var startupFolder = GetMsgFolderFromUri("mailbox://nobody@Local%20Folders");
-    if (startupFolder) {
-      initialUri = startupFolder.URI;
-      var folderTree = document.getElementById("folderTree");
-      if (window.gFolderTreeView)
-        gFolderTreeView.selectFolder(startupFolder);
+  var prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                    .getService(Components.interfaces.nsIPrefBranch);
+  if (!(prefs.getBoolPref('extensions.torbirdy.startup_folder'))) {
+    function selectFolderOnInit(initialUri) {
+      var startupFolder = GetMsgFolderFromUri("mailbox://nobody@Local%20Folders");
+      if (startupFolder) {
+        initialUri = startupFolder.URI;
+        var folderTree = document.getElementById("folderTree");
+        if (window.gFolderTreeView)
+          gFolderTreeView.selectFolder(startupFolder);
+      }
     }
+    window.loadStartFolder = selectFolderOnInit;
   }
-  window.loadStartFolder = selectFolderOnInit;
 })();
 
 function startup() {

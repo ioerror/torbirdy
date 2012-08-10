@@ -334,6 +334,7 @@ TorBirdy.prototype = {
     this.prefs.clearUserPref("extensions.torbirdy.proxy.type");
     this.prefs.clearUserPref("extensions.torbirdy.first_run");
     this.prefs.clearUserPref("extensions.torbirdy.warn");
+    this.prefs.clearUserPref("extensions.torbirdy.startup_folder");
   },
 
   setPrefs: function() {
