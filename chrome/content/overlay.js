@@ -1,3 +1,16 @@
+(function initOverlayWindow() {
+  function selectFolderOnInit(initialUri) {
+    var startupFolder = GetMsgFolderFromUri("mailbox://nobody@Local%20Folders");
+    if (startupFolder) {
+      initialUri = startupFolder.URI;
+      var folderTree = document.getElementById("folderTree");
+      if (window.gFolderTreeView)
+        gFolderTreeView.selectFolder(startupFolder);
+    }
+  }
+  window.loadStartFolder = selectFolderOnInit;
+})();
+
 function startup() {
   // Set the time zone to UTC.
   var env = Components.classes["@mozilla.org/process/environment;1"]
