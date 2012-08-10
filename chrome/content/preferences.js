@@ -144,6 +144,14 @@ function onAccept() {
     prefs.setBoolPref(CUSTOM_BRANCH + idlePref, false);
     prefs.setBoolPref(idlePref, false);
   }
+
+  // Last accessed folder.
+  var startupFolder = document.getElementById('startup-folder').checked;
+  if (startupFolder) { 
+    prefs.setBoolPref(PREF_BRANCH + 'startup_folder', true);
+  } else {
+    prefs.setBoolPref(PREF_BRANCH + 'startup_folder', false);
+  }
 }
 
 function onLoad() {
@@ -209,6 +217,15 @@ function onLoad() {
     idle.checked = true;
   } else {
     idle.checked = false;
+  }
+  
+  // Select last accessed folder.
+  var startupFolder = document.getElementById('startup-folder');
+  var startupPref = prefs.getBoolPref(PREF_BRANCH + 'startup_folder');
+  if (!startupPref) {
+    startupFolder.checked = false;
+  } else {
+    startupFolder.checked = true;
   }
 
   // Load the email accounts.

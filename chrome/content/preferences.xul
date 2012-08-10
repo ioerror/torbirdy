@@ -84,9 +84,10 @@
 
           <groupbox>
             <caption label="&torbirdy.prefs.global;"/>
-            <hbox align="center">
+            <vbox>
               <checkbox accesskey="&torbirdy.prefs.imap.key;" id="idle" label="&torbirdy.prefs.imap.label;"/>
-            </hbox>
+              <checkbox accesskey="&torbirdy.prefs.startup_folder.key;" id="startup-folder" label="&torbirdy.prefs.startup_folder.label;"/>
+            </vbox>
           </groupbox>
 
           <separator class="groove-thin" orient="horizontal"/>
