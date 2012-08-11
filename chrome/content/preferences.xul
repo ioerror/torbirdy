@@ -8,14 +8,14 @@
         xmlns:html="http://www.w3.org/1999/xhtml"
         title="&torbirdy.prefs.title;"
         persist="screenX screenY width height"
-        buttons="accept,cancel,extra1"
+        buttons="accept,cancel,extra2"
         buttonlabelaccept="&torbirdy.prefs.save.button;"
         buttonaccesskeyaccept="&torbirdy.prefs.save.key;"
         buttonlabelcancel="&torbirdy.prefs.cancel.button;"
-        buttonlabelextra1="&torbirdy.prefs.extra1.button;"
-        buttonaccesskeyextra1="&torbirdy.prefs.extra1.key;"
+        buttonlabelextra2="&torbirdy.prefs.extra2.button;"
+        buttonaccesskeyextra2="&torbirdy.prefs.extra2.key;"
         
-        ondialogextra1="return testSettings();"
+        ondialogextra2="return testSettings();"
         ondialogaccept="return onAccept();"
         onload="return onLoad();">
         
