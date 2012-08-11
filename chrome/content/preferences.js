@@ -78,7 +78,7 @@ function selectMailAccount() {
     // Configure the account.
     window.openDialog("chrome://castironthunderbirdclub/content/accountpref.xul",
                      "AccountPrefWindow",
-                     "dialog, centerscreen, modal",
+                     "chrome, dialog, centerscreen, modal",
                      account[sAccount]).focus();
     }
   mailaccount.selectedIndex = 0;
