@@ -71,7 +71,7 @@ function selectMailAccount() {
     var sAccount = null;
     var account = getAccount();
     for (var i = 0; i < account.length; i++) {
-      if (account[i].prettyName === mailaccount.value) {
+      if (account[i].key === mailaccount.value) {
         sAccount = i;
       }
     }
@@ -234,7 +234,7 @@ function onLoad() {
   if (accounts.length !== 0) {
     mailAccounts.appendItem('...', 'select-account');
     for (var i = 0; i < accounts.length; i++) {
-      mailAccounts.appendItem(accounts[i].prettyName, accounts[i].username, accounts[i].type.toUpperCase());
+      mailAccounts.appendItem(accounts[i].prettyName, accounts[i].key, accounts[i].type.toUpperCase());
     }
     mailAccounts.selectedIndex = 0;
   } else {
