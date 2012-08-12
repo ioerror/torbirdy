@@ -13,7 +13,7 @@
 <!ENTITY torbirdy.prefs.save.key "S">
 <!ENTITY torbirdy.prefs.cancel.button "ਰੱਦ ਕਰੋ">
 <!ENTITY torbirdy.prefs.extra1.button "ਟੇਸਟ ਸੈਟਿੰਗ">
-<!ENTITY torbirdy.prefs.extra1.key "T">
+<!ENTITY torbirdy.prefs.extra1.key "g">
 <!ENTITY torbirdy.prefs.proxy.label "ਪਰਾਕਸੀ ਸੈਟਿੰਗ">
 <!ENTITY torbirdy.prefs.privacy.label "ਪਰਾਈਵੇਸੀ ਸੈਟਿੰਗ">
 <!ENTITY torbirdy.prefs.recommended.text "ਟੌਰਬਰਡੀ ਲਈ ਆਖੀ ਹੋਈ ਪਰਾਕਸੀ ਸੈਟਿੰਗ ਵਰਤੋ ਕਰੋ (ਟੌਰ)">
@@ -27,8 +27,10 @@
 <!ENTITY torbirdy.prefs.socks_port.label "ਪੋਰਟ">
 <!ENTITY torbirdy.prefs.socks_port.key "t">
 <!ENTITY torbirdy.prefs.global "ਗਲੋਬਲ">
-<!ENTITY torbirdy.prefs.imap.label "IMAP ਅਕਾਊਂਟ ਵਾਸਤੇ ਪੁਸ਼ ਈਮੇਲ ਚਾਲੂ ਕਰੋ ">
+<!ENTITY torbirdy.prefs.imap.label "IMAP ਅਕਾਊਂਟ ਵਾਸਤੇ ਪੁਸ਼ ਈਮੇਲ ਚਾਲੂ ਕਰੋ">
 <!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "ਸ਼ੁਰੂ ਹੋਣ ਤੇ ਆਖਰੀ ਈਮੇਲ ਫੋਲਡਰ ਚੋਣਵਾਂ ਕਰੋ">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.account_specific "ਅਕਾਊਂਟ-ਵਿਸ਼ਿਸ਼ਟ">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "ਅਕਾਊਂਟ ਚੁਣੋ">
