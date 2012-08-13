@@ -9,7 +9,7 @@
   </stringbundleset>
 
   <statusbar id="status-bar">
-      <statusbarpanel id="my-panel" label="" />
+      <statusbarpanel id="torbirdy-my-panel" label="" />
   </statusbar>
 
 </overlay>

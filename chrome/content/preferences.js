@@ -32,20 +32,20 @@ function clearCustomPrefs() {
 }
 
 function checkSetting() {
-  var anonService = document.getElementById('proxy-settings').selectedIndex;
+  var anonService = document.getElementById('torbirdy-proxy-settings').selectedIndex;
   if (anonService === 2) {
-    document.getElementById('socks-host').disabled = false;
-    document.getElementById('socks-port').disabled = false;
+    document.getElementById('torbirdy-socks-host').disabled = false;
+    document.getElementById('torbirdy-socks-port').disabled = false;
   }
   else {
-    document.getElementById('socks-host').disabled = true;
-    document.getElementById('socks-port').disabled = true;
+    document.getElementById('torbirdy-socks-host').disabled = true;
+    document.getElementById('torbirdy-socks-port').disabled = true;
   }
 
   if (anonService === 1) {
-    document.getElementById('anonservice').disabled = false;
+    document.getElementById('torbirdy-anonservice').disabled = false;
   } else {
-    document.getElementById('anonservice').disabled = true;
+    document.getElementById('torbirdy-anonservice').disabled = true;
   }
 }
 
@@ -63,7 +63,7 @@ function getAccount() {
 }
 
 function selectMailAccount() {
-  var mailaccount = document.getElementById('mail-accounts');
+  var mailaccount = document.getElementById('torbirdy-mail-accounts');
   var index = mailaccount.selectedIndex;
 
   if (!(index === 0)) {
@@ -88,9 +88,9 @@ function onAccept() {
   var win = Cc['@mozilla.org/appshell/window-mediator;1']
               .getService(Ci.nsIWindowMediator)
               .getMostRecentWindow('mail:3pane');
-  var myPanel = win.document.getElementById("my-panel");
+  var myPanel = win.document.getElementById("torbirdy-my-panel");
 
-  var anonService = document.getElementById('proxy-settings').selectedIndex;
+  var anonService = document.getElementById('torbirdy-proxy-settings').selectedIndex;
 
   // Default (recommended) settings for TorBirdy.
   if (anonService === 0) {
@@ -102,7 +102,7 @@ function onAccept() {
   
   // Anonymization service.
   if (anonService === 1) {
-    var anonType = document.getElementById('anon-settings').selectedIndex;
+    var anonType = document.getElementById('torbirdy-anon-settings').selectedIndex;
     if (anonType === 0 || typeof anonType === "undefined") {
       // First set the preferences immediately.
       prefs.setIntPref("network.proxy.socks_port", 4001);
@@ -119,8 +119,8 @@ function onAccept() {
 
   // Custom proxy.
   if (anonService === 2) {
-    var socks_host = document.getElementById('socks-host').value;
-    var socks_port = document.getElementById('socks-port').value;
+    var socks_host = document.getElementById('torbirdy-socks-host').value;
+    var socks_port = document.getElementById('torbirdy-socks-port').value;
     // Set them now.
     prefs.setCharPref("network.proxy.socks", socks_host);
     prefs.setIntPref("network.proxy.socks_port", socks_port);
@@ -135,7 +135,7 @@ function onAccept() {
     Privacy
   */
   var idlePref = 'mail.server.default.use_idle';
-  var idle = document.getElementById('idle').checked;
+  var idle = document.getElementById('torbirdy-idle').checked;
   if (idle) {
     prefs.setBoolPref(CUSTOM_BRANCH + idlePref, true);
     prefs.setBoolPref(idlePref, true);
@@ -146,7 +146,7 @@ function onAccept() {
   }
 
   // Last accessed folder.
-  var startupFolder = document.getElementById('startup-folder').checked;
+  var startupFolder = document.getElementById('torbirdy-startup-folder').checked;
   if (startupFolder) { 
     prefs.setBoolPref(PREF_BRANCH + 'startup_folder', true);
   } else {
@@ -180,27 +180,27 @@ function onLoad() {
   */
   // Load the preference values.
   var anonService = prefs.getIntPref(PREF_BRANCH + 'proxy');
-  document.getElementById('proxy-settings').selectedIndex = anonService;
+  document.getElementById('torbirdy-proxy-settings').selectedIndex = anonService;
 
   if (anonService === 0) {
-    document.getElementById('socks-host').value = '127.0.0.1';
-    document.getElementById('socks-port').value = '9050';
+    document.getElementById('torbirdy-socks-host').value = '127.0.0.1';
+    document.getElementById('torbirdy-socks-port').value = '9050';
   }
 
   if (anonService === 1) {
     var anonType = prefs.getIntPref(PREF_BRANCH + 'proxy.type');
-    document.getElementById('anonservice').disabled = false;
-    document.getElementById('anon-settings').selectedIndex = anonType;
+    document.getElementById('torbirdy-anonservice').disabled = false;
+    document.getElementById('torbirdy-anon-settings').selectedIndex = anonType;
   }
   if (anonService === 2) {
     var socks_host = prefs.getCharPref(CUSTOM_BRANCH + 'network.proxy.socks');
     var socks_port = prefs.getIntPref(CUSTOM_BRANCH + 'network.proxy.socks_port');
 
-    document.getElementById('socks-host').value = socks_host;
-    document.getElementById('socks-port').value = socks_port;
+    document.getElementById('torbirdy-socks-host').value = socks_host;
+    document.getElementById('torbirdy-socks-port').value = socks_port;
     // Enable the settings.
-    document.getElementById('socks-host').disabled = false;
-    document.getElementById('socks-port').disabled = false;
+    document.getElementById('torbirdy-socks-host').disabled = false;
+    document.getElementById('torbirdy-socks-port').disabled = false;
   }
 
   /*
@@ -208,7 +208,7 @@ function onLoad() {
   */
   // Global settings.
   // IDLE.
-  var idle = document.getElementById('idle');
+  var idle = document.getElementById('torbirdy-idle');
   var idlePref = CUSTOM_BRANCH + 'mail.server.default.use_idle';
   if (prefs.prefHasUserValue(idlePref)) {
     var idlePrefValue = prefs.getBoolPref(idlePref);
@@ -220,7 +220,7 @@ function onLoad() {
   }
   
   // Select last accessed folder.
-  var startupFolder = document.getElementById('startup-folder');
+  var startupFolder = document.getElementById('torbirdy-startup-folder');
   var startupPref = prefs.getBoolPref(PREF_BRANCH + 'startup_folder');
   if (!startupPref) {
     startupFolder.checked = false;
@@ -230,7 +230,7 @@ function onLoad() {
 
   // Load the email accounts.
   var accounts = getAccount();
-  var mailAccounts = document.getElementById('mail-accounts');
+  var mailAccounts = document.getElementById('torbirdy-mail-accounts');
   if (accounts.length !== 0) {
     mailAccounts.appendItem('...', 'select-account');
     for (var i = 0; i < accounts.length; i++) {

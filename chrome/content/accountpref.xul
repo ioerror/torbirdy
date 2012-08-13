@@ -19,7 +19,7 @@
      src="chrome://castironthunderbirdclub/content/accountpref.js"></script>
 
    <vbox>
-     <label id="account-name" style="font-weight: bold" />
+     <label id="torbirdy-account-name" style="font-weight: bold" />
 
      <grid class="indent" flex="1">
        <columns>
@@ -29,14 +29,14 @@
        <rows>
 
          <row>
-           <checkbox label="&torbirdy.accountprefs.startup.label;" id="check-startup" accesskey="&torbirdy.accountprefs.startup.key;" />
+           <checkbox label="&torbirdy.accountprefs.startup.label;" id="torbirdy-check-startup" accesskey="&torbirdy.accountprefs.startup.key;" />
          </row>
 
 
          <row>
            <hbox align="center">
-             <checkbox label="&torbirdy.accountprefs.minutes.label;" id="check-new" oncommand="onToggleCheck();" accesskey="&torbirdy.accountprefs.minutes.key;" control="check-minutes" />
-             <textbox id="check-minutes" type="number" size="2" value="0" />
+             <checkbox label="&torbirdy.accountprefs.minutes.label;" id="torbirdy-check-new" oncommand="onToggleCheck();" accesskey="&torbirdy.accountprefs.minutes.key;" control="check-minutes" />
+             <textbox id="torbirdy-check-minutes" type="number" size="2" value="0" />
              <label value="&torbirdy.accountprefs.minutes.trail.label;" />
            </hbox>
          </row>

@@ -2,11 +2,11 @@
 var account = window.arguments[0];
 
 function onLoad() {
-  var nameLabel = document.getElementById("account-name");
-  var startup = document.getElementById("check-startup");
+  var nameLabel = document.getElementById("torbirdy-account-name");
+  var startup = document.getElementById("torbirdy-check-startup");
 
-  var dobiff = document.getElementById("check-new");
-  var biffminutes = document.getElementById("check-minutes");
+  var dobiff = document.getElementById("torbirdy-check-new");
+  var biffminutes = document.getElementById("torbirdy-check-minutes");
 
   nameLabel.value = account.prettyName;
 
@@ -28,9 +28,9 @@ function onLoad() {
 }
 
 function onAccept() {
-  var startup = document.getElementById("check-startup");
-  var dobiff = document.getElementById("check-new");
-  var biffminutes = document.getElementById("check-minutes");
+  var startup = document.getElementById("torbirdy-check-startup");
+  var dobiff = document.getElementById("torbirdy-check-new");
+  var biffminutes = document.getElementById("torbirdy-check-minutes");
 
   if (startup.checked) {
     account.loginAtStartUp = true;
@@ -47,7 +47,7 @@ function onAccept() {
 }
 
 function onToggleCheck() {
-  var biffminutes = document.getElementById("check-minutes");
+  var biffminutes = document.getElementById("torbirdy-check-minutes");
   if (biffminutes.disabled) {
     biffminutes.disabled = false;
   } else {

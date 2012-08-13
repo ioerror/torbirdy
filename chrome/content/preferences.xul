@@ -35,9 +35,9 @@
       <tabpanel>
         <vbox>
 
-          <radiogroup id="proxy-settings" oncommand="checkSetting();">
-            <radio accesskey="&torbirdy.prefs.recommended.key;" id="default-settings" label="&torbirdy.prefs.recommended.text;" selected="true"/>
-            <radio accesskey="&torbirdy.prefs.anonservice.key;" id="anon-settings" label="&torbirdy.prefs.anonservice.text;"/>
+          <radiogroup id="torbirdy-proxy-settings" oncommand="checkSetting();">
+            <radio accesskey="&torbirdy.prefs.recommended.key;" id="torbirdy-default-settings" label="&torbirdy.prefs.recommended.text;" selected="true"/>
+            <radio accesskey="&torbirdy.prefs.anonservice.key;" id="torbirdy-anon-settings" label="&torbirdy.prefs.anonservice.text;"/>
 
             <grid class="indent" flex="1">
               <columns>
@@ -46,7 +46,7 @@
               <rows>
                 <row align="center">
                   <hbox align="center">
-                    <menulist disabled="true" id="anonservice">
+                    <menulist disabled="true" id="torbirdy-anonservice">
                       <menupopup>
                         <menuitem label="JonDo" selected="true"/>
                       </menupopup>
@@ -56,7 +56,7 @@
               </rows>
             </grid>
 
-            <radio accesskey="&torbirdy.prefs.customsettings.key;" id="custom-settings" label="&torbirdy.prefs.customsettings.text;"/>
+            <radio accesskey="&torbirdy.prefs.customsettings.key;" id="torbirdy-custom-settings" label="&torbirdy.prefs.customsettings.text;"/>
             <grid class="indent" flex="1">
               <columns>
                 <column/>
@@ -66,9 +66,9 @@
                 <row align="center">
                   <hbox align="center">
                     <label accesskey="&torbirdy.prefs.socks_host.key;" control="socks-host" value="&torbirdy.prefs.socks_host.label;"/>
-                    <textbox disabled="true" flex="1" id="socks-host"/>
+                    <textbox disabled="true" flex="1" id="torbirdy-socks-host"/>
                     <label accesskey="&torbirdy.prefs.socks_port.key;" control="socks-port" value="&torbirdy.prefs.socks_port.label;"/>
-                    <textbox disabled="true" id="socks-port" max="65535" min="0" size="5" type="number" value="0"/>
+                    <textbox disabled="true" id="torbirdy-socks-port" max="65535" min="0" size="5" type="number" value="0"/>
                   </hbox>
                 </row>
               </rows>
@@ -85,8 +85,8 @@
           <groupbox>
             <caption label="&torbirdy.prefs.global;"/>
             <vbox>
-              <checkbox accesskey="&torbirdy.prefs.imap.key;" id="idle" label="&torbirdy.prefs.imap.label;"/>
-              <checkbox accesskey="&torbirdy.prefs.startup_folder.key;" id="startup-folder" label="&torbirdy.prefs.startup_folder.label;"/>
+              <checkbox accesskey="&torbirdy.prefs.imap.key;" id="torbirdy-idle" label="&torbirdy.prefs.imap.label;"/>
+              <checkbox accesskey="&torbirdy.prefs.startup_folder.key;" id="torbirdy-startup-folder" label="&torbirdy.prefs.startup_folder.label;"/>
             </vbox>
           </groupbox>
 
@@ -103,7 +103,7 @@
                 <row align="center">
                   <hbox align="center">
                     <label accesskey="&torbirdy.prefs.select_account.key;" value="&torbirdy.prefs.select_account.label;"/>
-                    <menulist id="mail-accounts" oncommand="selectMailAccount();">
+                    <menulist id="torbirdy-mail-accounts" oncommand="selectMailAccount();">
                       <menupopup></menupopup>
                     </menulist>
                   </hbox>

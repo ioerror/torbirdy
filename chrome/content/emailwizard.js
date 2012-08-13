@@ -3,7 +3,7 @@ function disableAutoWizard() {
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
   var remember_password = document.getElementById("remember_password").checked;
-  var protocol = document.getElementById("protocol").value;
+  var protocol = document.getElementById("torbirdy-protocol").value;
 
   var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
                                 .getService(Ci.nsIPromptService);

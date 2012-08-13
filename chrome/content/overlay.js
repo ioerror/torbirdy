@@ -23,7 +23,7 @@ function startup() {
   var prefs = Components.classes["@mozilla.org/preferences-service;1"]
                     .getService(Components.interfaces.nsIPrefBranch);
 
-  var myPanel = document.getElementById("my-panel");
+  var myPanel = document.getElementById("torbirdy-my-panel");
   var strbundle = document.getElementById("strings");
   if (prefs.getBoolPref("extensions.torbirdy.protected"))
   {

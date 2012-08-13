@@ -20,7 +20,7 @@
                accesskey="o"
                control="protocol" />
 
-        <menulist id="protocol">
+        <menulist id="torbirdy-protocol">
           <menupopup>
             <menuitem label="POP"
                       value="pop3" />
