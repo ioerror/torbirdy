@@ -70,13 +70,26 @@ const PREFERENCES = {
   // https://blog.torproject.org/blog/experimental-defense-website-traffic-fingerprinting
   // https://trac.torproject.org/projects/tor/ticket/3914
   "network.http.pipelining": true,
+  // We do not fully understand the privacy issues of the SPDY protocol
+  // We have no reason to believe that anyone would actually use it with
+  // Thunderbird but we fail closed to keep users safe out of an abundance of
+  // caution.
   "network.http.spdy.enabled": false,
+  // We want pipelined requests and a bunch of them, as is explained in the
+  // experimental-defense-website-traffic-fingerprinting blog post by Torbutton
+  // author Mike Perry.
   "network.http.pipelining.ssl": true,
   "network.http.proxy.pipelining": true,
   "network.http.pipelining.maxrequests": 12,
   "network.http.sendRefererHeader": 0,
 
   // Disable proxy bypass issue.
+  // Websockets have no use in Thunderbird over Tor; some versions of the
+  // underlying Mozilla networking code allowed websockets to bypass the proxy
+  // settings - this is deadly to Tor users:
+  // https://blog.torproject.org/blog/firefox-security-bug-proxy-bypass-current-tbbs
+  // We don't want user's of Thunderbird to even come close to such a bypass
+  // issue and so we have disabled websockets out of an abundance of caution.
   "network.websocket.enabled": false,
   // No cookies are allowed.
   "network.cookie.cookieBehavior": 2,
@@ -87,19 +100,28 @@ const PREFERENCES = {
     Security
   */
 
-  "security.OCSP.enabled": 1,
   // Default is always false for OCSP - it's broken crap
+  // Why is it broken, you might ask?
+  // Moxie Marlinspike, a hero to all humans everywhere, defeated it with the
+  // number '3' at Defcon/Blackhat 2009 His paper:
+  // http://www.thoughtcrime.org/papers/ocsp-attack.pdf His software to perform
+  // the attack is here: http://thoughtcrime.org/software/sslsniff/ Furthermore
+  // - OCSP servers may log information about a user as they use the internet
+  // generally; it's everything we hate about CRLs and more
+  "security.OCSP.enabled": 1,
   "security.OCSP.require": false,
   // Disable TLS Session Ticket.
   // See https://trac.torproject.org/projects/tor/ticket/4099
   "security.enable_tls_session_tickets": false,
-  // Enable SSL3.
+  // Enable SSL3?
+  // We do not want to enable a known weak protocol; users should use only use TLS
   "security.enable_ssl3": false,
   // Display a dialog warning the user when entering an insecure site from a secure one.
   "security.warn_entering_weak": true,
   // Display a dialog warning the user when submtting a form to an insecure site.
   "security.warn_submit_insecure": true,
   // Enable SSL FalseStart.
+  // This should be safe and improve TLS performance
   "security.ssl.enable_false_start": true,
   // Reject all connection attempts to servers using the old SSL/TLS protocol.
   "security.ssl.require_safe_negotiation": true,
@@ -162,18 +184,33 @@ const PREFERENCES = {
   */
 
   // We hope the user has Enigmail and if so, we believe these improve security.
+  // We would like these options to be a single shared option we can toggle but
+  // we require some discussions with upstream and then they would need a new
+  // release. It's not actually clear how we could or even if we should then
+  // depend on a specific Enigmail version. Either way, we want to save the
+  // user who would shoot themselves in the privacy-foot.
 
   // Disable X-Enigmail headers.
+  // We don't want to obviously disclose that we're using Enigmail as it may
+  // add privacy distroying headers
   "extensions.enigmail.addHeaders": false,
   // Use GnuPG's default comment for signed messages.
   "extensions.enigmail.useDefaultComment": true,
   // XXX: TODO --hidden-recipient should be used for each person but perhaps
   // --throw-keyids will be an OK stopgap?
-  "extensions.enigmail.agentAdditionalParam": "--no-emit-version " +
+  "extensions.enigmail.agentAdditionalParam":
+                                              // Don't disclose the version
+                                              "--no-emit-version " +
+                                              // Don't add additional comments (may leak language, etc)
                                               "--no-comments " +
+                                              // Don't include keyids that may disclose the sender or any other non-obvious keyids
                                               "--throw-keyids " +
+                                              // We want to force UTF-8 everywhere
                                               "--display-charset utf-8 " +
+                                              // We want to ensure that Enigmail is proxy aware even when it runs gpg in a shell
                                               "--keyserver-options http-proxy=http://127.0.0.1:8118 " +
+                                              // The default key server should be a hidden service and this is the only known one
+                                              // (it's part of the normal SKS network)
                                               "--keyserver hkp://2eghzlv2wwcq7u7y.onion",
 
   // Prefer plain text for RSS.
