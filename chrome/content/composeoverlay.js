@@ -1,11 +1,7 @@
 const Ci = Components.interfaces;
 const Cc = Components.classes;
 
-function getRandom() {
-  return Math.random();
-}
-
-function atextRandom() {
+function torbirdyTextRandom() {
   var inChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+-=_";
   var randomString = '';
   for (var i = 0; i < 10; i++) {
@@ -15,7 +11,7 @@ function atextRandom() {
   return randomString;
 }
 
-function toHexString(charCode) {
+function torbirdyHexString(charCode) {
   return ("0" + charCode.toString(16)).slice(-2);
 }
 
@@ -43,6 +39,7 @@ function send_event_handler(event) {
       gMsgCompose.compFields.references = '';
     }
 
+    // Get the text of the body.
     try {
       var editor = GetCurrentEditor();
       var body = editor.outputToString('text/plain', 4);
@@ -52,29 +49,29 @@ function send_event_handler(event) {
     }
 
     // Generate an 'email' and append a random number. The SHA512 hash of this email will be used later.
-    var mail = to_field + cc_field + subject_field + body + getRandom();
+    var mail = to_field + cc_field + subject_field + body + Math.random();
 
+    // SHA512 hash generator.
     var converter = Cc["@mozilla.org/intl/scriptableunicodeconverter"]
                         .createInstance(Ci.nsIScriptableUnicodeConverter);
     var ch = Cc["@mozilla.org/security/hash;1"]
                  .createInstance(Ci.nsICryptoHash);
-
     converter.charset = "UTF-8";
-    var result = {};
 
+    var result = {};
     var data = converter.convertToByteArray(mail, result);
     ch.init(ch.SHA512);
     ch.update(data, data.length);
 
     var hash = ch.finish(false);
-    var pref_hash = [toHexString(hash.charCodeAt(i)) for (i in hash)].join("").slice(0, 40);
+    var pref_hash = [torbirdyHexString(hash.charCodeAt(i)) for (i in hash)].join("").slice(0, 40);
     // Randomize characters to upper case and lower case.
     var choices = [true, false];
     pref_hash = [choices[Math.floor(Math.random() * choices.length)] ?
                         e.toUpperCase() : e.toLowerCase() for each (e in pref_hash.split(""))].join("");
 
     // Introduce more randomness.
-    var randomString = atextRandom();
+    var randomString = torbirdyTextRandom();
     var message_id = pref_hash + randomString;
 
     // Set the preference to use the custom generated header ID.

@@ -14,7 +14,7 @@
   }
 })();
 
-function startup() {
+function torbirdyStartup() {
   // Set the time zone to UTC.
   var env = Components.classes["@mozilla.org/process/environment;1"]
                             .getService(Components.interfaces.nsIEnvironment);
@@ -50,4 +50,4 @@ function startup() {
   }
 }
 
-window.addEventListener("load", startup, false);
+window.addEventListener("load", torbirdyStartup, false);

@@ -1,274 +1,287 @@
 const Ci = Components.interfaces;
 const Cc = Components.classes;
 
-const PREF_BRANCH = "extensions.torbirdy.";
-const CUSTOM_BRANCH = "extensions.torbirdy.custom.";
+if (!com) var com = {};
+if (!com.torbirdy) com.torbirdy = {};
 
-var prefs = Cc["@mozilla.org/preferences-service;1"]
-                .getService(Ci.nsIPrefBranch);
+com.torbirdy.prefs = new function() {
+  var pub = {};
 
-var torbirdyPref = Cc["@mozilla.org/preferences-service;1"]
-                       .getService(Ci.nsIPrefService).getBranch(CUSTOM_BRANCH);
+  pub.prefBranch = "extensions.torbirdy.";
+  pub.customBranch = "extensions.torbirdy.custom.";
 
-var acctMgr = Cc["@mozilla.org/messenger/account-manager;1"]
-                  .getService(Ci.nsIMsgAccountManager);
+  pub.prefs = Cc["@mozilla.org/preferences-service;1"]
+                  .getService(Ci.nsIPrefBranch);
 
-var bundles = Cc["@mozilla.org/intl/stringbundle;1"]
-                      .getService(Ci.nsIStringBundleService);
-var strbundle = bundles.createBundle("chrome://castironthunderbirdclub/locale/torbirdy.properties");
+  pub.torBirdyPref = Cc["@mozilla.org/preferences-service;1"]
+                         .getService(Ci.nsIPrefService).getBranch(pub.customBranch);
 
-function setDefaultPrefs() {
-  prefs.setCharPref("network.proxy.socks", "127.0.0.1");
-  prefs.setIntPref("network.proxy.socks_port", 9050);
-  prefs.setIntPref("network.proxy.ssl_port", 8118);
-  prefs.setIntPref("network.proxy.http_port", 8118);
-}
+  pub.acctMgr = Cc["@mozilla.org/messenger/account-manager;1"]
+                    .getService(Ci.nsIMsgAccountManager);
 
-function clearCustomPrefs() {
-  var customPrefs = torbirdyPref.getChildList("", {});
-  for (var i = 0; i < customPrefs.length; i++) {
-    prefs.clearUserPref(CUSTOM_BRANCH + customPrefs[i]);
-  }
-}
+  var bundles = Cc["@mozilla.org/intl/stringbundle;1"]
+                        .getService(Ci.nsIStringBundleService);
+  pub.strbundle = bundles.createBundle("chrome://castironthunderbirdclub/locale/torbirdy.properties");
 
-function checkSetting() {
-  var anonService = document.getElementById('torbirdy-proxy-settings').selectedIndex;
-  if (anonService === 2) {
-    document.getElementById('torbirdy-socks-host').disabled = false;
-    document.getElementById('torbirdy-socks-port').disabled = false;
-  }
-  else {
-    document.getElementById('torbirdy-socks-host').disabled = true;
-    document.getElementById('torbirdy-socks-port').disabled = true;
-  }
+  pub.setDefaultPrefs = function() {
+    pub.prefs.setCharPref("network.proxy.socks", "127.0.0.1");
+    pub.prefs.setIntPref("network.proxy.socks_port", 9050);
+    pub.prefs.setIntPref("network.proxy.ssl_port", 8118);
+    pub.prefs.setIntPref("network.proxy.http_port", 8118);
+  };
 
-  if (anonService === 1) {
-    document.getElementById('torbirdy-anonservice').disabled = false;
-  } else {
-    document.getElementById('torbirdy-anonservice').disabled = true;
-  }
-}
-
-function getAccount() {
-  var mailAccounts = [];
-  var accounts = acctMgr.accounts;
-  for (var i = 0; i < accounts.Count(); i++) {
-    var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
-    var name = account.prettyName;
-    if (!(name === "Local Folders")) {
-      mailAccounts.push(account);
+  pub.clearCustomPrefs = function() {
+    var customPrefs = pub.torBirdyPref.getChildList("", {});
+    for (var i = 0; i < customPrefs.length; i++) {
+      pub.prefs.clearUserPref(pub.customBranch + customPrefs[i]);
     }
-  }
-  return mailAccounts;
-}
+  };
 
-function selectMailAccount() {
-  var mailaccount = document.getElementById('torbirdy-mail-accounts');
-  var index = mailaccount.selectedIndex;
-
-  if (!(index === 0)) {
-    // For email accounts, configure accordingly.
-    var sAccount = null;
-    var account = getAccount();
-    for (var i = 0; i < account.length; i++) {
-      if (account[i].key === mailaccount.value) {
-        sAccount = i;
-      }
+  pub.checkSetting = function() {
+    var index = pub.anonService.selectedIndex;
+    if (index === 2) {
+      pub.socksHost.disabled = false;
+      pub.socksPort.disabled = false;
     }
-    // Configure the account.
-    window.openDialog("chrome://castironthunderbirdclub/content/accountpref.xul",
-                     "AccountPrefWindow",
-                     "chrome, centerscreen, modal, resizable=yes",
-                     account[sAccount]).focus();
+    else {
+      pub.socksHost.disabled = true;
+      pub.socksPort.disabled = true;
     }
-  mailaccount.selectedIndex = 0;
-}
 
-function onAccept() {
-  var win = Cc['@mozilla.org/appshell/window-mediator;1']
-              .getService(Ci.nsIWindowMediator)
-              .getMostRecentWindow('mail:3pane');
-  var myPanel = win.document.getElementById("torbirdy-my-panel");
-
-  var anonService = document.getElementById('torbirdy-proxy-settings').selectedIndex;
-
-  // Default (recommended) settings for TorBirdy.
-  if (anonService === 0) {
-    // Set proxies for Tor.
-    setDefaultPrefs();
-    clearCustomPrefs();
-    myPanel.label = strbundle.GetStringFromName("torbirdy.enabled.tor");
-  }
-  
-  // Anonymization service.
-  if (anonService === 1) {
-    var anonType = document.getElementById('torbirdy-anon-settings').selectedIndex;
-    if (anonType === 0 || typeof anonType === "undefined") {
-      // First set the preferences immediately.
-      prefs.setIntPref("network.proxy.socks_port", 4001);
-      prefs.setIntPref("network.proxy.ssl_port", 4001);
-      prefs.setIntPref("network.proxy.http_port", 4001);
-      // Now save them for later use.
-      prefs.setIntPref(CUSTOM_BRANCH + "network.proxy.socks_port", 4001);
-      prefs.setIntPref(CUSTOM_BRANCH + "network.proxy.ssl_port", 4001);
-      prefs.setIntPref(CUSTOM_BRANCH + "network.proxy.http_port", 4001);
-      myPanel.label = strbundle.GetStringFromName("torbirdy.enabled.jondo");
-    }
-    prefs.setIntPref(PREF_BRANCH + 'proxy.type', anonType);
-  }
-
-  // Custom proxy.
-  if (anonService === 2) {
-    var socks_host = document.getElementById('torbirdy-socks-host').value;
-    var socks_port = document.getElementById('torbirdy-socks-port').value;
-    // Set them now.
-    prefs.setCharPref("network.proxy.socks", socks_host);
-    prefs.setIntPref("network.proxy.socks_port", socks_port);
-    // Later use.
-    prefs.setCharPref(CUSTOM_BRANCH + "network.proxy.socks", socks_host);
-    prefs.setIntPref(CUSTOM_BRANCH + "network.proxy.socks_port", socks_port);
-    myPanel.label = strbundle.GetStringFromName("torbirdy.enabled.custom");
-  }
-  prefs.setIntPref(PREF_BRANCH + 'proxy', anonService);
-
-  /*
-    Privacy
-  */
-  var idlePref = 'mail.server.default.use_idle';
-  var idle = document.getElementById('torbirdy-idle').checked;
-  if (idle) {
-    prefs.setBoolPref(CUSTOM_BRANCH + idlePref, true);
-    prefs.setBoolPref(idlePref, true);
-  }
-  else {
-    prefs.setBoolPref(CUSTOM_BRANCH + idlePref, false);
-    prefs.setBoolPref(idlePref, false);
-  }
-
-  // Last accessed folder.
-  var startupFolder = document.getElementById('torbirdy-startup-folder').checked;
-  if (startupFolder) { 
-    prefs.setBoolPref(PREF_BRANCH + 'startup_folder', true);
-  } else {
-    prefs.setBoolPref(PREF_BRANCH + 'startup_folder', false);
-  }
-}
-
-function onLoad() {
-  // Make sure the user really wants to change these settings.
-  var warnPrompt = prefs.getBoolPref("extensions.torbirdy.warn");
-
-  if (warnPrompt) {
-    var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
-                            .getService(Ci.nsIPromptService);
-    var check = {value: true};
-    var result = prompts.confirmCheck(null, strbundle.GetStringFromName('torbirdy.email.advanced.title'),
-                                            strbundle.GetStringFromName('torbirdy.email.advanced'),
-                                            strbundle.GetStringFromName('torbirdy.email.advanced.nextwarning'),
-                                            check);
-    if (!result) {
-      window.close();
+    if (index === 1) {
+      pub.anonCustomService.disabled = false;
     } else {
-      if (!check.value) {
-        prefs.setBoolPref("extensions.torbirdy.warn", false);
+      pub.anonCustomService.disabled = true;
+    }
+  };
+
+  pub.getAccount = function() {
+    var mailAccounts = [];
+    var accounts = pub.acctMgr.accounts;
+    for (var i = 0; i < accounts.Count(); i++) {
+      var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
+      var name = account.prettyName;
+      if (!(name === "Local Folders")) {
+        mailAccounts.push(account);
       }
     }
-  }
+    return mailAccounts;
+  };
 
-  /*
-   PROXY
-  */
-  // Load the preference values.
-  var anonService = prefs.getIntPref(PREF_BRANCH + 'proxy');
-  document.getElementById('torbirdy-proxy-settings').selectedIndex = anonService;
+  pub.selectMailAccount = function() {
+    var index = pub.mailAccount.selectedIndex;
 
-  if (anonService === 0) {
-    document.getElementById('torbirdy-socks-host').value = '127.0.0.1';
-    document.getElementById('torbirdy-socks-port').value = '9050';
-  }
+    if (!(index === 0)) {
+      // For email accounts, configure accordingly.
+      var sAccount = null;
+      var account = pub.getAccount();
+      for (var i = 0; i < account.length; i++) {
+        if (account[i].key === pub.mailAccount.value) {
+          sAccount = i;
+        }
+      }
+      // Configure the account.
+      window.openDialog("chrome://castironthunderbirdclub/content/accountpref.xul",
+                       "AccountPrefWindow",
+                       "chrome, centerscreen, modal, resizable=yes",
+                       account[sAccount]).focus();
+      }
+    pub.mailAccount.selectedIndex = 0;
+  };
 
-  if (anonService === 1) {
-    var anonType = prefs.getIntPref(PREF_BRANCH + 'proxy.type');
-    document.getElementById('torbirdy-anonservice').disabled = false;
-    document.getElementById('torbirdy-anon-settings').selectedIndex = anonType;
-  }
-  if (anonService === 2) {
-    var socks_host = prefs.getCharPref(CUSTOM_BRANCH + 'network.proxy.socks');
-    var socks_port = prefs.getIntPref(CUSTOM_BRANCH + 'network.proxy.socks_port');
+  pub.onAccept = function() {
+    var win = Cc['@mozilla.org/appshell/window-mediator;1']
+                .getService(Ci.nsIWindowMediator)
+                .getMostRecentWindow('mail:3pane');
+    var myPanel = win.document.getElementById("torbirdy-my-panel");
 
-    document.getElementById('torbirdy-socks-host').value = socks_host;
-    document.getElementById('torbirdy-socks-port').value = socks_port;
-    // Enable the settings.
-    document.getElementById('torbirdy-socks-host').disabled = false;
-    document.getElementById('torbirdy-socks-port').disabled = false;
-  }
+    var index = pub.anonService.selectedIndex;
 
-  /*
-   Privacy
-  */
-  // Global settings.
-  // IDLE.
-  var idle = document.getElementById('torbirdy-idle');
-  var idlePref = CUSTOM_BRANCH + 'mail.server.default.use_idle';
-  if (prefs.prefHasUserValue(idlePref)) {
-    var idlePrefValue = prefs.getBoolPref(idlePref);
-  }
-  if (idlePrefValue) {
-    idle.checked = true;
-  } else {
-    idle.checked = false;
-  }
-  
-  // Select last accessed folder.
-  var startupFolder = document.getElementById('torbirdy-startup-folder');
-  var startupPref = prefs.getBoolPref(PREF_BRANCH + 'startup_folder');
-  if (!startupPref) {
-    startupFolder.checked = false;
-  } else {
-    startupFolder.checked = true;
-  }
-
-  // Load the email accounts.
-  var accounts = getAccount();
-  var mailAccounts = document.getElementById('torbirdy-mail-accounts');
-  if (accounts.length !== 0) {
-    mailAccounts.appendItem('...', 'select-account');
-    for (var i = 0; i < accounts.length; i++) {
-      mailAccounts.appendItem(accounts[i].prettyName, accounts[i].key, accounts[i].type.toUpperCase());
+    // Default (recommended) settings for TorBirdy.
+    if (index === 0) {
+      // Set proxies for Tor.
+      pub.setDefaultPrefs();
+      pub.clearCustomPrefs();
+      myPanel.label = pub.strbundle.GetStringFromName("torbirdy.enabled.tor");
     }
-    mailAccounts.selectedIndex = 0;
-  } else {
-      mailAccounts.disabled = true;
-      mailAccounts.appendItem('No email accounts found');
-      mailAccounts.selectedIndex = 0;
-  }
-}
+    
+    // Anonymization service.
+    if (index === 1) {
+      var anonType = pub.anonType.selectedIndex;
+      if (anonType === 0 || typeof anonType === "undefined") {
+        // First set the preferences immediately.
+        pub.prefs.setIntPref("network.proxy.socks_port", 4001);
+        pub.prefs.setIntPref("network.proxy.ssl_port", 4001);
+        pub.prefs.setIntPref("network.proxy.http_port", 4001);
+        // Now save them for later use.
+        pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", 4001);
+        pub.prefs.setIntPref(pub.customBranch + "network.proxy.ssl_port", 4001);
+        pub.prefs.setIntPref(pub.customBranch + "network.proxy.http_port", 4001);
+        myPanel.label = pub.strbundle.GetStringFromName("torbirdy.enabled.jondo");
+      }
+      pub.prefs.setIntPref(pub.prefBranch + 'proxy.type', anonType);
+    }
 
-function testSettings() {
-  onAccept();
-  // Temporarily disable the fail closed HTTP and SSL proxies.
-  var http = "network.proxy.http";
-  var http_port = "network.proxy.http_port";
-  var ssl = "network.proxy.ssl";
-  var ssl_port = "network.proxy.ssl_port";
+    // Custom proxy.
+    if (index === 2) {
+      var socks_host = pub.socksHost.value;
+      var socks_port = pub.socksPort.value;
+      // Set them now.
+      pub.prefs.setCharPref("network.proxy.socks", socks_host);
+      pub.prefs.setIntPref("network.proxy.socks_port", socks_port);
+      // Later use.
+      pub.prefs.setCharPref(pub.customBranch + "network.proxy.socks", socks_host);
+      pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", socks_port);
+      myPanel.label = pub.strbundle.GetStringFromName("torbirdy.enabled.custom");
+    }
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy', index);
 
-  var chttp = prefs.getCharPref(http);
-  var chttp_port = prefs.getIntPref(http_port);
-  var cssl = prefs.getCharPref(ssl);
-  var cssl_port = prefs.getIntPref(ssl_port);
+    /*
+      Privacy
+    */
+    var idlePref = 'mail.server.default.use_idle';
+    var idle = pub.idle.checked; 
+    if (idle) {
+      pub.prefs.setBoolPref(pub.customBranch + idlePref, true);
+      pub.prefs.setBoolPref(idlePref, true);
+    }
+    else {
+      pub.prefs.setBoolPref(pub.customBranch + idlePref, false);
+      pub.prefs.setBoolPref(idlePref, false);
+    }
 
-  prefs.setCharPref(http, "");
-  prefs.setCharPref(ssl, "");
-  prefs.setIntPref(http_port, 0);
-  prefs.setIntPref(ssl_port, 0);
+    // Last accessed folder.
+    var startupFolder = pub.startupFolder.checked; 
+    if (startupFolder) { 
+      pub.prefs.setBoolPref(pub.prefBranch + 'startup_folder', true);
+    } else {
+      pub.prefs.setBoolPref(pub.prefBranch + 'startup_folder', false);
+    }
+  };
 
-  Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator).
-                getMostRecentWindow("mail:3pane").
-                document.getElementById("tabmail").
-                openTab("contentTab", {contentPage: "https://check.torproject.org/"});
+  pub.onLoad = function() {
+    pub.anonService = document.getElementById('torbirdy-proxy-settings');
+    pub.socksHost = document.getElementById('torbirdy-socks-host');
+    pub.socksPort = document.getElementById('torbirdy-socks-port');
+    pub.mailAccount = document.getElementById('torbirdy-mail-accounts');
+    pub.anonType = document.getElementById('torbirdy-anon-settings');
+    pub.idle = document.getElementById('torbirdy-idle');
+    pub.startupFolder = document.getElementById('torbirdy-startup-folder');
+    pub.anonCustomService = document.getElementById('torbirdy-anonservice');
 
-  prefs.setCharPref(http, chttp);
-  prefs.setCharPref(ssl, cssl);
-  prefs.setIntPref(http_port, chttp_port);
-  prefs.setIntPref(ssl_port, cssl_port);
-}
+    // Make sure the user really wants to change these settings.
+    var warnPrompt = pub.prefs.getBoolPref("extensions.torbirdy.warn");
+
+    if (warnPrompt) {
+      var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
+                              .getService(Ci.nsIPromptService);
+      var check = {value: true};
+      var result = prompts.confirmCheck(null, pub.strbundle.GetStringFromName('torbirdy.email.advanced.title'),
+                                              pub.strbundle.GetStringFromName('torbirdy.email.advanced'),
+                                              pub.strbundle.GetStringFromName('torbirdy.email.advanced.nextwarning'),
+                                              check);
+      if (!result) {
+        window.close();
+      } else {
+        if (!check.value) {
+          pub.prefs.setBoolPref("extensions.torbirdy.warn", false);
+        }
+      }
+    }
+
+    /*
+     PROXY
+    */
+    // Load the preference values.
+    var anonService = pub.prefs.getIntPref(pub.prefBranch + 'proxy');
+    pub.anonService.selectedIndex = anonService;
+
+    if (anonService === 0) {
+      pub.socksHost.value = '127.0.0.1';
+      pub.socksPort.value = '9050';
+    }
+
+    if (anonService === 1) {
+      var anonType = pub.prefs.getIntPref(pub.prefBranch + 'proxy.type');
+      pub.anonCustomService.disabled = false;
+      pub.anonType.selectedIndex = anonType;
+    }
+    if (anonService === 2) {
+      var socks_host = pub.prefs.getCharPref(pub.customBranch + 'network.proxy.socks');
+      var socks_port = pub.prefs.getIntPref(pub.customBranch + 'network.proxy.socks_port');
+
+      pub.socksHost.value = socks_host;
+      pub.socksPort.value = socks_port;
+      // Enable the settings.
+      pub.socksHost.disabled = false;
+      pub.socksPort.disabled = false;
+    }
+
+    /*
+     Privacy
+    */
+    // Global settings.
+    // IDLE.
+    var idlePref = pub.customBranch + 'mail.server.default.use_idle';
+    if (pub.prefs.prefHasUserValue(idlePref)) {
+      var idlePrefValue = pub.prefs.getBoolPref(idlePref);
+    }
+    if (idlePrefValue) {
+      pub.idle.checked = true;
+    } else {
+      pub.idle.checked = false;
+    }
+    
+    // Select last accessed folder.
+    var startupPref = pub.prefs.getBoolPref(pub.prefBranch + 'startup_folder');
+    if (!startupPref) {
+      pub.startupFolder.checked = false;
+    } else {
+      pub.startupFolder.checked = true;
+    }
+
+    // Load the email accounts.
+    var accounts = pub.getAccount();
+    if (accounts.length !== 0) {
+      pub.mailAccount.appendItem('...', 'select-account');
+      for (var i = 0; i < accounts.length; i++) {
+        pub.mailAccount.appendItem(accounts[i].prettyName, accounts[i].key, accounts[i].type.toUpperCase());
+      }
+      pub.mailAccount.selectedIndex = 0;
+    } else {
+        pub.mailAccount.disabled = true;
+        pub.mailAccount.appendItem('No email accounts found');
+        pub.mailAccount.selectedIndex = 0;
+    }
+  };
+
+  pub.testSettings = function() {
+    pub.onAccept();
+    // Temporarily disable the fail closed HTTP and SSL proxies.
+    var http = "network.proxy.http";
+    var http_port = "network.proxy.http_port";
+    var ssl = "network.proxy.ssl";
+    var ssl_port = "network.proxy.ssl_port";
+
+    var chttp = pub.prefs.getCharPref(http);
+    var chttp_port = pub.prefs.getIntPref(http_port);
+    var cssl = pub.prefs.getCharPref(ssl);
+    var cssl_port = pub.prefs.getIntPref(ssl_port);
+
+    pub.prefs.setCharPref(http, "");
+    pub.prefs.setCharPref(ssl, "");
+    pub.prefs.setIntPref(http_port, 0);
+    pub.prefs.setIntPref(ssl_port, 0);
+
+    Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator).
+                  getMostRecentWindow("mail:3pane").
+                  document.getElementById("tabmail").
+                  openTab("contentTab", {contentPage: "https://check.torproject.org/"});
+
+    pub.prefs.setCharPref(http, chttp);
+    pub.prefs.setCharPref(ssl, cssl);
+    pub.prefs.setIntPref(http_port, chttp_port);
+    pub.prefs.setIntPref(ssl_port, cssl_port);
+  };
+  return pub;
+};

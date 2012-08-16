@@ -1,56 +1,55 @@
-// Per-account configuration dialog.
-var account = window.arguments[0];
+if (!com) var com = {};
+if (!com.torbirdy) com.torbirdy = {};
 
-function onLoad() {
-  var nameLabel = document.getElementById("torbirdy-account-name");
-  var startup = document.getElementById("torbirdy-check-startup");
+com.torbirdy.accountprefs = new function() {
+  var pub = {};
+  pub.account = window.arguments[0];
 
-  var dobiff = document.getElementById("torbirdy-check-new");
-  var biffminutes = document.getElementById("torbirdy-check-minutes");
+  pub.onLoad = function() {
+    pub.nameLabel = document.getElementById("torbirdy-account-name");
+    pub.startup = document.getElementById("torbirdy-check-startup");
+    pub.dobiff = document.getElementById("torbirdy-check-new");
+    pub.biffminutes = document.getElementById("torbirdy-check-minutes");
+    pub.nameLabel.value = pub.account.prettyName;
 
-  nameLabel.value = account.prettyName;
+    if (pub.account.loginAtStartUp) {
+      pub.startup.checked = true;
+    } else {
+      pub.startup.checked = false;
+    }
 
-  if (account.loginAtStartUp) {
-    startup.checked = true;
-  } else {
-    startup.checked = false;
-  }
+    if (pub.account.doBiff) {
+      pub.dobiff.checked = true;
+      pub.biffminutes.disabled = false;
+      pub.biffminutes.value = pub.account.biffMinutes;
+    } else {
+      pub.dobiff.checked = false;
+      pub.biffminutes.disabled = true;
+      pub.biffminutes.value = pub.account.biffMinutes;
+    }
+  };
 
-  if (account.doBiff) {
-    dobiff.checked = true;
-    biffminutes.disabled = false;
-    biffminutes.value = account.biffMinutes;
-  } else {
-    dobiff.checked = false;
-    biffminutes.disabled = true;
-    biffminutes.value = account.biffMinutes;
-  }
-}
+  pub.onAccept = function() {
+    if (pub.startup.checked) {
+      pub.account.loginAtStartUp = true;
+    } else {
+      pub.account.loginAtStartUp = false;
+    }
 
-function onAccept() {
-  var startup = document.getElementById("torbirdy-check-startup");
-  var dobiff = document.getElementById("torbirdy-check-new");
-  var biffminutes = document.getElementById("torbirdy-check-minutes");
+    if (pub.dobiff.checked) {
+      pub.account.doBiff = true;
+      pub.account.biffMinutes = pub.biffminutes.value;
+    } else {
+      pub.account.doBiff = false;
+    }
+  };
 
-  if (startup.checked) {
-    account.loginAtStartUp = true;
-  } else {
-    account.loginAtStartUp = false;
-  }
-
-  if (dobiff.checked) {
-    account.doBiff = true;
-    account.biffMinutes = biffminutes.value;
-  } else {
-    account.doBiff = false;
-  }
-}
-
-function onToggleCheck() {
-  var biffminutes = document.getElementById("torbirdy-check-minutes");
-  if (biffminutes.disabled) {
-    biffminutes.disabled = false;
-  } else {
-    biffminutes.disabled = true;
-  }
-}
+  pub.onToggleCheck = function() {
+    if (pub.biffminutes.disabled) {
+      pub.biffminutes.disabled = false;
+    } else {
+      pub.biffminutes.disabled = true;
+    }
+  };
+  return pub;
+};
