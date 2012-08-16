@@ -3,6 +3,7 @@
   TorBirdy now has localization support
   Do not select the last selected account to prevent automatic login (TorBirdy
   selects 'Local Folders' to prevent this)
+  TorBirdy code cleanup: fix global namespace pollution and prefix DOM nodes
   Fix a bug in 0.0.11 that prevented account preferences from being set
 
 0.0.11, 04 Aug 2012
