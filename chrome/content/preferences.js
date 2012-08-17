@@ -283,5 +283,6 @@ com.torbirdy.prefs = new function() {
     pub.prefs.setIntPref(http_port, chttp_port);
     pub.prefs.setIntPref(ssl_port, cssl_port);
   };
+
   return pub;
 };

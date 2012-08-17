@@ -89,6 +89,7 @@ com.torbirdy.emailwizard = new function() {
   pub.onLoad = function(event) {
     document.getElementById('provisioner_button').setAttribute('disabled', 'true');
   };
+
   return pub;
 };
 

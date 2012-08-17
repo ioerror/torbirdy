@@ -51,5 +51,6 @@ com.torbirdy.accountprefs = new function() {
       pub.biffminutes.disabled = true;
     }
   };
+
   return pub;
 };

@@ -2,6 +2,7 @@ const Ci = Components.interfaces;
 const Cc = Components.classes;
 
 function torbirdyTextRandom() {
+  // Generate alphanumeric random numbers.
   var inChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+-=_";
   var randomString = '';
   for (var i = 0; i < 10; i++) {
@@ -29,6 +30,7 @@ function send_event_handler(event) {
     if (!(msg_type == nsIMsgCompDeliverMode.Now || msg_type == nsIMsgCompDeliverMode.Later))
       return;
 
+    // We now generate the custom message-ID based on the approach described in tagnaq's paper.
     var to_field = gMsgCompose.compFields.to;
     var cc_field = gMsgCompose.compFields.cc;
     var subject_field = gMsgCompose.compFields.subject;
@@ -51,7 +53,7 @@ function send_event_handler(event) {
     // Generate an 'email' and append a random number. The SHA512 hash of this email will be used later.
     var mail = to_field + cc_field + subject_field + body + Math.random();
 
-    // SHA512 hash generator.
+    // Generate a SHA512 hash of the string above.
     var converter = Cc["@mozilla.org/intl/scriptableunicodeconverter"]
                         .createInstance(Ci.nsIScriptableUnicodeConverter);
     var ch = Cc["@mozilla.org/security/hash;1"]
@@ -75,6 +77,7 @@ function send_event_handler(event) {
     var message_id = pref_hash + randomString;
 
     // Set the preference to use the custom generated header ID.
+    // This is the message-ID that will be used in the outgoing message.
     prefs.setCharPref("mailnews.header.custom_message_id", message_id);
   }
 }
