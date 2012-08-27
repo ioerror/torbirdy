@@ -1,0 +1,36 @@
+<!ENTITY torbirdy.accountprefs.title "Konten Konfiguration">
+<!ENTITY torbirdy.accountprefs.startup.label "Beim Start auf neue Nachrichten prüfen">
+<!ENTITY torbirdy.accountprefs.startup.key "n">
+<!ENTITY torbirdy.accountprefs.minutes.label "Auf neue Nachrichten alle">
+<!ENTITY torbirdy.accountprefs.minutes.key "m">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "Minuten prüfen">
+<!ENTITY torbirdy.accountprefs.cancel.button "Abbrechen">
+<!ENTITY torbirdy.accountprefs.save.button "Speichern">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "TorBirdy Einstellungen">
+<!ENTITY torbirdy.prefs.save.button "Speichern">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Abbrechen">
+<!ENTITY torbirdy.prefs.extra2.button "Einstellungen prüfen">
+<!ENTITY torbirdy.prefs.extra2.key "p">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy Einstellungen">
+<!ENTITY torbirdy.prefs.privacy.label "Privacy Einstellungen">
+<!ENTITY torbirdy.prefs.recommended.text "Empfohlene Proxy Einstellungen für TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Anonymisierungsdienst auswählen">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "Benutzerdefinierte Proxy Einstellungen">
+<!ENTITY torbirdy.prefs.customsettings.key "b">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Host: ">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Port: ">
+<!ENTITY torbirdy.prefs.socks_port.key "t">
+<!ENTITY torbirdy.prefs.global "Global">
+<!ENTITY torbirdy.prefs.imap.label "Push E-Mail Support für IMAP-Konten aktivieren [default: deaktiviert]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "Beim Start zum zuletzt aktiven Mail-Ordner wechseln [default: Lokale Ordner wird gewählt]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.account_specific "Konten-spezifisch">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Konto auswählen: ">
