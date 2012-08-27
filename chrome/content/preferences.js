@@ -109,14 +109,22 @@ com.torbirdy.prefs = new function() {
     if (index === 1) {
       var anonType = pub.anonType.selectedIndex;
       if (anonType === 0 || typeof anonType === "undefined") {
+        var jondoEnigmail = "--no-emit-version " +
+                            "--no-comments " +
+                            "--throw-keyids " +
+                            "--display-charset utf-8 " +
+                            "--keyserver-options http-proxy=http://127.0.0.1:4001";
+
         // First set the preferences immediately.
         pub.prefs.setIntPref("network.proxy.socks_port", 4001);
         pub.prefs.setIntPref("network.proxy.ssl_port", 4001);
         pub.prefs.setIntPref("network.proxy.http_port", 4001);
+        pub.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", jondoEnigmail);
         // Now save them for later use.
         pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", 4001);
         pub.prefs.setIntPref(pub.customBranch + "network.proxy.ssl_port", 4001);
         pub.prefs.setIntPref(pub.customBranch + "network.proxy.http_port", 4001);
+        pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", jondoEnigmail);
         myPanel.label = pub.strbundle.GetStringFromName("torbirdy.enabled.jondo");
       }
       pub.prefs.setIntPref(pub.prefBranch + 'proxy.type', anonType);
@@ -126,6 +134,7 @@ com.torbirdy.prefs = new function() {
     if (index === 2) {
       var socks_host = pub.socksHost.value;
       var socks_port = pub.socksPort.value;
+
       // Set them now.
       pub.prefs.setCharPref("network.proxy.socks", socks_host);
       pub.prefs.setIntPref("network.proxy.socks_port", socks_port);
@@ -255,8 +264,18 @@ com.torbirdy.prefs = new function() {
     }
   };
 
+  pub.displayTestPage = function(service) {
+    Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator).
+              getMostRecentWindow("mail:3pane").
+              document.getElementById("tabmail").
+              openTab("contentTab", {contentPage: service});
+  },
+
   pub.testSettings = function() {
     pub.onAccept();
+    var index = pub.anonService.selectedIndex;
+    var anonType = pub.anonType.selectedIndex;
+
     // Temporarily disable the fail closed HTTP and SSL proxies.
     var http = "network.proxy.http";
     var http_port = "network.proxy.http_port";
@@ -273,11 +292,15 @@ com.torbirdy.prefs = new function() {
     pub.prefs.setIntPref(http_port, 0);
     pub.prefs.setIntPref(ssl_port, 0);
 
-    Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator).
-                  getMostRecentWindow("mail:3pane").
-                  document.getElementById("tabmail").
-                  openTab("contentTab", {contentPage: "https://check.torproject.org/"});
+    if ((index === 1) && (anonType === 0 || typeof anonType === "undefined")) {
+        // Use "http://ip-check.info/tb.php?lang=en" for JonDo.
+        pub.displayTestPage("http://ip-check.info/tb.php?lang=en");
+    } else {
+        // Use https://check.torproject.org for others.
+        pub.displayTestPage("https://check.torproject.org/");
+    }
 
+    // We are done, so restore the default preferences.
     pub.prefs.setCharPref(http, chttp);
     pub.prefs.setCharPref(ssl, cssl);
     pub.prefs.setIntPref(http_port, chttp_port);
