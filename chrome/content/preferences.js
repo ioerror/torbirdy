@@ -277,35 +277,35 @@ com.torbirdy.prefs = new function() {
     var index = pub.anonService.selectedIndex;
     var anonType = pub.anonType.selectedIndex;
 
-    // Temporarily disable the fail closed HTTP and SSL proxies.
-    var http = "network.proxy.http";
-    var http_port = "network.proxy.http_port";
-    var ssl = "network.proxy.ssl";
-    var ssl_port = "network.proxy.ssl_port";
-
-    var chttp = pub.prefs.getCharPref(http);
-    var chttp_port = pub.prefs.getIntPref(http_port);
-    var cssl = pub.prefs.getCharPref(ssl);
-    var cssl_port = pub.prefs.getIntPref(ssl_port);
-
-    pub.prefs.setCharPref(http, "");
-    pub.prefs.setCharPref(ssl, "");
-    pub.prefs.setIntPref(http_port, 0);
-    pub.prefs.setIntPref(ssl_port, 0);
-
     if ((index === 1) && (anonType === 0 || typeof anonType === "undefined")) {
         // Use "http://ip-check.info/tb.php?lang=en" for JonDo.
         pub.displayTestPage("http://ip-check.info/tb.php?lang=en");
     } else {
         // Use https://check.torproject.org for others.
-        pub.displayTestPage("https://check.torproject.org/");
-    }
+        // Temporarily disable the fail closed HTTP and SSL proxies.
+        var http = "network.proxy.http";
+        var http_port = "network.proxy.http_port";
+        var ssl = "network.proxy.ssl";
+        var ssl_port = "network.proxy.ssl_port";
 
-    // We are done, so restore the default preferences.
-    pub.prefs.setCharPref(http, chttp);
-    pub.prefs.setCharPref(ssl, cssl);
-    pub.prefs.setIntPref(http_port, chttp_port);
-    pub.prefs.setIntPref(ssl_port, cssl_port);
+        var chttp = pub.prefs.getCharPref(http);
+        var chttp_port = pub.prefs.getIntPref(http_port);
+        var cssl = pub.prefs.getCharPref(ssl);
+        var cssl_port = pub.prefs.getIntPref(ssl_port);
+
+        pub.prefs.setCharPref(http, "");
+        pub.prefs.setCharPref(ssl, "");
+        pub.prefs.setIntPref(http_port, 0);
+        pub.prefs.setIntPref(ssl_port, 0);
+
+        pub.displayTestPage("https://check.torproject.org/");
+
+        // We are done, so restore the default preferences.
+        pub.prefs.setCharPref(http, chttp);
+        pub.prefs.setCharPref(ssl, cssl);
+        pub.prefs.setIntPref(http_port, chttp_port);
+        pub.prefs.setIntPref(ssl_port, cssl_port);
+    }
   };
 
   return pub;
