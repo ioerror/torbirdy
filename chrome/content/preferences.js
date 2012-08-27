@@ -107,6 +107,7 @@ com.torbirdy.prefs = new function() {
     
     // Anonymization service.
     if (index === 1) {
+      pub.clearCustomPrefs();
       var anonType = pub.anonType.selectedIndex;
       if (anonType === 0 || typeof anonType === "undefined") {
         var jondoEnigmail = "--no-emit-version " +
