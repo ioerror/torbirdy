@@ -30,6 +30,15 @@ com.torbirdy.prefs = new function() {
     pub.prefs.setIntPref("network.proxy.http_port", 8118);
   };
 
+  pub.restoreEnigmailPrefs = function() {
+    pub.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", "--no-emit-version " +
+                                                                      "--no-comments " +
+                                                                      "--throw-keyids " +
+                                                                      "--display-charset utf-8 " +
+                                                                      "--keyserver-options http-proxy=http://127.0.0.1:8118 " +
+                                                                      "--keyserver hkp://2eghzlv2wwcq7u7y.onion");
+  };
+
   pub.clearCustomPrefs = function() {
     var customPrefs = pub.torBirdyPref.getChildList("", {});
     for (var i = 0; i < customPrefs.length; i++) {
@@ -102,6 +111,7 @@ com.torbirdy.prefs = new function() {
       // Set proxies for Tor.
       pub.setDefaultPrefs();
       pub.clearCustomPrefs();
+      pub.restoreEnigmailPrefs();
       myPanel.label = pub.strbundle.GetStringFromName("torbirdy.enabled.tor");
     }
     
@@ -133,6 +143,7 @@ com.torbirdy.prefs = new function() {
 
     // Custom proxy.
     if (index === 2) {
+      pub.restoreEnigmailPrefs();
       var socks_host = pub.socksHost.value;
       var socks_port = pub.socksPort.value;
 
