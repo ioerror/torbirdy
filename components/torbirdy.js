@@ -262,6 +262,14 @@ const PREFERENCES = {
   // Disable remote images.
   "permissions.default.image": 2,
 
+  // Thunderbird 15 introduces the chat feature so disable the preferences below.
+  "purple.logging.log_chats": false,
+  "purple.logging.log_ims": false,
+  "purple.logging.log_system": false,
+
+  "messenger.status.reportIdle": false,
+  "messenger.status.defaultIdleAwayMessage": "",
+
   // All preferences have been set: now enable TorBirdy.
   "extensions.torbirdy.protected": true,
 }
