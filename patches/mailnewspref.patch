@@ -1,5 +1,5 @@
 # HG changeset patch
-# Parent 5f659702021e2d505c40ac4d452e80fe0b7be590
+# Parent 721cec51e68558ab41a21d7f3db1b7de0e20f3bd
 # User Sukhbir Singh <sukhbir.in@gmail.com>
 Set the default preferences for the patches (https://bugzilla.mozilla.org/show_bug.cgi?id=776397)
 
@@ -7,7 +7,7 @@ Set the default preferences for the patches (https://bugzilla.mozilla.org/show_b
 diff --git a/mailnews/mailnews.js b/mailnews/mailnews.js
 --- a/mailnews/mailnews.js
 +++ b/mailnews/mailnews.js
-@@ -812,8 +812,15 @@ pref("mail.smtp.qos", 0);
+@@ -814,8 +814,16 @@ pref("mail.smtp.qos", 0);
  pref("mail.nntp.qos", 0);
  
  // default value for IMAP4
@@ -23,3 +23,4 @@ diff --git a/mailnews/mailnews.js b/mailnews/mailnews.js
 +
 +// Allow a custom message-ID to be set through an extension.
 +pref("mailnews.custom_message_id", false);
++pref("mailnews.header.custom_message_id", "");
