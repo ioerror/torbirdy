@@ -20,6 +20,7 @@ push-release:
 	scp ../torbirdy-${VERSION}.xpi* vescum.torproject.org:/srv/www-master.torproject.org/htdocs/dist/torbirdy/$
 	scp ../torbirdy-${VERSION}.xpi vescum.torproject.org:/srv/www-master.torproject.org/htdocs/dist/torbirdy/torbirdy-current.xpi$
 	scp ../torbirdy-${VERSION}.xpi.asc vescum.torproject.org:/srv/www-master.torproject.org/htdocs/dist/torbirdy/torbirdy-current.xpi.asc$
+	ssh vescum.torproject.org ~mirroradm/bin/trigger-mirrors
 	
 release: sign-release push-release
 	
