@@ -1,7 +1,7 @@
 if (!org) var org = {};
 if (!org.torbirdy) org.torbirdy = {};
 
-com.torbirdy.emailwizard = new function() {
+org.torbirdy.emailwizard = new function() {
   var pub = {};
 
   pub.disableAutoWizard = function() {
