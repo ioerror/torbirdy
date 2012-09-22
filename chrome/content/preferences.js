@@ -290,7 +290,7 @@ org.torbirdy.prefs = new function() {
 
     if ((index === 1) && (anonType === 0 || typeof anonType === "undefined")) {
         // Use "http://ip-check.info/tb.php?lang=en" for JonDo.
-        pub.displayTestPage("http://ip-check.info/tb.php?lang=en");
+        pub.displayTestPage("https://ip-check.info/tb.php?lang=en");
     } else {
         // Use https://check.torproject.org for others.
         // Temporarily disable the fail closed HTTP and SSL proxies.
