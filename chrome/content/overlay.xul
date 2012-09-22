@@ -9,7 +9,24 @@
   </stringbundleset>
 
   <statusbar id="status-bar">
-      <statusbarpanel id="torbirdy-my-panel" label="" />
+      <statusbarpanel id="torbirdy-my-panel" label="" popup="torbirdy-proxy-list" />
   </statusbar>
 
+  <popupset>
+   <menupopup id="torbirdy-proxy-list" position="after_start">
+      <menuitem id="tor-selection"
+                class="menuitem-iconic"
+                image="chrome://castironthunderbirdclub/skin/images/tor-16.png"
+                label="Use Tor Onion Router"
+                oncommand="setProxyTor();"
+              />
+      <menuitem id="jondo-selection"
+                class="menuitem-iconic"
+                image="chrome://castironthunderbirdclub/skin/images/jondo-16.png"
+                label="Use JonDo (Premium)"
+                oncommand="setProxyJonDo();"
+               />
+    </menupopup> 
+  </popupset>
+  
 </overlay>

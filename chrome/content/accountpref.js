@@ -1,7 +1,7 @@
-if (!com) var com = {};
-if (!com.torbirdy) com.torbirdy = {};
+if (!org) var org = {};
+if (!org.torbirdy) org.torbirdy = {};
 
-com.torbirdy.accountprefs = new function() {
+org.torbirdy.accountprefs = new function() {
   var pub = {};
   pub.account = window.arguments[0];
 

@@ -9,7 +9,7 @@
   </stringbundleset>
 
   <button id="next_button"
-      oncommand="com.torbirdy.emailwizard.disableAutoWizard();" />
+      oncommand="org.torbirdy.emailwizard.disableAutoWizard();" />
 
   <vbox id="mastervbox" flex="1">
     <groupbox id="protocolBox" class="indent" insertafter="initialSettings">

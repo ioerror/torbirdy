@@ -5,21 +5,15 @@ const Ci = Components.interfaces;
 const Cc = Components.classes;
 const Cr = Components.results;
 
-// Log level #defines.
-VERB=1;
-DEBUG=2;
-INFO=3;
-NOTE=4;
-WARN=5;
-
-const SERVICE_CTRID = "@torproject.org/torbirdy;1";
-const SERVICE_ID    = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
-const SERVICE_NAME  = "Main TorBirdy component";
-const TORBIRDY_ID   = "castironthunderbirdclub@torproject.org";
-const PREF_BRANCH   = "extensions.torbirdy.custom.";
+const SERVICE_CTRID  = "@torproject.org/torbirdy;1";
+const SERVICE_ID     = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
+const SERVICE_NAME   = "Main TorBirdy component";
+const TORBIRDY_ID    = "castironthunderbirdclub@torproject.org";
+const PREF_BRANCH    = "extensions.torbirdy.custom.";
+const RESTORE_BRANCH = "extensions.torbirdy.restore.";
 
 // Default preference values for TorBirdy.
-const PREFERENCES = {
+const TORBIRDYPREFS = {
   "extensions.torbirdy.protected": false,
   // When the preferences below have been set, then only enable TorBirdy.
   // Generate our own custom time-independent message-ID.
@@ -274,6 +268,17 @@ const PREFERENCES = {
   "extensions.torbirdy.protected": true,
 }
 
+const TORBIRDY_OLDPREFS = [
+  "network.proxy.type",
+  "network.proxy.ssl_port",
+  "network.proxy.ssl",
+  "network.proxy.socks_version",
+  "network.proxy.socks_port",
+  "network.proxy.socks",
+  "network.proxy.http_port",
+  "network.proxy.http",
+]
+
 // Constructor for component init.
 function TorBirdy() {
   this._uninstall = false;
@@ -285,6 +290,10 @@ function TorBirdy() {
   var torbirdyPref = Cc["@mozilla.org/preferences-service;1"]
                          .getService(Ci.nsIPrefService).getBranch(PREF_BRANCH);
   this.customPrefs = torbirdyPref.getChildList("", {});
+
+  var oldPrefs = Cc["@mozilla.org/preferences-service;1"]
+                           .getService(Ci.nsIPrefService).getBranch(RESTORE_BRANCH);
+  this.restorePrefs = oldPrefs.getChildList("", {});
 
   this.acctMgr = Cc["@mozilla.org/messenger/account-manager;1"]
                   .getService(Ci.nsIMsgAccountManager);
@@ -314,8 +323,8 @@ function TorBirdy() {
     observerService.addObserver(this, "em-action-requested", false);
   }
 
-  this.setPrefs();
   this.setAccountPrefs();
+  this.setPrefs();
 
   dump("TorBirdy registered!\n");
 }
@@ -368,7 +377,7 @@ TorBirdy.prototype = {
 
   resetUserPrefs: function() {
     dump("Resetting user preferences to default\n");
-    for (var each in PREFERENCES) {
+    for (var each in TORBIRDYPREFS) {
       this.prefs.clearUserPref(each);
     }
     for (var i = 0; i < this.customPrefs.length; i++) {
@@ -380,6 +389,23 @@ TorBirdy.prototype = {
     this.prefs.clearUserPref("extensions.torbirdy.first_run");
     this.prefs.clearUserPref("extensions.torbirdy.warn");
     this.prefs.clearUserPref("extensions.torbirdy.startup_folder");
+
+    // Restore the older proxy preferences that were set before TorBirdy.
+    dump("Restoring proxy settings\n");
+    for (var i = 0; i < TORBIRDY_OLDPREFS.length; i++) {
+      var oldPref = TORBIRDY_OLDPREFS[i];
+      var setValue = RESTORE_BRANCH + oldPref;
+      var type = this.prefs.getPrefType(setValue);
+      if (type === 32) {
+        this.prefs.setCharPref(oldPref, this.prefs.getCharPref(setValue));
+      }
+      if (type === 64) {
+        this.prefs.setIntPref(oldPref, this.prefs.getIntPref(setValue));
+      }
+      if (type === 128) {
+        this.prefs.setBoolPref(oldPref, this.prefs.getBoolPref(setValue));
+      }
+    }
   },
 
   setPrefs: function() {
@@ -399,26 +425,54 @@ TorBirdy.prototype = {
       if (typePref === 128) {
         var value = this.prefs.getBoolPref(PREF_BRANCH + this.customPrefs[i]);
       }
-      PREFERENCES[this.customPrefs[i]] = value;
+      TORBIRDYPREFS[this.customPrefs[i]] = value;
     }
 
-    for (var each in PREFERENCES) {
-      if (typeof PREFERENCES[each] === "boolean") {
-        this.prefs.setBoolPref(each, PREFERENCES[each]);
+    for (var each in TORBIRDYPREFS) {
+      if (typeof TORBIRDYPREFS[each] === "boolean") {
+        this.prefs.setBoolPref(each, TORBIRDYPREFS[each]);
       }
-      if (typeof PREFERENCES[each] === "number") {
-        this.prefs.setIntPref(each, PREFERENCES[each]);
+      if (typeof TORBIRDYPREFS[each] === "number") {
+        this.prefs.setIntPref(each, TORBIRDYPREFS[each]);
       }
-      if (typeof PREFERENCES[each] === "string") {
-        this.prefs.setCharPref(each, PREFERENCES[each]);
+      if (typeof TORBIRDYPREFS[each] === "string") {
+        this.prefs.setCharPref(each, TORBIRDYPREFS[each]);
       }
     }
   },
 
-  // For only the first run, after that the user can configure the account if need be:
-  //    Iterate through all accounts and disable automatic checking of emails.
   setAccountPrefs: function() {
     if (this.prefs.getBoolPref("extensions.torbirdy.first_run")) {
+      // Save the current proxy settings so that the settings can be restored in case
+      // TorBirdy is uninstalled or disabled.
+      for (var i = 0; i < TORBIRDY_OLDPREFS.length; i++) {
+        var oldPref = TORBIRDY_OLDPREFS[i];
+        var type = this.prefs.getPrefType(oldPref);
+        // String.
+        if (type === 32) {
+          if (this.prefs.prefHasUserValue(oldPref)) {
+            var pref = this.prefs.getCharPref(oldPref);
+            this.prefs.setCharPref(RESTORE_BRANCH + oldPref, pref);
+          }
+        }
+        // Int.
+        if (type === 64) {
+          if (this.prefs.prefHasUserValue(oldPref)) {
+            var pref = this.prefs.getIntPref(oldPref);
+            this.prefs.setIntPref(RESTORE_BRANCH + oldPref, pref);
+          }
+        }
+        // Bool.
+        if (type === 128) {
+          if (this.prefs.prefHasUserValue(oldPref)) {
+            var pref = this.prefs.getBoolPref(oldPref);
+            this.prefs.setBoolPref(RESTORE_BRANCH + oldPref, pref);
+          }
+        }
+      }
+      
+      // For only the first run (after that the user can configure the account if need be):
+      //    Iterate through all accounts and disable automatic checking of emails.
       var accounts = this.acctMgr.accounts;
       for (var i = 0; i < accounts.Count(); i++) {
         var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;

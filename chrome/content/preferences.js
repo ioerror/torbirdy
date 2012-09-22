@@ -1,10 +1,10 @@
 const Ci = Components.interfaces;
 const Cc = Components.classes;
 
-if (!com) var com = {};
-if (!com.torbirdy) com.torbirdy = {};
+if (!org) var org = {};
+if (!org.torbirdy) org.torbirdy = {};
 
-com.torbirdy.prefs = new function() {
+org.torbirdy.prefs = new function() {
   var pub = {};
 
   pub.prefBranch = "extensions.torbirdy.";

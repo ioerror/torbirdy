@@ -1,5 +1,5 @@
-if (!com) var com = {};
-if (!com.torbirdy) com.torbirdy = {};
+if (!org) var org = {};
+if (!org.torbirdy) org.torbirdy = {};
 
 com.torbirdy.emailwizard = new function() {
   var pub = {};
@@ -93,5 +93,5 @@ com.torbirdy.emailwizard = new function() {
   return pub;
 };
 
-window.addEventListener("keypress", com.torbirdy.emailwizard.onKeyEnter, true);
-window.addEventListener("load", com.torbirdy.emailwizard.onLoad, true);
+window.addEventListener("keypress", org.torbirdy.emailwizard.onKeyEnter, true);
+window.addEventListener("load", org.torbirdy.emailwizard.onLoad, true);

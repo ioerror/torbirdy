@@ -15,9 +15,9 @@
         buttonlabelextra2="&torbirdy.prefs.extra2.button;"
         buttonaccesskeyextra2="&torbirdy.prefs.extra2.key;"
         
-        ondialogextra2="return com.torbirdy.prefs.testSettings();"
-        ondialogaccept="return com.torbirdy.prefs.onAccept();"
-        onload="return com.torbirdy.prefs.onLoad();">
+        ondialogextra2="return org.torbirdy.prefs.testSettings();"
+        ondialogaccept="return org.torbirdy.prefs.onAccept();"
+        onload="return org.torbirdy.prefs.onLoad();">
         
   <script type="application/x-javascript"
        src="chrome://castironthunderbirdclub/content/preferences.js"></script>
@@ -35,7 +35,7 @@
       <tabpanel>
         <vbox>
 
-          <radiogroup id="torbirdy-proxy-settings" oncommand="com.torbirdy.prefs.checkSetting();">
+          <radiogroup id="torbirdy-proxy-settings" oncommand="org.torbirdy.prefs.checkSetting();">
             <radio accesskey="&torbirdy.prefs.recommended.key;" id="torbirdy-default-settings" label="&torbirdy.prefs.recommended.text;" selected="true"/>
             <radio accesskey="&torbirdy.prefs.anonservice.key;" id="torbirdy-anon-settings" label="&torbirdy.prefs.anonservice.text;"/>
 
@@ -103,7 +103,7 @@
                 <row align="center">
                   <hbox align="center">
                     <label accesskey="&torbirdy.prefs.select_account.key;" value="&torbirdy.prefs.select_account.label;"/>
-                    <menulist id="torbirdy-mail-accounts" oncommand="com.torbirdy.prefs.selectMailAccount();">
+                    <menulist id="torbirdy-mail-accounts" oncommand="org.torbirdy.prefs.selectMailAccount();">
                       <menupopup></menupopup>
                     </menulist>
                   </hbox>

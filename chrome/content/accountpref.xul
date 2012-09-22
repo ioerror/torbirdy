@@ -12,8 +12,8 @@
 
         buttonaccesskeyaccept="&torbirdy.accountprefs.save.key;"
 
-        onload="return com.torbirdy.accountprefs.onLoad();"
-        ondialogaccept="return com.torbirdy.accountprefs.onAccept();">
+        onload="return org.torbirdy.accountprefs.onLoad();"
+        ondialogaccept="return org.torbirdy.accountprefs.onAccept();">
 
    <script type="application/x-javascript"
      src="chrome://castironthunderbirdclub/content/accountpref.js"></script>
@@ -35,7 +35,7 @@
 
          <row>
            <hbox align="center">
-             <checkbox label="&torbirdy.accountprefs.minutes.label;" id="torbirdy-check-new" oncommand="com.torbirdy.accountprefs.onToggleCheck();" accesskey="&torbirdy.accountprefs.minutes.key;" control="check-minutes" />
+             <checkbox label="&torbirdy.accountprefs.minutes.label;" id="torbirdy-check-new" oncommand="org.torbirdy.accountprefs.onToggleCheck();" accesskey="&torbirdy.accountprefs.minutes.key;" control="check-minutes" />
              <textbox id="torbirdy-check-minutes" type="number" size="2" value="0" />
              <label value="&torbirdy.accountprefs.minutes.trail.label;" />
            </hbox>

@@ -1,12 +1,14 @@
 0.0.12,
-  Add Screenshots directory
   TorBirdy now has localization support
     Current languages: English, German (translated by Karsten N.), Punjabi
+  TorBirdy code cleanup: fix global namespace pollution
   Do not select the last selected account to prevent automatic login (TorBirdy
   selects 'Local Folders' to prevent this)
-  TorBirdy code cleanup: fix global namespace pollution and prefix DOM nodes
+  Restore proxy settings at TorBirdy uninstall (settings prior to installation
+  of TorBirdy)
   Enhanced TorBirdy JonDo support (thanks to Karsten N.)
   Fix a bug in 0.0.11 that prevented account preferences from being set
+  Add Screenshots directory
 
 0.0.11, 04 Aug 2012
   Implemented an algorithm to generate time-independent message-ID (apply
