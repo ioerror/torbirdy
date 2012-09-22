@@ -260,9 +260,11 @@ const TORBIRDYPREFS = {
   "purple.logging.log_chats": false,
   "purple.logging.log_ims": false,
   "purple.logging.log_system": false,
+  "purple.conversations.im.send_typing": false,
 
   "messenger.status.reportIdle": false,
   "messenger.status.defaultIdleAwayMessage": "",
+  "messenger.status.userDisplayName": false,
 
   // All preferences have been set: now enable TorBirdy.
   "extensions.torbirdy.protected": true,
