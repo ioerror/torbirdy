@@ -6,6 +6,7 @@
   selects 'Local Folders' on startup to prevent this)
   Restore proxy settings at TorBirdy uninstall (settings prior to installation
   of TorBirdy)
+  TorBirdy now allows HTTP/SSL connections
   Enhanced TorBirdy JonDo support (thanks to Karsten N.)
   Fix a bug in 0.0.11 that prevented account preferences from being set
   Add Screenshots directory
