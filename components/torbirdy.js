@@ -5,12 +5,13 @@ const Ci = Components.interfaces;
 const Cc = Components.classes;
 const Cr = Components.results;
 
-const SERVICE_CTRID  = "@torproject.org/torbirdy;1";
-const SERVICE_ID     = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
-const SERVICE_NAME   = "Main TorBirdy component";
-const TORBIRDY_ID    = "castironthunderbirdclub@torproject.org";
-const PREF_BRANCH    = "extensions.torbirdy.custom.";
-const RESTORE_BRANCH = "extensions.torbirdy.restore.";
+const SERVICE_CTRID   = "@torproject.org/torbirdy;1";
+const SERVICE_ID      = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
+const SERVICE_NAME    = "Main TorBirdy component";
+const TORBIRDY_ID     = "castironthunderbirdclub@torproject.org";
+const PREF_BRANCH     = "extensions.torbirdy.custom.";
+const RESTORE_BRANCH  = "extensions.torbirdy.restore.";
+const TORBIRDY_BRANCH = "extensions.torbirdy.";
 
 // Default preference values for TorBirdy.
 const TORBIRDYPREFS = {
@@ -192,8 +193,6 @@ const TORBIRDYPREFS = {
                                               "--throw-keyids " +
                                               // We want to force UTF-8 everywhere
                                               "--display-charset utf-8 " +
-                                              // We want to ensure that Enigmail is proxy aware even when it runs gpg in a shell
-                                              "--keyserver-options http-proxy=http://127.0.0.1:8118 " +
                                               // The default key server should be a hidden service and this is the only known one
                                               // (it's part of the normal SKS network)
                                               "--keyserver hkp://2eghzlv2wwcq7u7y.onion",
@@ -370,18 +369,10 @@ TorBirdy.prototype = {
 
   resetUserPrefs: function() {
     dump("Resetting user preferences to default\n");
+    // Clear the Thunderbird preferences we changed.
     for (var each in TORBIRDYPREFS) {
       this.prefs.clearUserPref(each);
     }
-    for (var i = 0; i < this.customPrefs.length; i++) {
-      this.prefs.clearUserPref(PREF_BRANCH + this.customPrefs[i]);
-    }
-    // Other misc. preferences.
-    this.prefs.clearUserPref("extensions.torbirdy.proxy");
-    this.prefs.clearUserPref("extensions.torbirdy.proxy.type");
-    this.prefs.clearUserPref("extensions.torbirdy.first_run");
-    this.prefs.clearUserPref("extensions.torbirdy.warn");
-    this.prefs.clearUserPref("extensions.torbirdy.startup_folder");
 
     // Restore the older proxy preferences that were set before TorBirdy.
     dump("Restoring proxy settings\n");
@@ -398,6 +389,13 @@ TorBirdy.prototype = {
       if (type === 128) {
         this.prefs.setBoolPref(oldPref, this.prefs.getBoolPref(setValue));
       }
+    }
+
+    // Now clear all TorBirdy preferences.
+    var clearPrefs = Cc["@mozilla.org/preferences-service;1"]
+                             .getService(Ci.nsIPrefService).getBranch(TORBIRDY_BRANCH).getChildList("", {});
+    for (var i = 0; i < clearPrefs.length; i++) {
+        this.prefs.clearUserPref(TORBIRDY_BRANCH + clearPrefs[i]);
     }
   },
 
