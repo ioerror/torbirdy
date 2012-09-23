@@ -3,7 +3,7 @@
     Current languages: English, German (translated by Karsten N.), Punjabi
   TorBirdy code cleanup: fix global namespace pollution
   Do not select the last selected account to prevent automatic login (TorBirdy
-  selects 'Local Folders' to prevent this)
+  selects 'Local Folders' on startup to prevent this)
   Restore proxy settings at TorBirdy uninstall (settings prior to installation
   of TorBirdy)
   Enhanced TorBirdy JonDo support (thanks to Karsten N.)
