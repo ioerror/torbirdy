@@ -86,6 +86,7 @@
             <caption label="&torbirdy.prefs.global;"/>
             <vbox>
               <checkbox accesskey="&torbirdy.prefs.imap.key;" id="torbirdy-idle" label="&torbirdy.prefs.imap.label;"/>
+              <checkbox accesskey="&torbirdy.prefs.enigmail_throwkeyid.key;" id="torbirdy-enigmail-throwkeyid" label="&torbirdy.prefs.enigmail_throwkeyid.label;"/>
               <checkbox accesskey="&torbirdy.prefs.startup_folder.key;" id="torbirdy-startup-folder" label="&torbirdy.prefs.startup_folder.label;"/>
             </vbox>
           </groupbox>
