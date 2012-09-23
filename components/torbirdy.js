@@ -40,15 +40,6 @@ const TORBIRDYPREFS = {
   // Set DNS proxying through SOCKS5.
   "network.proxy.socks_remote_dns": true,
 
-  // Anything that would cause another proxy type to be used, we'll make them
-  // fail closed with the following - if it can fail close, that is!
-  "network.proxy.ssl": "127.0.0.1",
-  "network.proxy.ssl_port": 8118,
-  "network.proxy.http": "127.0.0.1",
-  "network.proxy.http_port": 8118,
-  "network.proxy.ftp": "127.0.0.1",
-  "network.proxy.ftp_port": 8118,
-
   // https://lists.torproject.org/pipermail/tor-talk/2011-September/021398.html
   // "Towards a Tor-safe Mozilla Thunderbird"
   // These options enable a warning that tagnaq suggests.

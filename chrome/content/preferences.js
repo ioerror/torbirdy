@@ -26,8 +26,10 @@ org.torbirdy.prefs = new function() {
   pub.setDefaultPrefs = function() {
     pub.prefs.setCharPref("network.proxy.socks", "127.0.0.1");
     pub.prefs.setIntPref("network.proxy.socks_port", 9050);
-    pub.prefs.setIntPref("network.proxy.ssl_port", 8118);
-    pub.prefs.setIntPref("network.proxy.http_port", 8118);
+    pub.prefs.clearUserPref("network.proxy.http");
+    pub.prefs.clearUserPref("network.proxy.http_port");
+    pub.prefs.clearUserPref("network.proxy.ssl");
+    pub.prefs.clearUserPref("network.proxy.ssl_port");
   };
 
   pub.restoreEnigmailPrefs = function() {
@@ -128,13 +130,23 @@ org.torbirdy.prefs = new function() {
 
         // First set the preferences immediately.
         pub.prefs.setIntPref("network.proxy.socks_port", 4001);
+        // SSL.
+        pub.prefs.setCharPref("network.proxy.ssl", "127.0.0.1");
         pub.prefs.setIntPref("network.proxy.ssl_port", 4001);
+        // HTTP.
+        pub.prefs.setCharPref("network.proxy.http", "127.0.0.1");
         pub.prefs.setIntPref("network.proxy.http_port", 4001);
+
         pub.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", jondoEnigmail);
         // Now save them for later use.
         pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", 4001);
+        // SSL.
+        pub.prefs.setCharPref(pub.customBranch + "network.proxy.ssl", "127.0.0.1");
         pub.prefs.setIntPref(pub.customBranch + "network.proxy.ssl_port", 4001);
+        // HTTP.
+        pub.prefs.setCharPref(pub.customBranch + "network.proxy.http", "127.0.0.1");
         pub.prefs.setIntPref(pub.customBranch + "network.proxy.http_port", 4001);
+
         pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", jondoEnigmail);
         myPanel.label = pub.strbundle.GetStringFromName("torbirdy.enabled.jondo");
       }
@@ -143,6 +155,7 @@ org.torbirdy.prefs = new function() {
 
     // Custom proxy.
     if (index === 2) {
+      pub.setDefaultPrefs();
       pub.restoreEnigmailPrefs();
       var socks_host = pub.socksHost.value;
       var socks_port = pub.socksPort.value;
@@ -292,30 +305,7 @@ org.torbirdy.prefs = new function() {
         // Use "http://ip-check.info/tb.php?lang=en" for JonDo.
         pub.displayTestPage("https://ip-check.info/tb.php?lang=en");
     } else {
-        // Use https://check.torproject.org for others.
-        // Temporarily disable the fail closed HTTP and SSL proxies.
-        var http = "network.proxy.http";
-        var http_port = "network.proxy.http_port";
-        var ssl = "network.proxy.ssl";
-        var ssl_port = "network.proxy.ssl_port";
-
-        var chttp = pub.prefs.getCharPref(http);
-        var chttp_port = pub.prefs.getIntPref(http_port);
-        var cssl = pub.prefs.getCharPref(ssl);
-        var cssl_port = pub.prefs.getIntPref(ssl_port);
-
-        pub.prefs.setCharPref(http, "");
-        pub.prefs.setCharPref(ssl, "");
-        pub.prefs.setIntPref(http_port, 0);
-        pub.prefs.setIntPref(ssl_port, 0);
-
         pub.displayTestPage("https://check.torproject.org/");
-
-        // We are done, so restore the default preferences.
-        pub.prefs.setCharPref(http, chttp);
-        pub.prefs.setCharPref(ssl, cssl);
-        pub.prefs.setIntPref(http_port, chttp_port);
-        pub.prefs.setIntPref(ssl_port, cssl_port);
     }
   };
 
