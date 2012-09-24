@@ -39,7 +39,7 @@ org.torbirdy.prefs = new function() {
                "--no-comments " +
                "--throw-keyids " +
                "--display-charset utf-8 " +
-               "--keyserver-options http-proxy=socks5-hostname://127.0.0.1:9050 " +
+               "--keyserver-options no-try-dns-srv,http-proxy=socks5-hostname://127.0.0.1:9050 " +
                "--keyserver hkp://2eghzlv2wwcq7u7y.onion";
       }
       if (anonService === "jondo") {
@@ -47,21 +47,21 @@ org.torbirdy.prefs = new function() {
                "--no-comments " +
                "--throw-keyids " +
                "--display-charset utf-8 " +
-               "--keyserver-options http-proxy=http://127.0.0.1:4001";
+               "--keyserver-options no-try-dns-srv,http-proxy=http://127.0.0.1:4001";
       }
     } else {
       if (anonService === "tor") {
         return "--no-emit-version " +
                "--no-comments " +
                "--display-charset utf-8 " +
-               "--keyserver-options http-proxy=socks5-hostname://127.0.0.1:9050 " +
+               "--keyserver-options no-try-dns-srv,http-proxy=socks5-hostname://127.0.0.1:9050 " +
                "--keyserver hkp://2eghzlv2wwcq7u7y.onion";
       }
       if (anonService === "jondo") {
         return "--no-emit-version " +
                "--no-comments " +
                "--display-charset utf-8 " +
-               "--keyserver-options http-proxy=http://127.0.0.1:4001";
+               "--keyserver-options no-try-dns-srv,http-proxy=http://127.0.0.1:4001";
       }
     }
   };
