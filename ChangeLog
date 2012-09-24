@@ -11,6 +11,9 @@
   Enhanced TorBirdy JonDo support (thanks to Karsten N.)
   Fix a bug in 0.0.11 that prevented account preferences from being set
   Add Screenshots directory
+  TorBirdy no longer requires a configured HTTP proxy for full use with Tor
+  Add SOCKS5 proxy options to how we invoke GnuPG
+    This feature requires a gpg linked against libcurl (>7.21.7)
 
 0.0.11, 04 Aug 2012
   Implemented an algorithm to generate time-independent message-ID (apply
