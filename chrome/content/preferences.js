@@ -39,6 +39,7 @@ org.torbirdy.prefs = new function() {
                "--no-comments " +
                "--throw-keyids " +
                "--display-charset utf-8 " +
+               "--keyserver-options http-proxy=http://127.0.0.1:8118 " +
                "--keyserver hkp://2eghzlv2wwcq7u7y.onion";
       }
       if (anonService === "jondo") {
@@ -53,6 +54,7 @@ org.torbirdy.prefs = new function() {
         return "--no-emit-version " +
                "--no-comments " +
                "--display-charset utf-8 " +
+               "--keyserver-options http-proxy=http://127.0.0.1:8118 " +
                "--keyserver hkp://2eghzlv2wwcq7u7y.onion";
       }
       if (anonService === "jondo") {
