@@ -39,7 +39,7 @@ org.torbirdy.prefs = new function() {
                "--no-comments " +
                "--throw-keyids " +
                "--display-charset utf-8 " +
-               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=socks5-hostname://127.0.0.1:9050 " +
+               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:8118 " +
                "--keyserver hkp://2eghzlv2wwcq7u7y.onion";
       }
       if (anonService === "jondo") {
@@ -54,7 +54,7 @@ org.torbirdy.prefs = new function() {
         return "--no-emit-version " +
                "--no-comments " +
                "--display-charset utf-8 " +
-               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=socks5-hostname://127.0.0.1:9050 " +
+               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:8118 " +
                "--keyserver hkp://2eghzlv2wwcq7u7y.onion";
       }
       if (anonService === "jondo") {
