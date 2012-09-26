@@ -256,7 +256,7 @@ const TORBIRDYPREFS = {
 
   "messenger.status.reportIdle": false,
   "messenger.status.defaultIdleAwayMessage": "",
-  "messenger.status.userDisplayName": false,
+  "messenger.status.userDisplayName": "",
 
   // All preferences have been set: now enable TorBirdy.
   "extensions.torbirdy.protected": true,
