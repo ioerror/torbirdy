@@ -1,19 +1,23 @@
-0.0.12,
+0.0.12, 27 Sept 2012
   TorBirdy now has localization support
     Current languages: English, German (translated by Karsten N.), Punjabi
   TorBirdy code cleanup: fix global namespace pollution
-  Do not select the last selected account to prevent automatic login (TorBirdy
-  selects 'Local Folders' on startup to prevent this)
-  Restore proxy settings at TorBirdy uninstall (settings prior to installation
-  of TorBirdy)
+  Do not select the last selected account to prevent automatic login
+    (TorBirdy selects 'Local Folders' on startup to prevent this)
+  Restore proxy settings at TorBirdy uninstall
+    (settings prior to installation of TorBirdy)
   TorBirdy now allows HTTP/SSL connections
-  You can opt-out from `--throw-keyids'
+  Users may opt-out from `--throw-keyids'
   Enhanced TorBirdy JonDo support (thanks to Karsten N.)
   Fix a bug in 0.0.11 that prevented account preferences from being set
   Add Screenshots directory
   TorBirdy no longer requires a configured HTTP proxy for full use with Tor
-  Add SOCKS5 proxy options to how we invoke GnuPG
-    This feature requires a gpg linked against libcurl (>7.21.7)
+  TorBirdy now enforces the safest HTTP proxy usage possible with GnuPG
+    TorBirdy attempts to disable all name resolution in GnuPG due to a serious
+    SOCKS5 problem with GnuPG proxy options to how we invoke GnuPG; GnuPG only
+    supports SOCKS5 when it is linked against libcurl (>7.21.7) and hostnames
+    are not used. This is outlined the following bug:
+    https://trac.torproject.org/projects/tor/ticket/2846
 
 0.0.11, 04 Aug 2012
   Implemented an algorithm to generate time-independent message-ID (apply
