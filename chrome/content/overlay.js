@@ -24,7 +24,7 @@ function torbirdyStartup() {
                     .getService(Components.interfaces.nsIPrefBranch);
 
   var myPanel = document.getElementById("torbirdy-my-panel");
-  var strbundle = document.getElementById("strings");
+  var strbundle = document.getElementById("tobirdy-strings");
   if (prefs.getBoolPref("extensions.torbirdy.protected"))
   {
     var type = prefs.getIntPref("extensions.torbirdy.proxy");

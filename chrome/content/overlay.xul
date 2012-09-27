@@ -5,7 +5,7 @@
   <script type="application/javascript" src="chrome://castironthunderbirdclub/content/overlay.js" />
 
   <stringbundleset id="stringbundleset">
-    <stringbundle id="strings" src="chrome://castironthunderbirdclub/locale/torbirdy.properties"/>
+    <stringbundle id="torbirdy-strings" src="chrome://castironthunderbirdclub/locale/torbirdy.properties"/>
   </stringbundleset>
 
   <statusbar id="status-bar">
