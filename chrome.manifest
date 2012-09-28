@@ -13,5 +13,6 @@ category profile-after-change TorBirdy @torproject.org/torbirdy;1
 locale castironthunderbirdclub en chrome/locale/en/
 locale castironthunderbirdclub de chrome/locale/de/
 locale castironthunderbirdclub pa chrome/locale/pa/
+locale castironthunderbirdclub he chrome/locale/he/
 
 skin castironthunderbirdclub classic/1.0 chrome/skin/
