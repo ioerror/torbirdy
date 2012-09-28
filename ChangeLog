@@ -1,6 +1,7 @@
 0.0.13,
   Translation fixes:
     Add Hebrew translation (thanks to Sharon Dvir)
+    Add French translation (thanks to N3b)
     Update German translation (thanks to Karsten N)
   Code cleanup: prefixed generically-named IDs with TorBirdy namespace
 
