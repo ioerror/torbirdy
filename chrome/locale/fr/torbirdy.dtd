@@ -1,0 +1,38 @@
+<!ENTITY torbirdy.accountprefs.title "Configuration du compte">
+<!ENTITY torbirdy.accountprefs.startup.label "Vérifier les nouveaux messages au démarage">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Vérifier les nouveaux messages toutes les">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "minutes">
+<!ENTITY torbirdy.accountprefs.cancel.button "Annuler">
+<!ENTITY torbirdy.accountprefs.save.button "Sauvegarder">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "TorBirdy Préférences">
+<!ENTITY torbirdy.prefs.save.button "Sauvegarder">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Annuler">
+<!ENTITY torbirdy.prefs.extra2.button "Test des paramètres">
+<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.proxy.label "Paramètres proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Paramètres de vie privé">
+<!ENTITY torbirdy.prefs.recommended.text "Utiliser les paramètres proxy recommandé pour TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Choisir un service d'anonymat">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "Choisir les paramètres proxy">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Host: ">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Port: ">
+<!ENTITY torbirdy.prefs.socks_port.key "t">
+<!ENTITY torbirdy.prefs.global "Global">
+<!ENTITY torbirdy.prefs.imap.label "Activer le support du push email pour les comptes IMAP [default: désactivé]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "Selectionner comme dossier d'acceuil le dernier dossier email visité [default: désactivé, votre dossier local sera séléctionné]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Désactiver le GPG '--throw-keyids' [default: activé]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "e">
+<!ENTITY torbirdy.prefs.account_specific "Compte-spécifique">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Choisir un compte: ">
