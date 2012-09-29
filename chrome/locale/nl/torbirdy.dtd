@@ -1,0 +1,38 @@
+<!ENTITY torbirdy.accountprefs.title "Account configuratie">
+<!ENTITY torbirdy.accountprefs.startup.label "Op nieuwe berichten controleren bij opstarten">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Op nieuwe berichten controleren elke">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "minuten">
+<!ENTITY torbirdy.accountprefs.cancel.button "Annuleren">
+<!ENTITY torbirdy.accountprefs.save.button "Opslaan">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "TorBirdy configuratie">
+<!ENTITY torbirdy.prefs.save.button "Opslaan">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Annuleren">
+<!ENTITY torbirdy.prefs.extra2.button "Configuratie controleren">
+<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy configuratie">
+<!ENTITY torbirdy.prefs.privacy.label "Privacy configuratie">
+<!ENTITY torbirdy.prefs.recommended.text "Aanbevolen configuratie voor TorBirdy (Tor) gebruiken">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Kies een anonimiseringsdienst">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "Gebruik een aangepaste proxyconfiguratie">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Host: ">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Port: ">
+<!ENTITY torbirdy.prefs.socks_port.key "t">
+<!ENTITY torbirdy.prefs.global "Globaal">
+<!ENTITY torbirdy.prefs.imap.label "Ondersteuning voor push e-mail voor IMAP-accounts inschakelen [standaard: uitgeschakeld]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "Bij opstarten direct naar de laatst bekeken map gaan [standaard: uitgeschakeld, lokale map wordt geselecteerd]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Uitschakelen GPG '--throw-keyids' [standaard: ingeschakeld]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "e">
+<!ENTITY torbirdy.prefs.account_specific "Account-specifiek">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Kies een account: ">
