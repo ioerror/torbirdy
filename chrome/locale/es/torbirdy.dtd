@@ -12,7 +12,7 @@
 <!ENTITY torbirdy.prefs.save.button "Guardar">
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Cancelar">
-<!ENTITY torbirdy.prefs.extra2.button "Configuración de prueba">
+<!ENTITY torbirdy.prefs.extra2.button "Testear configuración">
 <!ENTITY torbirdy.prefs.extra2.key "g">
 <!ENTITY torbirdy.prefs.proxy.label "Configuración de proxy">
 <!ENTITY torbirdy.prefs.privacy.label "Configuración de privacidad">
