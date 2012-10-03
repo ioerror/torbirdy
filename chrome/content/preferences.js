@@ -32,6 +32,10 @@ org.torbirdy.prefs = new function() {
     pub.prefs.clearUserPref("network.proxy.ssl_port");
   };
 
+  pub.resetNetworkProxy = function() {
+    pub.prefs.setIntPref("network.proxy.type", 1);
+  };
+
   pub.setEnigmailPrefs = function(anonService) {
     if (pub.prefs.getBoolPref("extensions.torbirdy.enigmail.throwkeyid")) {
       if (anonService === "tor") {
@@ -82,6 +86,8 @@ org.torbirdy.prefs = new function() {
     if (index === 2) {
       pub.socksHost.disabled = false;
       pub.socksPort.disabled = false;
+      pub.socksHost.value = "";
+      pub.socksPort.value = 0;
     }
     else {
       pub.socksHost.disabled = true;
@@ -140,6 +146,7 @@ org.torbirdy.prefs = new function() {
     // Default (recommended) settings for TorBirdy.
     if (index === 0) {
       // Set proxies for Tor.
+      pub.resetNetworkProxy();
       pub.setDefaultPrefs();
       pub.clearCustomPrefs();
       pub.restoreEnigmailPrefs();
@@ -148,11 +155,13 @@ org.torbirdy.prefs = new function() {
     
     // Anonymization service.
     if (index === 1) {
+      pub.resetNetworkProxy();
       pub.clearCustomPrefs();
       var anonType = pub.anonType.selectedIndex;
       if (anonType === 0 || typeof anonType === "undefined") {
         //
         // First set the preferences immediately.
+        pub.prefs.setCharPref("network.proxy.socks", "127.0.0.1");
         pub.prefs.setIntPref("network.proxy.socks_port", 4001);
         // SSL.
         pub.prefs.setCharPref("network.proxy.ssl", "127.0.0.1");
@@ -179,8 +188,10 @@ org.torbirdy.prefs = new function() {
 
     // Custom proxy.
     if (index === 2) {
+      pub.resetNetworkProxy();
       pub.setDefaultPrefs();
       pub.restoreEnigmailPrefs();
+      pub.clearCustomPrefs();
       var socks_host = pub.socksHost.value;
       var socks_port = pub.socksPort.value;
 
@@ -192,6 +203,15 @@ org.torbirdy.prefs = new function() {
       pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", socks_port);
       myPanel.label = pub.strbundle.GetStringFromName("torbirdy.enabled.custom");
     }
+
+    // Transparent Torification.
+    if (index === 3) {
+      // Disable the proxy.
+      pub.prefs.setIntPref("network.proxy.type", 0);
+      pub.prefs.setIntPref(pub.customBranch + "network.proxy.type", 0);
+      myPanel.label = pub.strbundle.GetStringFromName("torbirdy.enabled.torification");
+    }
+
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', index);
 
     /*
@@ -244,6 +264,7 @@ org.torbirdy.prefs = new function() {
     pub.startupFolder = document.getElementById('torbirdy-startup-folder');
     pub.anonCustomService = document.getElementById('torbirdy-anonservice');
     pub.enigmail = document.getElementById('torbirdy-enigmail-throwkeyid');
+    pub.torification = document.getElementById('torbirdy-torification');
 
     // Make sure the user really wants to change these settings.
     var warnPrompt = pub.prefs.getBoolPref("extensions.torbirdy.warn");
@@ -272,16 +293,23 @@ org.torbirdy.prefs = new function() {
     var anonService = pub.prefs.getIntPref(pub.prefBranch + 'proxy');
     pub.anonService.selectedIndex = anonService;
 
+    pub.socksHost.value = pub.prefs.getCharPref("network.proxy.socks");
+    pub.socksPort.value = pub.prefs.getIntPref("network.proxy.socks_port");
+
+    // Tor.
     if (anonService === 0) {
       pub.socksHost.value = '127.0.0.1';
       pub.socksPort.value = '9050';
     }
 
+    // JonDo.
     if (anonService === 1) {
       var anonType = pub.prefs.getIntPref(pub.prefBranch + 'proxy.type');
       pub.anonCustomService.disabled = false;
       pub.anonType.selectedIndex = anonType;
     }
+
+    // Custom.
     if (anonService === 2) {
       var socks_host = pub.prefs.getCharPref(pub.customBranch + 'network.proxy.socks');
       var socks_port = pub.prefs.getIntPref(pub.customBranch + 'network.proxy.socks_port');
