@@ -86,7 +86,6 @@ org.torbirdy.prefs = new function() {
     if (index === 2) {
       pub.socksHost.disabled = false;
       pub.socksPort.disabled = false;
-      pub.socksHost.value = "";
       pub.socksPort.value = 0;
     }
     else {
