@@ -25,14 +25,16 @@
 <!ENTITY torbirdy.prefs.socks_host.label "SOCKS Host: ">
 <!ENTITY torbirdy.prefs.socks_host.key "h">
 <!ENTITY torbirdy.prefs.socks_port.label "Port: ">
-<!ENTITY torbirdy.prefs.socks_port.key "t">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "Transparent Torification">
+<!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "Global">
 <!ENTITY torbirdy.prefs.imap.label "Push E-Mail Support für IMAP-Konten aktivieren [default: deaktiviert]">
-<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.imap.key "i">
 <!ENTITY torbirdy.prefs.startup_folder.label "Beim Start zum zuletzt aktiven Mail-Ordner wechseln [default: Lokale Ordner wird gewählt]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Deaktiviere GPG '--throw-keyids' [default: aktiviert]">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "e">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
 <!ENTITY torbirdy.prefs.account_specific "Konten-spezifisch">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Konto auswählen: ">
