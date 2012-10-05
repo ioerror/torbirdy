@@ -151,6 +151,8 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
   }
 
   pub.setProxyJonDo = function() {
+    pub.resetNetworkProxy();
+    pub.clearCustomPrefs();
     // First set the preferences immediately.
     pub.prefs.setCharPref("network.proxy.socks", "127.0.0.1");
     pub.prefs.setIntPref("network.proxy.socks_port", 4001);
@@ -183,7 +185,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
   }
 
   pub.onAccept = function() {
-
     var index = pub.anonService.selectedIndex;
 
     // Default (recommended) settings for TorBirdy.
