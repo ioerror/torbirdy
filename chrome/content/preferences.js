@@ -1,26 +1,23 @@
-const Ci = Components.interfaces;
-const Cc = Components.classes;
-
 if (!org) var org = {};
 if (!org.torbirdy) org.torbirdy = {};
 
-org.torbirdy.prefs = new function() {
+if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
   var pub = {};
 
   pub.prefBranch = "extensions.torbirdy.";
   pub.customBranch = "extensions.torbirdy.custom.";
 
-  pub.prefs = Cc["@mozilla.org/preferences-service;1"]
-                  .getService(Ci.nsIPrefBranch);
+  pub.prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                  .getService(Components.interfaces.nsIPrefBranch);
 
-  pub.torBirdyPref = Cc["@mozilla.org/preferences-service;1"]
-                         .getService(Ci.nsIPrefService).getBranch(pub.customBranch);
+  pub.torBirdyPref = Components.classes["@mozilla.org/preferences-service;1"]
+                         .getService(Components.interfaces.nsIPrefService).getBranch(pub.customBranch);
 
-  pub.acctMgr = Cc["@mozilla.org/messenger/account-manager;1"]
-                    .getService(Ci.nsIMsgAccountManager);
+  pub.acctMgr = Components.classes["@mozilla.org/messenger/account-manager;1"]
+                    .getService(Components.interfaces.nsIMsgAccountManager);
 
-  var bundles = Cc["@mozilla.org/intl/stringbundle;1"]
-                        .getService(Ci.nsIStringBundleService);
+  var bundles = Components.classes["@mozilla.org/intl/stringbundle;1"]
+                        .getService(Components.interfaces.nsIStringBundleService);
   pub.strbundle = bundles.createBundle("chrome://castironthunderbirdclub/locale/torbirdy.properties");
 
   pub.setDefaultPrefs = function() {
@@ -104,7 +101,7 @@ org.torbirdy.prefs = new function() {
     var mailAccounts = [];
     var accounts = pub.acctMgr.accounts;
     for (var i = 0; i < accounts.Count(); i++) {
-      var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
+      var account = accounts.QueryElementAt(i, Components.interfaces.nsIMsgAccount).incomingServer;
       var name = account.prettyName;
       if (!(name === "Local Folders")) {
         mailAccounts.push(account);
@@ -134,22 +131,65 @@ org.torbirdy.prefs = new function() {
     pub.mailAccount.selectedIndex = 0;
   };
 
-  pub.onAccept = function() {
-    var win = Cc['@mozilla.org/appshell/window-mediator;1']
-                .getService(Ci.nsIWindowMediator)
-                .getMostRecentWindow('mail:3pane');
+
+  pub.setPanelLabel = function(proxyname) {
+    var win = Components.classes['@mozilla.org/appshell/window-mediator;1']
+             .getService(Components.interfaces.nsIWindowMediator)
+             .getMostRecentWindow('mail:3pane');
     var myPanel = win.document.getElementById("torbirdy-my-panel");
+    myPanel.label = proxyname;
+  }
+
+  pub.setProxyTor = function() {
+    // Set Tor proxy
+    pub.resetNetworkProxy();
+    pub.setDefaultPrefs();
+    pub.clearCustomPrefs();
+    pub.restoreEnigmailPrefs();
+
+    pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.tor"));
+  }
+
+  pub.setProxyJonDo = function() {
+    // First set the preferences immediately.
+    pub.prefs.setCharPref("network.proxy.socks", "127.0.0.1");
+    pub.prefs.setIntPref("network.proxy.socks_port", 4001);
+    // SSL.
+    pub.prefs.setCharPref("network.proxy.ssl", "127.0.0.1");
+    pub.prefs.setIntPref("network.proxy.ssl_port", 4001);
+    // HTTP.
+    pub.prefs.setCharPref("network.proxy.http", "127.0.0.1");
+    pub.prefs.setIntPref("network.proxy.http_port", 4001);
+
+    pub.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
+    // Now save them for later use.
+    pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", 4001);
+    // SSL.
+    pub.prefs.setCharPref(pub.customBranch + "network.proxy.ssl", "127.0.0.1");
+    pub.prefs.setIntPref(pub.customBranch + "network.proxy.ssl_port", 4001);
+    // HTTP.
+    pub.prefs.setCharPref(pub.customBranch + "network.proxy.http", "127.0.0.1");
+    pub.prefs.setIntPref(pub.customBranch + "network.proxy.http_port", 4001);
+
+    pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
+
+    pub.setPanelLabel( pub.strbundle.GetStringFromName("torbirdy.enabled.jondo") );
+  }
+
+  pub.setProxyTransparent = function() {
+    pub.prefs.setIntPref("network.proxy.type", 0);
+    pub.prefs.setIntPref(pub.customBranch + "network.proxy.type", 0);
+    pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.torification"));
+  }
+
+  pub.onAccept = function() {
 
     var index = pub.anonService.selectedIndex;
 
     // Default (recommended) settings for TorBirdy.
     if (index === 0) {
       // Set proxies for Tor.
-      pub.resetNetworkProxy();
-      pub.setDefaultPrefs();
-      pub.clearCustomPrefs();
-      pub.restoreEnigmailPrefs();
-      myPanel.label = pub.strbundle.GetStringFromName("torbirdy.enabled.tor");
+      pub.setProxyTor();
     }
     
     // Anonymization service.
@@ -158,29 +198,8 @@ org.torbirdy.prefs = new function() {
       pub.clearCustomPrefs();
       var anonType = pub.anonType.selectedIndex;
       if (anonType === 0 || typeof anonType === "undefined") {
-        //
-        // First set the preferences immediately.
-        pub.prefs.setCharPref("network.proxy.socks", "127.0.0.1");
-        pub.prefs.setIntPref("network.proxy.socks_port", 4001);
-        // SSL.
-        pub.prefs.setCharPref("network.proxy.ssl", "127.0.0.1");
-        pub.prefs.setIntPref("network.proxy.ssl_port", 4001);
-        // HTTP.
-        pub.prefs.setCharPref("network.proxy.http", "127.0.0.1");
-        pub.prefs.setIntPref("network.proxy.http_port", 4001);
-
-        pub.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
-        // Now save them for later use.
-        pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", 4001);
-        // SSL.
-        pub.prefs.setCharPref(pub.customBranch + "network.proxy.ssl", "127.0.0.1");
-        pub.prefs.setIntPref(pub.customBranch + "network.proxy.ssl_port", 4001);
-        // HTTP.
-        pub.prefs.setCharPref(pub.customBranch + "network.proxy.http", "127.0.0.1");
-        pub.prefs.setIntPref(pub.customBranch + "network.proxy.http_port", 4001);
-
-        pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
-        myPanel.label = pub.strbundle.GetStringFromName("torbirdy.enabled.jondo");
+        // Set proxies for JonDo.
+        pub.setProxyJonDo();
       }
       pub.prefs.setIntPref(pub.prefBranch + 'proxy.type', anonType);
     }
@@ -200,15 +219,13 @@ org.torbirdy.prefs = new function() {
       // Later use.
       pub.prefs.setCharPref(pub.customBranch + "network.proxy.socks", socks_host);
       pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", socks_port);
-      myPanel.label = pub.strbundle.GetStringFromName("torbirdy.enabled.custom");
+      pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.custom"));
     }
 
-    // Transparent Torification.
+    // Transparent Anonymisation.
     if (index === 3) {
       // Disable the proxy.
-      pub.prefs.setIntPref("network.proxy.type", 0);
-      pub.prefs.setIntPref(pub.customBranch + "network.proxy.type", 0);
-      myPanel.label = pub.strbundle.GetStringFromName("torbirdy.enabled.torification");
+      pub.setProxyTransparent();
     }
 
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', index);
@@ -269,8 +286,8 @@ org.torbirdy.prefs = new function() {
     var warnPrompt = pub.prefs.getBoolPref("extensions.torbirdy.warn");
 
     if (warnPrompt) {
-      var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
-                              .getService(Ci.nsIPromptService);
+      var prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
+                              .getService(Components.interfaces.nsIPromptService);
       var check = {value: true};
       var result = prompts.confirmCheck(null, pub.strbundle.GetStringFromName('torbirdy.email.advanced.title'),
                                               pub.strbundle.GetStringFromName('torbirdy.email.advanced'),
@@ -367,7 +384,7 @@ org.torbirdy.prefs = new function() {
   };
 
   pub.displayTestPage = function(service) {
-    Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator).
+    Components.classes['@mozilla.org/appshell/window-mediator;1'].getService(Components.interfaces.nsIWindowMediator).
               getMostRecentWindow("mail:3pane").
               document.getElementById("tabmail").
               openTab("contentTab", {contentPage: service});
