@@ -27,7 +27,7 @@
                 oncommand="org.torbirdy.prefs.setProxyJonDo();" />
       <menuitem id="jondo-selection"
                 class="menuitem"
-                label="Transparent Anonymisation"
+                label="Use Transparent Torification"
                 oncommand="org.torbirdy.prefs.setProxyTransparent();" />
     </menupopup>
   </popupset>
