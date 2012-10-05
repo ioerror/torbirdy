@@ -15,20 +15,16 @@
 
   <popupset>
     <menupopup id="torbirdy-proxy-list" position="after_start">
-      <menuitem id="tor-selection"
+      <menuitem id="torbirdy-tor-selection"
                 class="menuitem-iconic"
                 image="chrome://castironthunderbirdclub/skin/images/tor-16.png"
                 label="Use Tor Onion Router"
                 oncommand="org.torbirdy.prefs.setProxyTor();" />
-      <menuitem id="jondo-selection"
+      <menuitem id="torbirdy-jondo-selection"
                 class="menuitem-iconic"
                 image="chrome://castironthunderbirdclub/skin/images/jondo-16.png"
                 label="Use JonDo (Premium)"
                 oncommand="org.torbirdy.prefs.setProxyJonDo();" />
-      <menuitem id="jondo-selection"
-                class="menuitem"
-                label="Use Transparent Torification"
-                oncommand="org.torbirdy.prefs.setProxyTransparent();" />
     </menupopup>
   </popupset>
 

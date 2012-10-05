@@ -174,8 +174,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.prefs.setIntPref(pub.customBranch + "network.proxy.http_port", 4001);
 
     pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
-
-    pub.setPanelLabel( pub.strbundle.GetStringFromName("torbirdy.enabled.jondo") );
+    pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.jondo"));
   }
 
   pub.setProxyTransparent = function() {
