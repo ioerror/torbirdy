@@ -194,8 +194,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     
     // Anonymization service.
     if (index === 1) {
-      pub.resetNetworkProxy();
-      pub.clearCustomPrefs();
       var anonType = pub.anonType.selectedIndex;
       if (anonType === 0 || typeof anonType === "undefined") {
         // Set proxies for JonDo.
