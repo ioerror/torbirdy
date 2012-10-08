@@ -1,0 +1,40 @@
+<!ENTITY torbirdy.accountprefs.title "Fiók beállítások">
+<!ENTITY torbirdy.accountprefs.startup.label "Új üzenetek keresése indításkor">
+<!ENTITY torbirdy.accountprefs.startup.key "S">
+<!ENTITY torbirdy.accountprefs.minutes.label "Új üzenetek keresése">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "percenként">
+<!ENTITY torbirdy.accountprefs.cancel.button "Mégsem">
+<!ENTITY torbirdy.accountprefs.save.button "Ment">
+<!ENTITY torbirdy.accountprefs.save.key "M">
+
+<!ENTITY torbirdy.prefs.title "TorBirdy Beállítások">
+<!ENTITY torbirdy.prefs.save.button "Mentés">
+<!ENTITY torbirdy.prefs.save.key "m">
+<!ENTITY torbirdy.prefs.cancel.button "Mégsem">
+<!ENTITY torbirdy.prefs.extra2.button "Beállítások tesztelése">
+<!ENTITY torbirdy.prefs.extra2.key "t">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy Beállítások">
+<!ENTITY torbirdy.prefs.privacy.label "Adatvédelmi Beállítások">
+<!ENTITY torbirdy.prefs.recommended.text "Az ajánlott proxy beállítások használata a TorBirdy (Tor) használatához">
+<!ENTITY torbirdy.prefs.recommended.key "a">
+<!ENTITY torbirdy.prefs.anonservice.text "Névtelenné tevő szerver választása">
+<!ENTITY torbirdy.prefs.anonservice.key "n">
+<!ENTITY torbirdy.prefs.customsettings.text "Egyéni proxy beállítások használata">
+<!ENTITY torbirdy.prefs.customsettings.key "p">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS gép:">
+<!ENTITY torbirdy.prefs.socks_host.key "g">
+<!ENTITY torbirdy.prefs.socks_port.label "Port: ">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "Átlátszó Torosítás">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "Globális">
+<!ENTITY torbirdy.prefs.imap.label "A push támogatás bekapcsolása az IMAP fiókokhoz [alapértelmezett: kikapcsolva]">
+<!ENTITY torbirdy.prefs.imap.key "i">
+<!ENTITY torbirdy.prefs.startup_folder.label "A legutolsó mail mappa használata indításkor (alapértelmezett: kikapcoslva, csak a helyi mappákat válassza ki)">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "A GPG '--throw-keyids' kikapcsolása [alapértelmezett: bekapcsolva]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.account_specific "Fiók-specifikus">
+<!ENTITY torbirdy.prefs.select_account.key "V">
+<!ENTITY torbirdy.prefs.select_account.label "Válasszon egy fiókot:">
