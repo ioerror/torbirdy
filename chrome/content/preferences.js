@@ -148,6 +148,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.restoreEnigmailPrefs();
 
     pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.tor"));
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy', 0);
   }
 
   pub.setProxyJonDo = function() {
@@ -175,12 +176,33 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
     pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
     pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.jondo"));
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy', 1);
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy.type', 0);
+  }
+
+  pub.setProxyCustom = function() {
+    pub.resetNetworkProxy();
+    pub.setDefaultPrefs();
+    pub.restoreEnigmailPrefs();
+    pub.clearCustomPrefs();
+    var socks_host = pub.socksHost.value;
+    var socks_port = pub.socksPort.value;
+
+    // Set them now.
+    pub.prefs.setCharPref("network.proxy.socks", socks_host);
+    pub.prefs.setIntPref("network.proxy.socks_port", socks_port);
+    // Later use.
+    pub.prefs.setCharPref(pub.customBranch + "network.proxy.socks", socks_host);
+    pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", socks_port);
+    pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.custom"));
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy', 2);
   }
 
   pub.setProxyTransparent = function() {
     pub.prefs.setIntPref("network.proxy.type", 0);
     pub.prefs.setIntPref(pub.customBranch + "network.proxy.type", 0);
     pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.torification"));
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy', 3);
   }
 
   pub.onAccept = function() {
@@ -199,25 +221,11 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
         // Set proxies for JonDo.
         pub.setProxyJonDo();
       }
-      pub.prefs.setIntPref(pub.prefBranch + 'proxy.type', anonType);
     }
 
     // Custom proxy.
     if (index === 2) {
-      pub.resetNetworkProxy();
-      pub.setDefaultPrefs();
-      pub.restoreEnigmailPrefs();
-      pub.clearCustomPrefs();
-      var socks_host = pub.socksHost.value;
-      var socks_port = pub.socksPort.value;
-
-      // Set them now.
-      pub.prefs.setCharPref("network.proxy.socks", socks_host);
-      pub.prefs.setIntPref("network.proxy.socks_port", socks_port);
-      // Later use.
-      pub.prefs.setCharPref(pub.customBranch + "network.proxy.socks", socks_host);
-      pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", socks_port);
-      pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.custom"));
+      pub.setProxyCustom();
     }
 
     // Transparent Anonymisation.
@@ -225,8 +233,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       // Disable the proxy.
       pub.setProxyTransparent();
     }
-
-    pub.prefs.setIntPref(pub.prefBranch + 'proxy', index);
 
     /*
       Privacy
