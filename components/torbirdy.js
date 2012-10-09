@@ -129,8 +129,9 @@ const TORBIRDYPREFS = {
   "mailnews.send_plaintext_flowed": false,
   // Display a message as plain text, even if there is a HTML version.
   "mailnews.display.prefer_plaintext": true,
-  // Don't display HTML.
-  "mailnews.display.disallow_mime_handlers": 1,
+  // Don't display HTML, inline images and some other uncommon content.
+  // From: http://www.bucksch.org/1/projects/mozilla/108153/
+  "mailnews.display.disallow_mime_handlers": 3,
   // Convert HTML to text and then back again.
   "mailnews.display.html_as": 1,
   // Disable plugin support.
