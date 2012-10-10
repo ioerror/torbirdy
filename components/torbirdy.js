@@ -302,6 +302,9 @@ function TorBirdy() {
   var versionChecker = Cc["@mozilla.org/xpcom/version-comparator;1"]
                           .getService(Ci.nsIVersionComparator);
 
+  var pluginsHost = Cc["@mozilla.org/plugin/host;1"].getService(Ci.nsIPluginHost);
+  this.plugins = pluginsHost.getPluginTags({});
+
   if (versionChecker.compare(appInfo.version, "5.0") >= 0) {
     this.is_tb5 = true;
   }
@@ -394,6 +397,11 @@ TorBirdy.prototype = {
       }
     }
 
+    // Enable plugins.
+    for(var i = 0; i < this.plugins.length; i++) {
+        this.plugins[i].disabled = false;
+    }
+
     // Now clear all TorBirdy preferences.
     var clearPrefs = Cc["@mozilla.org/preferences-service;1"]
                              .getService(Ci.nsIPrefService).getBranch(TORBIRDY_BRANCH).getChildList("", {});
@@ -464,7 +472,12 @@ TorBirdy.prototype = {
           }
         }
       }
-      
+
+      // Disable all plugins.
+      for(var i = 0; i < this.plugins.length; i++) {
+          this.plugins[i].disabled = true;
+      }
+
       // For only the first run (after that the user can configure the account if need be):
       //    Iterate through all accounts and disable automatic checking of emails.
       var accounts = this.acctMgr.accounts;

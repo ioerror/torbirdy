@@ -7,6 +7,7 @@
     Add Basque translation (thanks to Antxon Baldarra)
     Update Spanish translation (thanks to Juan Garofalo)
   Added Transparent Torification mode for TorBirdy
+  Disable all plugins
   Add Tor-JonDo quick switch (patch by Karsten N)
 
 0.0.13, 28 Sept 2012
