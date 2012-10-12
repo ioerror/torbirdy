@@ -20,6 +20,11 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
                         .getService(Components.interfaces.nsIStringBundleService);
   pub.strbundle = bundles.createBundle("chrome://castironthunderbirdclub/locale/torbirdy.properties");
 
+  var win = Components.classes['@mozilla.org/appshell/window-mediator;1']
+           .getService(Components.interfaces.nsIWindowMediator)
+           .getMostRecentWindow('mail:3pane');
+  pub.myPanel = win.document.getElementById("torbirdy-my-panel");
+
   pub.setDefaultPrefs = function() {
     pub.prefs.setCharPref("network.proxy.socks", "127.0.0.1");
     pub.prefs.setIntPref("network.proxy.socks_port", 9050);
@@ -133,11 +138,11 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
 
   pub.setPanelLabel = function(proxyname) {
-    var win = Components.classes['@mozilla.org/appshell/window-mediator;1']
-             .getService(Components.interfaces.nsIWindowMediator)
-             .getMostRecentWindow('mail:3pane');
-    var myPanel = win.document.getElementById("torbirdy-my-panel");
-    myPanel.label = proxyname;
+    pub.myPanel.label = proxyname;
+  }
+
+  pub.setPanelColor = function(color) {
+    pub.myPanel.style.color = color;
   }
 
   pub.setProxyTor = function() {
@@ -231,6 +236,8 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     // Transparent Anonymisation.
     if (index === 3) {
       // Disable the proxy.
+      // Because this is potentially unsafe, change the panel color to red.
+      pub.setPanelColor("red");
       pub.setProxyTransparent();
     }
 

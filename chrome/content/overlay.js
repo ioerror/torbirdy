@@ -48,6 +48,7 @@ function torbirdyStartup() {
     if (type === 3)
     {
       myPanel.label = strbundle.getString("torbirdy.enabled.torification");
+      myPanel.style.color = "red";
     }
   } else {
     myPanel.label = strbundle.getString("torbirdy.enabled.disabled");
