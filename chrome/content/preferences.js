@@ -151,6 +151,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.setDefaultPrefs();
     pub.clearCustomPrefs();
     pub.restoreEnigmailPrefs();
+    pub.setPanelColor("green");
 
     pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.tor"));
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 0);
@@ -183,6 +184,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.jondo"));
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 1);
     pub.prefs.setIntPref(pub.prefBranch + 'proxy.type', 0);
+    pub.setPanelColor("green");
   }
 
   pub.setProxyCustom = function() {
@@ -201,6 +203,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", socks_port);
     pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.custom"));
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 2);
+    pub.setPanelColor("green");
   }
 
   pub.setProxyTransparent = function() {
