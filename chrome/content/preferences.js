@@ -136,7 +136,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.mailAccount.selectedIndex = 0;
   };
 
-
   pub.setPanelLabel = function(proxyname) {
     pub.myPanel.label = proxyname;
   }
