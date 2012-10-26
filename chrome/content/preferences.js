@@ -136,11 +136,12 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.mailAccount.selectedIndex = 0;
   };
 
-  pub.setPanelLabel = function(proxyname) {
+  pub.setPanelSettings = function(proxyname, color) {
+    var win = Components.classes['@mozilla.org/appshell/window-mediator;1']
+             .getService(Components.interfaces.nsIWindowMediator)
+             .getMostRecentWindow('mail:3pane');
+    pub.myPanel = win.document.getElementById("torbirdy-my-panel");
     pub.myPanel.label = proxyname;
-  }
-
-  pub.setPanelColor = function(color) {
     pub.myPanel.style.color = color;
   }
 
@@ -150,9 +151,8 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.setDefaultPrefs();
     pub.clearCustomPrefs();
     pub.restoreEnigmailPrefs();
-    pub.setPanelColor("green");
 
-    pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.tor"));
+    pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.tor"), "green");
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 0);
   }
 
@@ -180,10 +180,9 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.prefs.setIntPref(pub.customBranch + "network.proxy.http_port", 4001);
 
     pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
-    pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.jondo"));
+    pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.jondo"), "green");
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 1);
     pub.prefs.setIntPref(pub.prefBranch + 'proxy.type', 0);
-    pub.setPanelColor("green");
   }
 
   pub.setProxyCustom = function() {
@@ -200,15 +199,14 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     // Later use.
     pub.prefs.setCharPref(pub.customBranch + "network.proxy.socks", socks_host);
     pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", socks_port);
-    pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.custom"));
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 2);
-    pub.setPanelColor("green");
+    pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.custom"), "green");
   }
 
   pub.setProxyTransparent = function() {
     pub.prefs.setIntPref("network.proxy.type", 0);
     pub.prefs.setIntPref(pub.customBranch + "network.proxy.type", 0);
-    pub.setPanelLabel(pub.strbundle.GetStringFromName("torbirdy.enabled.torification"));
+    pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.torification"), "red");
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 3);
   }
 
@@ -238,8 +236,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     // Transparent Anonymisation.
     if (index === 3) {
       // Disable the proxy.
-      // Because this is potentially unsafe, change the panel color to red.
-      pub.setPanelColor("red");
       pub.setProxyTransparent();
     }
 
