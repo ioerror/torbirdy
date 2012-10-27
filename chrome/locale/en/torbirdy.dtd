@@ -33,7 +33,7 @@
 <!ENTITY torbirdy.prefs.imap.key "i">
 <!ENTITY torbirdy.prefs.startup_folder.label "Select last accessed mail folder on startup [default: disabled, will select Local Folders]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Disable GPG '--throw-keyids' [default: enabled]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Put the recipient key IDs into encrypted messages [default: do not put]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
 <!ENTITY torbirdy.prefs.account_specific "Account-Specific">
 <!ENTITY torbirdy.prefs.select_account.key "C">
