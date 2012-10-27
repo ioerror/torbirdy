@@ -20,11 +20,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
                         .getService(Components.interfaces.nsIStringBundleService);
   pub.strbundle = bundles.createBundle("chrome://castironthunderbirdclub/locale/torbirdy.properties");
 
-  var win = Components.classes['@mozilla.org/appshell/window-mediator;1']
-           .getService(Components.interfaces.nsIWindowMediator)
-           .getMostRecentWindow('mail:3pane');
-  pub.myPanel = win.document.getElementById("torbirdy-my-panel");
-
   pub.setDefaultPrefs = function() {
     pub.prefs.setCharPref("network.proxy.socks", "127.0.0.1");
     pub.prefs.setIntPref("network.proxy.socks_port", 9050);
