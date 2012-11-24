@@ -287,14 +287,13 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
                                         .getService(Components.interfaces.nsIPromptService);
 
         var check = {value: false};
-
         var flags = prompts.BUTTON_POS_0 * prompts.BUTTON_TITLE_YES +
                     prompts.BUTTON_POS_1 * prompts.BUTTON_TITLE_NO;
 
         var button = prompts.confirmEx(null, pub.strbundle.GetStringFromName("torbirdy.name"),
                                              pub.strbundle.GetStringFromName("torbirdy.restart"),
                                              flags, "", "", null, null, check);
-        // Restart after saving preference.
+        // Restart after saving others preferences.
         if (button === 0) {
           var restart = true;
         }
