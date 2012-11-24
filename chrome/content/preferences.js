@@ -50,7 +50,8 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
                "--display-charset utf-8 " +
                "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:4001";
       }
-    } else {
+    }
+    else {
       if (anonService === "tor") {
         return "--no-emit-version " +
                "--no-comments " +
