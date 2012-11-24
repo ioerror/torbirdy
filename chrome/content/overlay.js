@@ -15,13 +15,16 @@
 })();
 
 function torbirdyStartup() {
-  // Set the time zone to UTC.
-  var env = Components.classes["@mozilla.org/process/environment;1"]
-                            .getService(Components.interfaces.nsIEnvironment);
-  env.set('TZ', 'UTC');
-
   var prefs = Components.classes["@mozilla.org/preferences-service;1"]
                     .getService(Components.interfaces.nsIPrefBranch);
+
+  // Set the time zone to UTC if the preference is true.
+  if (prefs.getBoolPref("extensions.torbirdy.timezone"))
+  {
+    var env = Components.classes["@mozilla.org/process/environment;1"]
+                              .getService(Components.interfaces.nsIEnvironment);
+    env.set('TZ', 'UTC');
+  }
 
   var myPanel = document.getElementById("torbirdy-my-panel");
   var strbundle = document.getElementById("torbirdy-strings");

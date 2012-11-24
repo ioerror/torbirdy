@@ -4,3 +4,4 @@ pref("extensions.torbirdy.first_run", true);
 pref("extensions.torbirdy.warn", true);
 pref("extensions.torbirdy.startup_folder", false);
 pref("extensions.torbirdy.enigmail.throwkeyid", true);
+pref("extensions.torbirdy.timezone", true);

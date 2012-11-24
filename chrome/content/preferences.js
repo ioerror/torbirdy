@@ -205,6 +205,10 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 3);
   }
 
+  /*
+   Save
+  */
+
   pub.onAccept = function() {
     var index = pub.anonService.selectedIndex;
 
@@ -249,6 +253,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     }
 
     // Last accessed folder.
+    // default: false
     var startupFolder = pub.startupFolder.checked; 
     if (startupFolder) { 
       pub.prefs.setBoolPref(pub.prefBranch + 'startup_folder', true);
@@ -256,7 +261,29 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.prefs.setBoolPref(pub.prefBranch + 'startup_folder', false);
     }
 
+    // Time zone.
+    // default: true
+    var timezone = pub.timezone.checked;
+    var oldPreference = pub.prefs.getBoolPref(pub.prefBranch + 'timezone');
+    // Only update this if required.
+    if (timezone === oldPreference) {
+        var env = Components.classes["@mozilla.org/process/environment;1"]
+                                      .getService(Components.interfaces.nsIEnvironment);
+        if (timezone) {
+          pub.prefs.setBoolPref(pub.prefBranch + 'timezone', false);
+          env.set('TZ', '');
+        } else {
+          pub.prefs.setBoolPref(pub.prefBranch + 'timezone', true);
+          env.set('TZ', 'UTC');
+        }
+        var prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
+                                            .getService(Components.interfaces.nsIPromptService);
+        prompts.alert(null, pub.strbundle.GetStringFromName("torbirdy.name"),
+                            pub.strbundle.GetStringFromName("torbirdy.restart"));
+    }
+
     // Enigmail.
+    // default: true
     var enigmail = pub.enigmail.checked;
     if (enigmail) {
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', false);
@@ -274,6 +301,10 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     }
   };
 
+  /*
+    Load
+  */
+
   pub.onLoad = function() {
     pub.anonService = document.getElementById('torbirdy-proxy-settings');
     pub.socksHost = document.getElementById('torbirdy-socks-host');
@@ -285,6 +316,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.anonCustomService = document.getElementById('torbirdy-anonservice');
     pub.enigmail = document.getElementById('torbirdy-enigmail-throwkeyid');
     pub.torification = document.getElementById('torbirdy-torification');
+    pub.timezone = document.getElementById('torbirdy-timezone');
 
     // Make sure the user really wants to change these settings.
     var warnPrompt = pub.prefs.getBoolPref("extensions.torbirdy.warn");
@@ -357,6 +389,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     }
     
     // Select last accessed folder.
+    // default: false
     var startupPref = pub.prefs.getBoolPref(pub.prefBranch + 'startup_folder');
     if (!startupPref) {
       pub.startupFolder.checked = false;
@@ -364,7 +397,17 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.startupFolder.checked = true;
     }
 
+    // Time zone settings.
+    // default: true
+    var timezone = pub.prefs.getBoolPref(pub.prefBranch + 'timezone');
+    if (timezone) {
+      pub.timezone.checked = false;
+    } else {
+      pub.timezone.checked = true;
+    }
+
     // Enigmal settings.
+    // default: true
     var enigmail_throwkeyid = pub.prefs.getBoolPref(pub.prefBranch + 'enigmail.throwkeyid');
     if (enigmail_throwkeyid) {
       pub.enigmail.checked = false;
