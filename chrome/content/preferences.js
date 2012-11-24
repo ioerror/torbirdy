@@ -284,16 +284,16 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
         // Because we need to restart Thunderbird, ask the user.
         var prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
-                                .getService(Components.interfaces.nsIPromptService);
+                                        .getService(Components.interfaces.nsIPromptService);
          
         var check = {value: false};
-         
+
         var flags = prompts.BUTTON_POS_0 * prompts.BUTTON_TITLE_YES +
-                    prompts.BUTTON_POS_1 * prompts.BUTTON_TITLE_NO;
-         
+                    prompts.BUTTON_POS_1 * prompts.BUTTON_TITLE_NO;
+
         var button = prompts.confirmEx(null, pub.strbundle.GetStringFromName("torbirdy.name"),
                                              pub.strbundle.GetStringFromName("torbirdy.restart"),
-                                             flags, "", "", null, null, check);
+                                             flags, "", "", null, null, check);
         // Restart after saving preference.
         if (button === 0) {
           var restart = true;
