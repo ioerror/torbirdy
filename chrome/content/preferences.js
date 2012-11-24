@@ -205,11 +205,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 3);
   }
 
-  pub.restart = function() {
-    Components.classes["@mozilla.org/toolkit/app-startup;1"].getService(Components.interfaces.nsIAppStartup)
-              .quit(Components.interfaces.nsIAppStartup.eRestart| Components.interfaces.nsIAppStartup.eAttemptQuit);
-  }
-
   /*
    Save
   */
@@ -282,21 +277,13 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
           env.set('TZ', 'UTC');
         }
 
-        // Because we need to restart Thunderbird, ask the user.
+        // Ask the user to restart Thunderbird. We can't do this for the user
+        // because the environment variables are not reset without quitting
+        // Thunderbird and starting it again.
         var prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
                                         .getService(Components.interfaces.nsIPromptService);
-
-        var check = {value: false};
-        var flags = prompts.BUTTON_POS_0 * prompts.BUTTON_TITLE_YES +
-                    prompts.BUTTON_POS_1 * prompts.BUTTON_TITLE_NO;
-
-        var button = prompts.confirmEx(null, pub.strbundle.GetStringFromName("torbirdy.name"),
-                                             pub.strbundle.GetStringFromName("torbirdy.restart"),
-                                             flags, "", "", null, null, check);
-        // Restart after saving others preferences.
-        if (button === 0) {
-          var restart = true;
-        }
+        prompts.alert(null, pub.strbundle.GetStringFromName("torbirdy.name"),
+                            pub.strbundle.GetStringFromName("torbirdy.restart"));
     }
 
     // Enigmail.
@@ -317,9 +304,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("tor"));
     }
 
-    if (restart) {
-      pub.restart();
-    }
   };
 
   /*
