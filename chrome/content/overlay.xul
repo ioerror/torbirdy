@@ -15,6 +15,11 @@
 
   <popupset>
     <menupopup id="torbirdy-proxy-list" position="after_start">
+      <menuitem id="torbirdy-preferences-selection"
+                class="menuitem-iconic"
+                label="Open TorBirdy Preferences"
+                oncommand="window.openDialog('chrome://castironthunderbirdclub/content/preferences.xul');"/>
+      <menuseparator />
       <menuitem id="torbirdy-tor-selection"
                 class="menuitem-iconic"
                 image="chrome://castironthunderbirdclub/skin/images/tor-16.png"
