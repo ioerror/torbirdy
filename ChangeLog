@@ -9,7 +9,7 @@
   Added Transparent Torification mode for TorBirdy
   Disable all plugins
   Added opt-out from setting time zone to UTC
-  Add Tor-JonDo quick switch (patch by Karsten N)
+  Add Tor-JonDo-Preferences quick switch (patch by Karsten N)
 
 0.0.13, 28 Sept 2012
   Translation updates:
