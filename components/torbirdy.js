@@ -113,7 +113,7 @@ const TORBIRDYPREFS = {
   "security.ssl.require_safe_negotiation": true,
   // Warn when connecting to a server that uses an old protocol version.
   "security.ssl.treat_unsafe_negotiation_as_broken": true,
-  // Disable 'extension blacklist' which might leak the OS information.
+  // Disable 'extension blocklist' which might leak the OS information.
   // See https://trac.torproject.org/projects/tor/ticket/6734
   "extensions.blocklist.enabled": false,
 
