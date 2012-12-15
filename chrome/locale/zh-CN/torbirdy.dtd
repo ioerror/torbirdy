@@ -1,0 +1,42 @@
+<!ENTITY torbirdy.accountprefs.title "帐户设置">
+<!ENTITY torbirdy.accountprefs.startup.label "在启动时检查新邮件">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "检查所有的新邮件">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "分">
+<!ENTITY torbirdy.accountprefs.cancel.button "取消">
+<!ENTITY torbirdy.accountprefs.save.button "保存">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "TorBirdy 首选项">
+<!ENTITY torbirdy.prefs.save.button "保存">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "取消">
+<!ENTITY torbirdy.prefs.extra2.button "测试设置">
+<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.proxy.label "代理设置">
+<!ENTITY torbirdy.prefs.privacy.label "隐私设置">
+<!ENTITY torbirdy.prefs.recommended.text "使用 TorBirdy（Tor）推荐的代理设置">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "选择一个匿名服务">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "使用自定义代理设置">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS 主机：">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "端口">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "透明 Torification">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "全球">
+<!ENTITY torbirdy.prefs.imap.label "启用 IMAP 帐户邮件推送支持[默认：禁用]">
+<!ENTITY torbirdy.prefs.imap.key "i">
+<!ENTITY torbirdy.prefs.startup_folder.label "启动时选择最后访问的邮件文件夹[默认：禁用，选择本地文件夹]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "">
+<!ENTITY torbirdy.prefs.timezone.key "">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "将收件人 key ID 放入加密邮件（默认：不放入）">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.account_specific "指定帐户">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "选择帐户：">
