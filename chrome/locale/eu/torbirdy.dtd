@@ -33,6 +33,8 @@
 <!ENTITY torbirdy.prefs.imap.key "i">
 <!ENTITY torbirdy.prefs.startup_folder.label "Abioan azkenengoz erabilitako karpeta aukeratu [lehenetsia: ezgaituta, karpeta lokalak aukeratuko dira]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "Thunderbirden denbora gunea UTCra ez ezarri [lehenetsia: UTCra ezarri]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Ezgaitu GPG '--throw-keyids' [lehenetsia: gaituta]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
 <!ENTITY torbirdy.prefs.account_specific "Kontuaren araberakoa">
