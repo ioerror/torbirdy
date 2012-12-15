@@ -18,8 +18,8 @@ const TORBIRDY_BRANCH = "extensions.torbirdy.";
 // change the preferences listed below, they will be reset to the TorBirdy
 // default when Thunderbird restarts. The reason we are doing this is because
 // these preferences, if changed, can introduce leaks and therefore should be
-// not changed by the user, and even if the user does change them, we reset
-// them to the secure default when Thunderbird starts.
+// not changed by the user. Even if the user does change them, we reset them to
+// the secure default when Thunderbird starts.
 // There are some preferences that can be overwritten using TorBirdy's
 // preferences dialog. See `preferences.js'.
 const TORBIRDYPREFS = {
