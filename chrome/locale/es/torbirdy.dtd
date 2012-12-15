@@ -33,10 +33,10 @@
 <!ENTITY torbirdy.prefs.imap.key "i">
 <!ENTITY torbirdy.prefs.startup_folder.label "Seleccionar la carpeta usada por ultima vez al iniciar [por defecto: desactivado, se seleccionan carpetas locales]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "No establecer la zona horaria de Thunderbird a UTC [por defecto: establecer a UTC]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Desactivar GPG '--throw-keyids' [por defecto: activado]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
 <!ENTITY torbirdy.prefs.account_specific "Especifico de la cuenta">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Elija una cuenta: ">
-
-
