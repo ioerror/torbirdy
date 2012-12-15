@@ -1,0 +1,42 @@
+<!ENTITY torbirdy.accountprefs.title "Konfiguracja konta">
+<!ENTITY torbirdy.accountprefs.startup.label "Sprawdzaj nowe wiadomości przy uruchamianiu">
+<!ENTITY torbirdy.accountprefs.startup.key "S">
+<!ENTITY torbirdy.accountprefs.minutes.label "Sprawdzaj nowe wiadomości co">
+<!ENTITY torbirdy.accountprefs.minutes.key "r">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "minut">
+<!ENTITY torbirdy.accountprefs.cancel.button "Anuluj">
+<!ENTITY torbirdy.accountprefs.save.button "Zapisz">
+<!ENTITY torbirdy.accountprefs.save.key "Z">
+
+<!ENTITY torbirdy.prefs.title "Ustawienia TorBirdy">
+<!ENTITY torbirdy.prefs.save.button "Zapisz">
+<!ENTITY torbirdy.prefs.save.key "z">
+<!ENTITY torbirdy.prefs.cancel.button "Anuluj">
+<!ENTITY torbirdy.prefs.extra2.button "Sprawdź ustawienia">
+<!ENTITY torbirdy.prefs.extra2.key "w">
+<!ENTITY torbirdy.prefs.proxy.label "Ustawienia Proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Ustawienia Prywatności">
+<!ENTITY torbirdy.prefs.recommended.text "Użyj zalecanych ustawień proxy dla TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "j">
+<!ENTITY torbirdy.prefs.anonservice.text "Wybierz usługę anonimizującą">
+<!ENTITY torbirdy.prefs.anonservice.key "u">
+<!ENTITY torbirdy.prefs.customsettings.text "Użyj własnych ustawień proxy">
+<!ENTITY torbirdy.prefs.customsettings.key "i">
+<!ENTITY torbirdy.prefs.socks_host.label "Host SOCKS:">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Port:">
+<!ENTITY torbirdy.prefs.socks_port.key "P">
+<!ENTITY torbirdy.prefs.torification.label "Przezroczysta Toryfikacja">
+<!ENTITY torbirdy.prefs.torification.key "T">
+<!ENTITY torbirdy.prefs.global "Globalne">
+<!ENTITY torbirdy.prefs.imap.label "Włącz obsługę push email dla kont IMAP [domyślne: wyłączone]">
+<!ENTITY torbirdy.prefs.imap.key "e">
+<!ENTITY torbirdy.prefs.startup_folder.label "Przejdź do ostatniego folderu pocztowego przy uruchomieniu [domyślne: wyłączone, wybierze Foldery Lokalne]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "">
+<!ENTITY torbirdy.prefs.timezone.key "">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Wyłącz GPG '--throw-keyids' [domyślne: włączone]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.account_specific "Specyficzne dla konta">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Wybierz konto:">
