@@ -14,6 +14,14 @@ const RESTORE_BRANCH  = "extensions.torbirdy.restore.";
 const TORBIRDY_BRANCH = "extensions.torbirdy.";
 
 // Default preference values for TorBirdy.
+// These preferences values will be "enforced": even if the user decides to
+// change the preferences listed below, they will be reset to the TorBirdy
+// default when Thunderbird restarts. The reason we are doing this is because
+// these preferences, if changed, can introduce leaks and therefore should be
+// not changed by the user, and even if the user does change them, we reset
+// them to the secure default when Thunderbird starts.
+// There are some preferences that can be overwritten using TorBirdy's
+// preferences dialog. See `preferences.js'.
 const TORBIRDYPREFS = {
   "extensions.torbirdy.protected": false,
   // When the preferences below have been set, then only enable TorBirdy.
@@ -266,6 +274,11 @@ const TORBIRDYPREFS = {
   "extensions.torbirdy.protected": true,
 }
 
+// Although we do perform a cleanup when TorBirdy is removed (we remove
+// TorBirdy's preferences), there are some preference values that we change
+// when TorBirdy is initialized that should be preserved instead. When TorBirdy
+// is disabled or uninstalled, these preferences are restored to their original
+// value. All such preferences go here.
 const TORBIRDY_OLDPREFS = [
   "network.proxy.type",
   "network.proxy.ssl_port",
@@ -449,7 +462,7 @@ TorBirdy.prototype = {
   setAccountPrefs: function() {
     if (this.prefs.getBoolPref("extensions.torbirdy.first_run")) {
       // Save the current proxy settings so that the settings can be restored in case
-      // TorBirdy is uninstalled or disabled.
+      // TorBirdy is uninstalled or disabled. (TORBIRDY_OLDPREFS)
       for (var i = 0; i < TORBIRDY_OLDPREFS.length; i++) {
         var oldPref = TORBIRDY_OLDPREFS[i];
         var type = this.prefs.getPrefType(oldPref);
