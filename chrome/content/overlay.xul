@@ -3,6 +3,7 @@
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
   <script type="application/javascript" src="chrome://castironthunderbirdclub/content/overlay.js" />
+  <script type="application/javascript" src="chrome://castironthunderbirdclub/content/preferences.js" />
 
   <stringbundleset id="stringbundleset">
     <stringbundle id="torbirdy-strings" src="chrome://castironthunderbirdclub/locale/torbirdy.properties"/>
@@ -11,5 +12,25 @@
   <statusbar id="status-bar">
       <statusbarpanel id="torbirdy-my-panel" label="" popup="torbirdy-proxy-list" />
   </statusbar>
+
+  <popupset>
+    <menupopup id="torbirdy-proxy-list" position="after_start">
+      <menuitem id="torbirdy-preferences-selection"
+                class="menuitem-iconic"
+                label="Open TorBirdy Preferences"
+                oncommand="window.openDialog('chrome://castironthunderbirdclub/content/preferences.xul');"/>
+      <menuseparator />
+      <menuitem id="torbirdy-tor-selection"
+                class="menuitem-iconic"
+                image="chrome://castironthunderbirdclub/skin/images/tor-16.png"
+                label="Use Tor Onion Router"
+                oncommand="org.torbirdy.prefs.setProxyTor();" />
+      <menuitem id="torbirdy-jondo-selection"
+                class="menuitem-iconic"
+                image="chrome://castironthunderbirdclub/skin/images/jondo-16.png"
+                label="Use JonDo (Premium)"
+                oncommand="org.torbirdy.prefs.setProxyJonDo();" />
+    </menupopup>
+  </popupset>
 
 </overlay>

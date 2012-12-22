@@ -1,0 +1,42 @@
+<!ENTITY torbirdy.accountprefs.title "Конфигурация аккаунта">
+<!ENTITY torbirdy.accountprefs.startup.label "Проверять наличие новых сообщений при запуске">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Проверять наличие новых сообщений каждые">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "протокол">
+<!ENTITY torbirdy.accountprefs.cancel.button "Отмена">
+<!ENTITY torbirdy.accountprefs.save.button "Сохранить">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "TorBirdy Предпочтения">
+<!ENTITY torbirdy.prefs.save.button "Сохранить">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Отмена">
+<!ENTITY torbirdy.prefs.extra2.button "Настройки теста">
+<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.proxy.label "Настройки Прокси">
+<!ENTITY torbirdy.prefs.privacy.label "Настройки приватности">
+<!ENTITY torbirdy.prefs.recommended.text "Использовать рекомендуемые параметры прокси-сервера для TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Выберите сервис анонимизации">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "Использовать параметры прокси-">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS хост: ">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Порт:">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "Глобальные">
+<!ENTITY torbirdy.prefs.imap.label "Включить нажать поддержку по электронной почте IMAP счетов [по умолчанию: отключено]">
+<!ENTITY torbirdy.prefs.imap.key "i">
+<!ENTITY torbirdy.prefs.startup_folder.label "Выбор последнего обращения к почтовой папки при запуске [по умолчанию: отключено, будет выбирать Local Folders]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "Не устанавливать часовой пояс Thunderbird по UTC [по умолчанию: по Гринвичу]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Вставьте идентификаторы получателей ключа в зашифрованные сообщения [по умолчанию: не ставьте]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.account_specific "">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Выберите аккаунт:">

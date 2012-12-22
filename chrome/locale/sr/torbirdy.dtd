@@ -1,0 +1,40 @@
+<!ENTITY torbirdy.accountprefs.title "Подешавање налога">
+<!ENTITY torbirdy.accountprefs.startup.label "Провјери нове поруке одмах након покретања">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Провјери нове поруке сваких">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "минута">
+<!ENTITY torbirdy.accountprefs.cancel.button "Откажи">
+<!ENTITY torbirdy.accountprefs.save.button "Запамти">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "TorBirdy подешавања">
+<!ENTITY torbirdy.prefs.save.button "Запамти">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Откажи">
+<!ENTITY torbirdy.prefs.extra2.button "Тест подешавања">
+<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.proxy.label "Прокси подешавања">
+<!ENTITY torbirdy.prefs.privacy.label "Подешавања приватности">
+<!ENTITY torbirdy.prefs.recommended.text "Користите препоручена прокси подешавања за TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Изаберите сервис заштите (анонимности)">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "Кориштење не стандардних прокси подешавања">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Host: ">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Port: ">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "транспарентан Torification">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "Globalno">
+<!ENTITY torbirdy.prefs.imap.label "Укључите просљеђивање порука према вашем IMAP налогу [стандардно: искључено]">
+<!ENTITY torbirdy.prefs.imap.key "i">
+<!ENTITY torbirdy.prefs.startup_folder.label "Селектуј последњу фасциклу којој је приступљено након покретања [стандардно: искључено, биће селектован локални фолдер]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Искључи GPG '--throw-keyids' [стандардно: укључено]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.account_specific "Специјално-за налог">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Изабери налог: ">

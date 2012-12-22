@@ -1,0 +1,42 @@
+<!ENTITY torbirdy.accountprefs.title "Configurações da Conta">
+<!ENTITY torbirdy.accountprefs.startup.label "Verifique se há novas mensagens ao iniciar">
+<!ENTITY torbirdy.accountprefs.startup.key "I">
+<!ENTITY torbirdy.accountprefs.minutes.label "Verificar se há novas mensagens a cada">
+<!ENTITY torbirdy.accountprefs.minutes.key "a">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "minutos">
+<!ENTITY torbirdy.accountprefs.cancel.button "Cancelar">
+<!ENTITY torbirdy.accountprefs.save.button "Salvar">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "Preferências">
+<!ENTITY torbirdy.prefs.save.button "Salvar">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Cancelar">
+<!ENTITY torbirdy.prefs.extra2.button "Testar Configurações">
+<!ENTITY torbirdy.prefs.extra2.key "c">
+<!ENTITY torbirdy.prefs.proxy.label "Configurações de Proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Configurações de Privacidade">
+<!ENTITY torbirdy.prefs.recommended.text "Utilize as configurações de proxy recomendadas pelo TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Escolha um serviço de anonimação">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "Usar configurações de proxy personalizadas">
+<!ENTITY torbirdy.prefs.customsettings.key "p">
+<!ENTITY torbirdy.prefs.socks_host.label "Host SOCKS:">
+<!ENTITY torbirdy.prefs.socks_host.key "s">
+<!ENTITY torbirdy.prefs.socks_port.label "Porta:">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "Torificação Transparente">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "Geral">
+<!ENTITY torbirdy.prefs.imap.label "Habilitar suporte a download de emails via IMAP [padrão: desativado]">
+<!ENTITY torbirdy.prefs.imap.key "i">
+<!ENTITY torbirdy.prefs.startup_folder.label "Abrir a última pasta acessada ao iniciar [padrão: desativado, será selecionada a Pasta Local]">
+<!ENTITY torbirdy.prefs.startup_folder.key "p">
+<!ENTITY torbirdy.prefs.timezone.label "Não defina o fuso-hotário do Thunderbird para UTC [padrão: definido para UTC]">
+<!ENTITY torbirdy.prefs.timezone.key "f">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Colocar o ID do destinatário em mensagens criptografadas [padrão: não colocar]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "l">
+<!ENTITY torbirdy.prefs.account_specific "Configurações da Conta">
+<!ENTITY torbirdy.prefs.select_account.key "s">
+<!ENTITY torbirdy.prefs.select_account.label "Escolha uma conta:">

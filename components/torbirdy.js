@@ -14,6 +14,14 @@ const RESTORE_BRANCH  = "extensions.torbirdy.restore.";
 const TORBIRDY_BRANCH = "extensions.torbirdy.";
 
 // Default preference values for TorBirdy.
+// These preferences values will be "enforced": even if the user decides to
+// change the preferences listed below, they will be reset to the TorBirdy
+// default when Thunderbird restarts. The reason we are doing this is because
+// these preferences, if changed, can introduce leaks and therefore should be
+// not changed by the user. Even if the user does change them, we reset them to
+// the secure default when Thunderbird starts.
+// There are some preferences that can be overwritten using TorBirdy's
+// preferences dialog. See `preferences.js'.
 const TORBIRDYPREFS = {
   "extensions.torbirdy.protected": false,
   // When the preferences below have been set, then only enable TorBirdy.
@@ -113,6 +121,9 @@ const TORBIRDYPREFS = {
   "security.ssl.require_safe_negotiation": true,
   // Warn when connecting to a server that uses an old protocol version.
   "security.ssl.treat_unsafe_negotiation_as_broken": true,
+  // Disable 'extension blocklist' which might leak the OS information.
+  // See https://trac.torproject.org/projects/tor/ticket/6734
+  "extensions.blocklist.enabled": false,
 
   /*
     Mailnews
@@ -129,8 +140,9 @@ const TORBIRDYPREFS = {
   "mailnews.send_plaintext_flowed": false,
   // Display a message as plain text, even if there is a HTML version.
   "mailnews.display.prefer_plaintext": true,
-  // Don't display HTML.
-  "mailnews.display.disallow_mime_handlers": 1,
+  // Don't display HTML, inline images and some other uncommon content.
+  // From: http://www.bucksch.org/1/projects/mozilla/108153/
+  "mailnews.display.disallow_mime_handlers": 3,
   // Convert HTML to text and then back again.
   "mailnews.display.html_as": 1,
   // Disable plugin support.
@@ -262,6 +274,11 @@ const TORBIRDYPREFS = {
   "extensions.torbirdy.protected": true,
 }
 
+// Although we do perform a cleanup when TorBirdy is removed (we remove
+// TorBirdy's preferences), there are some preference values that we change
+// when TorBirdy is initialized that should be preserved instead. When TorBirdy
+// is disabled or uninstalled, these preferences are restored to their original
+// value. All such preferences go here.
 const TORBIRDY_OLDPREFS = [
   "network.proxy.type",
   "network.proxy.ssl_port",
@@ -300,6 +317,9 @@ function TorBirdy() {
                    .getService(Ci.nsIXULAppInfo);
   var versionChecker = Cc["@mozilla.org/xpcom/version-comparator;1"]
                           .getService(Ci.nsIVersionComparator);
+
+  var pluginsHost = Cc["@mozilla.org/plugin/host;1"].getService(Ci.nsIPluginHost);
+  this.plugins = pluginsHost.getPluginTags({});
 
   if (versionChecker.compare(appInfo.version, "5.0") >= 0) {
     this.is_tb5 = true;
@@ -393,6 +413,11 @@ TorBirdy.prototype = {
       }
     }
 
+    // Enable plugins.
+    for(var i = 0; i < this.plugins.length; i++) {
+        this.plugins[i].disabled = false;
+    }
+
     // Now clear all TorBirdy preferences.
     var clearPrefs = Cc["@mozilla.org/preferences-service;1"]
                              .getService(Ci.nsIPrefService).getBranch(TORBIRDY_BRANCH).getChildList("", {});
@@ -437,7 +462,7 @@ TorBirdy.prototype = {
   setAccountPrefs: function() {
     if (this.prefs.getBoolPref("extensions.torbirdy.first_run")) {
       // Save the current proxy settings so that the settings can be restored in case
-      // TorBirdy is uninstalled or disabled.
+      // TorBirdy is uninstalled or disabled. (TORBIRDY_OLDPREFS)
       for (var i = 0; i < TORBIRDY_OLDPREFS.length; i++) {
         var oldPref = TORBIRDY_OLDPREFS[i];
         var type = this.prefs.getPrefType(oldPref);
@@ -463,7 +488,12 @@ TorBirdy.prototype = {
           }
         }
       }
-      
+
+      // Disable all plugins.
+      for(var i = 0; i < this.plugins.length; i++) {
+          this.plugins[i].disabled = true;
+      }
+
       // For only the first run (after that the user can configure the account if need be):
       //    Iterate through all accounts and disable automatic checking of emails.
       var accounts = this.acctMgr.accounts;

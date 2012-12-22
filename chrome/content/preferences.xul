@@ -65,14 +65,17 @@
               <rows>
                 <row align="center">
                   <hbox align="center">
-                    <label accesskey="&torbirdy.prefs.socks_host.key;" control="socks-host" value="&torbirdy.prefs.socks_host.label;"/>
+                    <label accesskey="&torbirdy.prefs.socks_host.key;" control="torbirdy-socks-host" value="&torbirdy.prefs.socks_host.label;"/>
                     <textbox disabled="true" flex="1" id="torbirdy-socks-host"/>
-                    <label accesskey="&torbirdy.prefs.socks_port.key;" control="socks-port" value="&torbirdy.prefs.socks_port.label;"/>
+                    <label accesskey="&torbirdy.prefs.socks_port.key;" control="torbirdy-socks-port" value="&torbirdy.prefs.socks_port.label;"/>
                     <textbox disabled="true" id="torbirdy-socks-port" max="65535" min="0" size="5" type="number" value="0"/>
                   </hbox>
                 </row>
               </rows>
             </grid>
+
+            <radio accesskey="&torbirdy.prefs.torification.key;" id="torbirdy-torification" label="&torbirdy.prefs.torification.label;" />
+
           </radiogroup>
 
         </vbox>
@@ -88,6 +91,7 @@
               <checkbox accesskey="&torbirdy.prefs.imap.key;" id="torbirdy-idle" label="&torbirdy.prefs.imap.label;"/>
               <checkbox accesskey="&torbirdy.prefs.enigmail_throwkeyid.key;" id="torbirdy-enigmail-throwkeyid" label="&torbirdy.prefs.enigmail_throwkeyid.label;"/>
               <checkbox accesskey="&torbirdy.prefs.startup_folder.key;" id="torbirdy-startup-folder" label="&torbirdy.prefs.startup_folder.label;"/>
+              <checkbox accesskey="&torbirdy.prefs.timezone.key;" id="torbirdy-timezone" label="&torbirdy.prefs.timezone.label;"/>
             </vbox>
           </groupbox>
 

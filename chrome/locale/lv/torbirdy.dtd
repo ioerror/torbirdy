@@ -1,0 +1,42 @@
+<!ENTITY torbirdy.accountprefs.title "Konta konfigurēšana">
+<!ENTITY torbirdy.accountprefs.startup.label "Sākot darbu, pārbaudīt vai ir jauni ziņojumi ">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Pārbaudīt vai ir jauni ziņojumi katru">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "minūti">
+<!ENTITY torbirdy.accountprefs.cancel.button "Atcelt">
+<!ENTITY torbirdy.accountprefs.save.button "Saglabāt">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "TorBirdy preferences">
+<!ENTITY torbirdy.prefs.save.button "Saglabāt">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Atcelt">
+<!ENTITY torbirdy.prefs.extra2.button "Testa iestatījumi">
+<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.proxy.label "Starpniekdatora iestatījumi">
+<!ENTITY torbirdy.prefs.privacy.label "Privātuma iestatījumi">
+<!ENTITY torbirdy.prefs.recommended.text "Lietot Tor Birdy (Tor) ieteiktos starpniekdatora iestatījumus">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Izvēlieties anonimizācijas pakalpojumu">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "Izmantot pielāgotus starpniekdatora iestatījumus">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "LIGZDU mitinātājs:">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Porti:">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "Pārredzama torifikācija">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "Globāls">
+<!ENTITY torbirdy.prefs.imap.label "IMAP kontiem [noklusēti: atspējots] iespējot e-pastu pašpiegādes atbalstu">
+<!ENTITY torbirdy.prefs.imap.key "i">
+<!ENTITY torbirdy.prefs.startup_folder.label "Sākot darbu, izvēlēties pēdējo apmeklēto pasta mapi [noklusēti: atspējots, izvēlēsies Vietējās mapes]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "Neiestatīt Thunderbird'a laika zonu uz UTC [pēc noklusējuma: iestatīt uz UTC]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Likt saņēmēju atslēgu identifikatorus kriptētos ziņojumos [noklusēti: nelikt]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.account_specific "Kontam-piemītošs">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Izvēlēties kontu:">

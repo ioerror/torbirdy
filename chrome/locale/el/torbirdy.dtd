@@ -1,0 +1,42 @@
+<!ENTITY torbirdy.accountprefs.title "Ρύθμιση λογαριασμού">
+<!ENTITY torbirdy.accountprefs.startup.label "Έλεγχος για νέα μηνύματα κατά την εκκίνηση">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Έλεγχος για νέα μηνύματα κάθε">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "λεπτά">
+<!ENTITY torbirdy.accountprefs.cancel.button "Ακύρωση">
+<!ENTITY torbirdy.accountprefs.save.button "Αποθήκευση">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "Ρυθμίσεις TorBirdy ">
+<!ENTITY torbirdy.prefs.save.button "Αποθήκευση">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Ακύρωση">
+<!ENTITY torbirdy.prefs.extra2.button "Έλεγχος ρυθμίσεων">
+<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.proxy.label "Ρυθμίσεις Proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Ρυθμίσεις απορρήτου">
+<!ENTITY torbirdy.prefs.recommended.text "Χρήση των προτεινόμενων ρυθμίσεων Proxy για το TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Επιλογή μιας υπηρεσίας ανωνυμίας">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "Χρήση προσαρμοσμένων ρυθμίσεων proxy">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Host: ">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Θύρα">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "Ξεχωριστό Torification">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "Παγκόσμια">
+<!ENTITY torbirdy.prefs.imap.label "Ενεργοποίηση push email για υποστήριξη IMAP λογαριασμών [προεπιλογή: απενεργοποιημένο]">
+<!ENTITY torbirdy.prefs.imap.key "i">
+<!ENTITY torbirdy.prefs.startup_folder.label "Επιλογή τελευταίου προσβάσιμου φακέλου e-mail κατά την εκκίνηση [προεπιλογή: απενεργοποιημένο, θα επιλεγούν τοπικοί φάκελοι]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "Μην ορίσετε τη ζώνη ώρας του Thunderbird σε UTC [προεπιλογή: ορίστηκε σε UTC]">
+<!ENTITY torbirdy.prefs.timezone.key "ζ">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Απενεργοποίηση GPG '--throw-keyids' [προεπιλογή: ενεργοποιημένο]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.account_specific "Ειδικός λογαριασμός">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Επιλογή ενός λογαριασμού">

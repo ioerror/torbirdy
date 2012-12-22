@@ -17,5 +17,15 @@ locale castironthunderbirdclub pa chrome/locale/pa/
 locale castironthunderbirdclub he chrome/locale/he/
 locale castironthunderbirdclub fr chrome/locale/fr/
 locale castironthunderbirdclub nl chrome/locale/nl/
+locale castironthunderbirdclub sr chrome/locale/sr/
+locale castironthunderbirdclub hu chrome/locale/hu/
+locale castironthunderbirdclub it chrome/locale/it/
+locale castironthunderbirdclub eu chrome/locale/eu/
+locale castironthunderbirdclub pt-BR chrome/locale/pt-BR/
+locale castironthunderbirdclub lv chrome/locale/lv/
+locale castironthunderbirdclub el chrome/locale/el/
+locale castironthunderbirdclub zh-CN chrome/locale/zh-CN/
+locale castironthunderbirdclub pl chrome/locale/pl/
+locale castironthunderbirdclub ru chrome/locale/ru/
 
 skin castironthunderbirdclub classic/1.0 chrome/skin/
