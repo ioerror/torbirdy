@@ -5,9 +5,9 @@
     function selectFolderOnInit(initialUri) {
       var startupFolder = GetMsgFolderFromUri("mailbox://nobody@Local%20Folders");
       if (startupFolder) {
-        var folderTree = document.getElementById("folderTree");
-        if (window.gFolderTreeView)
+        if (window.gFolderTreeView) {
           gFolderTreeView.selectFolder(startupFolder);
+        }
       }
     }
     window.loadStartFolder = selectFolderOnInit;
