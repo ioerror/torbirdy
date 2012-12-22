@@ -26,7 +26,7 @@
 <!ENTITY torbirdy.prefs.socks_host.key "h">
 <!ENTITY torbirdy.prefs.socks_port.label "Port: ">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
-<!ENTITY torbirdy.prefs.torification.label "Transparant Torification">
+<!ENTITY torbirdy.prefs.torification.label "Transparante anonimisering">
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "Globaal">
 <!ENTITY torbirdy.prefs.imap.label "Ondersteuning voor push e-mail voor IMAP-accounts inschakelen [standaard: uitgeschakeld]">
