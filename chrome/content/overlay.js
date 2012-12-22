@@ -2,7 +2,7 @@
   var prefs = Components.classes["@mozilla.org/preferences-service;1"]
                     .getService(Components.interfaces.nsIPrefBranch);
   if (!(prefs.getBoolPref('extensions.torbirdy.startup_folder'))) {
-    function selectFolderOnInit(initialUri) {
+    window.loadStartFolder = function() {
       var startupFolder = GetMsgFolderFromUri("mailbox://nobody@Local%20Folders");
       if (startupFolder) {
         if (window.gFolderTreeView) {
@@ -10,7 +10,6 @@
         }
       }
     }
-    window.loadStartFolder = selectFolderOnInit;
   }
 })();
 
