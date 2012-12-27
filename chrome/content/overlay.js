@@ -9,7 +9,7 @@
           gFolderTreeView.selectFolder(startupFolder);
         }
       }
-    }
+    };
   }
 })();
 
