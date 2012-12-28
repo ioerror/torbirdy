@@ -40,7 +40,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
                "--no-comments " +
                "--throw-keyids " +
                "--display-charset utf-8 " +
-               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:8118 ";
+               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:8118";
       }
       if (anonService === "jondo") {
         return "--no-emit-version " +
@@ -55,7 +55,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
         return "--no-emit-version " +
                "--no-comments " +
                "--display-charset utf-8 " +
-               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:8118 ";
+               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:8118";
       }
       if (anonService === "jondo") {
         return "--no-emit-version " +
