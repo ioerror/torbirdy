@@ -184,7 +184,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
     pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
     pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.keyserver", "hkp://pool.sks-keyservers.net");
-    
+
     pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.jondo"), "green");
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 1);
     pub.prefs.setIntPref(pub.prefBranch + 'proxy.type', 0);
@@ -227,7 +227,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       // Set proxies for Tor.
       pub.setProxyTor();
     }
-    
+
     // Anonymization service.
     if (index === 1) {
       var anonType = pub.anonType.selectedIndex;
@@ -252,7 +252,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       Privacy
     */
     var idlePref = 'mail.server.default.use_idle';
-    var idle = pub.idle.checked; 
+    var idle = pub.idle.checked;
     if (idle) {
       pub.prefs.setBoolPref(pub.customBranch + idlePref, true);
       pub.prefs.setBoolPref(idlePref, true);
@@ -264,8 +264,8 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
     // Last accessed folder.
     // default: false
-    var startupFolder = pub.startupFolder.checked; 
-    if (startupFolder) { 
+    var startupFolder = pub.startupFolder.checked;
+    if (startupFolder) {
       pub.prefs.setBoolPref(pub.prefBranch + 'startup_folder', true);
     } else {
       pub.prefs.setBoolPref(pub.prefBranch + 'startup_folder', false);
@@ -402,7 +402,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     } else {
       pub.idle.checked = false;
     }
-    
+
     // Select last accessed folder.
     // default: false
     var startupPref = pub.prefs.getBoolPref(pub.prefBranch + 'startup_folder');
