@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://castironthunderbirdclub/locale/torbirdy.dtd">
+
 <overlay id="castironthunderbirdclub-extension-overlay"
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
