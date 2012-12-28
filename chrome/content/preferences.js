@@ -40,8 +40,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
                "--no-comments " +
                "--throw-keyids " +
                "--display-charset utf-8 " +
-               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:8118 " +
-               "--keyserver hkp://2eghzlv2wwcq7u7y.onion";
+               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:8118 ";
       }
       if (anonService === "jondo") {
         return "--no-emit-version " +
@@ -56,8 +55,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
         return "--no-emit-version " +
                "--no-comments " +
                "--display-charset utf-8 " +
-               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:8118 " +
-               "--keyserver hkp://2eghzlv2wwcq7u7y.onion";
+               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:8118 ";
       }
       if (anonService === "jondo") {
         return "--no-emit-version " +
@@ -70,6 +68,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
   pub.restoreEnigmailPrefs = function() {
     pub.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("tor"));
+    pub.prefs.setCharPref("extensions.enigmail.keyserver", "hkp://2eghzlv2wwcq7u7y.onion");
   };
 
   pub.clearCustomPrefs = function() {
@@ -169,6 +168,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.prefs.setBoolPref("network.http.proxy.pipelining", false);
 
     pub.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
+    pub.prefs.setCharPref("extensions.enigmail.keyserver", "hkp://pool.sks-keyservers.net");
     // Now save them for later use.
     pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", 4001);
     // SSL.
@@ -183,6 +183,8 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.prefs.setBoolPref(pub.customBranch + "network.http.proxy.pipelining", false);
 
     pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
+    pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.keyserver", "hkp://pool.sks-keyservers.net");
+    
     pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.jondo"), "green");
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 1);
     pub.prefs.setIntPref(pub.prefBranch + 'proxy.type', 0);
