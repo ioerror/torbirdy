@@ -163,6 +163,10 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     // HTTP.
     pub.prefs.setCharPref("network.proxy.http", "127.0.0.1");
     pub.prefs.setIntPref("network.proxy.http_port", 4001);
+    // Disable pipelining
+    pub.prefs.setBoolPref("network.http.pipelining", false);
+    pub.prefs.setBoolPref("network.http.pipelining.ssl", false);
+    pub.prefs.setBoolPref("network.http.proxy.pipelining", false);
 
     pub.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
     // Now save them for later use.
@@ -173,6 +177,10 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     // HTTP.
     pub.prefs.setCharPref(pub.customBranch + "network.proxy.http", "127.0.0.1");
     pub.prefs.setIntPref(pub.customBranch + "network.proxy.http_port", 4001);
+    // Disable pipelining
+    pub.prefs.setBoolPref(pub.customBranch + "network.http.pipelining", false);
+    pub.prefs.setBoolPref(pub.customBranch + "network.http.pipelining.ssl", false);
+    pub.prefs.setBoolPref(pub.customBranch + "network.http.proxy.pipelining", false);
 
     pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
     pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.jondo"), "green");
