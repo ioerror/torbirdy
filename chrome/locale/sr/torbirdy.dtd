@@ -33,8 +33,14 @@
 <!ENTITY torbirdy.prefs.imap.key "i">
 <!ENTITY torbirdy.prefs.startup_folder.label "Селектуј последњу фасциклу којој је приступљено након покретања [стандардно: искључено, биће селектован локални фолдер]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "Do not set Thunderbird's time zone to UTC [default: set to UTC]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Искључи GPG '--throw-keyids' [стандардно: укључено]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
 <!ENTITY torbirdy.prefs.account_specific "Специјално-за налог">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Изабери налог: ">
+
+<!ENTITY torbirdy.panel.usetor.label "Use Tor Onion Router">
+<!ENTITY torbirdy.panel.usejondo.label "Use JonDo (Premium)">
+<!ENTITY torbirdy.panel.preferences.label "Open TorBirdy Preferences">

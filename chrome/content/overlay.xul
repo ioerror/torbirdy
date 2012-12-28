@@ -17,18 +17,18 @@
     <menupopup id="torbirdy-proxy-list" position="after_start">
       <menuitem id="torbirdy-preferences-selection"
                 class="menuitem-iconic"
-                label="Open TorBirdy Preferences"
+                label="&torbirdy.panel.preferences.label;"
                 oncommand="window.openDialog('chrome://castironthunderbirdclub/content/preferences.xul');"/>
       <menuseparator />
       <menuitem id="torbirdy-tor-selection"
                 class="menuitem-iconic"
                 image="chrome://castironthunderbirdclub/skin/images/tor-16.png"
-                label="Use Tor Onion Router"
+                label="&torbirdy.panel.usetor.label;"
                 oncommand="org.torbirdy.prefs.setProxyTor();" />
       <menuitem id="torbirdy-jondo-selection"
                 class="menuitem-iconic"
                 image="chrome://castironthunderbirdclub/skin/images/jondo-16.png"
-                label="Use JonDo (Premium)"
+                label="&torbirdy.panel.usejondo.label;"
                 oncommand="org.torbirdy.prefs.setProxyJonDo();" />
     </menupopup>
   </popupset>

@@ -40,3 +40,7 @@
 <!ENTITY torbirdy.prefs.account_specific "指定帐户">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "选择帐户：">
+
+<!ENTITY torbirdy.panel.usetor.label "Use Tor Onion Router">
+<!ENTITY torbirdy.panel.usejondo.label "Use JonDo (Premium)">
+<!ENTITY torbirdy.panel.preferences.label "Open TorBirdy Preferences">

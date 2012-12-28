@@ -33,8 +33,14 @@
 <!ENTITY torbirdy.prefs.imap.key "i">
 <!ENTITY torbirdy.prefs.startup_folder.label "Selectionner comme dossier d'acceuil le dernier dossier email visité [default: désactivé, votre dossier local sera séléctionné]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "Do not set Thunderbird's time zone to UTC [default: set to UTC]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Désactiver le GPG '--throw-keyids' [default: activé]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
 <!ENTITY torbirdy.prefs.account_specific "Compte-spécifique">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Choisir un compte: ">
+
+<!ENTITY torbirdy.panel.usetor.label "Use Tor Onion Router">
+<!ENTITY torbirdy.panel.usejondo.label "Use JonDo (Premium)">
+<!ENTITY torbirdy.panel.preferences.label "Open TorBirdy Preferences">
