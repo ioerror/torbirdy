@@ -26,7 +26,7 @@
 <!ENTITY torbirdy.prefs.socks_host.key "h">
 <!ENTITY torbirdy.prefs.socks_port.label "ਪੋਰਟ">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
-<!ENTITY torbirdy.prefs.torification.label "Transparent Torification">
+<!ENTITY torbirdy.prefs.torification.label "ਪਾਰਦਰਸ਼ਕ ਟੌਰ">
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "ਗਲੋਬਲ">
 <!ENTITY torbirdy.prefs.imap.label "IMAP ਅਕਾਊਂਟ ਵਾਸਤੇ ਪੁਸ਼ ਈਮੇਲ ਚਾਲੂ ਕਰੋ">
@@ -41,6 +41,6 @@
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "ਅਕਾਊਂਟ ਚੁਣੋ">
 
-<!ENTITY torbirdy.panel.usetor.label "Use Tor Onion Router">
-<!ENTITY torbirdy.panel.usejondo.label "Use JonDo (Premium)">
-<!ENTITY torbirdy.panel.preferences.label "Open TorBirdy Preferences">
+<!ENTITY torbirdy.panel.usetor.label "ਟੌਰ ਦੀ ਵਰਤੋ ਕਰੋ">
+<!ENTITY torbirdy.panel.usejondo.label "ਜੋਨ ਦੋ ਦੀ ਵਰਤੋ ਕਰੋ">
+<!ENTITY torbirdy.panel.preferences.label "ਟੌਰਬਰਡੀ ਸੈਟਿੰਗ">
