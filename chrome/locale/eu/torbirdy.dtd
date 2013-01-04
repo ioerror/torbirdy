@@ -41,6 +41,6 @@
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Kontu bat aukeratu:">
 
-<!ENTITY torbirdy.panel.usetor.label "Use Tor Onion Router">
-<!ENTITY torbirdy.panel.usejondo.label "Use JonDo (Premium)">
-<!ENTITY torbirdy.panel.preferences.label "Open TorBirdy Preferences">
+<!ENTITY torbirdy.panel.usetor.label "Erabili Tor Tipula Bideratzailea">
+<!ENTITY torbirdy.panel.usejondo.label "Erabili JonDo (Premium)">
+<!ENTITY torbirdy.panel.preferences.label "Ireki TorBirdy hobespenak">
