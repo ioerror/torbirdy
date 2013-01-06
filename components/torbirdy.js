@@ -503,6 +503,7 @@ TorBirdy.prototype = {
         var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
         account.downloadOnBiff = false;
         account.loginAtStartUp = false;
+        account.doBiff = false;
 
         // Depending on the account type, set the ports.
         if (account.type === "imap") {
@@ -514,9 +515,10 @@ TorBirdy.prototype = {
         if (account.type === "nntp") {
           account.port = 563;
         }
-
+        // SSL.
+        // For nsIMsgIncomingServer, socketType 3 is SSL, as compared to the
+        // manual account configuration wizard (emailwizard.js), where it is 2.
         account.socketType = 3;
-        account.doBiff = false;
       }
     }
     this.prefs.setBoolPref("extensions.torbirdy.first_run", false);

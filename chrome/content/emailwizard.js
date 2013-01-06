@@ -37,7 +37,7 @@ org.torbirdy.emailwizard = new function() {
       config.incoming.port = 995;
     }
 
-    // Default to SSL/TLS for both outgoing and incoming servers.
+    // Default to SSL for both outgoing and incoming servers.
     config.incoming.socketType = 2;
     config.outgoing.socketType = 2;
 
