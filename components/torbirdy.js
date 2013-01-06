@@ -503,6 +503,18 @@ TorBirdy.prototype = {
         var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
         account.downloadOnBiff = false;
         account.loginAtStartUp = false;
+
+        // Depending on the account type, set the ports.
+        if (account.type === "imap") {
+          account.port = 993;
+        }
+        if (account.type === "pop3") {
+          account.port = 995;
+        }
+        if (account.type === "nntp") {
+          account.port = 563;
+        }
+
         account.socketType = 3;
         account.doBiff = false;
       }
