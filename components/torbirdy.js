@@ -503,6 +503,7 @@ TorBirdy.prototype = {
         var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
         account.downloadOnBiff = false;
         account.loginAtStartUp = false;
+        account.socketType = 3;
         account.doBiff = false;
       }
     }

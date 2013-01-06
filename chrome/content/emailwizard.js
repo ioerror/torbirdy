@@ -41,6 +41,10 @@ org.torbirdy.emailwizard = new function() {
     config.incoming.socketType = 2;
     config.outgoing.socketType = 2;
 
+    // Set the authentication to 'Normal' (connection is already encrypted).
+    config.incoming.auth = 3;
+    config.outgoing.auth = 3;
+
     // Set default values to disable automatic email fetching.
     config.incoming.loginAtStartup = false;
     config.incoming.downloadOnBiff = false;
