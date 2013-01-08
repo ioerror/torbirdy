@@ -34,7 +34,7 @@
 <!ENTITY torbirdy.prefs.startup_folder.label "Seleziona l'ultima casella di posta all'avvio [default: disabilitato, verrà selezionato Local Folders]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "Non impostare il fuso orario di Thunderbird a UTC [default: impostato a UTC]">
-<!ENTITY torbirdy.prefs.timezone.key "">
+<!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Disabilita GPG '--throw-keyids' [default: abilitato]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
 <!ENTITY torbirdy.prefs.account_specific "Specifico Account">
