@@ -1,0 +1,46 @@
+<!ENTITY torbirdy.accountprefs.title "تهيئة الحساب">
+<!ENTITY torbirdy.accountprefs.startup.label "تحقق من وجود رسائل جديدة عند الاقلاع">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "تحقق من وجود رسائل كل">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "دقائق">
+<!ENTITY torbirdy.accountprefs.cancel.button "الغاء">
+<!ENTITY torbirdy.accountprefs.save.button "حفظ">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "تغضيلات توربيردي">
+<!ENTITY torbirdy.prefs.save.button "احفظ">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "الغاء">
+<!ENTITY torbirdy.prefs.extra2.button "اختبر الإعدادات">
+<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.proxy.label "إعدادات البروكسي">
+<!ENTITY torbirdy.prefs.privacy.label "اعدادات الخصوصية">
+<!ENTITY torbirdy.prefs.recommended.text "استعمل خيارات البروكسي الموصى بها لتوربيردي (تور)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "اختر خدمة اخفاء هوية">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "استعمل اعدادات البروكسي مخصصه">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "مضيف ال SOCKS">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "بوابة">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "تور شفاف">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "عالمي">
+<!ENTITY torbirdy.prefs.imap.label "فعِّل دعم إرسال البريد من المصدر (push) في IMAP [الوضع الافتراضي: غير فعّال]">
+<!ENTITY torbirdy.prefs.imap.key "i">
+<!ENTITY torbirdy.prefs.startup_folder.label "اختار الملف للبريد الاكتروني الذي استعمل اخر مره عند التشغيل [عادةً: هذا الاختيار معطل و سيختار البرنامج ملفات محليه]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "لا تقم بوضع المنطقة الزمنية لثندربيرد للتوقيت العالمي UTC [الوضع الافتراضي: قم باستخدام UTC]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "قم بوضع عناوين مفاتيح المرسل إليهم في رسائل مشفرة [الوضع الافتراضي: لا تضع]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.account_specific "مرتبط بالحساب">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "اختر حساباً">
+
+<!ENTITY torbirdy.panel.usetor.label "قم باستخدام تور">
+<!ENTITY torbirdy.panel.usejondo.label "قم باستخدام جون دو (JonDo) النسخة Premium">
+<!ENTITY torbirdy.panel.preferences.label "افتح مخصصات توربيردي">
