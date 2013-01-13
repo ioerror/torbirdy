@@ -41,6 +41,6 @@
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "בחר חשבון: ">
 
-<!ENTITY torbirdy.panel.usetor.label "Use Tor Onion Router">
-<!ENTITY torbirdy.panel.usejondo.label "Use JonDo (Premium)">
-<!ENTITY torbirdy.panel.preferences.label "Open TorBirdy Preferences">
+<!ENTITY torbirdy.panel.usetor.label "תשתמש ב Tor Onion Router">
+<!ENTITY torbirdy.panel.usejondo.label "תשתמש ב  JonDo (Premium)">
+<!ENTITY torbirdy.panel.preferences.label "פתח עדיפויות TorBirdy">
