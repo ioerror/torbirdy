@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+
+# NOTE: Remove all unused variables from this file before you release!
+
+# (Optional field, requires mozilla-devscripts >= 0.14)
+# Name of the package (as in debian/control) that will ship the extension. If
+# not defined, the first binary package defined in debian/control will be used
+#MOZ_EXTENSION_PKG := xul-ext-EXAMPLE_EXTENSION
+
+# xpi.mk will auto detect the .xpi in your package. If you want to do it
+# explicitly, use this variable
+MOZ_XPI_FILE := ../torbirdy-0.0.13.xpi
+
+# xpi.mk tries to auto detect the extension manager id (em:id) from the .xpis
+# install.rdf file. There might be cases where this doesn't work. Use the
+# following variable to explicitly define an extension ID and disable auto
+# detection
+#MOZ_XPI_EMID := {xxxxxxx-xxxx-xxxx}
+
+# xpi.mk will run a build command before packaging an .xpi file. You can use
+# this to produce an .xpi. If you define this, the clean rule will remove any
+# .xpi file found in the top level directory
+MOZ_XPI_BUILD_COMMAND = make make-xpi
+
+# (Optional field, requires mozilla-devscripts >= 0.15)
+# If there are any licenses that upstream provides in source tree, lintian will
+# complain about extra license files.
+# In order to fix that, add license files to this variable, and they will be
+# excluded during the packaging of a XPI file. For example:
+#MOZ_XPI_DOCUMENTED_LICENSE_FILES := license-a components/license-b
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/mozilla-devscripts/xpi.mk
+
