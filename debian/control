@@ -2,7 +2,7 @@ Source: torbirdy
 Section: web
 Priority: optional
 Maintainer: Jacob Appelbaum <jacob@appelbaum.net>
-Build-Depends: cdbs, debhelper (>= 7), mozilla-devscripts (>= 0.16~)
+Build-Depends: cdbs, debhelper (>= 7), mozilla-devscripts (>= 0.16~), make
 Standards-Version: 3.8.3
 Homepage: https://www.github.com/ioerror/torbirdy
 
@@ -12,6 +12,6 @@ Depends: ${misc:Depends}
 Recommends: ${xpi:Recommends}
 Provides: ${xpi:Provides}
 Enhances: ${xpi:Enhances}
-Description: configures Thunderbird to make connections over the Tor anonymity network
- The TorBirdy extension configures Thunderbird to make connections over the Tor
- anonymity network.
+Description: configures Mozilla birds for use with Tor
+ The TorBirdy extension configures Thunderbird (or IceDove, etc) to make
+ connections over the Tor anonymity network.

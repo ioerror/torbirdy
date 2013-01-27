@@ -1,5 +1,5 @@
 torbirdy (0.13-1) unstable; urgency=low
 
-  * Initial release.
+  * Initial release. (Closes: #699107)
 
  -- Jacob Appelbaum <jacob@appelbaum.net>  Sun, 27 Jan 2013 09:00:00 +0100
