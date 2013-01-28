@@ -15,7 +15,7 @@ Enhances: ${xpi:Enhances}
 Description: configures and enhances various Mozilla birds for anonymity use
  The TorBirdy extension configures Thunderbird (or Icedove, etc) to make
  connections over the Tor anonymity network. It also takes steps to protect
- anonymity at the application level by reducing uniquie identifiers, disabling
+ anonymity at the application level by reducing unique identifiers, disabling
  unsafe plugins, disabling insecure protocols, helpfully configuring other
  software such as Enigmail and GnuPG in anonymity protecting ways and more. It
  also helps to ease configuration with other anonmity networks and proxies such
