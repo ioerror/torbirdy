@@ -2,22 +2,22 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: torbirdy
 Source: https://github.com/ioerror/torbirdy/
 Comment:
-These following URLs are the various places to learn more about TorBirdy
-https://www.github.com/ioerror/torbirdy
-https://trac.torproject.org/projects/tor/wiki/torbirdy
-https://addons.mozilla.org/en-US/thunderbird/addon/torbirdy/
+  These following URLs are the various places to learn more about TorBirdy
+  https://www.github.com/ioerror/torbirdy
+  https://trac.torproject.org/projects/tor/wiki/torbirdy
+  https://addons.mozilla.org/en-US/thunderbird/addon/torbirdy/
 
 Files: *
 Copyright: 2012, Jacob Appelbaum <jacob@appelbaum.net>
            2012, Sukhbir Singh <sukhbir.in@gmail.com>
            2011-2012, The Tor Project, Inc.
-License: BSD-2-Clause
+License: BSD-2-clause
 
 Files: debian/*
 Copyright: 2012, Jacob Appelbaum <jacob@appelbaum.net>
-License: BSD-2-Clause
+License: BSD-2-clause
 
-License: BSD-2-Clause
+License: BSD-2-clause
 Copyright (c) 2012, Jacob Appelbaum <jacob@torproject.org>
 All rights reserved.
 
