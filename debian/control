@@ -2,14 +2,14 @@ Source: torbirdy
 Section: web
 Priority: optional
 Maintainer: Jacob Appelbaum <jacob@appelbaum.net>
-Build-Depends: cdbs, debhelper (>= 7), mozilla-devscripts (>= 0.16~), make
+Build-Depends: cdbs, debhelper (>= 9), mozilla-devscripts (>= 0.16~)
 Standards-Version: 3.9.4
 Homepage: https://www.github.com/ioerror/torbirdy
 
 Package: xul-ext-torbirdy
 Architecture: all
 Depends: ${misc:Depends}
-Recommends: ${xpi:Recommends}
+Recommends: make, ${xpi:Recommends}
 Provides: ${xpi:Provides}
 Enhances: ${xpi:Enhances}
 Description: configures and enhances various Mozilla birds for anonymity use

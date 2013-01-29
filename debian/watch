@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/\///" \
+http://githubredir.debian.net/github/ioerror/torbirdy (.+).tar.gz
