@@ -215,7 +215,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
     // Set them now.
     pub.setPreferences("network.proxy.socks", socks_host);
-    pub.setPreferences("network.proxy.socks_port", socks_port);
+    pub.setPreferences("network.proxy.socks_port", parseInt(socks_port, 10));
 
     pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.custom"), "green");
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 2);
