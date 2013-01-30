@@ -46,13 +46,6 @@ const TORBIRDYPREFS = {
   "network.proxy.socks_version": 5,
   "network.proxy.no_proxies_on": "localhost, 127.0.0.1",
 
-  // Clear the HTTP and SSL proxies.
-  // We restore these settings when TorBirdy is uninstalled.
-  "network.proxy.http": "",
-  "network.proxy.http_port": 0,
-  "network.proxy.ssl": "",
-  "network.proxy.ssl_port": 0,
-
   // Set DNS proxying through SOCKS5.
   "network.proxy.socks_remote_dns": true,
 
@@ -499,6 +492,13 @@ TorBirdy.prototype = {
           }
         }
       }
+
+      // Clear the existing HTTP and SSL proxies.
+      // We restore these when TorBirdy is uninstalled.
+      this.prefs.setCharPref("network.proxy.http", "");
+      this.prefs.setIntPref("network.proxy.http_port", 0);
+      this.prefs.setCharPref("network.proxy.ssl", "");
+      this.prefs.setIntPref("network.proxy.ssl_port", 0);
 
       // Disable all plugins.
       for(var i = 0; i < this.plugins.length; i++) {
