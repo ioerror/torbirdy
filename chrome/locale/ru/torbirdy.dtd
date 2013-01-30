@@ -43,4 +43,5 @@
 
 <!ENTITY torbirdy.panel.usetor.label "Использовать Tor">
 <!ENTITY torbirdy.panel.usejondo.label "Использовать JonDo(Premium)">
+<!ENTITY torbirdy.panel.usewhonix.label "Использовать Whonix">
 <!ENTITY torbirdy.panel.preferences.label "Открыть настройки TorBirdy">
