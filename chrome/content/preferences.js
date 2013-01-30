@@ -323,9 +323,16 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', true);
     }
     if (index === 1) {
-      pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
+      // JonDo.
+      if (pub.anonCustomService.selectedIndex === 0) {
+        pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
+      }
+      // Whonix.
+      if (pub.anonCustomService.selectedIndex === 1) {
+        pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("tor"));
+      }
     }
-    if (index === 0 || index === 2 || index === 4) {
+    if (index === 0 || index === 2 || index === 3) {
       pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("tor"));
     }
 
