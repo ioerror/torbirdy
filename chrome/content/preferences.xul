@@ -48,7 +48,8 @@
                   <hbox align="center">
                     <menulist disabled="true" id="torbirdy-anonservice">
                       <menupopup>
-                        <menuitem label="JonDo" selected="true"/>
+                        <menuitem label="JonDo"/>
+                        <menuitem label="Whonix"/>
                       </menupopup>
                     </menulist>
                   </hbox>

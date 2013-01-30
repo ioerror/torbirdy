@@ -43,4 +43,5 @@
 
 <!ENTITY torbirdy.panel.usetor.label "Usar o Roteador Tor Onion">
 <!ENTITY torbirdy.panel.usejondo.label "Usar o JonDo (Usuário Premium)">
+<!ENTITY torbirdy.panel.usewhonix.label "Usar o Whonix">
 <!ENTITY torbirdy.panel.preferences.label "Abrir Preferências">

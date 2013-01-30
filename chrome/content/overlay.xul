@@ -18,21 +18,26 @@
 
   <popupset>
     <menupopup id="torbirdy-proxy-list" position="after_start">
-      <menuitem id="torbirdy-preferences-selection"
+      <menuitem id="torbirdy-whonix-selection"
                 class="menuitem-iconic"
-                label="&torbirdy.panel.preferences.label;"
-                oncommand="window.openDialog('chrome://castironthunderbirdclub/content/preferences.xul');"/>
-      <menuseparator />
-      <menuitem id="torbirdy-tor-selection"
-                class="menuitem-iconic"
-                image="chrome://castironthunderbirdclub/skin/images/tor-16.png"
-                label="&torbirdy.panel.usetor.label;"
-                oncommand="org.torbirdy.prefs.setProxyTor();" />
+                image="chrome://castironthunderbirdclub/skin/images/whonix-16.png"
+                label="&torbirdy.panel.usewhonix.label;"
+                oncommand="org.torbirdy.prefs.setProxyWhonix();" />
       <menuitem id="torbirdy-jondo-selection"
                 class="menuitem-iconic"
                 image="chrome://castironthunderbirdclub/skin/images/jondo-16.png"
                 label="&torbirdy.panel.usejondo.label;"
                 oncommand="org.torbirdy.prefs.setProxyJonDo();" />
+      <menuitem id="torbirdy-tor-selection"
+                class="menuitem-iconic"
+                image="chrome://castironthunderbirdclub/skin/images/tor-16.png"
+                label="&torbirdy.panel.usetor.label;"
+                oncommand="org.torbirdy.prefs.setProxyTor();" />
+      <menuseparator />
+      <menuitem id="torbirdy-preferences-selection"
+                class="menuitem-iconic"
+                label="&torbirdy.panel.preferences.label;"
+                oncommand="window.openDialog('chrome://castironthunderbirdclub/content/preferences.xul');"/>
     </menupopup>
   </popupset>
 

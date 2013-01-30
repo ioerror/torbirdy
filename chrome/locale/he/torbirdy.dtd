@@ -43,4 +43,5 @@
 
 <!ENTITY torbirdy.panel.usetor.label "תשתמש ב Tor Onion Router">
 <!ENTITY torbirdy.panel.usejondo.label "תשתמש ב  JonDo (Premium)">
+<!ENTITY torbirdy.panel.usewhonix.label "תשתמש ב Whonix">
 <!ENTITY torbirdy.panel.preferences.label "פתח עדיפויות TorBirdy">

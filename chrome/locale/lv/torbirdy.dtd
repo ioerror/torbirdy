@@ -43,4 +43,5 @@
 
 <!ENTITY torbirdy.panel.usetor.label "Lietot maršrutētāju Tor sīpols">
 <!ENTITY torbirdy.panel.usejondo.label "Lietot JonDo (īpašs)">
+<!ENTITY torbirdy.panel.usewhonix.label "Lietot Whonix">
 <!ENTITY torbirdy.panel.preferences.label "Atvērt TorBirdy preferences">

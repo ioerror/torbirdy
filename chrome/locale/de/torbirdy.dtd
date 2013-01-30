@@ -43,4 +43,5 @@
 
 <!ENTITY torbirdy.panel.usetor.label "Tor Onion Router verwenden">
 <!ENTITY torbirdy.panel.usejondo.label "JonDo (Premium) verwenden">
+<!ENTITY torbirdy.panel.usewhonix.label "Whonix verwenden">
 <!ENTITY torbirdy.panel.preferences.label "TorBirdy Einstellungen">

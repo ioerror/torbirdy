@@ -43,4 +43,5 @@
 
 <!ENTITY torbirdy.panel.usetor.label "Gebruik Tor Onion Router">
 <!ENTITY torbirdy.panel.usejondo.label "Gebruik JonDo (Premium)">
+<!ENTITY torbirdy.panel.usewhonix.label "Gebruik Whonix">
 <!ENTITY torbirdy.panel.preferences.label "Openen TorBirdy configuratiescherm">

@@ -137,83 +137,96 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.myPanel = win.document.getElementById("torbirdy-my-panel");
     pub.myPanel.label = proxyname;
     pub.myPanel.style.color = color;
-  }
+  };
 
-  pub.setProxyTor = function() {
-    // Set Tor proxy
+  pub.resetAll = function() {
     pub.resetNetworkProxy();
     pub.setDefaultPrefs();
     pub.clearCustomPrefs();
     pub.restoreEnigmailPrefs();
+  };
+
+  pub.setPreferences = function(preference, value) {
+    // Set the preferences both for Thunderbird and our custom branch.
+    if (typeof value === "string") {
+      pub.prefs.setCharPref(preference, value);
+      pub.prefs.setCharPref(pub.customBranch + preference, value);
+    }
+    if (typeof value === "boolean") {
+      pub.prefs.setBoolPref(preference, value);
+      pub.prefs.setBoolPref(pub.customBranch + preference, value);
+    }
+    if (typeof value === "number") {
+      pub.prefs.setIntPref(preference, value);
+      pub.prefs.setIntPref(pub.customBranch + preference, value);
+    }
+  };
+
+  pub.setProxyTor = function() {
+    // Set Tor proxy
+    pub.resetAll();
 
     pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.tor"), "green");
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 0);
-  }
+  };
 
   pub.setProxyJonDo = function() {
     pub.resetNetworkProxy();
     pub.clearCustomPrefs();
-    // First set the preferences immediately.
-    pub.prefs.setCharPref("network.proxy.socks", "127.0.0.1");
-    pub.prefs.setIntPref("network.proxy.socks_port", 4001);
-    // SSL.
-    pub.prefs.setCharPref("network.proxy.ssl", "127.0.0.1");
-    pub.prefs.setIntPref("network.proxy.ssl_port", 4001);
-    // HTTP.
-    pub.prefs.setCharPref("network.proxy.http", "127.0.0.1");
-    pub.prefs.setIntPref("network.proxy.http_port", 4001);
-    // Disable pipelining
-    pub.prefs.setBoolPref("network.http.pipelining", false);
-    pub.prefs.setBoolPref("network.http.pipelining.ssl", false);
-    pub.prefs.setBoolPref("network.http.proxy.pipelining", false);
 
-    pub.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
-    pub.prefs.setCharPref("extensions.enigmail.keyserver", "hkp://pool.sks-keyservers.net");
-    // Now save them for later use.
-    pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", 4001);
-    // SSL.
-    pub.prefs.setCharPref(pub.customBranch + "network.proxy.ssl", "127.0.0.1");
-    pub.prefs.setIntPref(pub.customBranch + "network.proxy.ssl_port", 4001);
-    // HTTP.
-    pub.prefs.setCharPref(pub.customBranch + "network.proxy.http", "127.0.0.1");
-    pub.prefs.setIntPref(pub.customBranch + "network.proxy.http_port", 4001);
-    // Disable pipelining
-    pub.prefs.setBoolPref(pub.customBranch + "network.http.pipelining", false);
-    pub.prefs.setBoolPref(pub.customBranch + "network.http.pipelining.ssl", false);
-    pub.prefs.setBoolPref(pub.customBranch + "network.http.proxy.pipelining", false);
+    pub.setPreferences("network.proxy.socks", "127.0.0.1");
+    pub.setPreferences("network.proxy.socks_port", 4001);
 
-    pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
-    pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.keyserver", "hkp://pool.sks-keyservers.net");
+    // SSL.
+    pub.setPreferences("network.proxy.ssl", "127.0.0.1");
+    pub.setPreferences("network.proxy.ssl_port", 4001);
+    // HTTP.
+    pub.setPreferences("network.proxy.http", "127.0.0.1");
+    pub.setPreferences("network.proxy.http_port", 4001);
+    // Disable pipelining.
+    pub.setPreferences("network.http.pipelining", false);
+    pub.setPreferences("network.http.pipelining.ssl", false);
+    pub.setPreferences("network.http.proxy.pipelining", false);
+    // Enigmail.
+    pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
+    pub.setPreferences("extensions.enigmail.keyserver", "hkp://pool.sks-keyservers.net");
 
     pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.jondo"), "green");
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 1);
     pub.prefs.setIntPref(pub.prefBranch + 'proxy.type', 0);
-  }
+  };
+
+  pub.setProxyWhonix = function() {
+    pub.resetAll();
+
+    pub.setPreferences("network.proxy.socks", "192.168.0.10");
+    pub.setPreferences("network.proxy.socks_port", 9102);
+
+    pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.whonix"), "green");
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy', 1);
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy.type', 1);
+  };
 
   pub.setProxyCustom = function() {
-    pub.resetNetworkProxy();
-    pub.setDefaultPrefs();
-    pub.restoreEnigmailPrefs();
-    pub.clearCustomPrefs();
+    pub.resetAll();
+
     var socks_host = pub.socksHost.value;
     var socks_port = pub.socksPort.value;
 
     // Set them now.
-    pub.prefs.setCharPref("network.proxy.socks", socks_host);
-    pub.prefs.setIntPref("network.proxy.socks_port", socks_port);
-    // Later use.
-    pub.prefs.setCharPref(pub.customBranch + "network.proxy.socks", socks_host);
-    pub.prefs.setIntPref(pub.customBranch + "network.proxy.socks_port", socks_port);
-    pub.prefs.setIntPref(pub.prefBranch + 'proxy', 2);
+    pub.setPreferences("network.proxy.socks", socks_host);
+    pub.setPreferences("network.proxy.socks_port", parseInt(socks_port, 10));
+
     pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.custom"), "green");
-  }
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy', 2);
+  };
 
   pub.setProxyTransparent = function() {
-    pub.prefs.setIntPref("network.proxy.type", 0);
-    pub.prefs.setIntPref(pub.customBranch + "network.proxy.type", 0);
+    pub.setPreferences("network.proxy.type", 0);
+
     pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.torification"), "red");
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 3);
-  }
+  };
 
   /*
    Save
@@ -230,10 +243,14 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
     // Anonymization service.
     if (index === 1) {
-      var anonType = pub.anonType.selectedIndex;
-      if (anonType === 0 || typeof anonType === "undefined") {
+      var anonServiceType = pub.anonCustomService.selectedIndex;
+      if (anonServiceType === 0 || typeof anonServiceType === "undefined") {
         // Set proxies for JonDo.
         pub.setProxyJonDo();
+      }
+      if (anonServiceType === 1) {
+        // Set Whonix.
+        pub.setProxyWhonix();
       }
     }
 
@@ -306,12 +323,17 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', true);
     }
     if (index === 1) {
-      pub.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
-      pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
+      // JonDo.
+      if (pub.anonCustomService.selectedIndex === 0) {
+        pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
+      }
+      // Whonix.
+      if (pub.anonCustomService.selectedIndex === 1) {
+        pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("tor"));
+      }
     }
-    if (index === 0 || index === 2) {
-      pub.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("tor"));
-      pub.prefs.setCharPref(pub.customBranch + "extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("tor"));
+    if (index === 0 || index === 2 || index === 3) {
+      pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("tor"));
     }
 
   };
@@ -369,11 +391,12 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.socksPort.value = '9050';
     }
 
-    // JonDo.
+    // JonDo/Whonix.
     if (anonService === 1) {
-      var anonType = pub.prefs.getIntPref(pub.prefBranch + 'proxy.type');
-      pub.anonCustomService.disabled = false;
-      pub.anonType.selectedIndex = anonType;
+      var anonCustomService = pub.prefs.getIntPref(pub.prefBranch + 'proxy.type');
+      pub.anonType.disabled = false
+      pub.anonCustomService.disabled = false
+      pub.anonCustomService.selectedIndex = anonCustomService;
     }
 
     // Custom.
@@ -450,14 +473,14 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
               getMostRecentWindow("mail:3pane").
               document.getElementById("tabmail").
               openTab("contentTab", {contentPage: service});
-  },
+  };
 
   pub.testSettings = function() {
     pub.onAccept();
     var index = pub.anonService.selectedIndex;
-    var anonType = pub.anonType.selectedIndex;
+    var anonCustomService = pub.anonCustomService.selectedIndex;
 
-    if ((index === 1) && (anonType === 0 || typeof anonType === "undefined")) {
+    if ((index === 1) && (anonCustomService === 0 || typeof anonCustomService === "undefined")) {
         // Use "http://ip-check.info/tb.php?lang=en" for JonDo.
         pub.displayTestPage("https://ip-check.info/tb.php?lang=en");
     } else {
