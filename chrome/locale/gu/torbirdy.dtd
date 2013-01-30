@@ -1,0 +1,47 @@
+<!ENTITY torbirdy.accountprefs.title "ખાતાંની ગોઠવણી">
+<!ENTITY torbirdy.accountprefs.startup.label "નવા સંદેશ માટે શરુઆતમાં ચકાસો">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "નવા સંદેશ માટે આ સમયે ચકાસો">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "મિનિટ્સ">
+<!ENTITY torbirdy.accountprefs.cancel.button "રદ કરો">
+<!ENTITY torbirdy.accountprefs.save.button "સંગ્રહો">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "ટોરબર્ડિ પ્રાથમિકતાઓ">
+<!ENTITY torbirdy.prefs.save.button "સંગ્રહો">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "રદ કરો">
+<!ENTITY torbirdy.prefs.extra2.button "ચકાસણી ગોઠવણીઓ">
+<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.proxy.label "પ્રોક્સી ગોઠવણીઓ">
+<!ENTITY torbirdy.prefs.privacy.label "અંગતતા ગોઠવણીઓ">
+<!ENTITY torbirdy.prefs.recommended.text "ટોરબર્ડિ (ટોર) માટે આગ્રહ કરેલ પ્રોક્સી ગોઠવણીઓ વાપરો">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "અજ્ઞાત થવાની સેવા પસંદ કરો">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "પોતાની પ્રોક્સી ગોઠવણીઓ વાપરો">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS યજમાન: ">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "પોર્ટ: ">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "પારદર્શક ટોરિફિકેશન">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "વૈશ્વિક">
+<!ENTITY torbirdy.prefs.imap.label "IMAP ખાતાંઓ માટે પુશ ઇમેલ આધાર સક્રિય કરો [મૂળભૂત: નિષ્ક્રિય]">
+<!ENTITY torbirdy.prefs.imap.key "i">
+<!ENTITY torbirdy.prefs.startup_folder.label "શરુઆત પર છેલ્લો વાપરેલ ઇમેલ પસંદ કરો [મૂળભૂત: નિષ્ક્રિય, સ્થાનિક ફોલ્ડરો પસંદ કરશે]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "થન્ડરબર્ડનો સમય વિસ્તાર UTC પર ન ગોઠવો [મૂળભૂત: UTC પર ગોઠવેલ]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "મેળવનારની કી ઓળખ એન્ક્રિપ્ટ કરેલ સંદેશાઓમાં મૂકો [મૂળભૂત: ન મૂકો]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.account_specific "ખાતા-સંબંધિત">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "ખાતું પસંદ કરો: ">
+
+<!ENTITY torbirdy.panel.usetor.label "ટોર ઓનિયન રાઉટર વાપરો">
+<!ENTITY torbirdy.panel.usejondo.label "જોનડુ (પ્રિમિયમ) વાપરો">
+<!ENTITY torbirdy.panel.usewhonix.label "વ્હોનિક્સ વાપરો">
+<!ENTITY torbirdy.panel.preferences.label "ટોરબર્ડિ પ્રાથમિકતાઓ ખોલો">
