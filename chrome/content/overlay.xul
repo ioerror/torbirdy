@@ -33,6 +33,11 @@
                 image="chrome://castironthunderbirdclub/skin/images/jondo-16.png"
                 label="&torbirdy.panel.usejondo.label;"
                 oncommand="org.torbirdy.prefs.setProxyJonDo();" />
+      <menuitem id="torbirdy-whonix-selection"
+                class="menuitem-iconic"
+                image="chrome://castironthunderbirdclub/skin/images/whonix-16.png"
+                label="&torbirdy.panel.usewhonix.label;"
+                oncommand="org.torbirdy.prefs.setProxyWhonix();" />
     </menupopup>
   </popupset>
 
