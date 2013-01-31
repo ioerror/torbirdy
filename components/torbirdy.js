@@ -149,7 +149,7 @@ const TORBIRDYPREFS = {
   "mailnews.message_display.allow_plugins": false,
   // Don't convert to our local date. This may matter in a reply, etc.
   "mailnews.display.original_date": true,
-  // Wrap a line at this 72 characters.
+  // Wrap a line at 72 characters.
   "mailnews.wraplength": 72,
   // When replying to a message, set to: '%s'.
   // https://lists.torproject.org/pipermail/tor-talk/2012-May/024395.html
@@ -190,7 +190,7 @@ const TORBIRDYPREFS = {
 
   // Disable X-Enigmail headers.
   // We don't want to obviously disclose that we're using Enigmail as it may
-  // add privacy distroying headers
+  // add privacy destroying headers
   "extensions.enigmail.addHeaders": false,
   // Use GnuPG's default comment for signed messages.
   "extensions.enigmail.useDefaultComment": true,
