@@ -58,7 +58,7 @@ function torbirdyStartup() {
       myPanel.label = strbundle.getString("torbirdy.enabled.custom");
     }
     // Whonix.
-    if (whonix) {
+    if (whonix && prefs.getBoolPref("extensions.torbirdy.whonix_run")) {
       myPanel.label = strbundle.getString("torbirdy.enabled.whonix");
       org.torbirdy.prefs.setProxyWhonix();
     }
@@ -68,6 +68,7 @@ function torbirdyStartup() {
       myPanel.label = strbundle.getString("torbirdy.enabled.torification");
       myPanel.style.color = "red";
     }
+    prefs.setBoolPref("extensions.torbirdy.whonix_run", false);
   } else {
     myPanel.label = strbundle.getString("torbirdy.enabled.disabled");
     myPanel.style.color = "red";
