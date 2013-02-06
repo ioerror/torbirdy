@@ -5,7 +5,7 @@ clean:
 	rm -f ../torbirdy-$(VERSION).xpi
 
 make-xpi:
-	zip -r ../torbirdy-$(VERSION).xpi * -x "/screenshots/*" -x "*/screenshots/*"  -x "debian/*" -x "patches/*" -x "TODO" -x "ChangeLog"
+	zip -r ../torbirdy-$(VERSION).xpi * -x "/screenshots/*" -x "*/screenshots/*"  -x "debian/*" -x "patches/*" -x "TODO" -x "ChangeLog" -x "Makefile"
 
 git-tag:
 	git tag -u 0xD81D840E -s $(VERSION)
