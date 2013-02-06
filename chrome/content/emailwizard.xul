@@ -12,7 +12,7 @@
       oncommand="org.torbirdy.emailwizard.disableAutoWizard();" />
 
   <vbox id="mastervbox" flex="1">
-    <groupbox id="protocolBox" class="indent" insertafter="initialSettings">
+    <groupbox id="torbirdy-protocol-box" class="indent" insertafter="initialSettings">
 
       <hbox align="center" pack="start">
         <label value="Protocol:"
