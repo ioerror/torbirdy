@@ -21,6 +21,7 @@
   Add Tor-JonDo-Preferences quick switch (patch by Karsten N)
   Support for Whonix (http://whonix.sourceforge.net/)
   Improved security: better SSL enforcement
+  Add Tails support
 
 0.0.13, 28 Sept 2012
   Translation updates:

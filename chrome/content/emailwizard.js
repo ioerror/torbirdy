@@ -113,11 +113,9 @@ org.torbirdy.emailwizard = new function() {
     }
   };
 
-  pub.onLoad = function(event) {
-    if (!runningTails) {
-      document.getElementById("provisioner_button").disabled = true;
-    }
-    else {
+  pub.onLoad = function() {
+    document.getElementById("provisioner_button").disabled = true;
+    if (runningTails) {
       document.getElementById("torbirdy-protocol-box").collapsed = true;
     }
   };
