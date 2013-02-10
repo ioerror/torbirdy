@@ -26,14 +26,14 @@
 <!ENTITY torbirdy.prefs.socks_host.key "h">
 <!ENTITY torbirdy.prefs.socks_port.label "Port: ">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
-<!ENTITY torbirdy.prefs.torification.label "Transparante anonimisering">
+<!ENTITY torbirdy.prefs.torification.label "Transparant Torification">
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "Globaal">
 <!ENTITY torbirdy.prefs.imap.label "Ondersteuning voor push e-mail voor IMAP-accounts inschakelen [standaard: uitgeschakeld]">
 <!ENTITY torbirdy.prefs.imap.key "i">
 <!ENTITY torbirdy.prefs.startup_folder.label "Bij opstarten direct naar de laatst bekeken map gaan [standaard: uitgeschakeld, lokale map wordt geselecteerd]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
-<!ENTITY torbirdy.prefs.timezone.label "Stel Thunderbird's tijdzone niet in op UTC [standaard: wel instellen]">
+<!ENTITY torbirdy.prefs.timezone.label "Gebruik niet de UTC tijdzone voor Thunderbird [standaard: gebruik UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Uitschakelen GPG '--throw-keyids' [standaard: ingeschakeld]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
@@ -44,4 +44,4 @@
 <!ENTITY torbirdy.panel.usetor.label "Gebruik Tor Onion Router">
 <!ENTITY torbirdy.panel.usejondo.label "Gebruik JonDo (Premium)">
 <!ENTITY torbirdy.panel.usewhonix.label "Gebruik Whonix">
-<!ENTITY torbirdy.panel.preferences.label "Openen TorBirdy configuratiescherm">
+<!ENTITY torbirdy.panel.preferences.label "Open TorBirdy voorkeuren">
