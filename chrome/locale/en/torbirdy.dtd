@@ -13,7 +13,7 @@
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Cancel">
 <!ENTITY torbirdy.prefs.extra2.button "Test Settings">
-<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Proxy Settings">
 <!ENTITY torbirdy.prefs.privacy.label "Privacy Settings">
 <!ENTITY torbirdy.prefs.recommended.text "Use the recommended proxy settings for TorBirdy (Tor)">
@@ -37,6 +37,8 @@
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Put the recipient key IDs into encrypted messages [default: do not put]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.confirmemail.label "Confirm before sending email if Enigmail is enabled [default: do not confirm]">
+<!ENTITY torbirdy.prefs.confirmemail.key "m">
 <!ENTITY torbirdy.prefs.account_specific "Account-Specific">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Choose an account: ">

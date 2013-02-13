@@ -271,12 +271,10 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     var idlePref = 'mail.server.default.use_idle';
     var idle = pub.idle.checked;
     if (idle) {
-      pub.prefs.setBoolPref(pub.customBranch + idlePref, true);
-      pub.prefs.setBoolPref(idlePref, true);
+      pub.setPreferences(idlePref, true);
     }
     else {
-      pub.prefs.setBoolPref(pub.customBranch + idlePref, false);
-      pub.prefs.setBoolPref(idlePref, false);
+      pub.setPreferences(idlePref, false);
     }
 
     // Last accessed folder.
@@ -314,14 +312,24 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     }
 
     // Enigmail.
-    // default: true
-    var enigmail = pub.enigmail.checked;
-    if (enigmail) {
+    // --throw-keyids - default: true
+    var enigmail_throwkeyid = pub.enigmail.checked;
+    if (enigmail_throwkeyid) {
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', false);
     }
     else {
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', true);
     }
+    var enigmail_confirmemail = pub.confirmemail.checked;
+    var engimail_pref = "extensions.enigmail.confirmBeforeSend";
+    if (enigmail_confirmemail) {
+      pub.prefs.setBoolPref(engimail_pref, true);
+      pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.confirmemail', true);
+    } else {
+      pub.prefs.setBoolPref(engimail_pref, false);
+      pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.confirmemail', false);
+    }
+
     if (index === 1) {
       // JonDo.
       if (pub.anonCustomService.selectedIndex === 0) {
@@ -354,6 +362,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.enigmail = document.getElementById('torbirdy-enigmail-throwkeyid');
     pub.torification = document.getElementById('torbirdy-torification');
     pub.timezone = document.getElementById('torbirdy-timezone');
+    pub.confirmemail = document.getElementById('torbirdy-confirm-email');
 
     // Make sure the user really wants to change these settings.
     var warnPrompt = pub.prefs.getBoolPref("extensions.torbirdy.warn");
@@ -444,13 +453,20 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.timezone.checked = true;
     }
 
-    // Enigmal settings.
-    // default: true
+    // Enigmal settings
+    // --throw-keyids - default: true
     var enigmail_throwkeyid = pub.prefs.getBoolPref(pub.prefBranch + 'enigmail.throwkeyid');
     if (enigmail_throwkeyid) {
       pub.enigmail.checked = false;
     } else {
       pub.enigmail.checked = true;
+    }
+    // Confirm before sending - default: false
+    var enigmail_confirmemail = pub.prefs.getBoolPref(pub.prefBranch + 'enigmail.confirmemail');
+    if (enigmail_confirmemail) {
+      pub.confirmemail.checked = true;
+    } else {
+      pub.confirmemail.checked = false;
     }
 
     // Load the email accounts.

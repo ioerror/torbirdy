@@ -194,8 +194,6 @@ const TORBIRDYPREFS = {
   "extensions.enigmail.addHeaders": false,
   // Use GnuPG's default comment for signed messages.
   "extensions.enigmail.useDefaultComment": true,
-  // Confirm before sending a signed/encrypted message.
-  "extensions.enigmail.confirmBeforeSend": true,
   // XXX: TODO --hidden-recipient should be used for each person but perhaps
   // --throw-keyids will be an OK stopgap?
   "extensions.enigmail.agentAdditionalParam":

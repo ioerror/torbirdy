@@ -93,6 +93,7 @@
               <checkbox accesskey="&torbirdy.prefs.enigmail_throwkeyid.key;" id="torbirdy-enigmail-throwkeyid" label="&torbirdy.prefs.enigmail_throwkeyid.label;"/>
               <checkbox accesskey="&torbirdy.prefs.startup_folder.key;" id="torbirdy-startup-folder" label="&torbirdy.prefs.startup_folder.label;"/>
               <checkbox accesskey="&torbirdy.prefs.timezone.key;" id="torbirdy-timezone" label="&torbirdy.prefs.timezone.label;"/>
+              <checkbox accesskey="&torbirdy.prefs.confirmemail.key;" id="torbirdy-confirm-email" label="&torbirdy.prefs.confirmemail.label;"/>
             </vbox>
           </groupbox>
 
