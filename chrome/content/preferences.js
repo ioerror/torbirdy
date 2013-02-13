@@ -320,6 +320,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     else {
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', true);
     }
+    // Confirm before sending - default: false
     var enigmail_confirmemail = pub.confirmemail.checked;
     var engimail_pref = "extensions.enigmail.confirmBeforeSend";
     if (enigmail_confirmemail) {

@@ -508,6 +508,30 @@ TorBirdy.prototype = {
       var accounts = this.acctMgr.accounts;
       for (var i = 0; i < accounts.Count(); i++) {
         var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
+
+        // Save account settings for restoring later.
+        var key = account.key;
+        var restorePrefs = ["check_new_mail", "login_at_startup", "check_time", "download_on_biff"];
+        for (var j = 0; j < restorePrefs.length; j++) {
+          var pref = "mail.server.%serverkey%.".replace("%serverkey%", key);
+          var prefName = restorePrefs[j];
+          var prefToCall = pref + prefName;
+
+          if (this.prefs.prefHasUserValue(prefToCall)) {
+            var typePref = this.prefs.getPrefType(prefToCall);
+            if (typePref === 64) {
+              var currentPref = this.prefs.getIntPref(prefToCall);
+              this.prefs.setIntPref(RESTORE_BRANCH + prefToCall, currentPref);
+            }
+            if (typePref === 128) {
+              var currentPref = this.prefs.getBoolPref(prefToCall);
+              this.prefs.setBoolPref(RESTORE_BRANCH + prefToCall, currentPref);
+            }
+            TORBIRDY_OLDPREFS.push(prefToCall);
+          }
+        }
+
+        // Now apply the TorBirdy recommended settings.
         account.downloadOnBiff = false;
         account.loginAtStartUp = false;
         account.doBiff = false;
