@@ -511,7 +511,9 @@ TorBirdy.prototype = {
 
         // Save account settings for restoring later.
         var key = account.key;
-        var restorePrefs = ["check_new_mail", "login_at_startup", "check_time", "download_on_biff"];
+        var restorePrefs = ["check_new_mail", "login_at_startup",
+                            "check_time", "download_on_biff",
+                            "socketType", "port", "authMethod"];
         for (var j = 0; j < restorePrefs.length; j++) {
           var pref = "mail.server.%serverkey%.".replace("%serverkey%", key);
           var prefName = restorePrefs[j];
@@ -550,6 +552,8 @@ TorBirdy.prototype = {
         // For nsIMsgIncomingServer, socketType 3 is SSL, as compared to the
         // manual account configuration wizard (emailwizard.js), where it is 2.
         account.socketType = 3;
+        // Set the authentication to normal, connection is already encrypted.
+        account.authMethod = 3;
       }
     }
     this.prefs.setBoolPref("extensions.torbirdy.first_run", false);
