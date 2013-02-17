@@ -1,3 +1,7 @@
+0.1.1,
+  Added a dialog for new users that is shown during the first-run
+  Restore all account settings that were changed on uninstall
+
 0.1.0, 11 Feb 2013
   Our first release in the Beta release series! Hooray!
   Translation updates:
