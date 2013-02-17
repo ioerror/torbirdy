@@ -13,7 +13,7 @@
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Annuleren">
 <!ENTITY torbirdy.prefs.extra2.button "Configuratie controleren">
-<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Proxy configuratie">
 <!ENTITY torbirdy.prefs.privacy.label "Privacy configuratie">
 <!ENTITY torbirdy.prefs.recommended.text "Aanbevolen configuratie voor TorBirdy (Tor) gebruiken">
@@ -37,6 +37,10 @@
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Uitschakelen GPG '--throw-keyids' [standaard: ingeschakeld]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.confirmemail.label "Confirm before sending email if Enigmail is enabled [default: do not confirm]">
+<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.account_specific "Account-specifiek">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Kies een account: ">
@@ -45,3 +49,5 @@
 <!ENTITY torbirdy.panel.usejondo.label "Gebruik JonDo (Premium)">
 <!ENTITY torbirdy.panel.usewhonix.label "Gebruik Whonix">
 <!ENTITY torbirdy.panel.preferences.label "Open TorBirdy voorkeuren">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">

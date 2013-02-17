@@ -13,7 +13,7 @@
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Откажи">
 <!ENTITY torbirdy.prefs.extra2.button "Тест подешавања">
-<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Прокси подешавања">
 <!ENTITY torbirdy.prefs.privacy.label "Подешавања приватности">
 <!ENTITY torbirdy.prefs.recommended.text "Користите препоручена прокси подешавања за TorBirdy (Tor)">
@@ -37,6 +37,10 @@
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Искључи GPG '--throw-keyids' [стандардно: укључено]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.confirmemail.label "Confirm before sending email if Enigmail is enabled [default: do not confirm]">
+<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.account_specific "Специјално-за налог">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Изабери налог: ">
@@ -45,3 +49,5 @@
 <!ENTITY torbirdy.panel.usejondo.label "Use JonDo (Premium)">
 <!ENTITY torbirdy.panel.usewhonix.label "Use Whonix">
 <!ENTITY torbirdy.panel.preferences.label "Open TorBirdy Preferences">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">

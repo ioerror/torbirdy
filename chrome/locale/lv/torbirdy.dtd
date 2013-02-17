@@ -13,7 +13,7 @@
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Atcelt">
 <!ENTITY torbirdy.prefs.extra2.button "Testa iestatījumi">
-<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Starpniekdatora iestatījumi">
 <!ENTITY torbirdy.prefs.privacy.label "Privātuma iestatījumi">
 <!ENTITY torbirdy.prefs.recommended.text "Lietot Tor Birdy (Tor) ieteiktos starpniekdatora iestatījumus">
@@ -37,6 +37,10 @@
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Likt saņēmēju atslēgu identifikatorus kriptētos ziņojumos [noklusēti: nelikt]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.confirmemail.label "Confirm before sending email if Enigmail is enabled [default: do not confirm]">
+<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.account_specific "Kontam-piemītošs">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Izvēlēties kontu:">
@@ -45,3 +49,5 @@
 <!ENTITY torbirdy.panel.usejondo.label "Lietot JonDo (īpašs)">
 <!ENTITY torbirdy.panel.usewhonix.label "Lietot Whonix">
 <!ENTITY torbirdy.panel.preferences.label "Atvērt TorBirdy preferences">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">

@@ -13,7 +13,7 @@
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Cancelar">
 <!ENTITY torbirdy.prefs.extra2.button "Probar la configuración">
-<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Configuración del proxy">
 <!ENTITY torbirdy.prefs.privacy.label "Parámetros de privacidad">
 <!ENTITY torbirdy.prefs.recommended.text "Usar la configuración del proxy recomendada para TorBirdy (Tor)">
@@ -37,6 +37,10 @@
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Incluír las claves de identificación del receptor en los mensajes cifrados [por defecto: habilitado]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.confirmemail.label "Confirm before sending email if Enigmail is enabled [default: do not confirm]">
+<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.account_specific "Configuración específica de la cuenta">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Elegir una cuenta: ">
@@ -45,3 +49,5 @@
 <!ENTITY torbirdy.panel.usejondo.label "Usar JonDo (premium)">
 <!ENTITY torbirdy.panel.usewhonix.label "Usar Whonix">
 <!ENTITY torbirdy.panel.preferences.label "Abrir Preferencias de TorBirdy">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">

@@ -13,7 +13,7 @@
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "取消">
 <!ENTITY torbirdy.prefs.extra2.button "测试设置">
-<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "代理设置">
 <!ENTITY torbirdy.prefs.privacy.label "隐私设置">
 <!ENTITY torbirdy.prefs.recommended.text "使用 TorBirdy（Tor）推荐的代理设置">
@@ -37,6 +37,10 @@
 <!ENTITY torbirdy.prefs.timezone.key "">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "将收件人 key ID 放入加密邮件（默认：不放入）">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.confirmemail.label "Confirm before sending email if Enigmail is enabled [default: do not confirm]">
+<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.account_specific "指定帐户">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "选择帐户：">
@@ -45,3 +49,5 @@
 <!ENTITY torbirdy.panel.usejondo.label "Use JonDo (Premium)">
 <!ENTITY torbirdy.panel.usewhonix.label "Use Whonix">
 <!ENTITY torbirdy.panel.preferences.label "Open TorBirdy Preferences">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">

@@ -13,7 +13,7 @@
 <!ENTITY torbirdy.prefs.save.key "S">
 <!ENTITY torbirdy.prefs.cancel.button "ਰੱਦ ਕਰੋ">
 <!ENTITY torbirdy.prefs.extra2.button "ਟੇਸਟ ਸੈਟਿੰਗ">
-<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "ਪਰਾਕਸੀ ਸੈਟਿੰਗ">
 <!ENTITY torbirdy.prefs.privacy.label "ਪਰਾਈਵੇਸੀ ਸੈਟਿੰਗ">
 <!ENTITY torbirdy.prefs.recommended.text "ਟੌਰਬਰਡੀ ਲਈ ਆਖੀ ਹੋਈ ਪਰਾਕਸੀ ਸੈਟਿੰਗ ਵਰਤੋ ਕਰੋ (ਟੌਰ)">
@@ -37,6 +37,10 @@
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "GPG '--throw-keyids' ਰੱਦ ਕਰੋ">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.confirmemail.label "Confirm before sending email if Enigmail is enabled [default: do not confirm]">
+<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.account_specific "ਅਕਾਊਂਟ-ਵਿਸ਼ਿਸ਼ਟ">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "ਅਕਾਊਂਟ ਚੁਣੋ">
@@ -45,3 +49,5 @@
 <!ENTITY torbirdy.panel.usejondo.label "ਜੋਨ ਦੋ (ਪ੍ਰੀਮੀਅਮ) ਦੀ ਵਰਤੋ ਕਰੋ">
 <!ENTITY torbirdy.panel.usewhonix.label "ਹੁਨਿਕਸ ਦੀ ਵਰਤੋ ਕਰੋ">
 <!ENTITY torbirdy.panel.preferences.label "ਟੌਰਬਰਡੀ ਸੈਟਿੰਗ">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">

@@ -13,7 +13,7 @@
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "રદ કરો">
 <!ENTITY torbirdy.prefs.extra2.button "ચકાસણી ગોઠવણીઓ">
-<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "પ્રોક્સી ગોઠવણીઓ">
 <!ENTITY torbirdy.prefs.privacy.label "અંગતતા ગોઠવણીઓ">
 <!ENTITY torbirdy.prefs.recommended.text "ટોરબર્ડિ (ટોર) માટે આગ્રહ કરેલ પ્રોક્સી ગોઠવણીઓ વાપરો">
@@ -37,6 +37,10 @@
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "મેળવનારની કી ઓળખ એન્ક્રિપ્ટ કરેલ સંદેશાઓમાં મૂકો [મૂળભૂત: ન મૂકો]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.confirmemail.label "Confirm before sending email if Enigmail is enabled [default: do not confirm]">
+<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.account_specific "ખાતા-સંબંધિત">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "ખાતું પસંદ કરો: ">
@@ -45,3 +49,5 @@
 <!ENTITY torbirdy.panel.usejondo.label "જોનડુ (પ્રિમિયમ) વાપરો">
 <!ENTITY torbirdy.panel.usewhonix.label "વ્હોનિક્સ વાપરો">
 <!ENTITY torbirdy.panel.preferences.label "ટોરબર્ડિ પ્રાથમિકતાઓ ખોલો">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">
