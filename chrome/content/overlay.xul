@@ -9,7 +9,7 @@
   <script type="application/javascript" src="chrome://castironthunderbirdclub/content/preferences.js" />
 
   <stringbundleset id="stringbundleset">
-    <stringbundle id="torbirdy-strings" src="chrome://castironthunderbirdclub/locale/torbirdy.properties"/>
+    <stringbundle id="torbirdy-strings-overlay" src="chrome://castironthunderbirdclub/locale/torbirdy.properties"/>
   </stringbundleset>
 
   <statusbar id="status-bar">

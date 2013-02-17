@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://castironthunderbirdclub/locale/torbirdy.dtd">
+
+<dialog id="castironthunderbird-firstrun-info" 
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&torbirdy.firstrun.title;"
+        buttons="accept"
+        onload="return org.torbirdy.firstrun.onLoad();"
+        ondialogaccept="window.close();">
+
+   <script type="application/x-javascript"
+     src="chrome://castironthunderbirdclub/content/firstruninfo.js"></script>
+
+   <stringbundleset id="stringbundleset">
+     <stringbundle id="torbirdy-strings-firstrun" src="chrome://castironthunderbirdclub/locale/torbirdy.properties"/>
+   </stringbundleset>
+
+   <vbox flex="1" pack="start">
+     <description id="torbirdy-firstrun-info" style="white-space: pre-wrap; width: 400px"></description>
+     <textbox id="torbirdy-website" readonly="true" />
+   </vbox>
+
+</dialog>

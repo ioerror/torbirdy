@@ -5,7 +5,7 @@
   <script type="application/javascript" src="chrome://castironthunderbirdclub/content/emailwizard.js" />
 
   <stringbundleset id="stringbundleset">
-    <stringbundle id="torbirdy-strings" src="chrome://castironthunderbirdclub/locale/torbirdy.properties"/>
+    <stringbundle id="torbirdy-strings-emailwizard" src="chrome://castironthunderbirdclub/locale/torbirdy.properties"/>
   </stringbundleset>
 
   <button id="next_button"

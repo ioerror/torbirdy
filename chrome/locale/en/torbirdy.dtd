@@ -47,3 +47,5 @@
 <!ENTITY torbirdy.panel.usejondo.label "Use JonDo (Premium)">
 <!ENTITY torbirdy.panel.usewhonix.label "Use Whonix">
 <!ENTITY torbirdy.panel.preferences.label "Open TorBirdy Preferences">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">

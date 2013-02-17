@@ -19,6 +19,14 @@ function torbirdyStartup() {
   var env = Components.classes["@mozilla.org/process/environment;1"]
                             .getService(Components.interfaces.nsIEnvironment);
 
+  var infoRun = "extensions.torbirdy.info_run";
+  if (prefs.getBoolPref(infoRun)) {
+    window.open("chrome://castironthunderbirdclub/content/firstruninfo.xul",
+                "FirstRunWindow",
+                "chrome, dialog, centerscreen, resizable=no");
+    prefs.setBoolPref(infoRun, false);
+  }
+
   // Set the time zone to UTC if the preference is true.
   if (prefs.getBoolPref("extensions.torbirdy.timezone"))
   {
@@ -32,7 +40,7 @@ function torbirdyStartup() {
   }
 
   var myPanel = document.getElementById("torbirdy-my-panel");
-  var strbundle = document.getElementById("torbirdy-strings");
+  var strbundle = document.getElementById("torbirdy-strings-overlay");
   if (prefs.getBoolPref("extensions.torbirdy.protected"))
   {
     var type = prefs.getIntPref("extensions.torbirdy.proxy");
