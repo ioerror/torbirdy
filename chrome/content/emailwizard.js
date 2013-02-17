@@ -10,15 +10,19 @@ org.torbirdy.emailwizard = new function() {
   // Check if we are running Tails. If yes, disable the manual account
   // configuration wizard since Tails handles that on its own. See:
   // https://tails.boum.org/todo/Return_of_Icedove__63__/#index6h2
-  var runningTails = false;
+  // This is also disabled if "extensions.torbirdy.emailwizard" is true.
+  var disableWizard = false;
   if (prefs.prefHasUserValue("vendor.name")) {
     if (prefs.getCharPref("vendor.name") === "Tails") {
-      runningTails = true;
+      disableWizard = true;
     }
+  }
+  if (prefs.getBoolPref("extensions.torbirdy.emailwizard")) {
+    disableWizard = true;
   }
 
   pub.disableAutoWizard = function() {
-    if (!runningTails) {
+    if (!disableWizard) {
       var realname = document.getElementById("realname").value;
       var email = document.getElementById("email").value;
       var password = document.getElementById("password").value;
@@ -103,7 +107,7 @@ org.torbirdy.emailwizard = new function() {
     var keycode = event.keyCode;
     if (keycode == 13) {
       if (document.getElementById("next_button").disabled === false) {
-        if (!runningTails) {
+        if (!disableWizard) {
           pub.disableAutoWizard();
         }
         else {
@@ -115,7 +119,7 @@ org.torbirdy.emailwizard = new function() {
 
   pub.onLoad = function() {
     document.getElementById("provisioner_button").disabled = true;
-    if (runningTails) {
+    if (disableWizard) {
       document.getElementById("torbirdy-protocol-box").collapsed = true;
     }
   };

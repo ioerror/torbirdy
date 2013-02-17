@@ -331,6 +331,14 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.confirmemail', false);
     }
 
+    // Thunderbird's email wizard - default: false
+    var emailwizard = pub.emailwizard.checked;
+    if (emailwizard) {
+      pub.prefs.setBoolPref(pub.prefBranch + 'emailwizard', true);
+    } else {
+      pub.prefs.setBoolPref(pub.prefBranch + 'emailwizard', false);
+    }
+
     if (index === 1) {
       // JonDo.
       if (pub.anonCustomService.selectedIndex === 0) {
@@ -364,6 +372,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.torification = document.getElementById('torbirdy-torification');
     pub.timezone = document.getElementById('torbirdy-timezone');
     pub.confirmemail = document.getElementById('torbirdy-confirm-email');
+    pub.emailwizard = document.getElementById('torbirdy-email-wizard');
 
     // Make sure the user really wants to change these settings.
     var warnPrompt = pub.prefs.getBoolPref("extensions.torbirdy.warn");
@@ -468,6 +477,14 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.confirmemail.checked = true;
     } else {
       pub.confirmemail.checked = false;
+    }
+
+    // Thunderbird's email wizard - default: false
+    var emailWizard = pub.prefs.getBoolPref(pub.prefBranch + 'emailwizard');
+    if (emailWizard) {
+      pub.emailwizard.checked = true;
+    } else {
+      pub.emailwizard.checked = false;
     }
 
     // Load the email accounts.
