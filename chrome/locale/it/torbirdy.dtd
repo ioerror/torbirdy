@@ -13,7 +13,7 @@
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Annulla">
 <!ENTITY torbirdy.prefs.extra2.button "Test Impostazioni">
-<!ENTITY torbirdy.prefs.extra2.key "n">
+<!ENTITY torbirdy.prefs.extra2.key "g">
 <!ENTITY torbirdy.prefs.proxy.label "Impostazioni Proxy">
 <!ENTITY torbirdy.prefs.privacy.label "Impostazioni Privacy">
 <!ENTITY torbirdy.prefs.recommended.text "Utilizza le impostazioni consigliate per TorBirdy(Tor)">
@@ -37,9 +37,9 @@
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Disabilita GPG '--throw-keyids' [default: abilitato]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
-<!ENTITY torbirdy.prefs.confirmemail.label "Confirm before sending email if Enigmail is enabled [default: do not confirm]">
+<!ENTITY torbirdy.prefs.confirmemail.label "Conferma prima di inviare l'email se Enigmail è attivo [predefinito: non confermare]">
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
-<!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
+<!ENTITY torbirdy.prefs.emailwizard.label "Attiva il wizard di configurazione automatica email di Thunderbird [default: disabilitato]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.account_specific "Specifico Account">
 <!ENTITY torbirdy.prefs.select_account.key "C">
@@ -50,4 +50,4 @@
 <!ENTITY torbirdy.panel.usewhonix.label "Usa Whonix">
 <!ENTITY torbirdy.panel.preferences.label "Apri le preferenze di TorBirdy">
 
-<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">
+<!ENTITY torbirdy.firstrun.title "Primo Avvio di TorBirdy">
