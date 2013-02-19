@@ -37,9 +37,9 @@
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "OpenPGP-IDs der Empfänger in verschlüsselten E-Mails nicht entfernen [Default: wird entfernt]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "o">
-<!ENTITY torbirdy.prefs.confirmemail.label "Confirm before sending email if Enigmail is enabled [default: do not confirm]">
+<!ENTITY torbirdy.prefs.confirmemail.label "Vor dem absenden einer Email überprüfen, ob Enigmail aktiviert ist [standard: nicht überprüfen]">
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
-<!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
+<!ENTITY torbirdy.prefs.emailwizard.label "Thunderbird's automatischen Email-Konfigurator aktivieren [standard: deaktiviert]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.account_specific "Konten-spezifisch">
 <!ENTITY torbirdy.prefs.select_account.key "C">
@@ -50,4 +50,4 @@
 <!ENTITY torbirdy.panel.usewhonix.label "Whonix verwenden">
 <!ENTITY torbirdy.panel.preferences.label "TorBirdy Einstellungen">
 
-<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">
+<!ENTITY torbirdy.firstrun.title "TorBirdy's Erster Start">
