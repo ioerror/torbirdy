@@ -22,7 +22,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
   pub.setDefaultPrefs = function() {
     pub.prefs.setCharPref("network.proxy.socks", "127.0.0.1");
-    pub.prefs.setIntPref("network.proxy.socks_port", 9050);
+    pub.prefs.setIntPref("network.proxy.socks_port", 9150);
     pub.prefs.clearUserPref("network.proxy.http");
     pub.prefs.clearUserPref("network.proxy.http_port");
     pub.prefs.clearUserPref("network.proxy.ssl");
@@ -407,7 +407,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     // Tor.
     if (anonService === 0) {
       pub.socksHost.value = '127.0.0.1';
-      pub.socksPort.value = '9050';
+      pub.socksPort.value = '9150';
     }
 
     // JonDo/Whonix.
