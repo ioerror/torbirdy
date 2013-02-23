@@ -149,8 +149,6 @@ const TORBIRDYPREFS = {
   "mailnews.message_display.allow_plugins": false,
   // Don't convert to our local date. This may matter in a reply, etc.
   "mailnews.display.original_date": true,
-  // Wrap a line at 72 characters.
-  "mailnews.wraplength": 72,
   // When replying to a message, set to: '%s'.
   // https://lists.torproject.org/pipermail/tor-talk/2012-May/024395.html
   "mailnews.reply_header_type": 1,

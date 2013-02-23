@@ -35,7 +35,7 @@
 
          <row>
            <hbox align="center">
-             <checkbox label="&torbirdy.accountprefs.minutes.label;" id="torbirdy-check-new" oncommand="org.torbirdy.accountprefs.onToggleCheck();" accesskey="&torbirdy.accountprefs.minutes.key;" control="check-minutes" />
+             <checkbox label="&torbirdy.accountprefs.minutes.label;" id="torbirdy-check-new" oncommand="org.torbirdy.accountprefs.onToggleCheck();" accesskey="&torbirdy.accountprefs.minutes.key;" control="torbirdy-check-minutes" />
              <textbox id="torbirdy-check-minutes" type="number" size="2" value="0" />
              <label value="&torbirdy.accountprefs.minutes.trail.label;" />
            </hbox>
