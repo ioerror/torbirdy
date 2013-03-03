@@ -1,0 +1,53 @@
+<!ENTITY torbirdy.accountprefs.title "계정 설정">
+<!ENTITY torbirdy.accountprefs.startup.label "시작시에 새로운 메시지 확인">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "매번 새로운 메시지 확인">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "분">
+<!ENTITY torbirdy.accountprefs.cancel.button "취소">
+<!ENTITY torbirdy.accountprefs.save.button "저장">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "Torbirdy 개인 설정">
+<!ENTITY torbirdy.prefs.save.button "저장">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "취소">
+<!ENTITY torbirdy.prefs.extra2.button "설정 테스트">
+<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.proxy.label "프록시 설정">
+<!ENTITY torbirdy.prefs.privacy.label "개인 정보 설정">
+<!ENTITY torbirdy.prefs.recommended.text "Torbirdy를 위한 추천되는 프록시 설정을 사용합니다.">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "익명화 서비스 선택">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "사용자 프록시 설정 사용">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Host: ">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "포트">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "투명한 Tor화">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "글로벌">
+<!ENTITY torbirdy.prefs.imap.label "IMAP 계정에 대한 푸시 이메일 지원 활성화 [기본값:비활성화]">
+<!ENTITY torbirdy.prefs.imap.key "i">
+<!ENTITY torbirdy.prefs.startup_folder.label "시작시에 지난번에 접근한 메일 폴더 선택 [기본값 : 비활성화, 로컬 폴더 사용]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "썬더버드의 타임존을 UTC로 설정하지 마십시오 [기본값 : UTC로 설정]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "수취인의 키 ID를 암호화된 메시지에 넣기 [기본값 : 비활성화]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.confirmemail.label "Enigmail이 활성화되었을 경우 메일을 보내기 전에 확인하기 [기본값 : 확인하지 않음]">
+<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.emailwizard.label "썬더버드의 자동 이메일 환경설정 마법사 활성화 [기본값 : 비활성화]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.account_specific "계정-특징적">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "계정 선택 : ">
+
+<!ENTITY torbirdy.panel.usetor.label "Tor Onion Router 사용">
+<!ENTITY torbirdy.panel.usejondo.label "JonDo 사용 (프리미엄)">
+<!ENTITY torbirdy.panel.usewhonix.label "Whonix 사용">
+<!ENTITY torbirdy.panel.preferences.label "Torbirdy 개인 설정 열기">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">
