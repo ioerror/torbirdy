@@ -14,8 +14,10 @@
 <!ENTITY torbirdy.prefs.cancel.button "Cancel">
 <!ENTITY torbirdy.prefs.extra2.button "Test Settings">
 <!ENTITY torbirdy.prefs.extra2.key "n">
-<!ENTITY torbirdy.prefs.proxy.label "Proxy Settings">
-<!ENTITY torbirdy.prefs.privacy.label "Privacy Settings">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Privacy">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Security">
 <!ENTITY torbirdy.prefs.recommended.text "Use the recommended proxy settings for TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Choose an anonymization service">
@@ -41,9 +43,13 @@
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
 <!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.renegotiation.label "Allow connections to servers that do not support SSL/TLS with secure renegotiation [default: do not allow]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Account-Specific">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Choose an account: ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Keyserver(s) to use: ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "Use Tor Onion Router">
 <!ENTITY torbirdy.panel.usejondo.label "Use JonDo (Premium)">

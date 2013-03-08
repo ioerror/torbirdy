@@ -27,6 +27,8 @@
     <tabs>
       <tab label="&torbirdy.prefs.proxy.label;"/>
       <tab label="&torbirdy.prefs.privacy.label;"/>
+      <tab label="&torbirdy.prefs.enigmail.label;"/>
+      <tab label="&torbirdy.prefs.security.label;"/>
     </tabs>
 
     <tabpanels>
@@ -90,15 +92,14 @@
             <caption label="&torbirdy.prefs.global;"/>
             <vbox>
               <checkbox accesskey="&torbirdy.prefs.imap.key;" id="torbirdy-idle" label="&torbirdy.prefs.imap.label;"/>
-              <checkbox accesskey="&torbirdy.prefs.enigmail_throwkeyid.key;" id="torbirdy-enigmail-throwkeyid" label="&torbirdy.prefs.enigmail_throwkeyid.label;"/>
               <checkbox accesskey="&torbirdy.prefs.startup_folder.key;" id="torbirdy-startup-folder" label="&torbirdy.prefs.startup_folder.label;"/>
               <checkbox accesskey="&torbirdy.prefs.timezone.key;" id="torbirdy-timezone" label="&torbirdy.prefs.timezone.label;"/>
-              <checkbox accesskey="&torbirdy.prefs.confirmemail.key;" id="torbirdy-confirm-email" label="&torbirdy.prefs.confirmemail.label;"/>
               <checkbox accesskey="&torbirdy.prefs.emailwizard.key;" id="torbirdy-email-wizard" label="&torbirdy.prefs.emailwizard.label;"/>
             </vbox>
           </groupbox>
 
           <separator class="groove-thin" orient="horizontal"/>
+
 
           <groupbox>
             <caption label="&torbirdy.prefs.account_specific;"/>
@@ -119,6 +120,34 @@
               </rows>
             </grid>
           </groupbox>
+
+        </vbox>
+      </tabpanel>
+
+      <!-- Enigmail Settings -->
+      <tabpanel>
+        <vbox>
+
+          <vbox>
+            <checkbox accesskey="&torbirdy.prefs.confirmemail.key;" id="torbirdy-confirm-email" label="&torbirdy.prefs.confirmemail.label;"/>
+            <checkbox accesskey="&torbirdy.prefs.enigmail_throwkeyid.key;" id="torbirdy-enigmail-throwkeyid" label="&torbirdy.prefs.enigmail_throwkeyid.label;"/>
+            <separator class="thin" orient="horizontal"/>
+            <vbox>
+              <label accesskey="&torbirdy.prefs.enigmail.keyserver.key;" control="torbirdy-enigmail-keyserver" value="&torbirdy.prefs.enigmail.keyserver.label;"/>
+              <textbox id="torbirdy-enigmail-keyserver" />
+            </vbox>
+          </vbox>
+
+        </vbox>
+      </tabpanel>
+
+      <!-- Security Settings -->
+      <tabpanel>
+        <vbox>
+
+          <vbox>
+              <checkbox accesskey="&torbirdy.prefs.renegotiation.key;" id="torbirdy-renegotiation" label="&torbirdy.prefs.renegotiation.label;"/>
+          </vbox>
 
         </vbox>
       </tabpanel>

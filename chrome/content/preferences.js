@@ -78,6 +78,10 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     }
   };
 
+  pub.clearSinglePref = function(pref) {
+    pub.prefs.clearUserPref(pub.customBranch + pref);
+  };
+
   pub.checkSetting = function() {
     var index = pub.anonService.selectedIndex;
     if (index === 2) {
@@ -320,15 +324,23 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     else {
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', true);
     }
+
     // Confirm before sending - default: false
     var enigmail_confirmemail = pub.confirmemail.checked;
-    var engimail_pref = "extensions.enigmail.confirmBeforeSend";
+    var enigmail_confirmemail_pref = "extensions.enigmail.confirmBeforeSend";
     if (enigmail_confirmemail) {
-      pub.prefs.setBoolPref(engimail_pref, true);
+      pub.prefs.setBoolPref(enigmail_confirmemail_pref, true);
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.confirmemail', true);
     } else {
-      pub.prefs.setBoolPref(engimail_pref, false);
+      pub.prefs.setBoolPref(enigmail_confirmemail_pref, false);
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.confirmemail', false);
+    }
+
+    // Keyserver.
+    var enigmail_keyserver = pub.keyserver.value;
+    var enigmail_keyserver_pref = "extensions.enigmail.keyserver";
+    if (!(enigmail_keyserver === pub.prefs.getCharPref(enigmail_keyserver_pref))) {
+      pub.setPreferences(enigmail_keyserver_pref, enigmail_keyserver);
     }
 
     // Thunderbird's email wizard - default: false
@@ -337,6 +349,18 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.prefs.setBoolPref(pub.prefBranch + 'emailwizard', true);
     } else {
       pub.prefs.setBoolPref(pub.prefBranch + 'emailwizard', false);
+    }
+
+    // Insecure renegotiation - default: false (opt-out for mailservers that do
+    // not support secure renegotiation yet)
+    var securityRenegotiation = 'security.ssl.require_safe_negotiation';
+    var securityWarn = 'security.ssl.treat_unsafe_negotiation_as_broken';
+    if (pub.renegotiation.checked) {
+      pub.setPreferences(securityRenegotiation, false);
+      pub.setPreferences(securityWarn, false);
+    } else {
+      pub.clearSinglePref(securityRenegotiation);
+      pub.clearSinglePref(securityWarn);
     }
 
     if (index === 1) {
@@ -373,6 +397,8 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.timezone = document.getElementById('torbirdy-timezone');
     pub.confirmemail = document.getElementById('torbirdy-confirm-email');
     pub.emailwizard = document.getElementById('torbirdy-email-wizard');
+    pub.renegotiation = document.getElementById('torbirdy-renegotiation');
+    pub.keyserver = document.getElementById('torbirdy-enigmail-keyserver');
 
     // Make sure the user really wants to change these settings.
     var warnPrompt = pub.prefs.getBoolPref("extensions.torbirdy.warn");
@@ -478,6 +504,13 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     } else {
       pub.confirmemail.checked = false;
     }
+    // Keyserver.
+    var enigmail_keyserver = pub.customBranch + 'extensions.enigmail.keyserver';
+    if (pub.prefs.prefHasUserValue(enigmail_keyserver)) {
+      pub.keyserver.value = pub.prefs.getCharPref(enigmail_keyserver);
+    } else {
+      pub.keyserver.value = pub.prefs.getCharPref('extensions.enigmail.keyserver');
+    }
 
     // Thunderbird's email wizard - default: false
     var emailWizard = pub.prefs.getBoolPref(pub.prefBranch + 'emailwizard');
@@ -485,6 +518,17 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.emailwizard.checked = true;
     } else {
       pub.emailwizard.checked = false;
+    }
+
+    /*
+     Security
+    */
+    // Allow insecure renegotiation - default: false
+    var securityRenegotiation = pub.customBranch + 'security.ssl.require_safe_negotiation';
+    if (pub.prefs.prefHasUserValue(securityRenegotiation)) {
+      pub.renegotiation.checked = true;
+    } else {
+      pub.renegotiation.checked = false;
     }
 
     // Load the email accounts.
