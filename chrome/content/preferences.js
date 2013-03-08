@@ -413,8 +413,8 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     // JonDo/Whonix.
     if (anonService === 1) {
       var anonCustomService = pub.prefs.getIntPref(pub.prefBranch + 'proxy.type');
-      pub.anonType.disabled = false
-      pub.anonCustomService.disabled = false
+      pub.anonType.disabled = false;
+      pub.anonCustomService.disabled = false;
       pub.anonCustomService.selectedIndex = anonCustomService;
     }
 
