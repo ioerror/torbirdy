@@ -8,7 +8,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
   pub.customBranch = "extensions.torbirdy.custom.";
 
   pub.torKeyserver = "hkp://2eghzlv2wwcq7u7y.onion";
-  pub.jondoKeyserver = "hkps://pool.sks-keyservers.net";
+  pub.jondoKeyserver = "hkp://pool.sks-keyservers.net";
 
   pub.prefs = Components.classes["@mozilla.org/preferences-service;1"]
                   .getService(Components.interfaces.nsIPrefBranch);
