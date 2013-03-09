@@ -111,7 +111,7 @@
               <rows>
                 <row align="center">
                   <hbox align="center">
-                    <label accesskey="&torbirdy.prefs.select_account.key;" value="&torbirdy.prefs.select_account.label;"/>
+                    <label accesskey="&torbirdy.prefs.select_account.key;" control="torbirdy-mail-accounts" value="&torbirdy.prefs.select_account.label;"/>
                     <menulist id="torbirdy-mail-accounts" oncommand="org.torbirdy.prefs.selectMailAccount();">
                       <menupopup></menupopup>
                     </menulist>
