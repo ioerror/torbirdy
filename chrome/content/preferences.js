@@ -7,6 +7,9 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
   pub.prefBranch = "extensions.torbirdy.";
   pub.customBranch = "extensions.torbirdy.custom.";
 
+  pub.torKeyserver = "hkp://2eghzlv2wwcq7u7y.onion";
+  pub.jondoKeyserver = "hkp://pool.sks-keyservers.net";
+
   pub.prefs = Components.classes["@mozilla.org/preferences-service;1"]
                   .getService(Components.interfaces.nsIPrefBranch);
 
@@ -66,9 +69,25 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     }
   };
 
+  pub.updateKeyserver = function(anonService) {
+    var extension = "extensions.enigmail.keyserver";
+    var keyserver = pub.keyserver;
+    if (typeof keyserver === "undefined") {
+      var keyserverValue = (anonService === "tor") ? pub.torKeyserver : pub.jondoKeyserver;
+    } else {
+      var keyserverValue = keyserver.value;
+    }
+    if (anonService === "tor") {
+      pub.setPreferences(extension, keyserverValue);
+    }
+    if (anonService === "jondo") {
+      pub.setPreferences(extension, keyserverValue);
+    }
+  };
+
   pub.restoreEnigmailPrefs = function() {
     pub.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("tor"));
-    pub.prefs.setCharPref("extensions.enigmail.keyserver", "hkp://2eghzlv2wwcq7u7y.onion");
+    pub.updateKeyserver("tor");
   };
 
   pub.clearCustomPrefs = function() {
@@ -95,8 +114,18 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
     if (index === 1) {
       pub.anonCustomService.disabled = false;
+      var service = pub.anonCustomService.selectedIndex;
+      if (pub.anonCustomService.selectedIndex === 0) {
+        pub.keyserver.value = pub.jondoKeyserver;
+      }
+      if (pub.anonCustomService.selectedIndex === 1) {
+        pub.keyserver.value = pub.torKeyserver;
+      }
     } else {
       pub.anonCustomService.disabled = true;
+    }
+    if (index === 0 || index === 2 || index === 3) {
+      pub.keyserver.value = pub.torKeyserver;
     }
   };
 
@@ -193,7 +222,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.setPreferences("network.http.proxy.pipelining", false);
     // Enigmail.
     pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
-    pub.setPreferences("extensions.enigmail.keyserver", "hkp://pool.sks-keyservers.net");
+    pub.updateKeyserver("jondo");
 
     pub.setPanelSettings(pub.strbundle.GetStringFromName("torbirdy.enabled.jondo"), "green");
     pub.prefs.setIntPref(pub.prefBranch + 'proxy', 1);
@@ -336,13 +365,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.confirmemail', false);
     }
 
-    // Keyserver.
-    var enigmail_keyserver = pub.keyserver.value;
-    var enigmail_keyserver_pref = "extensions.enigmail.keyserver";
-    if (!(enigmail_keyserver === pub.prefs.getCharPref(enigmail_keyserver_pref))) {
-      pub.setPreferences(enigmail_keyserver_pref, enigmail_keyserver);
-    }
-
     // Thunderbird's email wizard - default: false
     var emailwizard = pub.emailwizard.checked;
     if (emailwizard) {
@@ -376,7 +398,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     if (index === 0 || index === 2 || index === 3) {
       pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("tor"));
     }
-
   };
 
   /*
@@ -497,6 +518,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     } else {
       pub.enigmail.checked = true;
     }
+
     // Confirm before sending - default: false
     var enigmail_confirmemail = pub.prefs.getBoolPref(pub.prefBranch + 'enigmail.confirmemail');
     if (enigmail_confirmemail) {
@@ -504,6 +526,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     } else {
       pub.confirmemail.checked = false;
     }
+
     // Keyserver.
     var enigmail_keyserver = pub.customBranch + 'extensions.enigmail.keyserver';
     if (pub.prefs.prefHasUserValue(enigmail_keyserver)) {
