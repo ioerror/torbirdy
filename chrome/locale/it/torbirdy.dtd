@@ -16,6 +16,8 @@
 <!ENTITY torbirdy.prefs.extra2.key "g">
 <!ENTITY torbirdy.prefs.proxy.label "Impostazioni Proxy">
 <!ENTITY torbirdy.prefs.privacy.label "Impostazioni Privacy">
+<!ENTITY torbirdy.prefs.enigmail.label "Impostazioni Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Impostazioni di Sicurezza">
 <!ENTITY torbirdy.prefs.recommended.text "Utilizza le impostazioni consigliate per TorBirdy(Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Scegli un servizio per l'anonimato">
@@ -24,9 +26,9 @@
 <!ENTITY torbirdy.prefs.customsettings.key "c">
 <!ENTITY torbirdy.prefs.socks_host.label "Host SOCKS: ">
 <!ENTITY torbirdy.prefs.socks_host.key "h">
-<!ENTITY torbirdy.prefs.socks_port.label "Porta">
+<!ENTITY torbirdy.prefs.socks_port.label "Porta:">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
-<!ENTITY torbirdy.prefs.torification.label "Transparent Torification">
+<!ENTITY torbirdy.prefs.torification.label "Torificazione Trasparente">
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "Globale">
 <!ENTITY torbirdy.prefs.imap.label "Abilita supporto push email per gli account IMAP [default: disabilitato]">
@@ -35,15 +37,19 @@
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "Non impostare il fuso orario di Thunderbird a UTC [default: impostato a UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Disabilita GPG '--throw-keyids' [default: abilitato]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Inserisci gli ID delle chiavi del destinatario in messaggi criptati [predefinito: non inserire]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
 <!ENTITY torbirdy.prefs.confirmemail.label "Conferma prima di inviare l'email se Enigmail è attivo [predefinito: non confermare]">
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
 <!ENTITY torbirdy.prefs.emailwizard.label "Attiva il wizard di configurazione automatica email di Thunderbird [default: disabilitato]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
-<!ENTITY torbirdy.prefs.account_specific "Specifico Account">
+<!ENTITY torbirdy.prefs.renegotiation.label "Permetti connessioni a server che non supportano SSL/TLS con rinegoziazione sicura [predefinito: non permettere]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
+<!ENTITY torbirdy.prefs.account_specific "Relativo all'Account">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Seleziona un account:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Keyserver(s) da usare:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "Usa Tor Onion Router">
 <!ENTITY torbirdy.panel.usejondo.label "Usa JonDo (Premium)">
