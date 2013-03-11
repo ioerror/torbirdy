@@ -7,5 +7,5 @@ pref("extensions.torbirdy.enigmail.throwkeyid", true);
 pref("extensions.torbirdy.enigmail.confirmemail", false);
 pref("extensions.torbirdy.timezone", true);
 pref("extensions.torbirdy.whonix_run", true);
-pref("extensions.torbirdy.info_run", true);
+pref("extensions.torbirdy.info_run", false);
 pref("extensions.torbirdy.emailwizard", false);
