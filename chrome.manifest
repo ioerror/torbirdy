@@ -30,5 +30,6 @@ locale castironthunderbirdclub pl chrome/locale/pl/
 locale castironthunderbirdclub ru chrome/locale/ru/
 locale castironthunderbirdclub ar chrome/locale/ar/
 locale castironthunderbirdclub ko chrome/locale/ko/
+locale castironthunderbirdclub nb chrome/locale/nb/
 
 skin castironthunderbirdclub classic/1.0 chrome/skin/
