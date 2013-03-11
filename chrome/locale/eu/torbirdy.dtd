@@ -16,6 +16,8 @@
 <!ENTITY torbirdy.prefs.extra2.key "g">
 <!ENTITY torbirdy.prefs.proxy.label "Proxy ezarpenak">
 <!ENTITY torbirdy.prefs.privacy.label "Pribatutasun ezarpenak">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail ezarpenak">
+<!ENTITY torbirdy.prefs.security.label "Segurtasun ezarpenak">
 <!ENTITY torbirdy.prefs.recommended.text "TorBirdy(Tor)rentzako gomendatutako proxy ezarpenak erabili">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Aukeratu anonimotasun zerbitzu bat">
@@ -41,9 +43,13 @@
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
 <!ENTITY torbirdy.prefs.emailwizard.label "Gaitu Thunderbirden eposta konfigurazio morroi automatikoa [lehenetsia: ezgaituta]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.renegotiation.label "SSL/TLS birnegoziazioa onartzen ez duten zerbitzarietara konexioak baimendu [lehenetsia: ez baimendu]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Kontuaren araberakoa">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Kontu bat aukeratu:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Erabiltzeko gako zerbitzaria(k):">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "Erabili Tor Tipula Bideratzailea">
 <!ENTITY torbirdy.panel.usejondo.label "Erabili JonDo (Premium)">
