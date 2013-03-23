@@ -1,0 +1,59 @@
+<!ENTITY torbirdy.accountprefs.title "تنظیمات حساب کاربری">
+<!ENTITY torbirdy.accountprefs.startup.label "پیغام‌های جدید را در زمان راه اندازی چک کن">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "مدت زمان چک کردن پیغام‌های تازه هر">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "دقیقه">
+<!ENTITY torbirdy.accountprefs.cancel.button "لغو">
+<!ENTITY torbirdy.accountprefs.save.button "ذخیره">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "تنظیمات توربِردی">
+<!ENTITY torbirdy.prefs.save.button "ذخیره">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "لغو">
+<!ENTITY torbirdy.prefs.extra2.button "آزمایش تنظیمات">
+<!ENTITY torbirdy.prefs.extra2.key "g">
+<!ENTITY torbirdy.prefs.proxy.label "تنظیمات پراکسی">
+<!ENTITY torbirdy.prefs.privacy.label "تنظیمات حریم خصوصی">
+<!ENTITY torbirdy.prefs.enigmail.label "تنظیمات Enigmail">
+<!ENTITY torbirdy.prefs.security.label "تنظیمات امنیت ">
+<!ENTITY torbirdy.prefs.recommended.text "از تنظیمات پراکسی توصیه شده برای توربِردی استفاده کن (تور)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "یک سرویس ناشناسی انتخاب کنید">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "از تنظیمات پراکسی دلخواه استفاده کن">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "میزبان SOCKS:">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "درگاه:">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "پروکسی نا پیدا">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "جهانی">
+<!ENTITY torbirdy.prefs.imap.label "قابلیت شناسایی کلید در پیغام به رمز شده [پیش فرض: خاموش ]">
+<!ENTITY torbirdy.prefs.imap.key "i">
+<!ENTITY torbirdy.prefs.startup_folder.label "هنگام آغاز، آخرین پوشه‌ی استفاده شده را انتخاب کن [پیش فرض: غیرفعال، پوشه های محلی را انتخاب کن]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "ساعت تاندربِرد را به UTC تغییر نده [پیش فرض: تغییر به UTC]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "قابلیت شناسایی کلید در پیغام به رمز شده [پیش فرض: خاموش ]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.confirmemail.label "تایید قبل از ارسال کردن ایمیل، در صورتی که Enigmail فعال باشد. [ پیشفرض: خاموش] ">
+<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.emailwizard.label "فعال کردن سیستم اتومیتک تنظیم ایمیل در Thunderbird. [ پیش فرض: خاموش ]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.renegotiation.label "اجازه برقراری ارتباط با سرورهایی که از SSL/TLS با مذاکره دوباره امن پشتیبانی نمیکنند [پیش فرض: غیرفعال]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
+<!ENTITY torbirdy.prefs.account_specific "مخصوص حساب کاربری">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "یک حساب کاربری انتخاب کنید:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "از این سرور کلید(ها) استفاده کن:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
+
+<!ENTITY torbirdy.panel.usetor.label "از روترِ پیازیِ تور استفاده کن">
+<!ENTITY torbirdy.panel.usejondo.label "از JonDo استفاده کن (ویژه)">
+<!ENTITY torbirdy.panel.usewhonix.label "استفاده از سیستم Whonix">
+<!ENTITY torbirdy.panel.preferences.label "تنظیمات توربِردی را باز کن">
+
+<!ENTITY torbirdy.firstrun.title "اولین راه اندازی TorBirdy">

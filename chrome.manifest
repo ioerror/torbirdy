@@ -32,5 +32,6 @@ locale castironthunderbirdclub ar chrome/locale/ar/
 locale castironthunderbirdclub ko chrome/locale/ko/
 locale castironthunderbirdclub nb chrome/locale/nb/
 locale castironthunderbirdclub gl chrome/locale/gl/
+locale castironthunderbirdclub fa chrome/locale/fa/
 
 skin castironthunderbirdclub classic/1.0 chrome/skin/
