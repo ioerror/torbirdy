@@ -16,6 +16,8 @@
 <!ENTITY torbirdy.prefs.extra2.key "g">
 <!ENTITY torbirdy.prefs.proxy.label "Starpniekdatora iestatījumi">
 <!ENTITY torbirdy.prefs.privacy.label "Privātuma iestatījumi">
+<!ENTITY torbirdy.prefs.enigmail.label "">
+<!ENTITY torbirdy.prefs.security.label "">
 <!ENTITY torbirdy.prefs.recommended.text "Lietot Tor Birdy (Tor) ieteiktos starpniekdatora iestatījumus">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Izvēlieties anonimizācijas pakalpojumu">
@@ -41,9 +43,13 @@
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
 <!ENTITY torbirdy.prefs.emailwizard.label "Iespējot Thunderbird'a automātisko e-pasta konfigurācijas palīgu [noklusējumvērtība: atspējots]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.renegotiation.label "">
+<!ENTITY torbirdy.prefs.renegotiation.key "">
 <!ENTITY torbirdy.prefs.account_specific "Kontam-piemītošs">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Izvēlēties kontu:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "">
 
 <!ENTITY torbirdy.panel.usetor.label "Lietot maršrutētāju Tor sīpols">
 <!ENTITY torbirdy.panel.usejondo.label "Lietot JonDo (īpašs)">
