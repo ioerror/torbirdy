@@ -16,8 +16,8 @@
 <!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Proxy innstillinger">
 <!ENTITY torbirdy.prefs.privacy.label "Personvern Innstillinger">
-<!ENTITY torbirdy.prefs.enigmail.label "">
-<!ENTITY torbirdy.prefs.security.label "">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail Innstillinger">
+<!ENTITY torbirdy.prefs.security.label "Sikkerhetsinnstillinger">
 <!ENTITY torbirdy.prefs.recommended.text "Bruk de anbefalte proxyinnstillingene for TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Velg en anonymiseringstjeneste">
@@ -43,13 +43,13 @@
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
 <!ENTITY torbirdy.prefs.emailwizard.label "Aktiver Thunderbirds automatiske konfigureringshjelp [standard: deaktivert]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
-<!ENTITY torbirdy.prefs.renegotiation.label "">
-<!ENTITY torbirdy.prefs.renegotiation.key "">
+<!ENTITY torbirdy.prefs.renegotiation.label "Tillat tilkoblinger til servere som ikke støtter SSL/TLS med sikker renegotiation [standard: ikke tillat]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Kontospesifikt">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Velg en konto:">
-<!ENTITY torbirdy.prefs.enigmail.keyserver.label "">
-<!ENTITY torbirdy.prefs.enigmail.keyserver.key "">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Bruk følgende keyserver(e):">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "Bruk Tor Onion Router">
 <!ENTITY torbirdy.panel.usejondo.label "Bruk JonDo (Premium)">
