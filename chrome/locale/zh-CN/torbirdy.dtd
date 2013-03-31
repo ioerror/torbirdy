@@ -16,8 +16,8 @@
 <!ENTITY torbirdy.prefs.extra2.key "g">
 <!ENTITY torbirdy.prefs.proxy.label "代理设置">
 <!ENTITY torbirdy.prefs.privacy.label "隐私设置">
-<!ENTITY torbirdy.prefs.enigmail.label "">
-<!ENTITY torbirdy.prefs.security.label "">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail 设置">
+<!ENTITY torbirdy.prefs.security.label "安全设置">
 <!ENTITY torbirdy.prefs.recommended.text "使用 TorBirdy（Tor）推荐的代理设置">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "选择一个匿名服务">
@@ -43,13 +43,13 @@
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
 <!ENTITY torbirdy.prefs.emailwizard.label "启用 Thunderbird 自动电子邮件配置向导 [默认：禁用]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
-<!ENTITY torbirdy.prefs.renegotiation.label "">
-<!ENTITY torbirdy.prefs.renegotiation.key "">
+<!ENTITY torbirdy.prefs.renegotiation.label "允许连接至不支持具有安全重新协商机制的 SSL/TLS 的服务器 [默认：不允许]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "指定帐户">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "选择帐户：">
-<!ENTITY torbirdy.prefs.enigmail.keyserver.label "">
-<!ENTITY torbirdy.prefs.enigmail.keyserver.key "">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "使用的密钥服务器：">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "使用 Tor Onion Router">
 <!ENTITY torbirdy.panel.usejondo.label "使用 JonDo (Premium)">
