@@ -77,7 +77,7 @@
               </rows>
             </grid>
 
-            <radio accesskey="&torbirdy.prefs.torification.key;" id="torbirdy-torification" label="&torbirdy.prefs.torification.label;" />
+            <radio accesskey="&torbirdy.prefs.torification.key;" id="torbirdy-torification" label="&torbirdy.prefs.torification.label;" style="color:red"/>
 
           </radiogroup>
 
