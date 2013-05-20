@@ -16,6 +16,8 @@
 <!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "પ્રોક્સી ગોઠવણીઓ">
 <!ENTITY torbirdy.prefs.privacy.label "અંગતતા ગોઠવણીઓ">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail Settings">
+<!ENTITY torbirdy.prefs.security.label "Security Settings">
 <!ENTITY torbirdy.prefs.recommended.text "ટોરબર્ડિ (ટોર) માટે આગ્રહ કરેલ પ્રોક્સી ગોઠવણીઓ વાપરો">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "અજ્ઞાત થવાની સેવા પસંદ કરો">
@@ -41,9 +43,13 @@
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
 <!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.renegotiation.label "Allow connections to servers that do not support SSL/TLS with secure renegotiation [default: do not allow]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "ખાતા-સંબંધિત">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "ખાતું પસંદ કરો: ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Keyserver(s) to use: ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "ટોર ઓનિયન રાઉટર વાપરો">
 <!ENTITY torbirdy.panel.usejondo.label "જોનડુ (પ્રિમિયમ) વાપરો">

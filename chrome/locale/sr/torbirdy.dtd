@@ -16,6 +16,8 @@
 <!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Прокси подешавања">
 <!ENTITY torbirdy.prefs.privacy.label "Подешавања приватности">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail Settings">
+<!ENTITY torbirdy.prefs.security.label "Security Settings">
 <!ENTITY torbirdy.prefs.recommended.text "Користите препоручена прокси подешавања за TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Изаберите сервис заштите (анонимности)">
@@ -41,9 +43,13 @@
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
 <!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.renegotiation.label "Allow connections to servers that do not support SSL/TLS with secure renegotiation [default: do not allow]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Специјално-за налог">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Изабери налог: ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Keyserver(s) to use: ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "Use Tor Onion Router">
 <!ENTITY torbirdy.panel.usejondo.label "Use JonDo (Premium)">

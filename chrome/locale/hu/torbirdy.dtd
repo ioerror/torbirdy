@@ -16,6 +16,8 @@
 <!ENTITY torbirdy.prefs.extra2.key "t">
 <!ENTITY torbirdy.prefs.proxy.label "Proxy Beállítások">
 <!ENTITY torbirdy.prefs.privacy.label "Adatvédelmi Beállítások">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail Settings">
+<!ENTITY torbirdy.prefs.security.label "Security Settings">
 <!ENTITY torbirdy.prefs.recommended.text "Az ajánlott proxy beállítások használata a TorBirdy (Tor) használatához">
 <!ENTITY torbirdy.prefs.recommended.key "a">
 <!ENTITY torbirdy.prefs.anonservice.text "Névtelenné tevő szerver választása">
@@ -41,9 +43,13 @@
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
 <!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.renegotiation.label "Allow connections to servers that do not support SSL/TLS with secure renegotiation [default: do not allow]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Fiók-specifikus">
 <!ENTITY torbirdy.prefs.select_account.key "V">
 <!ENTITY torbirdy.prefs.select_account.label "Válasszon egy fiókot:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Keyserver(s) to use: ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "Use Tor Onion Router">
 <!ENTITY torbirdy.panel.usejondo.label "Use JonDo (Premium)">
