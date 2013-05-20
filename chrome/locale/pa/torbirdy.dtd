@@ -43,7 +43,7 @@
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
 <!ENTITY torbirdy.prefs.emailwizard.label "ਥੰਡਰਬਰਡ ਦੇ ਆਟੋ-ਸੰਰਚਨਾ ਈਮੈਲ ਸੈਟਅੱਪ ਨੂੰ ਨਾ ਰੱਦ ਕਰੋ">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
-<!ENTITY torbirdy.prefs.renegotiation.label "ਜੇ ਸਰਵਰ ਤੇ  SSL /TLS Secure  Regontiation ਦੀ ਸਹਾਇਤਾ ਨਹੀਂ ਹੈ, ਤਾਂ ਵੀ ਕਨੇਕਟ ਕਰੋ">
+<!ENTITY torbirdy.prefs.renegotiation.label "ਜੇ ਸਰਵਰ ਤੇ  SSL /TLS Secure  Regontiation ਦੀ ਸਹਾਇਤਾ ਨਹੀਂ ਹੈ ਤਾਂ ਵੀ ਕਨੇਕਟ ਕਰੋ">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "ਅਕਾਊਂਟ-ਵਿਸ਼ਿਸ਼ਟ">
 <!ENTITY torbirdy.prefs.select_account.key "C">
