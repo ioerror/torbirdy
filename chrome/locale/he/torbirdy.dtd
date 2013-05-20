@@ -16,8 +16,8 @@
 <!ENTITY torbirdy.prefs.extra2.key "g">
 <!ENTITY torbirdy.prefs.proxy.label "הגדרות שרת פרוקסי">
 <!ENTITY torbirdy.prefs.privacy.label "הגדרות פרטיות">
-<!ENTITY torbirdy.prefs.enigmail.label "">
-<!ENTITY torbirdy.prefs.security.label "">
+<!ENTITY torbirdy.prefs.enigmail.label "הגדרות אניגמייל">
+<!ENTITY torbirdy.prefs.security.label "הגדרות אבטחה">
 <!ENTITY torbirdy.prefs.recommended.text "השתמש בהגדרות המומלצות עבור TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "בחר שרות עבור אלמוניות">
@@ -39,21 +39,21 @@
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "בעת שליחת דואר מוצפן, אל תצרף את זהות המקבל. [ברירת המחדל: מופעל]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
-<!ENTITY torbirdy.prefs.confirmemail.label "">
-<!ENTITY torbirdy.prefs.confirmemail.key "">
-<!ENTITY torbirdy.prefs.emailwizard.label "">
-<!ENTITY torbirdy.prefs.emailwizard.key "">
-<!ENTITY torbirdy.prefs.renegotiation.label "">
-<!ENTITY torbirdy.prefs.renegotiation.key "">
+<!ENTITY torbirdy.prefs.confirmemail.label "וודא לפני שליחה כאשר אניגמייל מופעל [ברירת מחדל: אל תוודא]">
+<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.emailwizard.label "הפעל את אשף הגדרות הדואר של ת'אנדרבירד [ברירת מחדל: כבוי]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.renegotiation.label "הרשה חיבורית לשרתים שאינם תומכים בSSL/TLS עם חידוש משא ומתן מאובטח [ברירת מחדל: לא להרשות]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "חשבון ספציפי">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "בחר חשבון: ">
-<!ENTITY torbirdy.prefs.enigmail.keyserver.label "">
-<!ENTITY torbirdy.prefs.enigmail.keyserver.key "">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "שרת(י) הפצת מפתחות:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "תשתמש ב Tor Onion Router">
 <!ENTITY torbirdy.panel.usejondo.label "תשתמש ב  JonDo (Premium)">
-<!ENTITY torbirdy.panel.usewhonix.label "">
+<!ENTITY torbirdy.panel.usewhonix.label "השתמש בwhonix">
 <!ENTITY torbirdy.panel.preferences.label "פתח עדיפויות TorBirdy">
 
-<!ENTITY torbirdy.firstrun.title "">
+<!ENTITY torbirdy.firstrun.title "הפעלה ראשונה של TorBirdy">
