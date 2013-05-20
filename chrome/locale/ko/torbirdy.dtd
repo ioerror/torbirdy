@@ -16,7 +16,7 @@
 <!ENTITY torbirdy.prefs.extra2.key "g">
 <!ENTITY torbirdy.prefs.proxy.label "프록시 설정">
 <!ENTITY torbirdy.prefs.privacy.label "개인 정보 설정">
-<!ENTITY torbirdy.prefs.enigmail.label "">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail 설정">
 <!ENTITY torbirdy.prefs.security.label " 보안 설정">
 <!ENTITY torbirdy.prefs.recommended.text "Torbirdy를 위한 추천되는 프록시 설정을 사용합니다.">
 <!ENTITY torbirdy.prefs.recommended.key "r">
@@ -44,12 +44,12 @@
 <!ENTITY torbirdy.prefs.emailwizard.label "썬더버드의 자동 이메일 환경설정 마법사 활성화 [기본값 : 비활성화]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.renegotiation.label "">
-<!ENTITY torbirdy.prefs.renegotiation.key "">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "계정-특징적">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "계정 선택 : ">
-<!ENTITY torbirdy.prefs.enigmail.keyserver.label "">
-<!ENTITY torbirdy.prefs.enigmail.keyserver.key "">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "사용할 키서버:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "Tor Onion Router 사용">
 <!ENTITY torbirdy.panel.usejondo.label "JonDo 사용 (프리미엄)">
