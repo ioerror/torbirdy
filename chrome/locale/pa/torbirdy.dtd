@@ -13,9 +13,11 @@
 <!ENTITY torbirdy.prefs.save.key "S">
 <!ENTITY torbirdy.prefs.cancel.button "ਰੱਦ ਕਰੋ">
 <!ENTITY torbirdy.prefs.extra2.button "ਟੇਸਟ ਸੈਟਿੰਗ">
-<!ENTITY torbirdy.prefs.extra2.key "n">
+<!ENTITY torbirdy.prefs.extra2.key "g">
 <!ENTITY torbirdy.prefs.proxy.label "ਪਰਾਕਸੀ ਸੈਟਿੰਗ">
 <!ENTITY torbirdy.prefs.privacy.label "ਪਰਾਈਵੇਸੀ ਸੈਟਿੰਗ">
+<!ENTITY torbirdy.prefs.enigmail.label "ਏਨਿਗਮੇਲ ਸੈਟਿੰਗ">
+<!ENTITY torbirdy.prefs.security.label "ਸੁਰੱਖਿਆ ਸੈਟਿੰਗ">
 <!ENTITY torbirdy.prefs.recommended.text "ਟੌਰਬਰਡੀ ਲਈ ਆਖੀ ਹੋਈ ਪਰਾਕਸੀ ਸੈਟਿੰਗ ਵਰਤੋ ਕਰੋ (ਟੌਰ)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "ਗੁਪਤ ਸਰਵਿਸ ਚੁਣ ਕਰੋ">
@@ -26,7 +28,7 @@
 <!ENTITY torbirdy.prefs.socks_host.key "h">
 <!ENTITY torbirdy.prefs.socks_port.label "ਪੋਰਟ">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
-<!ENTITY torbirdy.prefs.torification.label "ਪਾਰਦਰਸ਼ਕ ਟੌਰ">
+<!ENTITY torbirdy.prefs.torification.label "Transparent Torification">
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "ਗਲੋਬਲ">
 <!ENTITY torbirdy.prefs.imap.label "IMAP ਅਕਾਊਂਟ ਵਾਸਤੇ ਪੁਸ਼ ਈਮੇਲ ਚਾਲੂ ਕਰੋ">
@@ -37,17 +39,21 @@
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "GPG '--throw-keyids' ਰੱਦ ਕਰੋ">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
-<!ENTITY torbirdy.prefs.confirmemail.label "Confirm before sending email if Enigmail is enabled [default: do not confirm]">
+<!ENTITY torbirdy.prefs.confirmemail.label "ਈਮੇਲ ਕਰਨ ਤੌਂ ਪਿਹਲਾਂ ਪੂਛੋ ਜੈ ਏਨਿਗਮੇਲ ਚਾਲੂ ਹੈ">
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
-<!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
+<!ENTITY torbirdy.prefs.emailwizard.label "ਥੰਡਰਬਰਡ ਦੇ ਆਟੋ-ਸੰਰਚਨਾ ਈਮੈਲ ਸੈਟਅੱਪ ਨੂੰ ਨਾ ਰੱਦ ਕਰੋ">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.renegotiation.label "ਜੇ ਸਰਵਰ ਤੇ  SSL /TLS Secure  Regontiation ਦੀ ਸਹਾਇਤਾ ਨਹੀਂ ਹੈ, ਤਾਂ ਵੀ ਕਨੇਕਟ ਕਰੋ">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "ਅਕਾਊਂਟ-ਵਿਸ਼ਿਸ਼ਟ">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "ਅਕਾਊਂਟ ਚੁਣੋ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "ਕਿਹੜਾ ਕੀਸਰਵਰ ਵਰਤੋ:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "ਟੌਰ ਦੀ ਵਰਤੋ ਕਰੋ">
-<!ENTITY torbirdy.panel.usejondo.label "ਜੋਨ ਦੋ (ਪ੍ਰੀਮੀਅਮ) ਦੀ ਵਰਤੋ ਕਰੋ">
+<!ENTITY torbirdy.panel.usejondo.label "ਜੋਨ ਦੋ ਦੀ ਵਰਤੋ ਕਰੋ (ਪ੍ਰੀਮੀਅਮ)">
 <!ENTITY torbirdy.panel.usewhonix.label "ਹੁਨਿਕਸ ਦੀ ਵਰਤੋ ਕਰੋ">
 <!ENTITY torbirdy.panel.preferences.label "ਟੌਰਬਰਡੀ ਸੈਟਿੰਗ">
 
-<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">
+<!ENTITY torbirdy.firstrun.title "ਟੌਰਬਰਡੀ ਪਹਿਲੀ ਵਾਰ">
