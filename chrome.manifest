@@ -4,24 +4,18 @@ overlay chrome://messenger/content/messenger.xul chrome://castironthunderbirdclu
 overlay chrome://messenger/content/messengercompose/messengercompose.xul chrome://castironthunderbirdclub/content/composeoverlay.xul
 overlay chrome://messenger/content/accountcreation/emailWizard.xul chrome://castironthunderbirdclub/content/emailwizard.xul
 
-# Force setting our prefs.js and thus override the client's options; we know
-# better and we force things to keep users safe!
 component {ebd85413-18c8-4265-a708-a8890ec8d1ed} components/torbirdy.js
 contract @torproject.org/torbirdy;1 {ebd85413-18c8-4265-a708-a8890ec8d1ed}
 category profile-after-change TorBirdy @torproject.org/torbirdy;1
 
 locale castironthunderbirdclub ar chrome/locale/ar/
-locale castironthunderbirdclub cs chrome/locale/cs/
-locale castironthunderbirdclub da chrome/locale/da/
 locale castironthunderbirdclub de chrome/locale/de/
 locale castironthunderbirdclub el chrome/locale/el/
 locale castironthunderbirdclub en chrome/locale/en/
-locale castironthunderbirdclub eo chrome/locale/eo/
 locale castironthunderbirdclub es chrome/locale/es/
 locale castironthunderbirdclub eu chrome/locale/eu/
 locale castironthunderbirdclub fa chrome/locale/fa/
 locale castironthunderbirdclub fr chrome/locale/fr/
-locale castironthunderbirdclub gl chrome/locale/gl/
 locale castironthunderbirdclub gu chrome/locale/gu/
 locale castironthunderbirdclub he chrome/locale/he/
 locale castironthunderbirdclub hu chrome/locale/hu/
@@ -36,10 +30,8 @@ locale castironthunderbirdclub pl chrome/locale/pl/
 locale castironthunderbirdclub pt-BR chrome/locale/pt-BR/
 locale castironthunderbirdclub ru chrome/locale/ru/
 locale castironthunderbirdclub si-LK chrome/locale/si-LK/
-locale castironthunderbirdclub sk chrome/locale/sk/
 locale castironthunderbirdclub sr chrome/locale/sr/
 locale castironthunderbirdclub sv chrome/locale/sv/
-locale castironthunderbirdclub tr chrome/locale/tr/
 locale castironthunderbirdclub zh-CN chrome/locale/zh-CN/
 
 skin castironthunderbirdclub classic/1.0 chrome/skin/
