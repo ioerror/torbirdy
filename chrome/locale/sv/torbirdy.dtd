@@ -1,10 +1,10 @@
 <!ENTITY torbirdy.accountprefs.title "Kontoinställningar">
-<!ENTITY torbirdy.accountprefs.startup.label "Kolla efter nya meddelande vid uppstart.">
+<!ENTITY torbirdy.accountprefs.startup.label "Kolla efter nya meddelande vid uppstart">
 <!ENTITY torbirdy.accountprefs.startup.key "C">
 <!ENTITY torbirdy.accountprefs.minutes.label "Kontrollera om det finns nya meddelanden varje">
 <!ENTITY torbirdy.accountprefs.minutes.key "j">
 <!ENTITY torbirdy.accountprefs.minutes.trail.label "minuter">
-<!ENTITY torbirdy.accountprefs.cancel.button "avbryt">
+<!ENTITY torbirdy.accountprefs.cancel.button "Avbryt">
 <!ENTITY torbirdy.accountprefs.save.button "Spara">
 <!ENTITY torbirdy.accountprefs.save.key "S">
 
@@ -12,7 +12,7 @@
 <!ENTITY torbirdy.prefs.save.button "Spara">
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Avbryt">
-<!ENTITY torbirdy.prefs.extra2.button "Testinställningar">
+<!ENTITY torbirdy.prefs.extra2.button "Testa inställningar">
 <!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Proxyinställningar">
 <!ENTITY torbirdy.prefs.privacy.label "Sekretessinställningar">
@@ -24,16 +24,16 @@
 <!ENTITY torbirdy.prefs.anonservice.key "a">
 <!ENTITY torbirdy.prefs.customsettings.text "Använd egna proxyinställningar">
 <!ENTITY torbirdy.prefs.customsettings.key "c">
-<!ENTITY torbirdy.prefs.socks_host.label "SOCKS server:">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS värd:">
 <!ENTITY torbirdy.prefs.socks_host.key "h">
 <!ENTITY torbirdy.prefs.socks_port.label "Port: ">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
-<!ENTITY torbirdy.prefs.torification.label "Transparent Torification (varning: kräver anpassad transproxy eller Tor router)">
+<!ENTITY torbirdy.prefs.torification.label "Transparent Torifikation (varning: kräver anpassad transproxy eller Tor router)">
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "Global">
 <!ENTITY torbirdy.prefs.imap.label "Aktivera push e-post-stöd för IMAP-konton [standard: inaktiverat]">
 <!ENTITY torbirdy.prefs.imap.key "i">
-<!ENTITY torbirdy.prefs.startup_folder.label "Gå till den senast använda e-post-mappen vid start [standrad: inaktiverat, välj Lokala Mappar]">
+<!ENTITY torbirdy.prefs.startup_folder.label "Gå till den senast använda e-post-mappen vid start [standard: inaktiverat, välj Lokala Mappar]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "Sätt inte Thunderbirds tidzon till UTC [standard: sätt till UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
@@ -41,14 +41,14 @@
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
 <!ENTITY torbirdy.prefs.confirmemail.label "Bekräfta innan e-post skickas om Enigmail är aktiverat [standard: bekräfta inte]">
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
-<!ENTITY torbirdy.prefs.emailwizard.label "Aktivera Thunderbirds automatiska e-post inställnings guide [standard: inaktiverad]">
+<!ENTITY torbirdy.prefs.emailwizard.label "Aktivera Thunderbirds automatiska e-post inställningsguide [standard: inaktiverad]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.renegotiation.label "Tillåt anslutningar till servrar som inte stöder SSL/TLS med säker omförhandling [standard: tillåt inte]">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Konto-specifikt">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Välj ett konto:">
-<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Nyckelserver (nyckelservrar) att använda:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Nyckelservrar att använda:">
 <!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "Använd Tor Onion Router">
@@ -56,4 +56,4 @@
 <!ENTITY torbirdy.panel.usewhonix.label "Använd Whonix">
 <!ENTITY torbirdy.panel.preferences.label "Öppna inställningarna för TorBirdy">
 
-<!ENTITY torbirdy.firstrun.title "TorBirdy Första körning">
+<!ENTITY torbirdy.firstrun.title "TorBirdy Första starten">

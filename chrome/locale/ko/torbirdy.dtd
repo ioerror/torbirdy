@@ -43,7 +43,7 @@
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
 <!ENTITY torbirdy.prefs.emailwizard.label "썬더버드의 자동 이메일 환경설정 마법사 활성화 [기본값 : 비활성화]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
-<!ENTITY torbirdy.prefs.renegotiation.label "">
+<!ENTITY torbirdy.prefs.renegotiation.label "SSL/TLS가 호환되지 않는 사이트에의 비보호 접근을 허용 [기본 설정: 비허용]">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "계정-특징적">
 <!ENTITY torbirdy.prefs.select_account.key "C">

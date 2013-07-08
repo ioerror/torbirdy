@@ -16,8 +16,8 @@
 <!ENTITY torbirdy.prefs.extra2.key "g">
 <!ENTITY torbirdy.prefs.proxy.label "Proxy configuratie">
 <!ENTITY torbirdy.prefs.privacy.label "Privacy configuratie">
-<!ENTITY torbirdy.prefs.enigmail.label "Enigmail configuratie">
-<!ENTITY torbirdy.prefs.security.label "Beveiliging configuratie">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail instellingen">
+<!ENTITY torbirdy.prefs.security.label "Beveiligingsinstellingen">
 <!ENTITY torbirdy.prefs.recommended.text "Aanbevolen configuratie voor TorBirdy (Tor) gebruiken">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Kies een anonimiseringsdienst">
@@ -43,12 +43,12 @@
 <!ENTITY torbirdy.prefs.confirmemail.key "m">
 <!ENTITY torbirdy.prefs.emailwizard.label "Schakel Thunderbird's automatische e-mail configuratie-wizard in [standaard: uitgeschakeld]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
-<!ENTITY torbirdy.prefs.renegotiation.label "Sta verbindingen met severs die geen SSL/TLS met beveiligde onderhandeling ondersteunen toe [standaard: niet toestaand]">
+<!ENTITY torbirdy.prefs.renegotiation.label "sta connecties met servers die SSL/TLS met &quot;safe renegotiation&quot; toe  [default: do not allow]">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Account-specifiek">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Kies een account: ">
-<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Te gebruiken sluitelserver(s): ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Bruikbaare hoofdserver(s).">
 <!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "Gebruik Tor Onion Router">

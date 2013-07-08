@@ -4,22 +4,20 @@
 <!ENTITY torbirdy.accountprefs.minutes.label "Yeni mesajlara her XX de bak">
 <!ENTITY torbirdy.accountprefs.minutes.key "y">
 <!ENTITY torbirdy.accountprefs.minutes.trail.label "dakikalar">
-<!ENTITY torbirdy.accountprefs.cancel.button "İptal
-">
+<!ENTITY torbirdy.accountprefs.cancel.button "İptal">
 <!ENTITY torbirdy.accountprefs.save.button "Kaydet">
 <!ENTITY torbirdy.accountprefs.save.key "S">
 
 <!ENTITY torbirdy.prefs.title "TorBirdy Seçenekleri">
 <!ENTITY torbirdy.prefs.save.button "Kaydet">
 <!ENTITY torbirdy.prefs.save.key "s">
-<!ENTITY torbirdy.prefs.cancel.button "İptal
-">
+<!ENTITY torbirdy.prefs.cancel.button "İptal">
 <!ENTITY torbirdy.prefs.extra2.button "Ayarları test et">
 <!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Proxy Ayarları">
 <!ENTITY torbirdy.prefs.privacy.label "Mahremiyet Ayarları">
 <!ENTITY torbirdy.prefs.enigmail.label "">
-<!ENTITY torbirdy.prefs.security.label "">
+<!ENTITY torbirdy.prefs.security.label "Güvenlik Ayarları">
 <!ENTITY torbirdy.prefs.recommended.text "TorBirdy(Tor)  için önerilen proxy ayarlarını kullan">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Anonimleştirme servisi seçin. ">
@@ -46,7 +44,7 @@
 <!ENTITY torbirdy.prefs.emailwizard.label "">
 <!ENTITY torbirdy.prefs.emailwizard.key "">
 <!ENTITY torbirdy.prefs.renegotiation.label "">
-<!ENTITY torbirdy.prefs.renegotiation.key "">
+<!ENTITY torbirdy.prefs.renegotiation.key "p">
 <!ENTITY torbirdy.prefs.account_specific "">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Hesap Seç:">

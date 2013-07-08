@@ -4,17 +4,17 @@
 <!ENTITY torbirdy.accountprefs.minutes.label "">
 <!ENTITY torbirdy.accountprefs.minutes.key "">
 <!ENTITY torbirdy.accountprefs.minutes.trail.label "">
-<!ENTITY torbirdy.accountprefs.cancel.button "">
-<!ENTITY torbirdy.accountprefs.save.button "">
+<!ENTITY torbirdy.accountprefs.cancel.button "Zrušiť">
+<!ENTITY torbirdy.accountprefs.save.button "Uložiť">
 <!ENTITY torbirdy.accountprefs.save.key "">
 
 <!ENTITY torbirdy.prefs.title "">
-<!ENTITY torbirdy.prefs.save.button "">
+<!ENTITY torbirdy.prefs.save.button "Uložiť">
 <!ENTITY torbirdy.prefs.save.key "">
-<!ENTITY torbirdy.prefs.cancel.button "">
+<!ENTITY torbirdy.prefs.cancel.button "Zrušiť">
 <!ENTITY torbirdy.prefs.extra2.button "">
 <!ENTITY torbirdy.prefs.extra2.key "">
-<!ENTITY torbirdy.prefs.proxy.label "">
+<!ENTITY torbirdy.prefs.proxy.label "Nastavenie proxy">
 <!ENTITY torbirdy.prefs.privacy.label "">
 <!ENTITY torbirdy.prefs.enigmail.label "">
 <!ENTITY torbirdy.prefs.security.label "">
