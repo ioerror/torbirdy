@@ -1,0 +1,59 @@
+<!ENTITY torbirdy.accountprefs.title "アカウント設定">
+<!ENTITY torbirdy.accountprefs.startup.label "起動時に新しいメッセージがないか確認">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "毎回新しいメッセージを確認">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "分">
+<!ENTITY torbirdy.accountprefs.cancel.button "キャンセル">
+<!ENTITY torbirdy.accountprefs.save.button "保存">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "TorBirdyの設定">
+<!ENTITY torbirdy.prefs.save.button "保存">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "キャンセル">
+<!ENTITY torbirdy.prefs.extra2.button "設定をテストする">
+<!ENTITY torbirdy.prefs.extra2.key "n">
+<!ENTITY torbirdy.prefs.proxy.label "プロクシ設定">
+<!ENTITY torbirdy.prefs.privacy.label "プライバシー設定">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmailの設定">
+<!ENTITY torbirdy.prefs.security.label "セキュリティ設定">
+<!ENTITY torbirdy.prefs.recommended.text "Torbirdyに推奨されるプロキシ設定を使用 (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "匿名化サービスを選択">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "カスタム設定のプロキシを使う">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKSホスト:">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "ポート:">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "透過型Tor化 (警告:カスタム透過型プロキシかTorのルーターが必要)">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "グローバル">
+<!ENTITY torbirdy.prefs.imap.label "IMAPアカウントのプッシュメールサポートを有効に[デフォルト：無効]">
+<!ENTITY torbirdy.prefs.imap.key "i">
+<!ENTITY torbirdy.prefs.startup_folder.label "起動時に最後にアクセスしたメールフォルダを選択 [デフォルト: 無効、ローカルのフォルダを選択]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "サンダーバードのタイムゾーンをUTCに設定しない [デフォルト: UTCに設定]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "受領者のキーIDを暗号化したメッセージに付ける[デフォルト：付けない]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.confirmemail.label "Enigmailが有効の場合メールを送信する前に確認 [デフォルト: 確認しない]">
+<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.emailwizard.label "サンダーバードの自動メール設定ウィザードを有効に [デフォルト:無効]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.renegotiation.label "安全な再ネゴシエーションでSSL/TLSをサポートしていないサーバーへの接続を許可する [デフォルト: 許可しない]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
+<!ENTITY torbirdy.prefs.account_specific "アカウント特有">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "アカウントを選択:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "使用するキーサーバー():">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
+
+<!ENTITY torbirdy.panel.usetor.label "Tor Onion Routerを使用">
+<!ENTITY torbirdy.panel.usejondo.label "JonDoを使用(プレミアム)">
+<!ENTITY torbirdy.panel.usewhonix.label "Whonixを使用">
+<!ENTITY torbirdy.panel.preferences.label "TorBirdyの設定を開く">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">
