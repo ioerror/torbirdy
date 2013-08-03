@@ -110,6 +110,8 @@ const TORBIRDYPREFS = {
   // Enable SSL3?
   // We do not want to enable a known weak protocol; users should use only use TLS
   "security.enable_ssl3": false,
+  // Thunderbird 23.0 uses the following preference.
+  "security.tls.version.min": 1,
   // Display a dialog warning the user when entering an insecure site from a secure one.
   "security.warn_entering_weak": true,
   // Display a dialog warning the user when submtting a form to an insecure site.
