@@ -2,7 +2,7 @@ SHELL := /bin/bash
 VERSION := $(shell cat install.rdf|grep '<em:version>'|cut -d\> -f2|cut -d\< -f1)
 
 make-xpi:
-	zip -r ../torbirdy-$(VERSION).xpi * -x "/screenshots/*" -x "*/screenshots/*"  -x "debian/*" -x "patches/*" -x "TODO" -x "ChangeLog" -x "Makefile"
+	zip -r ../torbirdy-$(VERSION).xpi * -x "/screenshots/*" -x "*/screenshots/*"  -x "debian/*" -x "patches/*" -x "ChangeLog" -x "Makefile"
 
 clean:
 	rm -f ../torbirdy-$(VERSION).xpi
