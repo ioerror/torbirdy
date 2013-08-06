@@ -1,4 +1,3 @@
-// Import the required util components.
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
 
 const Ci = Components.interfaces;
@@ -214,10 +213,6 @@ const TORBIRDYPREFS = {
   // Prefer plain text for RSS.
   "rss.display.prefer_plaintext": true,
 
-  // Assume that the local Tor supports Prop 171
-  // How can we set a username and password for the network.proxy.socks property?
-  // XXX TODO
-
   // Override the user agent by setting it to an empty string.
   "general.useragent.override": "",
 
@@ -292,7 +287,6 @@ const TORBIRDY_OLDPREFS = [
   "network.proxy.http",
 ]
 
-// Constructor for component init.
 function TorBirdy() {
   this._uninstall = false;
   this.wrappedJSObject = this;
@@ -348,7 +342,7 @@ function TorBirdy() {
 TorBirdy.prototype = {
   QueryInterface: XPCOMUtils.generateQI(
   [Ci.nsIObserver]),
-  wrappedJSObject: null, // Initalized by constructor
+  wrappedJSObject: null,
 
   classDescription: SERVICE_NAME,
   classID:          SERVICE_ID,
