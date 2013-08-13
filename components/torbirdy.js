@@ -7,10 +7,11 @@ const Cr = Components.results;
 const SERVICE_CTRID   = "@torproject.org/torbirdy;1";
 const SERVICE_ID      = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
 const SERVICE_NAME    = "Main TorBirdy component";
-const TORBIRDY_ID     = "castironthunderbirdclub@torproject.org";
-const PREF_BRANCH     = "extensions.torbirdy.custom.";
-const RESTORE_BRANCH  = "extensions.torbirdy.restore.";
-const TORBIRDY_BRANCH = "extensions.torbirdy.";
+const tb_ID     = "castironthunderbirdclub@torproject.org";
+
+const kPrefBranch     = "extensions.torbirdy.custom.";
+const kRestoreBranch  = "extensions.torbirdy.restore.";
+const kTorBirdyBranch = "extensions.torbirdy.";
 
 // Default preference values for TorBirdy.
 // These preferences values will be "enforced": even if the user decides to
@@ -21,7 +22,7 @@ const TORBIRDY_BRANCH = "extensions.torbirdy.";
 // the secure default when Thunderbird starts.
 // There are some preferences that can be overwritten using TorBirdy's
 // preferences dialog. See `preferences.js'.
-const TORBIRDYPREFS = {
+const TorBirdyPrefs = {
   "extensions.torbirdy.protected": false,
   // When the preferences below have been set, then only enable TorBirdy.
   // Generate our own custom time-independent message-ID.
@@ -276,7 +277,7 @@ const TORBIRDYPREFS = {
 // when TorBirdy is initialized that should be preserved instead. When TorBirdy
 // is disabled or uninstalled, these preferences are restored to their original
 // value. All such preferences go here.
-const TORBIRDY_OLDPREFS = [
+const TorBirdyOldPrefs = [
   "network.proxy.type",
   "network.proxy.ssl_port",
   "network.proxy.ssl",
@@ -295,11 +296,11 @@ function TorBirdy() {
                   .getService(Ci.nsIPrefBranch);
 
   var torbirdyPref = Cc["@mozilla.org/preferences-service;1"]
-                         .getService(Ci.nsIPrefService).getBranch(PREF_BRANCH);
+                         .getService(Ci.nsIPrefService).getBranch(kPrefBranch);
   this.customPrefs = torbirdyPref.getChildList("", {});
 
   var oldPrefs = Cc["@mozilla.org/preferences-service;1"]
-                           .getService(Ci.nsIPrefService).getBranch(RESTORE_BRANCH);
+                           .getService(Ci.nsIPrefService).getBranch(kRestoreBranch);
   this.restorePrefs = oldPrefs.getChildList("", {});
 
   this.acctMgr = Cc["@mozilla.org/messenger/account-manager;1"]
@@ -352,7 +353,7 @@ TorBirdy.prototype = {
   _xpcom_categories: [{ category: "profile-after-change"}, ],
 
   onUninstalling: function(addon, needsRestart) {
-    if (addon.id == TORBIRDY_ID) {
+    if (addon.id == tb_ID) {
       dump("Nooo! TorBirdy uninstall requested\n");
       this._uninstall = true;
       this.resetUserPrefs();
@@ -360,7 +361,7 @@ TorBirdy.prototype = {
   },
 
   onOperationCancelled: function(addon) {
-    if (addon.id == TORBIRDY_ID) {
+    if (addon.id == tb_ID) {
       dump("Uninstall requested cancelled. Yayay!\n");
       this._uninstall = false;
       this.setPrefs();
@@ -371,7 +372,7 @@ TorBirdy.prototype = {
     if (topic == "em-action-requested") {
       subject.QueryInterface(Ci.nsIUpdateItem);
 
-      if (subject.id == TORBIRDY_ID) {
+      if (subject.id == tb_ID) {
         if (data == "item-uninstalled" || data == "item-disabled") {
           dump("Nooo! TorBirdy uninstall requested\n");
           this._uninstall = true;
@@ -388,15 +389,15 @@ TorBirdy.prototype = {
   resetUserPrefs: function() {
     dump("Resetting user preferences to default\n");
     // Clear the Thunderbird preferences we changed.
-    for (var each in TORBIRDYPREFS) {
+    for (var each in TorBirdyPrefs) {
       this.prefs.clearUserPref(each);
     }
 
     // Restore the older proxy preferences that were set before TorBirdy.
     dump("Restoring proxy settings\n");
-    for (var i = 0; i < TORBIRDY_OLDPREFS.length; i++) {
-      var oldPref = TORBIRDY_OLDPREFS[i];
-      var setValue = RESTORE_BRANCH + oldPref;
+    for (var i = 0; i < TorBirdyOldPrefs.length; i++) {
+      var oldPref = TorBirdyOldPrefs[i];
+      var setValue = kRestoreBranch + oldPref;
       var type = this.prefs.getPrefType(setValue);
       if (type === 32) {
         this.prefs.setCharPref(oldPref, this.prefs.getCharPref(setValue));
@@ -418,7 +419,7 @@ TorBirdy.prototype = {
     var clearPrefs = Cc["@mozilla.org/preferences-service;1"]
                              .getService(Ci.nsIPrefService).getBranch(TORBIRDY_BRANCH).getChildList("", {});
     for (var i = 0; i < clearPrefs.length; i++) {
-        this.prefs.clearUserPref(TORBIRDY_BRANCH + clearPrefs[i]);
+        this.prefs.clearUserPref(kTorBirdyBranch + clearPrefs[i]);
     }
   },
 
@@ -429,28 +430,28 @@ TorBirdy.prototype = {
       var typePref = this.prefs.getPrefType(this.customPrefs[i]);
       // String.
       if (typePref === 32) {
-        var value = this.prefs.getCharPref(PREF_BRANCH + this.customPrefs[i]);
+        var value = this.prefs.getCharPref(kPrefBranch + this.customPrefs[i]);
       }
       // Int.
       if (typePref === 64) {
-        var value = this.prefs.getIntPref(PREF_BRANCH + this.customPrefs[i]);
+        var value = this.prefs.getIntPref(kPrefBranch + this.customPrefs[i]);
       }
       // Bool.
       if (typePref === 128) {
-        var value = this.prefs.getBoolPref(PREF_BRANCH + this.customPrefs[i]);
+        var value = this.prefs.getBoolPref(kPrefBranch + this.customPrefs[i]);
       }
-      TORBIRDYPREFS[this.customPrefs[i]] = value;
+      TorBirdyPrefs[this.customPrefs[i]] = value;
     }
 
-    for (var each in TORBIRDYPREFS) {
-      if (typeof TORBIRDYPREFS[each] === "boolean") {
-        this.prefs.setBoolPref(each, TORBIRDYPREFS[each]);
+    for (var each in TorBirdyPrefs) {
+      if (typeof TorBirdyPrefs[each] === "boolean") {
+        this.prefs.setBoolPref(each, TorBirdyPrefs[each]);
       }
-      if (typeof TORBIRDYPREFS[each] === "number") {
-        this.prefs.setIntPref(each, TORBIRDYPREFS[each]);
+      if (typeof TorBirdyPrefs[each] === "number") {
+        this.prefs.setIntPref(each, TorBirdyPrefs[each]);
       }
-      if (typeof TORBIRDYPREFS[each] === "string") {
-        this.prefs.setCharPref(each, TORBIRDYPREFS[each]);
+      if (typeof TorBirdyPrefs[each] === "string") {
+        this.prefs.setCharPref(each, TorBirdyPrefs[each]);
       }
     }
   },
@@ -458,29 +459,29 @@ TorBirdy.prototype = {
   setAccountPrefs: function() {
     if (this.prefs.getBoolPref("extensions.torbirdy.first_run")) {
       // Save the current proxy settings so that the settings can be restored in case
-      // TorBirdy is uninstalled or disabled. (TORBIRDY_OLDPREFS)
-      for (var i = 0; i < TORBIRDY_OLDPREFS.length; i++) {
-        var oldPref = TORBIRDY_OLDPREFS[i];
+      // TorBirdy is uninstalled or disabled. (TorBirdyOldPrefs)
+      for (var i = 0; i < TorBirdyOldPrefs.length; i++) {
+        var oldPref = TorBirdyOldPrefs[i];
         var type = this.prefs.getPrefType(oldPref);
         // String.
         if (type === 32) {
           if (this.prefs.prefHasUserValue(oldPref)) {
             var pref = this.prefs.getCharPref(oldPref);
-            this.prefs.setCharPref(RESTORE_BRANCH + oldPref, pref);
+            this.prefs.setCharPref(kRestoreBranch + oldPref, pref);
           }
         }
         // Int.
         if (type === 64) {
           if (this.prefs.prefHasUserValue(oldPref)) {
             var pref = this.prefs.getIntPref(oldPref);
-            this.prefs.setIntPref(RESTORE_BRANCH + oldPref, pref);
+            this.prefs.setIntPref(kRestoreBranch + oldPref, pref);
           }
         }
         // Bool.
         if (type === 128) {
           if (this.prefs.prefHasUserValue(oldPref)) {
             var pref = this.prefs.getBoolPref(oldPref);
-            this.prefs.setBoolPref(RESTORE_BRANCH + oldPref, pref);
+            this.prefs.setBoolPref(kRestoreBranch + oldPref, pref);
           }
         }
       }
@@ -517,13 +518,13 @@ TorBirdy.prototype = {
             var typePref = this.prefs.getPrefType(prefToCall);
             if (typePref === 64) {
               var currentPref = this.prefs.getIntPref(prefToCall);
-              this.prefs.setIntPref(RESTORE_BRANCH + prefToCall, currentPref);
+              this.prefs.setIntPref(kRestoreBranch + prefToCall, currentPref);
             }
             if (typePref === 128) {
               var currentPref = this.prefs.getBoolPref(prefToCall);
-              this.prefs.setBoolPref(RESTORE_BRANCH + prefToCall, currentPref);
+              this.prefs.setBoolPref(kRestoreBranch + prefToCall, currentPref);
             }
-            TORBIRDY_OLDPREFS.push(prefToCall);
+            TorBirdyOldPrefs.push(prefToCall);
           }
         }
 
