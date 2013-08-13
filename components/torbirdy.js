@@ -7,7 +7,8 @@ const Cr = Components.results;
 const SERVICE_CTRID = "@torproject.org/torbirdy;1";
 const SERVICE_ID    = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
 const SERVICE_NAME  = "Main TorBirdy Component";
-const tb_ID         = "castironthunderbirdclub@torproject.org";
+
+const TB_ID         = "castironthunderbirdclub@torproject.org";
 
 const kPrefBranch     = "extensions.torbirdy.custom.";
 const kRestoreBranch  = "extensions.torbirdy.restore.";
@@ -353,7 +354,7 @@ TorBirdy.prototype = {
   _xpcom_categories: [{ category: "profile-after-change"}, ],
 
   onUninstalling: function(addon, needsRestart) {
-    if (addon.id == tb_ID) {
+    if (addon.id == TB_ID) {
       dump("Nooo! TorBirdy uninstall requested\n");
       this._uninstall = true;
       this.resetUserPrefs();
@@ -361,7 +362,7 @@ TorBirdy.prototype = {
   },
 
   onOperationCancelled: function(addon) {
-    if (addon.id == tb_ID) {
+    if (addon.id == TB_ID) {
       dump("Uninstall requested cancelled. Yayay!\n");
       this._uninstall = false;
       this.setPrefs();
@@ -372,7 +373,7 @@ TorBirdy.prototype = {
     if (topic == "em-action-requested") {
       subject.QueryInterface(Ci.nsIUpdateItem);
 
-      if (subject.id == tb_ID) {
+      if (subject.id == TB_ID) {
         if (data == "item-uninstalled" || data == "item-disabled") {
           dump("Nooo! TorBirdy uninstall requested\n");
           this._uninstall = true;
