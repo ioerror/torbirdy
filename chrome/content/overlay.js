@@ -28,8 +28,7 @@ function torbirdyStartup() {
   }
 
   // Set the time zone to UTC if the preference is true.
-  if (prefs.getBoolPref("extensions.torbirdy.timezone"))
-  {
+  if (prefs.getBoolPref("extensions.torbirdy.timezone")) {
     env.set('TZ', 'UTC');
   }
 
@@ -41,18 +40,18 @@ function torbirdyStartup() {
 
   var myPanel = document.getElementById("torbirdy-my-panel");
   var strbundle = document.getElementById("torbirdy-strings-overlay");
-  if (prefs.getBoolPref("extensions.torbirdy.protected"))
-  {
+
+  // If all other preferences have been set in `components/torbirdy.js'
+  if (prefs.getBoolPref("extensions.torbirdy.protected")) {
     var type = prefs.getIntPref("extensions.torbirdy.proxy");
     myPanel.style.color = "green";
+
     // Tor.
-    if (type === 0)
-    {
+    if (type === 0) {
       myPanel.label = strbundle.getString("torbirdy.enabled.tor");
     }
     // JonDo/Whonix.
-    if (type === 1)
-    {
+    if (type === 1) {
       if (prefs.getIntPref("extensions.torbirdy.proxy.type") === 0) {
         myPanel.label = strbundle.getString("torbirdy.enabled.jondo");
       }
@@ -61,8 +60,7 @@ function torbirdyStartup() {
       }
     }
     // Custom.
-    if (type === 2)
-    {
+    if (type === 2) {
       myPanel.label = strbundle.getString("torbirdy.enabled.custom");
     }
     // Whonix.
@@ -71,13 +69,13 @@ function torbirdyStartup() {
       org.torbirdy.prefs.setProxyWhonix();
     }
     // Transparent Torification.
-    if (type === 3)
-    {
+    if (type === 3) {
       myPanel.label = strbundle.getString("torbirdy.enabled.torification");
       myPanel.style.color = "red";
     }
     prefs.setBoolPref("extensions.torbirdy.whonix_run", false);
-  } else {
+  }
+  else {
     myPanel.label = strbundle.getString("torbirdy.enabled.disabled");
     myPanel.style.color = "red";
   }
