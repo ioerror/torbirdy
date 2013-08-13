@@ -4,10 +4,10 @@ const Ci = Components.interfaces;
 const Cc = Components.classes;
 const Cr = Components.results;
 
-const SERVICE_CTRID   = "@torproject.org/torbirdy;1";
-const SERVICE_ID      = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
-const SERVICE_NAME    = "Main TorBirdy component";
-const tb_ID     = "castironthunderbirdclub@torproject.org";
+const SERVICE_CTRID = "@torproject.org/torbirdy;1";
+const SERVICE_ID    = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
+const SERVICE_NAME  = "Main TorBirdy Component";
+const tb_ID         = "castironthunderbirdclub@torproject.org";
 
 const kPrefBranch     = "extensions.torbirdy.custom.";
 const kRestoreBranch  = "extensions.torbirdy.restore.";
