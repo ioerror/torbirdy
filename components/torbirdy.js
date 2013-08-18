@@ -7,7 +7,6 @@ const Cr = Components.results;
 const SERVICE_CTRID = "@torproject.org/torbirdy;1";
 const SERVICE_ID    = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
 const SERVICE_NAME  = "Main TorBirdy Component";
-
 const TB_ID         = "castironthunderbirdclub@torproject.org";
 
 const kPrefBranch     = "extensions.torbirdy.custom.";
@@ -394,7 +393,7 @@ TorBirdy.prototype = {
       this.prefs.clearUserPref(each);
     }
 
-    // Restore the older proxy preferences that were set before TorBirdy.
+    // Restore the older proxy preferences that were set prior to TorBirdy's install.
     dump("Restoring proxy settings\n");
     for (var i = 0; i < TorBirdyOldPrefs.length; i++) {
       var oldPref = TorBirdyOldPrefs[i];
@@ -425,6 +424,7 @@ TorBirdy.prototype = {
   },
 
   setPrefs: function() {
+    dump("Setting TorBirdy preferences\n");
     // If custom values are set for specific preferences, override the defaults with them.
     // For each preference, get the type and then set the property.
     for (var i = 0; i < this.customPrefs.length; i++) {
