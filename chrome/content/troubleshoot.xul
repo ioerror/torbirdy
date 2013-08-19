@@ -3,7 +3,7 @@
 
 <!DOCTYPE overlay SYSTEM "chrome://castironthunderbirdclub/locale/torbirdy.dtd">
 
-<dialog id="castironthunderbird-troubleshoot" 
+<dialog id="castironthunderbird-troubleshoot"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         title="&torbirdy.troubleshoot.title;"
         buttons="accept"

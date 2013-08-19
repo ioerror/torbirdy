@@ -34,15 +34,15 @@
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "Global">
 <!ENTITY torbirdy.prefs.imap.label "Enable push email support for IMAP accounts [default: disabled]">
-<!ENTITY torbirdy.prefs.imap.key "i">
+<!ENTITY torbirdy.prefs.imap.key "p">
 <!ENTITY torbirdy.prefs.startup_folder.label "Select last accessed mail folder on startup [default: disabled, select Local Folders]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "Do not set Thunderbird's time zone to UTC [default: set to UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Put the recipient key IDs into encrypted messages [default: do not put]">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "Confirm before sending email if Enigmail is enabled [default: do not confirm]">
-<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.confirmemail.key "c">
 <!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.renegotiation.label "Allow connections to servers that do not support SSL/TLS with secure renegotiation [default: do not allow]">
