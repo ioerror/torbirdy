@@ -12,6 +12,8 @@
 <!ENTITY torbirdy.prefs.save.button "Save">
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Cancel">
+<!ENTITY torbirdy.prefs.extra1.button "Troubleshoot">
+<!ENTITY torbirdy.prefs.extra1.key "o">
 <!ENTITY torbirdy.prefs.extra2.button "Test Settings">
 <!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Proxy Settings">
@@ -57,3 +59,4 @@
 <!ENTITY torbirdy.panel.preferences.label "Open TorBirdy Preferences">
 
 <!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">
+<!ENTITY torbirdy.troubleshoot.title "Troubleshooting">

@@ -589,5 +589,11 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     }
   };
 
+  pub.troubleshoot = function() {
+    window.openDialog("chrome://castironthunderbirdclub/content/troubleshoot.xul",
+                     "TroubleshootWindow",
+                     "chrome, centerscreen, modal, resizable=yes").focus();
+  };
+
   return pub;
 };
