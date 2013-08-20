@@ -589,5 +589,21 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     }
   };
 
+  pub.restoreDefaults = function() {
+    // Set the values to their default state.
+    pub.anonService.selectedIndex = 0;
+    pub.idle.checked = false;
+    pub.startupFolder.checked = false;
+    pub.timezone.checked = false;
+    pub.enigmail.checked = false;
+    pub.confirmemail.checked = false;
+    pub.emailwizard.checked = false;
+    pub.renegotiation.checked = false;
+    // Save the settings and close the window.
+    pub.checkSetting();
+    pub.onAccept();
+    window.close();
+  };
+
   return pub;
 };

@@ -417,7 +417,7 @@ TorBirdy.prototype = {
 
     // Now clear all TorBirdy preferences.
     var clearPrefs = Cc["@mozilla.org/preferences-service;1"]
-                             .getService(Ci.nsIPrefService).getBranch(TORBIRDY_BRANCH).getChildList("", {});
+                             .getService(Ci.nsIPrefService).getBranch(kTorBirdyBranch).getChildList("", {});
     for (var i = 0; i < clearPrefs.length; i++) {
         this.prefs.clearUserPref(kTorBirdyBranch + clearPrefs[i]);
     }
