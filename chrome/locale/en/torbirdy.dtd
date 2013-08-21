@@ -14,7 +14,7 @@
 <!ENTITY torbirdy.prefs.cancel.button "Cancel">
 <!ENTITY torbirdy.prefs.extra1.button "Restore Defaults">
 <!ENTITY torbirdy.prefs.extra1.key "d">
-<!ENTITY torbirdy.prefs.extra2.button "Test Settings">
+<!ENTITY torbirdy.prefs.extra2.button "Test Proxy Settings">
 <!ENTITY torbirdy.prefs.extra2.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Proxy Settings">
 <!ENTITY torbirdy.prefs.privacy.label "Privacy Settings">
