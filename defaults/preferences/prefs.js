@@ -9,3 +9,4 @@ pref("extensions.torbirdy.timezone", true);
 pref("extensions.torbirdy.whonix_run", true);
 pref("extensions.torbirdy.info_run", false);
 pref("extensions.torbirdy.emailwizard", false);
+pref("extensions.torbirdy.fetchall", false);

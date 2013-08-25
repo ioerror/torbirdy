@@ -45,6 +45,8 @@
 <!ENTITY torbirdy.prefs.confirmemail.key "c">
 <!ENTITY torbirdy.prefs.emailwizard.label "Enable Thunderbird's automatic email configuration wizard [default: disabled]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.automatic.label "Check for new messages automatically for all accounts [default: disabled]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
 <!ENTITY torbirdy.prefs.renegotiation.label "Allow connections to servers that do not support SSL/TLS with secure renegotiation [default: do not allow]">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Account-Specific">

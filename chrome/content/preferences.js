@@ -101,6 +101,17 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.prefs.clearUserPref(pub.customBranch + pref);
   };
 
+  pub.fetchAllMessages = function() {
+    if (pub.fetchAll.checked) {
+      pub.idle.checked = true;
+      pub.startupFolder.checked = true;
+    }
+    else {
+      pub.idle.checked = false;
+      pub.startupFolder.checked = false;
+    }
+  };
+
   pub.checkSetting = function() {
     var index = pub.anonService.selectedIndex;
     if (index === 2) {
@@ -344,6 +355,27 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
                             pub.strbundle.GetStringFromName("torbirdy.restart"));
     }
 
+    // Fetch all messages for all accounts.
+    // default: false
+    // Only change the state if it is required.
+    if (pub.fetchAll.checked !== pub.prefs.getBoolPref(pub.prefBranch + 'fetchall')) {
+      var accounts = pub.getAccount();
+      if (pub.fetchAll.checked) {
+        pub.prefs.setBoolPref(pub.prefBranch + 'fetchall', true);
+        for (var i = 0; i < accounts.length; i++) {
+          accounts[i].loginAtStartUp = true;
+          accounts[i].doBiff = true;
+        }
+      }
+      else {
+        pub.prefs.setBoolPref(pub.prefBranch + 'fetchall', false);
+        for (var i = 0; i < accounts.length; i++) {
+          accounts[i].loginAtStartUp = false;
+          accounts[i].doBiff = false;
+        }
+      }
+    }
+
     // Enigmail.
     // --throw-keyids - default: true
     var enigmail_throwkeyid = pub.enigmail.checked;
@@ -420,6 +452,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.emailwizard = document.getElementById('torbirdy-email-wizard');
     pub.renegotiation = document.getElementById('torbirdy-renegotiation');
     pub.keyserver = document.getElementById('torbirdy-enigmail-keyserver');
+    pub.fetchAll = document.getElementById('torbirdy-email-automatic');
 
     // Make sure the user really wants to change these settings.
     var warnPrompt = pub.prefs.getBoolPref("extensions.torbirdy.warn");
@@ -510,6 +543,15 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.timezone.checked = true;
     }
 
+    // Fetch all messages for all accounts.
+    // default: false
+    var fetchAllMessages = pub.prefs.getBoolPref(pub.prefBranch + 'fetchall');
+    if (fetchAllMessages) {
+      pub.fetchAll.checked = true;
+    } else {
+      pub.fetchAll.checked = false;
+    }
+
     // Enigmal settings
     // --throw-keyids - default: true
     var enigmail_throwkeyid = pub.prefs.getBoolPref(pub.prefBranch + 'enigmail.throwkeyid');
@@ -592,13 +634,14 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
   pub.restoreDefaults = function() {
     // Set the values to their default state.
     pub.anonService.selectedIndex = 0;
-    pub.idle.checked = false;
-    pub.startupFolder.checked = false;
     pub.timezone.checked = false;
     pub.enigmail.checked = false;
     pub.confirmemail.checked = false;
     pub.emailwizard.checked = false;
     pub.renegotiation.checked = false;
+    pub.idle.checked = false;
+    pub.startupFolder.checked = false;
+    pub.fetchAll.checked = false;
     // Save the settings and close the window.
     pub.checkSetting();
     pub.onAccept();
