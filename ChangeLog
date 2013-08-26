@@ -1,6 +1,7 @@
 0.1.2,
-  Add an option for restoring default TorBirdy settings
-  Add an option for toggling checking for new messages
+  New options:
+    restore default TorBirdy settings
+    toggle checking of new messages automatically for all accounts
   Add Persian translation (thanks to Nima)
   Add Czech translation (thanks to dope)
   Add Esperanto translation (thanks to Michael Moroni)

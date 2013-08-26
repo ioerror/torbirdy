@@ -313,8 +313,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       Privacy
     */
     var idlePref = 'mail.server.default.use_idle';
-    var idle = pub.idle.checked;
-    if (idle) {
+    if (pub.idle.checked) {
       pub.setPreferences(idlePref, true);
     }
     else {
@@ -323,8 +322,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
     // Last accessed folder.
     // default: false
-    var startupFolder = pub.startupFolder.checked;
-    if (startupFolder) {
+    if (pub.startupFolder.checked) {
       pub.prefs.setBoolPref(pub.prefBranch + 'startup_folder', true);
     } else {
       pub.prefs.setBoolPref(pub.prefBranch + 'startup_folder', false);
@@ -333,9 +331,8 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     // Time zone.
     // default: true
     var timezone = pub.timezone.checked;
-    var oldPreference = pub.prefs.getBoolPref(pub.prefBranch + 'timezone');
     // Only update this if required.
-    if (timezone === oldPreference) {
+    if (timezone === pub.prefs.getBoolPref(pub.prefBranch + 'timezone')) {
         var env = Components.classes["@mozilla.org/process/environment;1"]
                                       .getService(Components.interfaces.nsIEnvironment);
         if (timezone) {
@@ -378,8 +375,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
     // Enigmail.
     // --throw-keyids - default: true
-    var enigmail_throwkeyid = pub.enigmail.checked;
-    if (enigmail_throwkeyid) {
+    if (pub.enigmail.checked) {
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', false);
     }
     else {
@@ -387,19 +383,17 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     }
 
     // Confirm before sending - default: false
-    var enigmail_confirmemail = pub.confirmemail.checked;
-    var enigmail_confirmemail_pref = "extensions.enigmail.confirmBeforeSend";
-    if (enigmail_confirmemail) {
-      pub.prefs.setBoolPref(enigmail_confirmemail_pref, true);
+    var enigmailConfirmPref = "extensions.enigmail.confirmBeforeSend";
+    if (pub.confirmemail.checked) {
+      pub.prefs.setBoolPref(enigmailConfirmPref, true);
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.confirmemail', true);
     } else {
-      pub.prefs.setBoolPref(enigmail_confirmemail_pref, false);
+      pub.prefs.setBoolPref(enigmailConfirmPref, false);
       pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.confirmemail', false);
     }
 
     // Thunderbird's email wizard - default: false
-    var emailwizard = pub.emailwizard.checked;
-    if (emailwizard) {
+    if (pub.emailwizard.checked) {
       pub.prefs.setBoolPref(pub.prefBranch + 'emailwizard', true);
     } else {
       pub.prefs.setBoolPref(pub.prefBranch + 'emailwizard', false);
@@ -527,8 +521,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
     // Select last accessed folder.
     // default: false
-    var startupPref = pub.prefs.getBoolPref(pub.prefBranch + 'startup_folder');
-    if (!startupPref) {
+    if (!pub.prefs.getBoolPref(pub.prefBranch + 'startup_folder')) {
       pub.startupFolder.checked = false;
     } else {
       pub.startupFolder.checked = true;
@@ -536,8 +529,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
     // Time zone settings.
     // default: true
-    var timezone = pub.prefs.getBoolPref(pub.prefBranch + 'timezone');
-    if (timezone) {
+    if (pub.prefs.getBoolPref(pub.prefBranch + 'timezone')) {
       pub.timezone.checked = false;
     } else {
       pub.timezone.checked = true;
@@ -545,8 +537,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
     // Fetch all messages for all accounts.
     // default: false
-    var fetchAllMessages = pub.prefs.getBoolPref(pub.prefBranch + 'fetchall');
-    if (fetchAllMessages) {
+    if (pub.prefs.getBoolPref(pub.prefBranch + 'fetchall')) {
       pub.fetchAll.checked = true;
     } else {
       pub.fetchAll.checked = false;
@@ -554,32 +545,29 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
     // Enigmal settings
     // --throw-keyids - default: true
-    var enigmail_throwkeyid = pub.prefs.getBoolPref(pub.prefBranch + 'enigmail.throwkeyid');
-    if (enigmail_throwkeyid) {
+    if (pub.prefs.getBoolPref(pub.prefBranch + 'enigmail.throwkeyid')) {
       pub.enigmail.checked = false;
     } else {
       pub.enigmail.checked = true;
     }
 
     // Confirm before sending - default: false
-    var enigmail_confirmemail = pub.prefs.getBoolPref(pub.prefBranch + 'enigmail.confirmemail');
-    if (enigmail_confirmemail) {
+    if (pub.prefs.getBoolPref(pub.prefBranch + 'enigmail.confirmemail')) {
       pub.confirmemail.checked = true;
     } else {
       pub.confirmemail.checked = false;
     }
 
     // Keyserver.
-    var enigmail_keyserver = pub.customBranch + 'extensions.enigmail.keyserver';
-    if (pub.prefs.prefHasUserValue(enigmail_keyserver)) {
-      pub.keyserver.value = pub.prefs.getCharPref(enigmail_keyserver);
+    var enigmailKeyserver = pub.customBranch + 'extensions.enigmail.keyserver';
+    if (pub.prefs.prefHasUserValue(enigmailKeyserver)) {
+      pub.keyserver.value = pub.prefs.getCharPref(enigmailKeyserver);
     } else {
       pub.keyserver.value = pub.prefs.getCharPref('extensions.enigmail.keyserver');
     }
 
     // Thunderbird's email wizard - default: false
-    var emailWizard = pub.prefs.getBoolPref(pub.prefBranch + 'emailwizard');
-    if (emailWizard) {
+    if (pub.prefs.getBoolPref(pub.prefBranch + 'emailwizard')) {
       pub.emailwizard.checked = true;
     } else {
       pub.emailwizard.checked = false;
@@ -589,8 +577,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
      Security
     */
     // Allow insecure renegotiation - default: false
-    var securityRenegotiation = pub.customBranch + 'security.ssl.require_safe_negotiation';
-    if (pub.prefs.prefHasUserValue(securityRenegotiation)) {
+    if (pub.prefs.prefHasUserValue(pub.customBranch + 'security.ssl.require_safe_negotiation')) {
       pub.renegotiation.checked = true;
     } else {
       pub.renegotiation.checked = false;
