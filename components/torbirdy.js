@@ -226,8 +226,9 @@ const TorBirdyPrefs = {
   // Disable WebGL.
   "webgl.disabled": true,
 
-  // Disable Telemetry.
+  // Disable Telemetry completely.
   "toolkit.telemetry.enabled": false,
+  "toolkit.telemetry.prompted": true,
 
   // Disable Geolocation.
   "geo.enabled": false,
