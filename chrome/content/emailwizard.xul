@@ -22,7 +22,7 @@
 
         <menulist id="torbirdy-protocol">
           <menupopup>
-            <menuitem label="POP"
+            <menuitem label="POP3"
                       value="pop3" />
             <menuitem label="IMAP"
                       value="imap" />
