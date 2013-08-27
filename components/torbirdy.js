@@ -228,6 +228,7 @@ const TorBirdyPrefs = {
 
   // Disable Telemetry completely.
   "toolkit.telemetry.enabled": false,
+  // And don't prompt for it. Yes, it should be set to true!
   "toolkit.telemetry.prompted": true,
 
   // Disable Geolocation.
