@@ -1,4 +1,5 @@
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+Components.utils.import("resource://gre/modules/AddonManager.jsm");
 
 const Ci = Components.interfaces;
 const Cc = Components.classes;
@@ -308,33 +309,12 @@ function TorBirdy() {
   this.acctMgr = Cc["@mozilla.org/messenger/account-manager;1"]
                   .getService(Ci.nsIMsgAccountManager);
 
-  var observerService = Cc["@mozilla.org/observer-service;1"]
-                           .getService(Ci.nsIObserverService);
-  observerService.addObserver(this, "quit-application-granted", false);
-
-  var appInfo = Cc["@mozilla.org/xre/app-info;1"]
-                   .getService(Ci.nsIXULAppInfo);
-  var versionChecker = Cc["@mozilla.org/xpcom/version-comparator;1"]
-                          .getService(Ci.nsIVersionComparator);
-
   var pluginsHost = Cc["@mozilla.org/plugin/host;1"].getService(Ci.nsIPluginHost);
   this.plugins = pluginsHost.getPluginTags({});
 
-  if (versionChecker.compare(appInfo.version, "5.0") >= 0) {
-    this.is_tb5 = true;
-  }
-  else {
-    this.is_tb5 = false;
-  }
-
-  if (this.is_tb5) {
-    Components.utils.import("resource://gre/modules/AddonManager.jsm");
-    this.onEnabling = this.onOperationCancelled;
-    this.onDisabling = this.onUninstalling;
-    AddonManager.addAddonListener(this);
-  } else {
-    observerService.addObserver(this, "em-action-requested", false);
-  }
+  this.onEnabling = this.onOperationCancelled;
+  this.onDisabling = this.onUninstalling;
+  AddonManager.addAddonListener(this);
 
   this.setAccountPrefs();
   this.setPrefs();
@@ -371,21 +351,7 @@ TorBirdy.prototype = {
   },
 
   observe: function(subject, topic, data) {
-    if (topic == "em-action-requested") {
-      subject.QueryInterface(Ci.nsIUpdateItem);
-
-      if (subject.id == TB_ID) {
-        if (data == "item-uninstalled" || data == "item-disabled") {
-          dump("Nooo! TorBirdy uninstall requested\n");
-          this._uninstall = true;
-          this.resetUserPrefs();
-        } else if (data == "item-cancel-action") {
-          dump("Uninstall requested cancelled. Yayay!\n");
-          this._uninstall = false;
-          this.setPrefs();
-        }
-      }
-    }
+    return;
   },
 
   resetUserPrefs: function() {
@@ -559,7 +525,4 @@ TorBirdy.prototype = {
 
 }
 
-if (XPCOMUtils.generateNSGetFactory)
-  var NSGetFactory = XPCOMUtils.generateNSGetFactory([TorBirdy]);
-else
-  var NSGetModule = XPCOMUtils.generateNSGetModule([TorBirdy]);
+const NSGetFactory = XPCOMUtils.generateNSGetFactory([TorBirdy]);
