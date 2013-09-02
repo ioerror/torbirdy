@@ -632,7 +632,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     // Save the settings and close the window.
     pub.checkSetting();
     pub.onAccept();
-    window.close();
   };
 
   return pub;
