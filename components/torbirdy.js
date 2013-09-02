@@ -202,8 +202,6 @@ const TorBirdyPrefs = {
                                               "--no-emit-version " +
                                               // Don't add additional comments (may leak language, etc)
                                               "--no-comments " +
-                                              // Don't include keyids that may disclose the sender or any other non-obvious keyids
-                                              "--throw-keyids " +
                                               // We want to force UTF-8 everywhere
                                               "--display-charset utf-8 " +
                                               // We want to ensure that Enigmail is proxy aware even when it runs gpg in a shell

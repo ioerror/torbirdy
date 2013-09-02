@@ -374,12 +374,12 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     }
 
     // Enigmail.
-    // --throw-keyids - default: true
+    // --throw-keyids - default: false
     if (pub.enigmail.checked) {
-      pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', false);
+      pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', true);
     }
     else {
-      pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', true);
+      pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', false);
     }
 
     // Confirm before sending - default: false
@@ -544,11 +544,11 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     }
 
     // Enigmal settings
-    // --throw-keyids - default: true
+    // --throw-keyids - default: false
     if (pub.prefs.getBoolPref(pub.prefBranch + 'enigmail.throwkeyid')) {
-      pub.enigmail.checked = false;
-    } else {
       pub.enigmail.checked = true;
+    } else {
+      pub.enigmail.checked = false;
     }
 
     // Confirm before sending - default: false
