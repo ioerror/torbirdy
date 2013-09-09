@@ -63,8 +63,8 @@ if (!org.torbirdy.emailwizard) org.torbirdy.emailwizard = {
       var newAccount = createAccountInBackend(config);
 
       // Set check_new_mail to false. We can't do this through the account setup, so let's do it here.
-      const checkNewMail = 'mail.server.%serverkey%.check_new_mail';
-      const serverkey = newAccount.incomingServer.key;
+      var checkNewMail = 'mail.server.%serverkey%.check_new_mail';
+      var serverkey = newAccount.incomingServer.key;
       var checkNewMailPref = checkNewMail.replace("%serverkey%", serverkey);
       this.prefs.setBoolPref(checkNewMailPref, false);
 

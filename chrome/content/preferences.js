@@ -74,7 +74,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = {
     if (typeof keyserver === "undefined") {
       var keyserverValue = (anonService === "tor") ? this.torKeyserver : this.jondoKeyserver;
     } else {
-      var keyserverValue = this.enigmailKeyserver.value;
+      var keyserverValue = keyserver.value;
     }
     if (anonService === "tor") {
       this.setPreferences(extension, keyserverValue);
@@ -253,12 +253,12 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = {
   setProxyCustom: function() {
     this.resetAll();
 
-    var socks_host = this.socksHost.value;
-    var socks_port = this.socksPort.value;
+    var socksHost = this.socksHost.value;
+    var socksPort = this.socksPort.value;
 
     // Set them now.
-    this.setPreferences("network.proxy.socks", socks_host);
-    this.setPreferences("network.proxy.socks_port", parseInt(socks_port, 10));
+    this.setPreferences("network.proxy.socks", socksHost);
+    this.setPreferences("network.proxy.socks_port", parseInt(socksPort, 10));
 
     this.setPanelSettings(this.strBundle.GetStringFromName("torbirdy.enabled.custom"), "green");
     this.prefs.setIntPref(this.prefBranch + 'proxy', 2);
@@ -433,7 +433,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = {
     // Proxy.
     this.anonCustomService = document.getElementById('torbirdy-anonservice');
     this.anonService = document.getElementById('torbirdy-proxy-settings');
-    this.anonCustomService = document.getElementById('torbirdy-anonservice');
     this.anonType = document.getElementById('torbirdy-anon-settings');
     this.socksHost = document.getElementById('torbirdy-socks-host');
     this.socksPort = document.getElementById('torbirdy-socks-port');
@@ -498,11 +497,11 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = {
 
     // Custom.
     if (anonService === 2) {
-      var socks_host = this.prefs.getCharPref(this.customBranch + 'network.proxy.socks');
-      var socks_port = this.prefs.getIntPref(this.customBranch + 'network.proxy.socks_port');
+      var socksHost = this.prefs.getCharPref(this.customBranch + 'network.proxy.socks');
+      var socksPort = this.prefs.getIntPref(this.customBranch + 'network.proxy.socks_port');
 
-      this.socksHost.value = socks_host;
-      this.socksPort.value = socks_port;
+      this.socksHost.value = socksHost;
+      this.socksPort.value = socksPort;
       // Enable the settings.
       this.socksHost.disabled = false;
       this.socksPort.disabled = false;
