@@ -1,10 +1,9 @@
 if (!org) var org = {};
 if (!org.torbirdy) org.torbirdy = {};
 
-org.torbirdy.firstrun = new function() {
-  var pub = {};
+if (!org.torbirdy.firstrun) org.torbirdy.firstrun = {
 
-  pub.onLoad = function() {
+  onLoad: function() {
     var strings = document.getElementById("torbirdy-strings-firstrun");
 
     var description = document.getElementById("torbirdy-firstrun-info");
@@ -13,7 +12,6 @@ org.torbirdy.firstrun = new function() {
     var torbirdyWebsite = strings.getString("torbirdy.website");
     var website = document.getElementById("torbirdy-website");
     website.value = torbirdyWebsite;
-  };
+  }
 
-  return pub;
 };

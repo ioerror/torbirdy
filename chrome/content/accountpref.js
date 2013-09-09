@@ -1,56 +1,55 @@
 if (!org) var org = {};
 if (!org.torbirdy) org.torbirdy = {};
 
-org.torbirdy.accountprefs = new function() {
-  var pub = {};
-  pub.account = window.arguments[0];
+if (!org.torbirdy.accountprefs) org.torbirdy.accountprefs = {
 
-  pub.onLoad = function() {
-    pub.nameLabel = document.getElementById("torbirdy-account-name");
-    pub.startup = document.getElementById("torbirdy-check-startup");
-    pub.dobiff = document.getElementById("torbirdy-check-new");
-    pub.biffminutes = document.getElementById("torbirdy-check-minutes");
-    pub.nameLabel.value = pub.account.prettyName;
+  account: window.arguments[0],
 
-    if (pub.account.loginAtStartUp) {
-      pub.startup.checked = true;
+  onLoad: function() {
+    var nameLabel = document.getElementById("torbirdy-account-name");
+    this.startup = document.getElementById("torbirdy-check-startup");
+    this.dobiff = document.getElementById("torbirdy-check-new");
+    this.biffminutes = document.getElementById("torbirdy-check-minutes");
+    nameLabel.value = this.account.prettyName;
+
+    if (this.account.loginAtStartUp) {
+      this.startup.checked = true;
     } else {
-      pub.startup.checked = false;
+      this.startup.checked = false;
     }
 
-    if (pub.account.doBiff) {
-      pub.dobiff.checked = true;
-      pub.biffminutes.disabled = false;
-      pub.biffminutes.value = pub.account.biffMinutes;
+    if (this.account.doBiff) {
+      this.dobiff.checked = true;
+      this.biffminutes.disabled = false;
+      this.biffminutes.value = this.account.biffMinutes;
     } else {
-      pub.dobiff.checked = false;
-      pub.biffminutes.disabled = true;
-      pub.biffminutes.value = pub.account.biffMinutes;
+      this.dobiff.checked = false;
+      this.biffminutes.disabled = true;
+      this.biffminutes.value = this.account.biffMinutes;
     }
-  };
+  },
 
-  pub.onAccept = function() {
-    if (pub.startup.checked) {
-      pub.account.loginAtStartUp = true;
+  onAccept: function() {
+    if (this.startup.checked) {
+      this.account.loginAtStartUp = true;
     } else {
-      pub.account.loginAtStartUp = false;
+      this.account.loginAtStartUp = false;
     }
 
-    if (pub.dobiff.checked) {
-      pub.account.doBiff = true;
-      pub.account.biffMinutes = pub.biffminutes.value;
+    if (this.dobiff.checked) {
+      this.account.doBiff = true;
+      this.account.biffMinutes = this.biffminutes.value;
     } else {
-      pub.account.doBiff = false;
+      this.account.doBiff = false;
     }
-  };
+  },
 
-  pub.onToggleCheck = function() {
-    if (pub.biffminutes.disabled) {
-      pub.biffminutes.disabled = false;
+  onToggleCheck: function() {
+    if (this.biffminutes.disabled) {
+      this.biffminutes.disabled = false;
     } else {
-      pub.biffminutes.disabled = true;
+      this.biffminutes.disabled = true;
     }
-  };
+  }
 
-  return pub;
 };

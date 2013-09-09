@@ -1,32 +1,17 @@
 if (!org) var org = {};
 if (!org.torbirdy) org.torbirdy = {};
 
-org.torbirdy.emailwizard = new function() {
-  var pub = {};
+if (!org.torbirdy.emailwizard) org.torbirdy.emailwizard = {
 
-  var prefs = Cc["@mozilla.org/preferences-service;1"]
-                .getService(Ci.nsIPrefBranch);
+  prefs: Cc["@mozilla.org/preferences-service;1"]
+                  .getService(Ci.nsIPrefBranch),
 
-  // Check if we are running Tails. If yes, disable the manual account
-  // configuration wizard since Tails handles that on its own. See:
-  // https://tails.boum.org/todo/Return_of_Icedove__63__/#index6h2
-  // This is also disabled if "extensions.torbirdy.emailwizard" is true.
-  var disableWizard = false;
-  if (prefs.prefHasUserValue("vendor.name")) {
-    if (prefs.getCharPref("vendor.name") === "Tails") {
-      disableWizard = true;
-    }
-  }
-  if (prefs.getBoolPref("extensions.torbirdy.emailwizard")) {
-    disableWizard = true;
-  }
-
-  pub.disableAutoWizard = function() {
-    if (!disableWizard) {
+  disableAutoWizard: function() {
+    if (!this.disableWizard) {
       var realname = document.getElementById("realname").value;
       var email = document.getElementById("email").value;
       var password = document.getElementById("password").value;
-      var remember_password = document.getElementById("remember_password").checked;
+      var rememberPassword = document.getElementById("remember_password").checked;
       var protocol = document.getElementById("torbirdy-protocol").value;
 
       var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
@@ -73,7 +58,7 @@ org.torbirdy.emailwizard = new function() {
       config.outgoing.hostname = "smtp.%EMAILDOMAIN%";
 
       replaceVariables(config, realname, email, password);
-      config.rememberPassword = remember_password && !!password;
+      config.rememberPassword = rememberPassword && !!password;
 
       var newAccount = createAccountInBackend(config);
 
@@ -81,7 +66,7 @@ org.torbirdy.emailwizard = new function() {
       const checkNewMail = 'mail.server.%serverkey%.check_new_mail';
       const serverkey = newAccount.incomingServer.key;
       var checkNewMailPref = checkNewMail.replace("%serverkey%", serverkey);
-      prefs.setBoolPref(checkNewMailPref, false);
+      this.prefs.setBoolPref(checkNewMailPref, false);
 
       // From comm-release/mailnews/base/prefs/content/accountcreation/emailWizard.js : onAdvancedSetup().
       var windowManager = Cc["@mozilla.org/appshell/window-mediator;1"]
@@ -101,30 +86,43 @@ org.torbirdy.emailwizard = new function() {
     else {
       gEmailConfigWizard.onNext();
     }
-  };
+  },
 
-  pub.onKeyEnter = function(event) {
+  onKeyEnter: function(event) {
     var keycode = event.keyCode;
     if (keycode == 13) {
       if (document.getElementById("next_button").disabled === false) {
-        if (!disableWizard) {
-          pub.disableAutoWizard();
+        if (!this.disableWizard) {
+          this.disableAutoWizard();
         }
         else {
           gEmailConfigWizard.onNext();
         }
       }
     }
-  };
+  },
 
-  pub.onLoad = function() {
+  onLoad: function() {
+    // Check if we are running Tails. If yes, disable the manual account
+    // configuration wizard since Tails handles that on its own. See:
+    // https://tails.boum.org/todo/Return_of_Icedove__63__/#index6h2
+    // This is also disabled if "extensions.torbirdy.emailwizard" is true.
+    this.disableWizard = false;
+    if (this.prefs.prefHasUserValue("vendor.name")) {
+      if (this.prefs.getCharPref("vendor.name") === "Tails") {
+        this.disableWizard = true;
+      }
+    }
+    if (this.prefs.getBoolPref("extensions.torbirdy.emailwizard")) {
+      this.disableWizard = true;
+    }
+
     document.getElementById("provisioner_button").disabled = true;
-    if (disableWizard) {
+    if (this.disableWizard) {
       document.getElementById("torbirdy-protocol-box").collapsed = true;
     }
-  };
+  }
 
-  return pub;
 };
 
 window.addEventListener("keypress", org.torbirdy.emailwizard.onKeyEnter, true);
