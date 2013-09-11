@@ -16,10 +16,10 @@
 <!ENTITY torbirdy.prefs.extra1.key "d">
 <!ENTITY torbirdy.prefs.extra2.button "Test Proxy Settings">
 <!ENTITY torbirdy.prefs.extra2.key "n">
-<!ENTITY torbirdy.prefs.proxy.label "Proxy Settings">
-<!ENTITY torbirdy.prefs.privacy.label "Privacy Settings">
-<!ENTITY torbirdy.prefs.enigmail.label "Enigmail Settings">
-<!ENTITY torbirdy.prefs.security.label "Security Settings">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Privacy">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Security">
 <!ENTITY torbirdy.prefs.recommended.text "Use the recommended proxy settings for TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Choose an anonymization service">
