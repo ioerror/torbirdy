@@ -1,42 +1,43 @@
 if (!org) var org = {};
 if (!org.torbirdy) org.torbirdy = {};
 
-if (!org.torbirdy.prefs) org.torbirdy.prefs = {
+if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
+  var pub = {};
 
-  prefBranch: "extensions.torbirdy.",
-  customBranch: "extensions.torbirdy.custom.",
+  pub.prefBranch = "extensions.torbirdy.";
+  pub.customBranch = "extensions.torbirdy.custom.";
 
-  torKeyserver: "hkp://2eghzlv2wwcq7u7y.onion",
-  jondoKeyserver: "hkp://pool.sks-keyservers.net",
+  pub.torKeyserver = "hkp://2eghzlv2wwcq7u7y.onion";
+  pub.jondoKeyserver = "hkp://pool.sks-keyservers.net";
 
-  prefs: Components.classes["@mozilla.org/preferences-service;1"]
-                   .getService(Components.interfaces.nsIPrefBranch),
+  pub.prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                  .getService(Components.interfaces.nsIPrefBranch);
 
-  torBirdyPref: Components.classes["@mozilla.org/preferences-service;1"]
-                          .getService(Components.interfaces.nsIPrefService).getBranch(this.customBranch),
+  pub.torBirdyPref = Components.classes["@mozilla.org/preferences-service;1"]
+                         .getService(Components.interfaces.nsIPrefService).getBranch(pub.customBranch);
 
-  acctMgr: Components.classes["@mozilla.org/messenger/account-manager;1"]
-                     .getService(Components.interfaces.nsIMsgAccountManager),
+  pub.acctMgr = Components.classes["@mozilla.org/messenger/account-manager;1"]
+                    .getService(Components.interfaces.nsIMsgAccountManager);
 
-  strBundle: Components.classes["@mozilla.org/intl/stringbundle;1"]
-                       .getService(Components.interfaces.nsIStringBundleService)
-                       .createBundle("chrome://castironthunderbirdclub/locale/torbirdy.properties"),
+  var bundles = Components.classes["@mozilla.org/intl/stringbundle;1"]
+                        .getService(Components.interfaces.nsIStringBundleService);
+  pub.strBundle = bundles.createBundle("chrome://castironthunderbirdclub/locale/torbirdy.properties");
 
-  setDefaultPrefs: function() {
-    this.prefs.setCharPref("network.proxy.socks", "127.0.0.1");
-    this.prefs.setIntPref("network.proxy.socks_port", 9150);
-    this.prefs.clearUserPref("network.proxy.http");
-    this.prefs.clearUserPref("network.proxy.http_port");
-    this.prefs.clearUserPref("network.proxy.ssl");
-    this.prefs.clearUserPref("network.proxy.ssl_port");
-  },
+  pub.setDefaultPrefs = function() {
+    pub.prefs.setCharPref("network.proxy.socks", "127.0.0.1");
+    pub.prefs.setIntPref("network.proxy.socks_port", 9150);
+    pub.prefs.clearUserPref("network.proxy.http");
+    pub.prefs.clearUserPref("network.proxy.http_port");
+    pub.prefs.clearUserPref("network.proxy.ssl");
+    pub.prefs.clearUserPref("network.proxy.ssl_port");
+  };
 
-  resetNetworkProxy: function() {
-    this.prefs.setIntPref("network.proxy.type", 1);
-  },
+  pub.resetNetworkProxy = function() {
+    pub.prefs.setIntPref("network.proxy.type", 1);
+  };
 
-  setEnigmailPrefs: function(anonService) {
-    if (this.prefs.getBoolPref("extensions.torbirdy.enigmail.throwkeyid")) {
+  pub.setEnigmailPrefs = function(anonService) {
+    if (pub.prefs.getBoolPref("extensions.torbirdy.enigmail.throwkeyid")) {
       if (anonService === "tor") {
         return "--no-emit-version " +
                "--no-comments " +
@@ -66,82 +67,82 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = {
                "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:4001";
       }
     }
-  },
+  };
 
-  updateKeyserver: function(anonService) {
+  pub.updateKeyserver = function(anonService) {
     var extension = "extensions.enigmail.keyserver";
-    var keyserver = this.enigmailKeyserver;
+    var keyserver = pub.enigmailKeyserver;
     if (typeof keyserver === "undefined") {
-      var keyserverValue = (anonService === "tor") ? this.torKeyserver : this.jondoKeyserver;
+      var keyserverValue = (anonService === "tor") ? pub.torKeyserver : pub.jondoKeyserver;
     } else {
       var keyserverValue = keyserver.value;
     }
     if (anonService === "tor") {
-      this.setPreferences(extension, keyserverValue);
+      pub.setPreferences(extension, keyserverValue);
     }
     if (anonService === "jondo") {
-      this.setPreferences(extension, keyserverValue);
+      pub.setPreferences(extension, keyserverValue);
     }
-  },
+  };
 
-  restoreEnigmailPrefs: function() {
-    this.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", this.setEnigmailPrefs("tor"));
-    this.updateKeyserver("tor");
-  },
+  pub.restoreEnigmailPrefs = function() {
+    pub.prefs.setCharPref("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("tor"));
+    pub.updateKeyserver("tor");
+  };
 
-  clearCustomPrefs: function() {
-    var customPrefs = this.torBirdyPref.getChildList("", {});
+  pub.clearCustomPrefs = function() {
+    var customPrefs = pub.torBirdyPref.getChildList("", {});
     for (var i = 0; i < customPrefs.length; i++) {
-      this.prefs.clearUserPref(this.customBranch + customPrefs[i]);
+      pub.prefs.clearUserPref(pub.customBranch + customPrefs[i]);
     }
-  },
+  };
 
-  clearSinglePref: function(pref) {
-    this.prefs.clearUserPref(this.customBranch + pref);
-  },
+  pub.clearSinglePref = function(pref) {
+    pub.prefs.clearUserPref(pub.customBranch + pref);
+  };
 
-  fetchAllMessages: function() {
-    if (this.fetchAllMails.checked) {
-      this.imapIdle.checked = true;
-      this.startupFolder.checked = true;
+  pub.fetchAllMessages = function() {
+    if (pub.fetchAllMails.checked) {
+      pub.imapIdle.checked = true;
+      pub.startupFolder.checked = true;
     }
     else {
-      this.imapIdle.checked = false;
-      this.startupFolder.checked = false;
+      pub.imapIdle.checked = false;
+      pub.startupFolder.checked = false;
     }
-  },
+  };
 
-  checkSetting: function() {
-    var index = this.anonService.selectedIndex;
+  pub.checkSetting = function() {
+    var index = pub.anonService.selectedIndex;
     if (index === 2) {
-      this.socksHost.disabled = false;
-      this.socksPort.disabled = false;
+      pub.socksHost.disabled = false;
+      pub.socksPort.disabled = false;
     }
     else {
-      this.socksHost.disabled = true;
-      this.socksPort.disabled = true;
+      pub.socksHost.disabled = true;
+      pub.socksPort.disabled = true;
     }
 
     if (index === 1) {
-      this.anonCustomService.disabled = false;
-      var service = this.anonCustomService.selectedIndex;
-      if (this.anonCustomService.selectedIndex === 0) {
-        this.enigmailKeyserver.value = this.jondoKeyserver;
+      pub.anonCustomService.disabled = false;
+      var service = pub.anonCustomService.selectedIndex;
+      if (pub.anonCustomService.selectedIndex === 0) {
+        pub.enigmailKeyserver.value = pub.jondoKeyserver;
       }
-      if (this.anonCustomService.selectedIndex === 1) {
-        this.enigmailKeyserver.value = this.torKeyserver;
+      if (pub.anonCustomService.selectedIndex === 1) {
+        pub.enigmailKeyserver.value = pub.torKeyserver;
       }
     } else {
-      this.anonCustomService.disabled = true;
+      pub.anonCustomService.disabled = true;
     }
     if (index === 0 || index === 2 || index === 3) {
-      this.enigmailKeyserver.value = this.torKeyserver;
+      pub.enigmailKeyserver.value = pub.torKeyserver;
     }
-  },
+  };
 
-  getAccount: function() {
+  pub.getAccount = function() {
     var mailAccounts = [];
-    var accounts = this.acctMgr.accounts;
+    var accounts = pub.acctMgr.accounts;
     for (var i = 0; i < accounts.Count(); i++) {
       var account = accounts.QueryElementAt(i, Components.interfaces.nsIMsgAccount).incomingServer;
       var name = account.prettyName;
@@ -150,17 +151,17 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = {
       }
     }
     return mailAccounts;
-  },
+  };
 
-  selectMailAccount: function() {
-    var index = this.mailAccount.selectedIndex;
+  pub.selectMailAccount = function() {
+    var index = pub.mailAccount.selectedIndex;
 
     if (!(index === 0)) {
       // For email accounts, configure accordingly.
       var sAccount = null;
-      var account = this.getAccount();
+      var account = pub.getAccount();
       for (var i = 0; i < account.length; i++) {
-        if (account[i].key === this.mailAccount.value) {
+        if (account[i].key === pub.mailAccount.value) {
           sAccount = i;
         }
       }
@@ -170,201 +171,201 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = {
                        "chrome, centerscreen, modal, resizable=yes",
                        account[sAccount]).focus();
       }
-    this.mailAccount.selectedIndex = 0;
-  },
+    pub.mailAccount.selectedIndex = 0;
+  };
 
-  setPanelSettings: function(proxyname, color) {
+  pub.setPanelSettings = function(proxyname, color) {
     var win = Components.classes['@mozilla.org/appshell/window-mediator;1']
              .getService(Components.interfaces.nsIWindowMediator)
              .getMostRecentWindow('mail:3pane');
-    this.myPanel = win.document.getElementById("torbirdy-my-panel");
-    this.myPanel.label = proxyname;
-    this.myPanel.style.color = color;
-  },
+    pub.myPanel = win.document.getElementById("torbirdy-my-panel");
+    pub.myPanel.label = proxyname;
+    pub.myPanel.style.color = color;
+  };
 
-  resetAll: function() {
-    this.resetNetworkProxy();
-    this.setDefaultPrefs();
-    this.clearCustomPrefs();
-    this.restoreEnigmailPrefs();
-  },
+  pub.resetAll = function() {
+    pub.resetNetworkProxy();
+    pub.setDefaultPrefs();
+    pub.clearCustomPrefs();
+    pub.restoreEnigmailPrefs();
+  };
 
-  setPreferences: function(preference, value) {
+  pub.setPreferences = function(preference, value) {
     // Set the preferences both for Thunderbird and our custom branch.
     if (typeof value === "string") {
-      this.prefs.setCharPref(preference, value);
-      this.prefs.setCharPref(this.customBranch + preference, value);
+      pub.prefs.setCharPref(preference, value);
+      pub.prefs.setCharPref(pub.customBranch + preference, value);
     }
     if (typeof value === "boolean") {
-      this.prefs.setBoolPref(preference, value);
-      this.prefs.setBoolPref(this.customBranch + preference, value);
+      pub.prefs.setBoolPref(preference, value);
+      pub.prefs.setBoolPref(pub.customBranch + preference, value);
     }
     if (typeof value === "number") {
-      this.prefs.setIntPref(preference, value);
-      this.prefs.setIntPref(this.customBranch + preference, value);
+      pub.prefs.setIntPref(preference, value);
+      pub.prefs.setIntPref(pub.customBranch + preference, value);
     }
-  },
+  };
 
-  setProxyTor: function() {
+  pub.setProxyTor = function() {
     // Set Tor proxy
-    this.resetAll();
+    pub.resetAll();
 
-    this.setPanelSettings(this.strBundle.GetStringFromName("torbirdy.enabled.tor"), "green");
-    this.prefs.setIntPref(this.prefBranch + 'proxy', 0);
-  },
+    pub.setPanelSettings(pub.strBundle.GetStringFromName("torbirdy.enabled.tor"), "green");
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy', 0);
+  };
 
-  setProxyJonDo: function() {
-    this.resetNetworkProxy();
-    this.clearCustomPrefs();
+  pub.setProxyJonDo = function() {
+    pub.resetNetworkProxy();
+    pub.clearCustomPrefs();
 
-    this.setPreferences("network.proxy.socks", "127.0.0.1");
-    this.setPreferences("network.proxy.socks_port", 4001);
+    pub.setPreferences("network.proxy.socks", "127.0.0.1");
+    pub.setPreferences("network.proxy.socks_port", 4001);
 
     // SSL.
-    this.setPreferences("network.proxy.ssl", "127.0.0.1");
-    this.setPreferences("network.proxy.ssl_port", 4001);
+    pub.setPreferences("network.proxy.ssl", "127.0.0.1");
+    pub.setPreferences("network.proxy.ssl_port", 4001);
     // HTTP.
-    this.setPreferences("network.proxy.http", "127.0.0.1");
-    this.setPreferences("network.proxy.http_port", 4001);
+    pub.setPreferences("network.proxy.http", "127.0.0.1");
+    pub.setPreferences("network.proxy.http_port", 4001);
     // Disable pipelining.
-    this.setPreferences("network.http.pipelining", false);
-    this.setPreferences("network.http.pipelining.ssl", false);
-    this.setPreferences("network.http.proxy.pipelining", false);
+    pub.setPreferences("network.http.pipelining", false);
+    pub.setPreferences("network.http.pipelining.ssl", false);
+    pub.setPreferences("network.http.proxy.pipelining", false);
     // Enigmail.
-    this.setPreferences("extensions.enigmail.agentAdditionalParam", this.setEnigmailPrefs("jondo"));
-    this.updateKeyserver("jondo");
+    pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
+    pub.updateKeyserver("jondo");
 
-    this.setPanelSettings(this.strBundle.GetStringFromName("torbirdy.enabled.jondo"), "green");
-    this.prefs.setIntPref(this.prefBranch + 'proxy', 1);
-    this.prefs.setIntPref(this.prefBranch + 'proxy.type', 0);
-  },
+    pub.setPanelSettings(pub.strBundle.GetStringFromName("torbirdy.enabled.jondo"), "green");
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy', 1);
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy.type', 0);
+  };
 
-  setProxyWhonix: function() {
-    this.resetAll();
+  pub.setProxyWhonix = function() {
+    pub.resetAll();
 
-    this.setPreferences("network.proxy.socks", "192.168.0.10");
-    this.setPreferences("network.proxy.socks_port", 9102);
+    pub.setPreferences("network.proxy.socks", "192.168.0.10");
+    pub.setPreferences("network.proxy.socks_port", 9102);
 
-    this.setPanelSettings(this.strBundle.GetStringFromName("torbirdy.enabled.whonix"), "green");
-    this.prefs.setIntPref(this.prefBranch + 'proxy', 1);
-    this.prefs.setIntPref(this.prefBranch + 'proxy.type', 1);
-  },
+    pub.setPanelSettings(pub.strBundle.GetStringFromName("torbirdy.enabled.whonix"), "green");
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy', 1);
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy.type', 1);
+  };
 
-  setProxyCustom: function() {
-    this.resetAll();
+  pub.setProxyCustom = function() {
+    pub.resetAll();
 
-    var socksHost = this.socksHost.value;
-    var socksPort = this.socksPort.value;
+    var socksHost = pub.socksHost.value;
+    var socksPort = pub.socksPort.value;
 
     // Set them now.
-    this.setPreferences("network.proxy.socks", socksHost);
-    this.setPreferences("network.proxy.socks_port", parseInt(socksPort, 10));
+    pub.setPreferences("network.proxy.socks", socksHost);
+    pub.setPreferences("network.proxy.socks_port", parseInt(socksPort, 10));
 
-    this.setPanelSettings(this.strBundle.GetStringFromName("torbirdy.enabled.custom"), "green");
-    this.prefs.setIntPref(this.prefBranch + 'proxy', 2);
-  },
+    pub.setPanelSettings(pub.strBundle.GetStringFromName("torbirdy.enabled.custom"), "green");
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy', 2);
+  };
 
-  setProxyTransparent: function() {
-    this.setPreferences("network.proxy.type", 0);
+  pub.setProxyTransparent = function() {
+    pub.setPreferences("network.proxy.type", 0);
 
-    this.setPanelSettings(this.strBundle.GetStringFromName("torbirdy.enabled.torification"), "red");
-    this.prefs.setIntPref(this.prefBranch + 'proxy', 3);
-  },
+    pub.setPanelSettings(pub.strBundle.GetStringFromName("torbirdy.enabled.torification"), "red");
+    pub.prefs.setIntPref(pub.prefBranch + 'proxy', 3);
+  };
 
   /*
    Save
   */
 
-  onAccept: function() {
-    var index = this.anonService.selectedIndex;
+  pub.onAccept = function() {
+    var index = pub.anonService.selectedIndex;
 
     // Default (recommended) settings for TorBirdy.
     if (index === 0) {
       // Set proxies for Tor.
-      this.setProxyTor();
+      pub.setProxyTor();
     }
 
     // Anonymization service.
     if (index === 1) {
-      var anonServiceType = this.anonCustomService.selectedIndex;
+      var anonServiceType = pub.anonCustomService.selectedIndex;
       if (anonServiceType === 0 || typeof anonServiceType === "undefined") {
         // Set proxies for JonDo.
-        this.setProxyJonDo();
+        pub.setProxyJonDo();
       }
       if (anonServiceType === 1) {
         // Set Whonix.
-        this.setProxyWhonix();
+        pub.setProxyWhonix();
       }
     }
 
     // Custom proxy.
     if (index === 2) {
-      this.setProxyCustom();
+      pub.setProxyCustom();
     }
 
     // Transparent Anonymisation.
     if (index === 3) {
       // Disable the proxy.
-      this.setProxyTransparent();
+      pub.setProxyTransparent();
     }
 
     /*
       Privacy
     */
     var idlePref = 'mail.server.default.use_idle';
-    if (this.imapIdle.checked) {
-      this.setPreferences(idlePref, true);
+    if (pub.imapIdle.checked) {
+      pub.setPreferences(idlePref, true);
     }
     else {
-      this.setPreferences(idlePref, false);
+      pub.setPreferences(idlePref, false);
     }
 
     // Last accessed folder.
     // default: false
-    if (this.startupFolder.checked) {
-      this.prefs.setBoolPref(this.prefBranch + 'startup_folder', true);
+    if (pub.startupFolder.checked) {
+      pub.prefs.setBoolPref(pub.prefBranch + 'startup_folder', true);
     } else {
-      this.prefs.setBoolPref(this.prefBranch + 'startup_folder', false);
+      pub.prefs.setBoolPref(pub.prefBranch + 'startup_folder', false);
     }
 
     // Time zone.
     // default: true
-    var timezone = this.timezone.checked;
-    // Only update this if required.
-    if (timezone === this.prefs.getBoolPref(this.prefBranch + 'timezone')) {
+    var timezone = pub.timezone.checked;
+    // Only update pub if required.
+    if (timezone === pub.prefs.getBoolPref(pub.prefBranch + 'timezone')) {
         var env = Components.classes["@mozilla.org/process/environment;1"]
                                       .getService(Components.interfaces.nsIEnvironment);
         if (timezone) {
-          this.prefs.setBoolPref(this.prefBranch + 'timezone', false);
+          pub.prefs.setBoolPref(pub.prefBranch + 'timezone', false);
           env.set('TZ', '');
         } else {
-          this.prefs.setBoolPref(this.prefBranch + 'timezone', true);
+          pub.prefs.setBoolPref(pub.prefBranch + 'timezone', true);
           env.set('TZ', 'UTC');
         }
 
-        // Ask the user to restart Thunderbird. We can't do this for the user
+        // Ask the user to restart Thunderbird. We can't do pub for the user
         // because the environment variables are not reset without quitting
         // Thunderbird and starting it again.
         var prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
                                         .getService(Components.interfaces.nsIPromptService);
-        prompts.alert(null, this.strBundle.GetStringFromName("torbirdy.name"),
-                            this.strBundle.GetStringFromName("torbirdy.restart"));
+        prompts.alert(null, pub.strBundle.GetStringFromName("torbirdy.name"),
+                            pub.strBundle.GetStringFromName("torbirdy.restart"));
     }
 
     // Fetch all messages for all accounts.
     // default: false
     // Only change the state if it is required.
-    if (this.fetchAllMails.checked !== this.prefs.getBoolPref(this.prefBranch + 'fetchall')) {
-      var accounts = this.getAccount();
-      if (this.fetchAllMails.checked) {
-        this.prefs.setBoolPref(this.prefBranch + 'fetchall', true);
+    if (pub.fetchAllMails.checked !== pub.prefs.getBoolPref(pub.prefBranch + 'fetchall')) {
+      var accounts = pub.getAccount();
+      if (pub.fetchAllMails.checked) {
+        pub.prefs.setBoolPref(pub.prefBranch + 'fetchall', true);
         for (var i = 0; i < accounts.length; i++) {
           accounts[i].loginAtStartUp = true;
           accounts[i].doBiff = true;
         }
       }
       else {
-        this.prefs.setBoolPref(this.prefBranch + 'fetchall', false);
+        pub.prefs.setBoolPref(pub.prefBranch + 'fetchall', false);
         for (var i = 0; i < accounts.length; i++) {
           accounts[i].loginAtStartUp = false;
           accounts[i].doBiff = false;
@@ -374,99 +375,99 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = {
 
     // Enigmail.
     // --throw-keyids - default: false
-    if (this.enigmailKeyId.checked) {
-      this.prefs.setBoolPref(this.prefBranch + 'enigmail.throwkeyid', true);
+    if (pub.enigmailKeyId.checked) {
+      pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', true);
     }
     else {
-      this.prefs.setBoolPref(this.prefBranch + 'enigmail.throwkeyid', false);
+      pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.throwkeyid', false);
     }
 
     // Confirm before sending - default: false
     var enigmailConfirmPref = "extensions.enigmail.confirmBeforeSend";
-    if (this.enigmailConfirmEmail.checked) {
-      this.prefs.setBoolPref(enigmailConfirmPref, true);
-      this.prefs.setBoolPref(this.prefBranch + 'enigmail.confirmemail', true);
+    if (pub.enigmailConfirmEmail.checked) {
+      pub.prefs.setBoolPref(enigmailConfirmPref, true);
+      pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.confirmemail', true);
     } else {
-      this.prefs.setBoolPref(enigmailConfirmPref, false);
-      this.prefs.setBoolPref(this.prefBranch + 'enigmail.confirmemail', false);
+      pub.prefs.setBoolPref(enigmailConfirmPref, false);
+      pub.prefs.setBoolPref(pub.prefBranch + 'enigmail.confirmemail', false);
     }
 
     // Thunderbird's email wizard - default: false
-    if (this.emailWizard.checked) {
-      this.prefs.setBoolPref(this.prefBranch + 'emailwizard', true);
+    if (pub.emailWizard.checked) {
+      pub.prefs.setBoolPref(pub.prefBranch + 'emailwizard', true);
     } else {
-      this.prefs.setBoolPref(this.prefBranch + 'emailwizard', false);
+      pub.prefs.setBoolPref(pub.prefBranch + 'emailwizard', false);
     }
 
     // Insecure renegotiation - default: false (opt-out for mailservers that do
     // not support secure renegotiation yet)
     var securityRenegotiation = 'security.ssl.require_safe_negotiation';
     var securityWarn = 'security.ssl.treat_unsafe_negotiation_as_broken';
-    if (this.secureRenegotiation.checked) {
-      this.setPreferences(securityRenegotiation, false);
-      this.setPreferences(securityWarn, false);
+    if (pub.secureRenegotiation.checked) {
+      pub.setPreferences(securityRenegotiation, false);
+      pub.setPreferences(securityWarn, false);
     } else {
-      this.clearSinglePref(securityRenegotiation);
-      this.clearSinglePref(securityWarn);
+      pub.clearSinglePref(securityRenegotiation);
+      pub.clearSinglePref(securityWarn);
     }
 
     if (index === 1) {
       // JonDo.
-      if (this.anonCustomService.selectedIndex === 0) {
-        this.setPreferences("extensions.enigmail.agentAdditionalParam", this.setEnigmailPrefs("jondo"));
+      if (pub.anonCustomService.selectedIndex === 0) {
+        pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("jondo"));
       }
       // Whonix.
-      if (this.anonCustomService.selectedIndex === 1) {
-        this.setPreferences("extensions.enigmail.agentAdditionalParam", this.setEnigmailPrefs("tor"));
+      if (pub.anonCustomService.selectedIndex === 1) {
+        pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("tor"));
       }
     }
     if (index === 0 || index === 2 || index === 3) {
-      this.setPreferences("extensions.enigmail.agentAdditionalParam", this.setEnigmailPrefs("tor"));
+      pub.setPreferences("extensions.enigmail.agentAdditionalParam", pub.setEnigmailPrefs("tor"));
     }
-  },
+  };
 
   /*
     Load
   */
 
-  onLoad: function() {
+  pub.onLoad = function() {
     // Proxy.
-    this.anonCustomService = document.getElementById('torbirdy-anonservice');
-    this.anonService = document.getElementById('torbirdy-proxy-settings');
-    this.anonType = document.getElementById('torbirdy-anon-settings');
-    this.socksHost = document.getElementById('torbirdy-socks-host');
-    this.socksPort = document.getElementById('torbirdy-socks-port');
-    this.torification = document.getElementById('torbirdy-torification');
+    pub.anonCustomService = document.getElementById('torbirdy-anonservice');
+    pub.anonService = document.getElementById('torbirdy-proxy-settings');
+    pub.anonType = document.getElementById('torbirdy-anon-settings');
+    pub.socksHost = document.getElementById('torbirdy-socks-host');
+    pub.socksPort = document.getElementById('torbirdy-socks-port');
+    pub.torification = document.getElementById('torbirdy-torification');
     // Privacy.
-    this.mailAccount = document.getElementById('torbirdy-mail-accounts');
-    this.imapIdle = document.getElementById('torbirdy-idle');
-    this.startupFolder = document.getElementById('torbirdy-startup-folder');
-    this.timezone = document.getElementById('torbirdy-timezone');
-    this.emailWizard = document.getElementById('torbirdy-email-wizard');
-    this.fetchAllMails = document.getElementById('torbirdy-email-automatic');
+    pub.mailAccount = document.getElementById('torbirdy-mail-accounts');
+    pub.imapIdle = document.getElementById('torbirdy-idle');
+    pub.startupFolder = document.getElementById('torbirdy-startup-folder');
+    pub.timezone = document.getElementById('torbirdy-timezone');
+    pub.emailWizard = document.getElementById('torbirdy-email-wizard');
+    pub.fetchAllMails = document.getElementById('torbirdy-email-automatic');
     // Enigmail.
-    this.enigmailKeyId = document.getElementById('torbirdy-enigmail-throwkeyid');
-    this.enigmailKeyserver = document.getElementById('torbirdy-enigmail-keyserver');
-    this.enigmailConfirmEmail = document.getElementById('torbirdy-confirm-email');
+    pub.enigmailKeyId = document.getElementById('torbirdy-enigmail-throwkeyid');
+    pub.enigmailKeyserver = document.getElementById('torbirdy-enigmail-keyserver');
+    pub.enigmailConfirmEmail = document.getElementById('torbirdy-confirm-email');
     // Security.
-    this.secureRenegotiation = document.getElementById('torbirdy-renegotiation');
+    pub.secureRenegotiation = document.getElementById('torbirdy-renegotiation');
 
     // Make sure the user really wants to change these settings.
-    var warnPrompt = this.prefs.getBoolPref("extensions.torbirdy.warn");
+    var warnPrompt = pub.prefs.getBoolPref("extensions.torbirdy.warn");
 
     if (warnPrompt) {
       var prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
                               .getService(Components.interfaces.nsIPromptService);
       var check = {value: true};
-      var result = prompts.confirmCheck(null, this.strBundle.GetStringFromName('torbirdy.email.advanced.title'),
-                                              this.strBundle.GetStringFromName('torbirdy.email.advanced'),
-                                              this.strBundle.GetStringFromName('torbirdy.email.advanced.nextwarning'),
+      var result = prompts.confirmCheck(null, pub.strBundle.GetStringFromName('torbirdy.email.advanced.title'),
+                                              pub.strBundle.GetStringFromName('torbirdy.email.advanced'),
+                                              pub.strBundle.GetStringFromName('torbirdy.email.advanced.nextwarning'),
                                               check);
       if (!result) {
         window.close();
       } else {
         if (!check.value) {
-          this.prefs.setBoolPref("extensions.torbirdy.warn", false);
+          pub.prefs.setBoolPref("extensions.torbirdy.warn", false);
         }
       }
     }
@@ -475,36 +476,36 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = {
      PROXY
     */
     // Load the preference values.
-    var anonService = this.prefs.getIntPref(this.prefBranch + 'proxy');
-    this.anonService.selectedIndex = anonService;
+    var anonService = pub.prefs.getIntPref(pub.prefBranch + 'proxy');
+    pub.anonService.selectedIndex = anonService;
 
-    this.socksHost.value = this.prefs.getCharPref("network.proxy.socks");
-    this.socksPort.value = this.prefs.getIntPref("network.proxy.socks_port");
+    pub.socksHost.value = pub.prefs.getCharPref("network.proxy.socks");
+    pub.socksPort.value = pub.prefs.getIntPref("network.proxy.socks_port");
 
     // Tor.
     if (anonService === 0) {
-      this.socksHost.value = '127.0.0.1';
-      this.socksPort.value = '9150';
+      pub.socksHost.value = '127.0.0.1';
+      pub.socksPort.value = '9150';
     }
 
     // JonDo/Whonix.
     if (anonService === 1) {
-      var anonCustomService = this.prefs.getIntPref(this.prefBranch + 'proxy.type');
-      this.anonType.disabled = false;
-      this.anonCustomService.disabled = false;
-      this.anonCustomService.selectedIndex = anonCustomService;
+      var anonCustomService = pub.prefs.getIntPref(pub.prefBranch + 'proxy.type');
+      pub.anonType.disabled = false;
+      pub.anonCustomService.disabled = false;
+      pub.anonCustomService.selectedIndex = anonCustomService;
     }
 
     // Custom.
     if (anonService === 2) {
-      var socksHost = this.prefs.getCharPref(this.customBranch + 'network.proxy.socks');
-      var socksPort = this.prefs.getIntPref(this.customBranch + 'network.proxy.socks_port');
+      var socksHost = pub.prefs.getCharPref(pub.customBranch + 'network.proxy.socks');
+      var socksPort = pub.prefs.getIntPref(pub.customBranch + 'network.proxy.socks_port');
 
-      this.socksHost.value = socksHost;
-      this.socksPort.value = socksPort;
+      pub.socksHost.value = socksHost;
+      pub.socksPort.value = socksPort;
       // Enable the settings.
-      this.socksHost.disabled = false;
-      this.socksPort.disabled = false;
+      pub.socksHost.disabled = false;
+      pub.socksPort.disabled = false;
     }
 
     /*
@@ -512,129 +513,130 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = {
     */
     // Global settings.
     // IDLE.
-    var idlePref = this.customBranch + 'mail.server.default.use_idle';
-    if (this.prefs.prefHasUserValue(idlePref)) {
-      var idlePrefValue = this.prefs.getBoolPref(idlePref);
+    var idlePref = pub.customBranch + 'mail.server.default.use_idle';
+    if (pub.prefs.prefHasUserValue(idlePref)) {
+      var idlePrefValue = pub.prefs.getBoolPref(idlePref);
     }
     if (idlePrefValue) {
-      this.imapIdle.checked = true;
+      pub.imapIdle.checked = true;
     } else {
-      this.imapIdle.checked = false;
+      pub.imapIdle.checked = false;
     }
 
     // Select last accessed folder.
     // default: false
-    if (!this.prefs.getBoolPref(this.prefBranch + 'startup_folder')) {
-      this.startupFolder.checked = false;
+    if (!pub.prefs.getBoolPref(pub.prefBranch + 'startup_folder')) {
+      pub.startupFolder.checked = false;
     } else {
-      this.startupFolder.checked = true;
+      pub.startupFolder.checked = true;
     }
 
     // Time zone settings.
     // default: true
-    if (this.prefs.getBoolPref(this.prefBranch + 'timezone')) {
-      this.timezone.checked = false;
+    if (pub.prefs.getBoolPref(pub.prefBranch + 'timezone')) {
+      pub.timezone.checked = false;
     } else {
-      this.timezone.checked = true;
+      pub.timezone.checked = true;
     }
 
     // Fetch all messages for all accounts.
     // default: false
-    if (this.prefs.getBoolPref(this.prefBranch + 'fetchall')) {
-      this.fetchAllMails.checked = true;
+    if (pub.prefs.getBoolPref(pub.prefBranch + 'fetchall')) {
+      pub.fetchAllMails.checked = true;
     } else {
-      this.fetchAllMails.checked = false;
+      pub.fetchAllMails.checked = false;
     }
 
     // Enigmal settings
     // --throw-keyids - default: false
-    if (this.prefs.getBoolPref(this.prefBranch + 'enigmail.throwkeyid')) {
-      this.enigmailKeyId.checked = true;
+    if (pub.prefs.getBoolPref(pub.prefBranch + 'enigmail.throwkeyid')) {
+      pub.enigmailKeyId.checked = true;
     } else {
-      this.enigmailKeyId.checked = false;
+      pub.enigmailKeyId.checked = false;
     }
 
     // Confirm before sending - default: false
-    if (this.prefs.getBoolPref(this.prefBranch + 'enigmail.confirmemail')) {
-      this.enigmailConfirmEmail.checked = true;
+    if (pub.prefs.getBoolPref(pub.prefBranch + 'enigmail.confirmemail')) {
+      pub.enigmailConfirmEmail.checked = true;
     } else {
-      this.enigmailConfirmEmail.checked = false;
+      pub.enigmailConfirmEmail.checked = false;
     }
 
     // Keyserver.
-    var enigmailKeyserver = this.customBranch + 'extensions.enigmail.keyserver';
-    if (this.prefs.prefHasUserValue(enigmailKeyserver)) {
-      this.enigmailKeyserver.value = this.prefs.getCharPref(enigmailKeyserver);
+    var enigmailKeyserver = pub.customBranch + 'extensions.enigmail.keyserver';
+    if (pub.prefs.prefHasUserValue(enigmailKeyserver)) {
+      pub.enigmailKeyserver.value = pub.prefs.getCharPref(enigmailKeyserver);
     } else {
-      this.enigmailKeyserver.value = this.prefs.getCharPref('extensions.enigmail.keyserver');
+      pub.enigmailKeyserver.value = pub.prefs.getCharPref('extensions.enigmail.keyserver');
     }
 
     // Thunderbird's email wizard - default: false
-    if (this.prefs.getBoolPref(this.prefBranch + 'emailwizard')) {
-      this.emailWizard.checked = true;
+    if (pub.prefs.getBoolPref(pub.prefBranch + 'emailwizard')) {
+      pub.emailWizard.checked = true;
     } else {
-      this.emailWizard.checked = false;
+      pub.emailWizard.checked = false;
     }
 
     /*
      Security
     */
     // Allow insecure renegotiation - default: false
-    if (this.prefs.prefHasUserValue(this.customBranch + 'security.ssl.require_safe_negotiation')) {
-      this.secureRenegotiation.checked = true;
+    if (pub.prefs.prefHasUserValue(pub.customBranch + 'security.ssl.require_safe_negotiation')) {
+      pub.secureRenegotiation.checked = true;
     } else {
-      this.secureRenegotiation.checked = false;
+      pub.secureRenegotiation.checked = false;
     }
 
     // Load the email accounts.
-    var accounts = this.getAccount();
+    var accounts = pub.getAccount();
     if (accounts.length !== 0) {
-      this.mailAccount.appendItem('...', 'select-account');
+      pub.mailAccount.appendItem('...', 'select-account');
       for (var i = 0; i < accounts.length; i++) {
-        this.mailAccount.appendItem(accounts[i].prettyName, accounts[i].key, accounts[i].type.toUpperCase());
+        pub.mailAccount.appendItem(accounts[i].prettyName, accounts[i].key, accounts[i].type.toUpperCase());
       }
-      this.mailAccount.selectedIndex = 0;
+      pub.mailAccount.selectedIndex = 0;
     } else {
-        this.mailAccount.disabled = true;
-        this.mailAccount.appendItem('No email accounts found');
-        this.mailAccount.selectedIndex = 0;
+        pub.mailAccount.disabled = true;
+        pub.mailAccount.appendItem('No email accounts found');
+        pub.mailAccount.selectedIndex = 0;
     }
-  },
+  };
 
-  displayTestPage: function(service) {
+  pub.displayTestPage = function(service) {
     Components.classes['@mozilla.org/appshell/window-mediator;1'].getService(Components.interfaces.nsIWindowMediator).
               getMostRecentWindow("mail:3pane").
               document.getElementById("tabmail").
               openTab("contentTab", {contentPage: service});
-  },
+  };
 
-  testSettings: function() {
-    this.onAccept();
-    var index = this.anonService.selectedIndex;
-    var anonCustomService = this.anonCustomService.selectedIndex;
+  pub.testSettings = function() {
+    pub.onAccept();
+    var index = pub.anonService.selectedIndex;
+    var anonCustomService = pub.anonCustomService.selectedIndex;
 
     if ((index === 1) && (anonCustomService === 0 || typeof anonCustomService === "undefined")) {
         // Use "http://ip-check.info/tb.php?lang=en" for JonDo.
-        this.displayTestPage("https://ip-check.info/tb.php?lang=en");
+        pub.displayTestPage("https://ip-check.info/tb.php?lang=en");
     } else {
-        this.displayTestPage("https://check.torproject.org/");
+        pub.displayTestPage("https://check.torproject.org/");
     }
-  },
+  };
 
-  restoreDefaults: function() {
+  pub.restoreDefaults = function() {
     // Set the values to their default state.
-    this.anonService.selectedIndex = 0;
-    this.timezone.checked = false;
-    this.enigmailKeyId.checked = false;
-    this.enigmailConfirmEmail.checked = false;
-    this.emailWizard.checked = false;
-    this.secureRenegotiation.checked = false;
-    this.imapIdle.checked = false;
-    this.startupFolder.checked = false;
-    this.fetchAllMails.checked = false;
+    pub.anonService.selectedIndex = 0;
+    pub.timezone.checked = false;
+    pub.enigmailKeyId.checked = false;
+    pub.enigmailConfirmEmail.checked = false;
+    pub.emailWizard.checked = false;
+    pub.secureRenegotiation.checked = false;
+    pub.imapIdle.checked = false;
+    pub.startupFolder.checked = false;
+    pub.fetchAllMails.checked = false;
     // Save the settings and close the window.
-    this.checkSetting();
-    this.onAccept();
-  }
+    pub.checkSetting();
+    pub.onAccept();
+  };
 
+  return pub;
 };
