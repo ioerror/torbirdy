@@ -1,13 +1,28 @@
 if (!org) var org = {};
 if (!org.torbirdy) org.torbirdy = {};
 
-if (!org.torbirdy.emailwizard) org.torbirdy.emailwizard = {
+if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
+  var pub = {};
 
-  prefs: Cc["@mozilla.org/preferences-service;1"]
-                  .getService(Ci.nsIPrefBranch),
+  var prefs = Cc["@mozilla.org/preferences-service;1"]
+                .getService(Ci.nsIPrefBranch);
 
-  disableAutoWizard: function() {
-    if (!this.disableWizard) {
+  // Check if we are running Tails. If yes, disable the manual account
+  // configuration wizard since Tails handles that on its own. See:
+  // https://tails.boum.org/todo/Return_of_Icedove__63__/#index6h2
+  // This is also disabled if "extensions.torbirdy.emailwizard" is true.
+  var disableWizard = false;
+  if (prefs.prefHasUserValue("vendor.name")) {
+    if (prefs.getCharPref("vendor.name") === "Tails") {
+      disableWizard = true;
+    }
+  }
+  if (prefs.getBoolPref("extensions.torbirdy.emailwizard")) {
+    disableWizard = true;
+  }
+
+  pub.disableAutoWizard = function() {
+    if (!disableWizard) {
       var realname = document.getElementById("realname").value;
       var email = document.getElementById("email").value;
       var password = document.getElementById("password").value;
@@ -66,7 +81,7 @@ if (!org.torbirdy.emailwizard) org.torbirdy.emailwizard = {
       var checkNewMail = 'mail.server.%serverkey%.check_new_mail';
       var serverkey = newAccount.incomingServer.key;
       var checkNewMailPref = checkNewMail.replace("%serverkey%", serverkey);
-      this.prefs.setBoolPref(checkNewMailPref, false);
+      prefs.setBoolPref(checkNewMailPref, false);
 
       // From comm-release/mailnews/base/prefs/content/accountcreation/emailWizard.js : onAdvancedSetup().
       var windowManager = Cc["@mozilla.org/appshell/window-mediator;1"]
@@ -86,43 +101,34 @@ if (!org.torbirdy.emailwizard) org.torbirdy.emailwizard = {
     else {
       gEmailConfigWizard.onNext();
     }
-  },
+  };
 
-  onKeyEnter: function(event) {
+  pub.onKeyEnter = function(event) {
     var keycode = event.keyCode;
     if (keycode == 13) {
       if (document.getElementById("next_button").disabled === false) {
-        if (!this.disableWizard) {
-          this.disableAutoWizard();
+        if (!disableWizard) {
+          pub.disableAutoWizard();
         }
         else {
           gEmailConfigWizard.onNext();
         }
       }
     }
-  },
+  };
 
-  onLoad: function() {
-    // Check if we are running Tails. If yes, disable the manual account
-    // configuration wizard since Tails handles that on its own. See:
-    // https://tails.boum.org/todo/Return_of_Icedove__63__/#index6h2
-    // This is also disabled if "extensions.torbirdy.emailwizard" is true.
-    this.disableWizard = false;
-    if (this.prefs.prefHasUserValue("vendor.name")) {
-      if (this.prefs.getCharPref("vendor.name") === "Tails") {
-        this.disableWizard = true;
-      }
-    }
-    if (this.prefs.getBoolPref("extensions.torbirdy.emailwizard")) {
-      this.disableWizard = true;
-    }
-
-    document.getElementById("provisioner_button").disabled = true;
-    if (this.disableWizard) {
+  pub.onLoad = function() {
+    if (disableWizard) {
       document.getElementById("torbirdy-protocol-box").collapsed = true;
+      document.getElementById("provisioner_button").disabled = false;
+      document.getElementById("provisioner_button").hidden = false;
+    } else {
+      document.getElementById("provisioner_button").disabled = true;
+      document.getElementById("provisioner_button").hidden = true;
     }
-  }
+  };
 
+  return pub;
 };
 
 window.addEventListener("keypress", org.torbirdy.emailwizard.onKeyEnter, true);
