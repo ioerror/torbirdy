@@ -4,6 +4,7 @@
     toggle checking of new messages automatically for all accounts
   The minimum version of Thunderbird we now support is 10.0
   `--throw-keyids' is now disabled by default
+  Add support for Thunderbird 24 (Gecko 17+)
   Add Persian translation (thanks to Nima)
   Add Czech translation (thanks to dope)
   Add Esperanto translation (thanks to Michael Moroni)
