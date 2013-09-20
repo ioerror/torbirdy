@@ -227,8 +227,6 @@ const TorBirdyPrefs = {
 
   // Disable Telemetry completely.
   "toolkit.telemetry.enabled": false,
-  // And don't prompt for it. Yes, it should be set to true!
-  "toolkit.telemetry.prompted": true,
 
   // Disable Geolocation.
   "geo.enabled": false,
@@ -468,10 +466,24 @@ TorBirdy.prototype = {
       // For only the first run (after that the user can configure the account if need be):
       //    Iterate through all accounts and disable automatic checking of emails.
       var accounts = this.acctMgr.accounts;
-      for (var i = 0; i < accounts.Count(); i++) {
-        var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
 
+      // To maintain compatibility between Gecko 17+ and Gecko < 17.
+      var allAccounts = [];
+      if (accounts.queryElementAt) {
+        for (var i = 0; i < accounts.length; i++) {
+          var account = accounts.queryElementAt(i, Ci.nsIMsgAccount).incomingServer;
+          allAccounts.push(account);
+        }
+      } else {
+        for (var i = 0; i < accounts.Count(); i++) {
+          var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
+          allAccounts.push(account);
+        }
+      }
+
+      for (var i = 0; i < allAccounts.length; i++) {
         // Save account settings for restoring later.
+        var account = allAccounts[i];
         var key = account.key;
         var restorePrefs = ["check_new_mail", "login_at_startup",
                             "check_time", "download_on_biff",

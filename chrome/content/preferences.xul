@@ -8,17 +8,14 @@
         xmlns:html="http://www.w3.org/1999/xhtml"
         title="&torbirdy.prefs.title;"
         persist="screenX screenY width height"
-        buttons="accept,cancel,extra1,extra2"
+        buttons="accept,cancel,extra2"
         buttonlabelaccept="&torbirdy.prefs.save.button;"
         buttonaccesskeyaccept="&torbirdy.prefs.save.key;"
         buttonlabelcancel="&torbirdy.prefs.cancel.button;"
-        buttonlabelextra1="&torbirdy.prefs.extra1.button;"
         buttonlabelextra2="&torbirdy.prefs.extra2.button;"
-        buttonaccesskeyextra1="&torbirdy.prefs.extra1.key;"
         buttonaccesskeyextra2="&torbirdy.prefs.extra2.key;"
         
-        ondialogextra1="return org.torbirdy.prefs.restoreDefaults();"
-        ondialogextra2="return org.torbirdy.prefs.testSettings();"
+        ondialogextra2="return org.torbirdy.prefs.restoreDefaults();"
         ondialogaccept="return org.torbirdy.prefs.onAccept();"
         onload="return org.torbirdy.prefs.onLoad();">
         
@@ -38,7 +35,7 @@
 
       <!-- Proxy Settings -->
       <tabpanel>
-        <vbox>
+        <vbox flex="1">
 
           <radiogroup id="torbirdy-proxy-settings" oncommand="org.torbirdy.prefs.checkSetting();">
             <radio accesskey="&torbirdy.prefs.recommended.key;" id="torbirdy-default-settings" label="&torbirdy.prefs.recommended.text;" selected="true"/>
@@ -83,6 +80,12 @@
             <radio accesskey="&torbirdy.prefs.torification.key;" id="torbirdy-torification" label="&torbirdy.prefs.torification.label;" style="color:red"/>
 
           </radiogroup>
+
+        <separator orient="horizontal"/>
+
+        <hbox align="right">
+          <button label="&torbirdy.prefs.testproxy.button;" accesskey="&torbirdy.prefs.testproxy.key;" oncommand="org.torbirdy.prefs.testSettings();" />
+        </hbox>
 
         </vbox>
       </tabpanel>

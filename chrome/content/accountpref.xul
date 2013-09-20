@@ -9,7 +9,6 @@
         title="&torbirdy.accountprefs.title;"
         persist="screenX screenY width height"
         buttonlabelaccept="&torbirdy.accountprefs.save.button;"
-
         buttonaccesskeyaccept="&torbirdy.accountprefs.save.key;"
 
         onload="return org.torbirdy.accountprefs.onLoad();"
