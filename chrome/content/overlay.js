@@ -8,15 +8,10 @@
                     .getService(Ci.nsIEnvironment);
 
   if (!(prefs.getBoolPref('extensions.torbirdy.startup_folder'))) {
-    window.loadStartFolder = function() {
-      var startupFolder = GetMsgFolderFromUri("mailbox://nobody@Local%20Folders");
-      if (startupFolder) {
-        if (window.gFolderTreeView) {
-          gFolderTreeView.selectFolder(startupFolder);
-        }
-      }
-    };
-  }
+    if (window.gFolderTreeView) {
+      gFolderTreeView.selectFolder = function() { return; }
+    }
+  };
 
   window.TorBirdy = {
     onLoad: function() {
