@@ -216,9 +216,6 @@ const TorBirdyPrefs = {
   // Override the user agent by setting it to an empty string.
   "general.useragent.override": "",
 
-  // Make sure Thunderbird updates are enabled.
-  "app.update.enabled": true,
-
   // Force GnuPG to use SHA512.
   "extensions.enigmail.mimeHashAlgorithm": 5,
 
