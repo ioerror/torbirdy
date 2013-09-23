@@ -264,6 +264,10 @@ const TorBirdyPrefs = {
   "messenger.status.userDisplayName": "",
   "messenger.startup.action": 0,
 
+  // Mozilla Lightning.
+  "calendar.useragent.extra": "",
+  "calendar.timezone.local": "",
+
   // All preferences have been set: now enable TorBirdy.
   "extensions.torbirdy.protected": true,
 }
