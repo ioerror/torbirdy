@@ -6,6 +6,7 @@
   `--throw-keyids' is now disabled by default
   We are no longer forcing Thunderbird updates (closes #8341)
   Add support for Thunderbird 24 (Gecko 17+)
+  We have a new TorBirdy logo. Thanks to Nima Fatemi!
   Add Persian translation (thanks to Nima)
   Add Czech translation (thanks to dope)
   Add Esperanto translation (thanks to Michael Moroni)

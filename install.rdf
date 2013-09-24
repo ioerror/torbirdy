@@ -6,7 +6,7 @@
     <em:id>castironthunderbirdclub@torproject.org</em:id>
     <em:version>0.1.1</em:version>
     <em:type>2</em:type>
-    <em:iconURL>chrome://castironthunderbirdclub/skin/images/Logo-64.png</em:iconURL>
+    <em:iconURL>chrome://castironthunderbirdclub/skin/images/tor.png</em:iconURL>
 
     <em:targetApplication>
     <!-- Thunderbird -->
