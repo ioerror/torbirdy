@@ -179,6 +179,13 @@ const TorBirdyPrefs = {
   "mail.server.default.use_idle": false,
 
   /*
+    Browser
+  */
+  // Disable caching.
+  "browser.cache.disk.enable": false,
+  "browser.cache.memory.enable": false,
+
+  /*
     Enigmail
   */
 
@@ -195,8 +202,7 @@ const TorBirdyPrefs = {
   "extensions.enigmail.addHeaders": false,
   // Use GnuPG's default comment for signed messages.
   "extensions.enigmail.useDefaultComment": true,
-  // XXX: TODO --hidden-recipient should be used for each person but perhaps
-  // --throw-keyids will be an OK stopgap?
+  // We need to pass some more parameters to GPG.
   "extensions.enigmail.agentAdditionalParam":
                                               // Don't disclose the version
                                               "--no-emit-version " +
@@ -238,10 +244,11 @@ const TorBirdyPrefs = {
   // Disable changing of images via JavaScript.
   "dom.disable_image_src_set": true,
 
-  // Disable media files (WebM, WAV, Ogg).
+  // Disable WebM, WAV, Ogg, PeerConnection.
   "media.webm.enabled": false,
   "media.wave.enabled": false,
   "media.ogg.enabled": false,
+  "media.peerconnection.enabled": false,
 
   // Disable CSS :visited selector.
   "layout.css.visited_links_enabled": false,
@@ -259,10 +266,23 @@ const TorBirdyPrefs = {
   "purple.conversations.im.send_typing": false,
 
   // Messenger related preferences.
+  // Do not report idle.
   "messenger.status.reportIdle": false,
+  "messenger.status.awayWhenIdle": false,
+  // Set the following preferences to empty strings.
   "messenger.status.defaultIdleAwayMessage": "",
   "messenger.status.userDisplayName": "",
+  // Do not connect automatically.
   "messenger.startup.action": 0,
+  // Ignore invitations; do not automatically accept them.
+  "messenger.conversations.autoAcceptChatInvitations": 0,
+  // Do not format incoming messages.
+  "messenger.options.filterMode": 0,
+  // On copying the content in the chat window, remove the time information.
+  // See `comm-central/chat/locales/conversations.properties' for more information.
+  "messenger.conversations.selections.systemMessagesTemplate": "%message%",
+  "messenger.conversations.selections.contentMessagesTemplate": "%sender%: %message%",
+  "messenger.conversations.selections.actionMessagesTemplate": "%sender% %message%",
 
   // Mozilla Lightning.
   "calendar.useragent.extra": "",
@@ -460,7 +480,7 @@ TorBirdy.prototype = {
       this.prefs.setIntPref("network.proxy.ssl_port", 0);
 
       // Disable all plugins.
-      for(var i = 0; i < this.plugins.length; i++) {
+      for (var i = 0; i < this.plugins.length; i++) {
           this.plugins[i].disabled = true;
       }
 
