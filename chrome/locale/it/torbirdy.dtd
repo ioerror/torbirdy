@@ -15,7 +15,7 @@
 <!ENTITY torbirdy.prefs.extra2.button "Reimposta i valori di default">
 <!ENTITY torbirdy.prefs.extra2.key "d">
 <!ENTITY torbirdy.prefs.testproxy.button "Verifica le impostazioni del proxy">
-<!ENTITY torbirdy.prefs.testproxy.key "">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Proxy">
 <!ENTITY torbirdy.prefs.privacy.label "Privacy">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
@@ -35,7 +35,7 @@
 <!ENTITY torbirdy.prefs.global "Globale">
 <!ENTITY torbirdy.prefs.imap.label "Abilita supporto push email per gli account IMAP [default: disabilitato]">
 <!ENTITY torbirdy.prefs.imap.key "p">
-<!ENTITY torbirdy.prefs.startup_folder.label "">
+<!ENTITY torbirdy.prefs.startup_folder.label "Seleziona l'ultima casella di posta all'avvio [default: disabilitato]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "Non impostare il fuso orario di Thunderbird a UTC [default: impostato a UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
@@ -46,7 +46,7 @@
 <!ENTITY torbirdy.prefs.emailwizard.label "Attiva il wizard di configurazione automatica email di Thunderbird [default: disabilitato]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.automatic.label "Controlla automaticamente nuovi messaggi per tutti gli account [disabilitato di default]">
-<!ENTITY torbirdy.prefs.automatic.key "">
+<!ENTITY torbirdy.prefs.automatic.key "f">
 <!ENTITY torbirdy.prefs.renegotiation.label "Permetti connessioni a server che non supportano SSL/TLS con rinegoziazione sicura [predefinito: non permettere]">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Relativo all'Account">

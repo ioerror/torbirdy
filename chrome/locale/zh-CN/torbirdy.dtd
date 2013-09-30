@@ -35,7 +35,7 @@
 <!ENTITY torbirdy.prefs.global "全球">
 <!ENTITY torbirdy.prefs.imap.label "启用 IMAP 帐户邮件推送支持 [默认：禁用]">
 <!ENTITY torbirdy.prefs.imap.key "p">
-<!ENTITY torbirdy.prefs.startup_folder.label "">
+<!ENTITY torbirdy.prefs.startup_folder.label "启动时选择最后访问的邮件文件夹 [默认：禁用]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "请勿将 Thunderbird 的时区设置为 UTC [默认：设置为 UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">

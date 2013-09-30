@@ -35,7 +35,7 @@
 <!ENTITY torbirdy.prefs.global "Global">
 <!ENTITY torbirdy.prefs.imap.label "Understøt push e-mail for IMAP konti [standard: slået fra]">
 <!ENTITY torbirdy.prefs.imap.key "p">
-<!ENTITY torbirdy.prefs.startup_folder.label "">
+<!ENTITY torbirdy.prefs.startup_folder.label "Vælg sidst anvendte e-mail mappe ved opstart [standard: ikke aktiv]">
 <!ENTITY torbirdy.prefs.startup_folder.key "p">
 <!ENTITY torbirdy.prefs.timezone.label "Sæt ikke Thunderbirds tidszone til UTC [standard: sæt til UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">

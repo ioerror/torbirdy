@@ -15,7 +15,7 @@
 <!ENTITY torbirdy.prefs.extra2.button "חזרה לברירת מחדל">
 <!ENTITY torbirdy.prefs.extra2.key "d">
 <!ENTITY torbirdy.prefs.testproxy.button "בחן הגדרות Proxy">
-<!ENTITY torbirdy.prefs.testproxy.key "">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "פרוקסי">
 <!ENTITY torbirdy.prefs.privacy.label "פרטיות">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
@@ -35,7 +35,7 @@
 <!ENTITY torbirdy.prefs.global "גלובאלי">
 <!ENTITY torbirdy.prefs.imap.label "אפשר תמיכה בדחיפת דואר על ידי השרת לחשבונות מסוג IMAP [ברירת מחדל: מנוטרל]">
 <!ENTITY torbirdy.prefs.imap.key "p">
-<!ENTITY torbirdy.prefs.startup_folder.label "">
+<!ENTITY torbirdy.prefs.startup_folder.label "בעת הפעלה, בחר בתיקיית הדואר שנפתחה אחרונה [ברירת מחדל: מנוטרל]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "אל תקבע את איזור הזמן של Thunderbird לUTC [ברירת מחדל: קבע לUTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
