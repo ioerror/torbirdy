@@ -1,59 +1,63 @@
-<!ENTITY torbirdy.accountprefs.title "Configuration du compte">
-<!ENTITY torbirdy.accountprefs.startup.label "Vérifier les nouveaux messages au démarage">
+<!ENTITY torbirdy.accountprefs.title "Paramétrage du compte">
+<!ENTITY torbirdy.accountprefs.startup.label "Relever les nouveaux messages au démarrage">
 <!ENTITY torbirdy.accountprefs.startup.key "C">
-<!ENTITY torbirdy.accountprefs.minutes.label "Vérifier les nouveaux messages toutes les">
+<!ENTITY torbirdy.accountprefs.minutes.label "Relever les nouveaux messages toutes les">
 <!ENTITY torbirdy.accountprefs.minutes.key "y">
 <!ENTITY torbirdy.accountprefs.minutes.trail.label "minutes">
 <!ENTITY torbirdy.accountprefs.cancel.button "Annuler">
-<!ENTITY torbirdy.accountprefs.save.button "Sauvegarder">
+<!ENTITY torbirdy.accountprefs.save.button "Enregistrer">
 <!ENTITY torbirdy.accountprefs.save.key "S">
 
-<!ENTITY torbirdy.prefs.title "TorBirdy Préférences">
-<!ENTITY torbirdy.prefs.save.button "Sauvegarder">
+<!ENTITY torbirdy.prefs.title "Préférences TorBirdy">
+<!ENTITY torbirdy.prefs.save.button "Enregistrer">
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Annuler">
-<!ENTITY torbirdy.prefs.extra2.button "Test des paramètres">
-<!ENTITY torbirdy.prefs.extra2.key "g">
-<!ENTITY torbirdy.prefs.proxy.label "Paramètres proxy">
-<!ENTITY torbirdy.prefs.privacy.label "Paramètres de vie privé">
-<!ENTITY torbirdy.prefs.enigmail.label "Paramètres d'Enigmail">
-<!ENTITY torbirdy.prefs.security.label "Paramètres de Sécurité">
-<!ENTITY torbirdy.prefs.recommended.text "Utiliser les paramètres proxy recommandé pour TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.extra2.button "Valeurs par défaut">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "Tester les paramètres du proxy">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Vie privée">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Sécurité">
+<!ENTITY torbirdy.prefs.recommended.text "Utiliser les paramètres proxy recommandés pour TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
-<!ENTITY torbirdy.prefs.anonservice.text "Choisir un service d'anonymat">
+<!ENTITY torbirdy.prefs.anonservice.text "Choisir un service d'anonymisation">
 <!ENTITY torbirdy.prefs.anonservice.key "a">
-<!ENTITY torbirdy.prefs.customsettings.text "Choisir les paramètres proxy">
+<!ENTITY torbirdy.prefs.customsettings.text "Utiliser des paramètres personnalisés pour le proxy">
 <!ENTITY torbirdy.prefs.customsettings.key "c">
-<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Host: ">
+<!ENTITY torbirdy.prefs.socks_host.label "Hôte SOCKS : ">
 <!ENTITY torbirdy.prefs.socks_host.key "h">
-<!ENTITY torbirdy.prefs.socks_port.label "Port: ">
+<!ENTITY torbirdy.prefs.socks_port.label "Port : ">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
-<!ENTITY torbirdy.prefs.torification.label "Transparent Torification">
+<!ENTITY torbirdy.prefs.torification.label "Torification transparente (avertissement : nécessite un transproxy personnalisé ou un routeur Tor)">
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "Global">
-<!ENTITY torbirdy.prefs.imap.label "Activer le support du push email pour les comptes IMAP [default: désactivé]">
-<!ENTITY torbirdy.prefs.imap.key "i">
-<!ENTITY torbirdy.prefs.startup_folder.label "Selectionner comme dossier d'acceuil le dernier dossier email visité [default: désactivé, votre dossier local sera séléctionné]">
+<!ENTITY torbirdy.prefs.imap.label "Activer la gestion du mail « push » pour les comptes IMAP [défaut : désactivé]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
-<!ENTITY torbirdy.prefs.timezone.label "Ne pas configurer le fuseau horaire de Thunderbird en UTC [par défaut: configurer en UTC]">
+<!ENTITY torbirdy.prefs.timezone.label "Ne pas paramétrer le fuseau horaire de Thunderbird à UTC (temps universel) [défaut : configurer en UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Désactiver le GPG '--throw-keyids' [default: activé]">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
-<!ENTITY torbirdy.prefs.confirmemail.label "Confirmer avant d'envoyer l'e-mail si Enigmail est activé [défaut : ne pas confirmer]">
-<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Ne pas insérer dans les messages chiffrés les identifiants des clés des destinataires [défaut : les mettre]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
+<!ENTITY torbirdy.prefs.confirmemail.label "Confirmer avant d'envoyer un e-mail si Enigmail est activé [défaut : ne pas confirmer]">
+<!ENTITY torbirdy.prefs.confirmemail.key "c">
 <!ENTITY torbirdy.prefs.emailwizard.label "Activer l'assistant de configuration automatique d'e-mail de Thunderbird [défaut : désactivé]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
-<!ENTITY torbirdy.prefs.renegotiation.label "Autoriser les connexions aux serveurs qui ne supportent pas SSL/TLS avec renégociation sécurisée [défaut : ne pas autoriser]">
+<!ENTITY torbirdy.prefs.automatic.label "Relever automatiquement les nouveaux messages de tous les comptes [par défaut : désactivé]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
+<!ENTITY torbirdy.prefs.renegotiation.label "Autoriser les connexions aux serveurs qui ne gèrent pas SSL/TLS avec renégociation sécurisée [défaut : ne pas autoriser]">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
-<!ENTITY torbirdy.prefs.account_specific "Compte-spécifique">
+<!ENTITY torbirdy.prefs.account_specific "Propre à un compte">
 <!ENTITY torbirdy.prefs.select_account.key "C">
-<!ENTITY torbirdy.prefs.select_account.label "Choisir un compte: ">
+<!ENTITY torbirdy.prefs.select_account.label "Choisir un compte : ">
 <!ENTITY torbirdy.prefs.enigmail.keyserver.label "Serveur(s) de clés à utiliser :">
 <!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
-<!ENTITY torbirdy.panel.usetor.label "Utiliser un routeur Oignon Tor">
+<!ENTITY torbirdy.panel.usetor.label "Utiliser le routeur en oignon Tor">
 <!ENTITY torbirdy.panel.usejondo.label "Utiliser JonDo (Premium)">
 <!ENTITY torbirdy.panel.usewhonix.label "Utiliser Whonix">
 <!ENTITY torbirdy.panel.preferences.label "Ouvrir les préférences de TorBirdy">
 
-<!ENTITY torbirdy.firstrun.title "TorBirdy Premier Lancement">
+<!ENTITY torbirdy.firstrun.title "Premier lancement de TorBirdy">

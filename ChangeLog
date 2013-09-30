@@ -8,21 +8,8 @@
   Add support for Thunderbird 24 (Gecko 17+)
   Enhance support for Thunderbird chat
   We have a new TorBirdy logo. Thanks to Nima Fatemi!
-  Add Persian translation (thanks to Nima)
-  Add Czech translation (thanks to dope)
-  Add Esperanto translation (thanks to Michael Moroni)
-  Add Slovak translation (thanks to K0L0M4N)
-  Add Turkish translation (thanks to yozel, bob939800)
-  Add Swedish translation (thanks to Bjorn Schrammel)
-  Add Danish translation
-  Add Japanese translation (thanks to plazmism)
-  Add Sinhala translation (thanks to Ganesh Wakista)
-  Update Hebrew translation (thanks to fungimon)
-  Update Arabic translation (thanks to Sherief)
-  Update Russian translation
-  Update Latvian translation
-  Update Korean translation
-  Update Punjabi translation
+  Add new translations and updated existing ones
+    Please see the Transifex page for more information and credits
 
 0.1.1, 20 Mar 2013
   Add a dialog for new users that is shown during the first-run (closes #8238)

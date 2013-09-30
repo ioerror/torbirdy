@@ -12,12 +12,14 @@
 <!ENTITY torbirdy.prefs.save.button "Speichern">
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Abbrechen">
-<!ENTITY torbirdy.prefs.extra2.button "Einstellungen prüfen">
-<!ENTITY torbirdy.prefs.extra2.key "p">
-<!ENTITY torbirdy.prefs.proxy.label "Proxy Einstellungen">
-<!ENTITY torbirdy.prefs.privacy.label "Privacy Einstellungen">
-<!ENTITY torbirdy.prefs.enigmail.label "Enigmail-Einstellungen">
-<!ENTITY torbirdy.prefs.security.label "Sicherheitseinstellungen">
+<!ENTITY torbirdy.prefs.extra2.button "Stelle Einstellungen zurück auf Standard">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "Proxyeinstellungen Testen">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Privatsphäre">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Sicherheit">
 <!ENTITY torbirdy.prefs.recommended.text "Empfohlene Proxy Einstellungen für TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Anonymisierungsdienst auswählen">
@@ -28,21 +30,23 @@
 <!ENTITY torbirdy.prefs.socks_host.key "h">
 <!ENTITY torbirdy.prefs.socks_port.label "Port: ">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
-<!ENTITY torbirdy.prefs.torification.label "Transparent Torification">
+<!ENTITY torbirdy.prefs.torification.label "Transparent Torification (Achtung: Benötigt Benutzerspezifischer transproxy oder TOR)">
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "Global">
 <!ENTITY torbirdy.prefs.imap.label "Push E-Mail Support für IMAP-Konten aktivieren [default: deaktiviert]">
-<!ENTITY torbirdy.prefs.imap.key "i">
-<!ENTITY torbirdy.prefs.startup_folder.label "Beim Start zum zuletzt aktiven Mail-Ordner wechseln [default: Lokale Ordner wird gewählt]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "Beim Start zum zuletzt aktiven Mail-Ordner wechseln [default: deaktiviert]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "Setzen Sie Thunderbirds Zeitzone nicht auch UTC [standard: auf UTC setzen]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Deaktiviere GPG '--throw-keyids' [default: aktiviert]">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Die Empfänger-Schlüssel-ID nicht in Verschlüsselte Nachrichten einbinden [default: mit einbinden]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "Vor dem absenden einer Email überprüfen, ob Enigmail aktiviert ist [standard: nicht überprüfen]">
-<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.confirmemail.key "b">
 <!ENTITY torbirdy.prefs.emailwizard.label "Thunderbird's automatischen Email-Konfigurator aktivieren [standard: deaktiviert]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.automatic.label "Prüfe automatisch nach neuen Nachrichten für alle Accounts [Standard: deaktiviert]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
 <!ENTITY torbirdy.prefs.renegotiation.label "Verbindungen zu Servern erlauben, die kein SSL/TLS mit sicherer Renegotiation unterstützen [standard: nicht erlauben]">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Konten-spezifisch">
@@ -51,7 +55,7 @@
 <!ENTITY torbirdy.prefs.enigmail.keyserver.label "Folgende Keyserver benutzen:">
 <!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
-<!ENTITY torbirdy.panel.usetor.label "Tor Onion Router nutzen">
+<!ENTITY torbirdy.panel.usetor.label "Tor Onion Router benutzen">
 <!ENTITY torbirdy.panel.usejondo.label "JonDo (Premium) nutzen">
 <!ENTITY torbirdy.panel.usewhonix.label "Whonix nutzen">
 <!ENTITY torbirdy.panel.preferences.label "TorBirdy Einstellungen öffnen">

@@ -1,0 +1,63 @@
+<!ENTITY torbirdy.accountprefs.title "帳戶組態">
+<!ENTITY torbirdy.accountprefs.startup.label "啟動時自動檢查更新訊息">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "每次自動檢查更新訊息">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "分">
+<!ENTITY torbirdy.accountprefs.cancel.button "取消">
+<!ENTITY torbirdy.accountprefs.save.button "儲存">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "TorBirdy 偏好設定">
+<!ENTITY torbirdy.prefs.save.button "儲存">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "取消">
+<!ENTITY torbirdy.prefs.extra2.button "回復預設值">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "測試伺服器設定">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
+<!ENTITY torbirdy.prefs.proxy.label "">
+<!ENTITY torbirdy.prefs.privacy.label "">
+<!ENTITY torbirdy.prefs.enigmail.label "">
+<!ENTITY torbirdy.prefs.security.label "">
+<!ENTITY torbirdy.prefs.recommended.text "在TorBirdy (Tor)中使用建議的代理伺服器設定">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "請選擇一個匿名服務">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "使用自訂的代理伺服器設定">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS 主機：">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "連接埠：">
+<!ENTITY torbirdy.prefs.socks_port.key "P">
+<!ENTITY torbirdy.prefs.torification.label "透明化 Torification(警告：需要自訂轉接伺服器transproxy 或是 Tor 路由器)">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "全球">
+<!ENTITY torbirdy.prefs.imap.label "啟用郵件發送支援IMAP帳戶[預設值：停用]">
+<!ENTITY torbirdy.prefs.imap.key "P">
+<!ENTITY torbirdy.prefs.startup_folder.label "">
+<!ENTITY torbirdy.prefs.startup_folder.key "I">
+<!ENTITY torbirdy.prefs.timezone.label "不要設定Thunderbird的時區為UTC[預設值：設定為UTC]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
+<!ENTITY torbirdy.prefs.confirmemail.label "確認在發送電子郵件之前啟用Enigmail[預設值：不確認]">
+<!ENTITY torbirdy.prefs.confirmemail.key "c">
+<!ENTITY torbirdy.prefs.emailwizard.label "啟用Thunderbird的自動電子郵件組態精靈[預設值：停用]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.automatic.label "自動檢查所有帳戶更新訊息[預設值：停用]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
+<!ENTITY torbirdy.prefs.renegotiation.label "允許連接到不具備支援 SSL / TLS 安全辨識的服務器[預設值：不允許]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
+<!ENTITY torbirdy.prefs.account_specific "專一性帳戶">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "請選擇一個帳戶：">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "密鑰伺服器(s)可供使用：">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
+
+<!ENTITY torbirdy.panel.usetor.label "使用Tor Onion 路由器">
+<!ENTITY torbirdy.panel.usejondo.label "使用 JonDo (進階)">
+<!ENTITY torbirdy.panel.usewhonix.label "使用 Whonix">
+<!ENTITY torbirdy.panel.preferences.label "開啟 TorBirdy 偏好設定">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy 初次啟動">

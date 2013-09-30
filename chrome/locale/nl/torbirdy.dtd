@@ -1,4 +1,4 @@
-<!ENTITY torbirdy.accountprefs.title "Account configuratie">
+<!ENTITY torbirdy.accountprefs.title "Account Configuratie">
 <!ENTITY torbirdy.accountprefs.startup.label "Op nieuwe berichten controleren bij opstarten">
 <!ENTITY torbirdy.accountprefs.startup.key "C">
 <!ENTITY torbirdy.accountprefs.minutes.label "Op nieuwe berichten controleren elke">
@@ -8,52 +8,56 @@
 <!ENTITY torbirdy.accountprefs.save.button "Opslaan">
 <!ENTITY torbirdy.accountprefs.save.key "S">
 
-<!ENTITY torbirdy.prefs.title "TorBirdy Voorkeuren">
+<!ENTITY torbirdy.prefs.title "TorBirdy configuratie">
 <!ENTITY torbirdy.prefs.save.button "Opslaan">
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Annuleren">
-<!ENTITY torbirdy.prefs.extra2.button "Voorkeuren controleren">
-<!ENTITY torbirdy.prefs.extra2.key "g">
-<!ENTITY torbirdy.prefs.proxy.label "Proxy instellingen">
-<!ENTITY torbirdy.prefs.privacy.label "Privacy instellingen">
-<!ENTITY torbirdy.prefs.enigmail.label "Enigmail instellingen">
-<!ENTITY torbirdy.prefs.security.label "Beveiligingsinstellingen">
-<!ENTITY torbirdy.prefs.recommended.text "Aanbevolen instellingen voor TorBirdy (Tor) gebruiken">
+<!ENTITY torbirdy.prefs.extra2.button "Terugzetten op begintoestand">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "Test Proxy Instellingen">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Privacy">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Beveiliging">
+<!ENTITY torbirdy.prefs.recommended.text "Aanbevolen configuratie voor TorBirdy (Tor) gebruiken">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Kies een anonimiseringsdienst">
 <!ENTITY torbirdy.prefs.anonservice.key "a">
-<!ENTITY torbirdy.prefs.customsettings.text "Gebruik een aangepaste proxy instelling">
+<!ENTITY torbirdy.prefs.customsettings.text "Gebruik een aangepaste proxyconfiguratie">
 <!ENTITY torbirdy.prefs.customsettings.key "c">
 <!ENTITY torbirdy.prefs.socks_host.label "SOCKS Host: ">
 <!ENTITY torbirdy.prefs.socks_host.key "h">
-<!ENTITY torbirdy.prefs.socks_port.label "Poort: ">
+<!ENTITY torbirdy.prefs.socks_port.label "Port: ">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
-<!ENTITY torbirdy.prefs.torification.label "Transparante Torificatie (waarschuwing: custom transproxy of Tor router vereist)">
+<!ENTITY torbirdy.prefs.torification.label "Transparant Torification">
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "Globaal">
 <!ENTITY torbirdy.prefs.imap.label "Ondersteuning voor push e-mail voor IMAP-accounts inschakelen [standaard: uitgeschakeld]">
-<!ENTITY torbirdy.prefs.imap.key "i">
-<!ENTITY torbirdy.prefs.startup_folder.label "Bij opstarten direct naar de laatst bekeken map gaan [standaard: uitgeschakeld, lokale map wordt geselecteerd]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "Bij opstarten direct naar de laatst bekeken map gaan [standaard: uitgeschakeld]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "Gebruik niet de UTC tijdzone voor Thunderbird [standaard: gebruik UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Uitschakelen GPG '--throw-keyids' [standaard: ingeschakeld]">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Plaats key ID's van ontvangers niet in versleutelde berichten [standaard: wel plaatsen]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "Bevestig het versturen van e-mail als Enigmail is ingeschakeld [standaard: bevestig niet]">
-<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.confirmemail.key "c">
 <!ENTITY torbirdy.prefs.emailwizard.label "Schakel Thunderbird's automatische e-mail configuratie-wizard in [standaard: uitgeschakeld]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
-<!ENTITY torbirdy.prefs.renegotiation.label "Sta connecties met servers die SSL/TLS met &quot;safe renegotiation&quot; niet ondersteunen toe [standaard: niet toestaan]">
+<!ENTITY torbirdy.prefs.automatic.label "Controleer automatisch voor nieuwe berichten voor alle accounts [standaard: uitgeschakeld]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
+<!ENTITY torbirdy.prefs.renegotiation.label "sta connecties met servers die SSL/TLS met &quot;safe renegotiation&quot; toe  [default: do not allow]">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Account-specifiek">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Kies een account: ">
-<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Te gebruiken sleutelserver(s): ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Bruikbaare hoofdserver(s).">
 <!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
 <!ENTITY torbirdy.panel.usetor.label "Gebruik Tor Onion Router">
 <!ENTITY torbirdy.panel.usejondo.label "Gebruik JonDo (Premium)">
 <!ENTITY torbirdy.panel.usewhonix.label "Gebruik Whonix">
-<!ENTITY torbirdy.panel.preferences.label "Open TorBirdy Voorkeuren">
+<!ENTITY torbirdy.panel.preferences.label "Open TorBirdy voorkeuren">
 
 <!ENTITY torbirdy.firstrun.title "Eerste gebruik van TorBirdy">

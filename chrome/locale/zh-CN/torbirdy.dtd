@@ -12,12 +12,14 @@
 <!ENTITY torbirdy.prefs.save.button "保存">
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "取消">
-<!ENTITY torbirdy.prefs.extra2.button "测试设置">
-<!ENTITY torbirdy.prefs.extra2.key "g">
-<!ENTITY torbirdy.prefs.proxy.label "代理设置">
-<!ENTITY torbirdy.prefs.privacy.label "隐私设置">
-<!ENTITY torbirdy.prefs.enigmail.label "Enigmail 设置">
-<!ENTITY torbirdy.prefs.security.label "安全设置">
+<!ENTITY torbirdy.prefs.extra2.button "恢复默认设置">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "测试代理设置">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
+<!ENTITY torbirdy.prefs.proxy.label "代理">
+<!ENTITY torbirdy.prefs.privacy.label "隐私">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "安全">
 <!ENTITY torbirdy.prefs.recommended.text "使用推荐的 TorBirdy (Tor) 代理设置">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "选择匿名服务">
@@ -32,17 +34,19 @@
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "全球">
 <!ENTITY torbirdy.prefs.imap.label "启用 IMAP 帐户邮件推送支持 [默认：禁用]">
-<!ENTITY torbirdy.prefs.imap.key "i">
-<!ENTITY torbirdy.prefs.startup_folder.label "启动时选择最后访问的邮件文件夹 [默认：禁用，选择本地文件夹]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "请勿将 Thunderbird 的时区设置为 UTC [默认：设置为 UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "将收件人 key ID 放入加密邮件 [默认：不放入]">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "请勿讲收件人密钥 ID 放入加密邮件[默认：放入]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "在发送电子邮件之前，确认 Enigmail 是否已启用 [默认：不确认]">
-<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.confirmemail.key "c">
 <!ENTITY torbirdy.prefs.emailwizard.label "启用 Thunderbird 自动电子邮件配置向导 [默认：禁用]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.automatic.label "所有账户自动检查新消息 [默认：禁用]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
 <!ENTITY torbirdy.prefs.renegotiation.label "允许连接至不支持具有安全重新协商机制的 SSL/TLS 的服务器 [默认：不允许]">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "指定帐户">

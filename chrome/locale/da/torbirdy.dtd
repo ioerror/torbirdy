@@ -1,0 +1,63 @@
+<!ENTITY torbirdy.accountprefs.title "Konto konfiguration">
+<!ENTITY torbirdy.accountprefs.startup.label "Tjek for nye beskeder ved opstart">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Tjek for nye beskeder hver">
+<!ENTITY torbirdy.accountprefs.minutes.key "r">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "minutter">
+<!ENTITY torbirdy.accountprefs.cancel.button "Fortryd">
+<!ENTITY torbirdy.accountprefs.save.button "Gem">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "TorBirdy præferencer">
+<!ENTITY torbirdy.prefs.save.button "Gem">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Fortryd">
+<!ENTITY torbirdy.prefs.extra2.button "Gendan Standarder">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "Test proxyindstillinger">
+<!ENTITY torbirdy.prefs.testproxy.key "p">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Privatliv">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Sikkerhed">
+<!ENTITY torbirdy.prefs.recommended.text "Brug de anbefalede proxyindstillinger til TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Vælg en anonymiserings-service">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "Brug brugerdefinerede proxyindstillinger">
+<!ENTITY torbirdy.prefs.customsettings.key "p">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Host: ">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Port:">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "Gennemsigtig Torifikation (advarsel: Kræver tilpasset transproxy eller Tor-router)">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "Global">
+<!ENTITY torbirdy.prefs.imap.label "Understøt push e-mail for IMAP konti [standard: slået fra]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "">
+<!ENTITY torbirdy.prefs.startup_folder.key "p">
+<!ENTITY torbirdy.prefs.timezone.label "Sæt ikke Thunderbirds tidszone til UTC [standard: sæt til UTC]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Tilføj ikke modtagerens nøgle-id i de krypterede meddelelser [standard: tilføj]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
+<!ENTITY torbirdy.prefs.confirmemail.label "Bekræft før afsendelse af e-mail hvis Enigmail er aktiv [standard: bekræft ikke]">
+<!ENTITY torbirdy.prefs.confirmemail.key "c">
+<!ENTITY torbirdy.prefs.emailwizard.label "Anvend Thunderbirds automatiske e-mail konfigurationshjælper [standard: slået fra]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.automatic.label "Hent automatisk nye beskeder for alle konti [standardindstilling: slået fra]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
+<!ENTITY torbirdy.prefs.renegotiation.label "Tillad forbindelser til servere der ikke understøtter SSL/TLS med sikker genforhandling [standard: tillad ikke]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
+<!ENTITY torbirdy.prefs.account_specific "Kontospecifik">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Vælg en konto:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Nøgleserver(e) der bruges:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
+
+<!ENTITY torbirdy.panel.usetor.label "Brug Tor Onion Router">
+<!ENTITY torbirdy.panel.usejondo.label "Brug JonDo (Premium)">
+<!ENTITY torbirdy.panel.usewhonix.label "Brug Whonix">
+<!ENTITY torbirdy.panel.preferences.label "Åbn TorBirdy præferencer">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy First-Run">
