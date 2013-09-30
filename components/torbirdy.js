@@ -216,14 +216,14 @@ const TorBirdyPrefs = {
   // The default key server should be a hidden service and this is the only known one (it's part of the normal SKS network)
   "extensions.enigmail.keyserver": "hkp://2eghzlv2wwcq7u7y.onion",
 
+  // Force GnuPG to use SHA512.
+  "extensions.enigmail.mimeHashAlgorithm": 5,
+
   // Prefer plain text for RSS.
   "rss.display.prefer_plaintext": true,
 
   // Override the user agent by setting it to an empty string.
   "general.useragent.override": "",
-
-  // Force GnuPG to use SHA512.
-  "extensions.enigmail.mimeHashAlgorithm": 5,
 
   // Disable WebGL.
   "webgl.disabled": true,
