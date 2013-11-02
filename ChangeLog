@@ -2,12 +2,14 @@
   New options:
     restore default TorBirdy settings
     toggle checking of new messages automatically for all accounts
-  The minimum version of Thunderbird we now support is 10.0
-  `--throw-keyids' is now disabled by default
+  The minimum version of Thunderbird we now support is 10.0 (closes #9569)
+  `--throw-keyids' is now disabled by default (closes #9648)
   We are no longer forcing Thunderbird updates (closes #8341)
-  Add support for Thunderbird 24 (Gecko 17+)
+  Add support for Thunderbird 24 (Gecko 17+) (closes #9673)
   Enhanced support for Thunderbird chat
   We have a new TorBirdy logo. Thanks to Nima Fatemi!
+  Improved documentation:
+    https://trac.torproject.org/projects/tor/wiki/torbirdy
   Add new translations and updated existing ones
     Please see the Transifex page for more information and credits
 
