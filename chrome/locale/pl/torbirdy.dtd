@@ -12,12 +12,14 @@
 <!ENTITY torbirdy.prefs.save.button "Zapisz">
 <!ENTITY torbirdy.prefs.save.key "z">
 <!ENTITY torbirdy.prefs.cancel.button "Anuluj">
-<!ENTITY torbirdy.prefs.extra2.button "Sprawdź ustawienia">
-<!ENTITY torbirdy.prefs.extra2.key "w">
-<!ENTITY torbirdy.prefs.proxy.label "Ustawienia Proxy">
-<!ENTITY torbirdy.prefs.privacy.label "Ustawienia Prywatności">
-<!ENTITY torbirdy.prefs.enigmail.label "Ustawienia Enigmail">
-<!ENTITY torbirdy.prefs.security.label "Ustawienia bezpieczeństwa">
+<!ENTITY torbirdy.prefs.extra2.button "Ustawienia domyślne">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "Testuj ustawienia Proxy">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Prywatność">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Bezpieczeństwo">
 <!ENTITY torbirdy.prefs.recommended.text "Użyj zalecanych ustawień proxy dla TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "j">
 <!ENTITY torbirdy.prefs.anonservice.text "Wybierz usługę anonimizującą">
@@ -32,17 +34,19 @@
 <!ENTITY torbirdy.prefs.torification.key "T">
 <!ENTITY torbirdy.prefs.global "Globalne">
 <!ENTITY torbirdy.prefs.imap.label "Włącz obsługę push email dla kont IMAP [domyślne: wyłączone]">
-<!ENTITY torbirdy.prefs.imap.key "e">
-<!ENTITY torbirdy.prefs.startup_folder.label "Przejdź do ostatniego folderu pocztowego przy uruchomieniu [domyślne: wyłączone, wybierze Foldery Lokalne]">
+<!ENTITY torbirdy.prefs.imap.key "P">
+<!ENTITY torbirdy.prefs.startup_folder.label "Zaznacz ostatnio używany folder przy starcie [domyślnie: wyłączone]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "Nie ustawiaj strefy czasowej Thunderbirda na UTC [domyślne: ustaw na UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "s">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Wyłącz GPG '--throw-keyids' [domyślne: włączone]">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Nie wpisuj kluczy IDs odbiorców w zaszyfrowanej wiadomości [domyślnie: wpisz]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "Potwierdzaj przed wysłaniem wiadomości, gdy Enigmail jest włączony [domyślnie: nie potwierdzaj]">
-<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.confirmemail.key "i">
 <!ENTITY torbirdy.prefs.emailwizard.label "Włącz automatyczny kreator konfiguracji e-mail Thunderbirda [domyślnie: wyłączony]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.automatic.label "Sprawdź czy masz nowe wiadomości na wszystkich kontach [domyślnie: wyłączone]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
 <!ENTITY torbirdy.prefs.renegotiation.label "Zezwalaj na połączenia do serwerów nie obsługujących SSL/TLS z bezpieczną renegocjacją [domyślne: nie zezwalaj]">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Specyficzne dla konta">

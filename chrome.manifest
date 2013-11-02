@@ -9,34 +9,22 @@ contract @torproject.org/torbirdy;1 {ebd85413-18c8-4265-a708-a8890ec8d1ed}
 category profile-after-change TorBirdy @torproject.org/torbirdy;1
 
 locale castironthunderbirdclub ar chrome/locale/ar/
-locale castironthunderbirdclub bs chrome/locale/bs/
+locale castironthunderbirdclub cs chrome/locale/cs/
 locale castironthunderbirdclub da chrome/locale/da/
 locale castironthunderbirdclub de chrome/locale/de/
-locale castironthunderbirdclub el chrome/locale/el/
 locale castironthunderbirdclub en chrome/locale/en/
 locale castironthunderbirdclub es chrome/locale/es/
 locale castironthunderbirdclub eu chrome/locale/eu/
-locale castironthunderbirdclub fa chrome/locale/fa/
 locale castironthunderbirdclub fr chrome/locale/fr/
-locale castironthunderbirdclub gu chrome/locale/gu/
 locale castironthunderbirdclub he chrome/locale/he/
-locale castironthunderbirdclub hr-HR chrome/locale/hr-HR/
-locale castironthunderbirdclub hu chrome/locale/hu/
 locale castironthunderbirdclub it chrome/locale/it/
-locale castironthunderbirdclub ja chrome/locale/ja/
-locale castironthunderbirdclub ko chrome/locale/ko/
 locale castironthunderbirdclub lv chrome/locale/lv/
-locale castironthunderbirdclub nb chrome/locale/nb/
 locale castironthunderbirdclub nl chrome/locale/nl/
 locale castironthunderbirdclub pa chrome/locale/pa/
 locale castironthunderbirdclub pl chrome/locale/pl/
 locale castironthunderbirdclub pt-BR chrome/locale/pt-BR/
-locale castironthunderbirdclub ru chrome/locale/ru/
-locale castironthunderbirdclub si-LK chrome/locale/si-LK/
-locale castironthunderbirdclub sr chrome/locale/sr/
 locale castironthunderbirdclub sv chrome/locale/sv/
 locale castironthunderbirdclub tr chrome/locale/tr/
 locale castironthunderbirdclub zh-CN chrome/locale/zh-CN/
-locale castironthunderbirdclub zh-TW chrome/locale/zh-TW/
 
 skin castironthunderbirdclub classic/1.0 chrome/skin/

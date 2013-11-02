@@ -35,7 +35,7 @@
 <!ENTITY torbirdy.prefs.global "Global">
 <!ENTITY torbirdy.prefs.imap.label "Aktivera push e-post-stöd för IMAP-konton [standard: inaktiverat]">
 <!ENTITY torbirdy.prefs.imap.key "p">
-<!ENTITY torbirdy.prefs.startup_folder.label "Gå till den senast använda e-post-mappen vid start [standrad: inaktiverat]">
+<!ENTITY torbirdy.prefs.startup_folder.label "Välj senast besökta mail katalog vid uppstart [standard: inaktiverat]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "Sätt inte Thunderbirds tidzon till UTC [standard: sätt till UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">

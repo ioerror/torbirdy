@@ -12,12 +12,14 @@
 <!ENTITY torbirdy.prefs.save.button "Gorde">
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Utzi">
-<!ENTITY torbirdy.prefs.extra2.button "Ezarpenak frogatu">
-<!ENTITY torbirdy.prefs.extra2.key "g">
-<!ENTITY torbirdy.prefs.proxy.label "Proxy ezarpenak">
-<!ENTITY torbirdy.prefs.privacy.label "Pribatutasun ezarpenak">
-<!ENTITY torbirdy.prefs.enigmail.label "Enigmail ezarpenak">
-<!ENTITY torbirdy.prefs.security.label "Segurtasun ezarpenak">
+<!ENTITY torbirdy.prefs.extra2.button "Lehenetsiak berrezarri">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "Proxy ezarpenak frogatu">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy-a">
+<!ENTITY torbirdy.prefs.privacy.label "Pribatutasuna">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Segurtasuna">
 <!ENTITY torbirdy.prefs.recommended.text "TorBirdy(Tor)rentzako gomendatutako proxy ezarpenak erabili">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Aukeratu anonimotasun zerbitzu bat">
@@ -32,17 +34,19 @@
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "Orokorra">
 <!ENTITY torbirdy.prefs.imap.label "IMAP kontuentzako eposta bultzaketa gaitu [lehenetsia: ezgaitua]">
-<!ENTITY torbirdy.prefs.imap.key "i">
-<!ENTITY torbirdy.prefs.startup_folder.label "Abioan azkenengoz erabilitako karpeta aukeratu [lehenetsia: ezgaituta, karpeta lokalak aukeratuko dira]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "Hautatu azken aldiz erabilitako e-posta karpeta hasterakoan [lehenetsia: ezgaituta]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "Thunderbirden denbora gunea UTCra ez ezarri [lehenetsia: UTCra ezarri]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Ezgaitu GPG '--throw-keyids' [lehenetsia: gaituta]">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "g">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Ez jarri ID gako hartzailea enkriptatutako mezuetan [lehentsia: jarri]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "Berretsi Enigmail gaituta dagoen eposta bidali baino lehen [lehentsia: es berretsi]">
-<!ENTITY torbirdy.prefs.confirmemail.key "m">
+<!ENTITY torbirdy.prefs.confirmemail.key "c">
 <!ENTITY torbirdy.prefs.emailwizard.label "Gaitu Thunderbirden eposta konfigurazio morroi automatikoa [lehenetsia: ezgaituta]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.automatic.label "Egiaztatu mezu berririk dagoen kontu guztietarako [lehenetsia: ezgaituta]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
 <!ENTITY torbirdy.prefs.renegotiation.label "SSL/TLS birnegoziazioa onartzen ez duten zerbitzarietara konexioak baimendu [lehenetsia: ez baimendu]">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Kontuaren araberakoa">

@@ -35,7 +35,7 @@
 <!ENTITY torbirdy.prefs.global "Globale">
 <!ENTITY torbirdy.prefs.imap.label "Abilita supporto push email per gli account IMAP [default: disabilitato]">
 <!ENTITY torbirdy.prefs.imap.key "p">
-<!ENTITY torbirdy.prefs.startup_folder.label "Seleziona l'ultima casella di posta all'avvio [default: disabilitato]">
+<!ENTITY torbirdy.prefs.startup_folder.label "Seleziona all'avvio l'ultima cartella di mail visitata [default: disabilitato]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "Non impostare il fuso orario di Thunderbird a UTC [default: impostato a UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
