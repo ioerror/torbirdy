@@ -214,7 +214,7 @@ const TorBirdyPrefs = {
                                               "--keyserver-options http-proxy=http://127.0.0.1:8118 ",
                                             
   // The default key server should be a hidden service and this is the only known one (it's part of the normal SKS network)
-  "extensions.enigmail.keyserver": "hkp://2eghzlv2wwcq7u7y.onion",
+  "extensions.enigmail.keyserver": "hkp://qdigse2yzvuglcix.onion",
 
   // Force GnuPG to use SHA512.
   "extensions.enigmail.mimeHashAlgorithm": 5,

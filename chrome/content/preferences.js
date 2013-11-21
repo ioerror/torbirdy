@@ -7,7 +7,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
   pub.prefBranch = "extensions.torbirdy.";
   pub.customBranch = "extensions.torbirdy.custom.";
 
-  pub.torKeyserver = "hkp://2eghzlv2wwcq7u7y.onion";
+  pub.torKeyserver = "hkp://qdigse2yzvuglcix.onion";
   pub.jondoKeyserver = "hkp://pool.sks-keyservers.net";
 
   pub.prefs = Components.classes["@mozilla.org/preferences-service;1"]
