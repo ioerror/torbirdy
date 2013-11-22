@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Script to fetch and update translations. Modified from tor-launcher.
+
 BUNDLE_LOCALES="ar da eu he lv pa pt_BR tr cs de es fr it nl pl sv zh-CN ms-MY ja"
 
 if [ -d translation ];
@@ -20,5 +22,4 @@ do
   git merge origin/torbirdy
   cp $UL/torbirdy.dtd ../chrome/locale/$i/torbirdy.dtd
   cp $UL/torbirdy.properties ../chrome/locale/$i/torbirdy.properties
-
 done
