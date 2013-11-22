@@ -12,7 +12,7 @@
 <!ENTITY torbirdy.prefs.save.button "שמור">
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "ביטול">
-<!ENTITY torbirdy.prefs.extra2.button "חזרה לברירת מחדל">
+<!ENTITY torbirdy.prefs.extra2.button "שחזר ברירות מחדל">
 <!ENTITY torbirdy.prefs.extra2.key "d">
 <!ENTITY torbirdy.prefs.testproxy.button "בחן הגדרות Proxy">
 <!ENTITY torbirdy.prefs.testproxy.key "n">
@@ -30,22 +30,22 @@
 <!ENTITY torbirdy.prefs.socks_host.key "h">
 <!ENTITY torbirdy.prefs.socks_port.label "פורט:">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
-<!ENTITY torbirdy.prefs.torification.label "שקוף Torification (אזהרה: נדרש transproxy מותאם או נתב Tor)">
+<!ENTITY torbirdy.prefs.torification.label "‏Torification שקוף (אזהרה: נדרש transproxy מותאם או נתב Tor)">
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "גלובאלי">
-<!ENTITY torbirdy.prefs.imap.label "אפשר תמיכה בדחיפת דואר על ידי השרת לחשבונות מסוג IMAP [ברירת מחדל: מנוטרל]">
+<!ENTITY torbirdy.prefs.imap.label "אפשר תמיכת דחיפת דוא״ל עבור חשבונות IMAP [ברירת מחדל: מנוטרל]">
 <!ENTITY torbirdy.prefs.imap.key "p">
-<!ENTITY torbirdy.prefs.startup_folder.label "בעת הפעלה, בחר בתיקיית הדואר שנפתחה אחרונה [ברירת מחדל: מנוטרל]">
+<!ENTITY torbirdy.prefs.startup_folder.label "בחר את תיקיית הדואר האחרונה אשר נבחרה [ברירת מחדל: מנוטרל]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
 <!ENTITY torbirdy.prefs.timezone.label "אל תקבע את איזור הזמן של Thunderbird לUTC [ברירת מחדל: קבע לUTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "אל תשים את מזהי מפתח המקבל בתוך הודעות מוצפנות [ברירת מחדל: השם]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
-<!ENTITY torbirdy.prefs.confirmemail.label "וודא לפני שליחה כאשר אניגמייל מופעל [ברירת מחדל: אל תוודא]">
+<!ENTITY torbirdy.prefs.confirmemail.label "וודא לפני שליחת דוא״ל כאשר Enigmail מופעל [ברירת מחדל: אל תוודא]">
 <!ENTITY torbirdy.prefs.confirmemail.key "c">
-<!ENTITY torbirdy.prefs.emailwizard.label "הפעל את אשף הגדרות הדואר של ת'אנדרבירד [ברירת מחדל: כבוי]">
+<!ENTITY torbirdy.prefs.emailwizard.label "הפעל את אשף הגדרות הדוא״ל של Thunderbird [ברירת מחדל: מנוטרל]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
-<!ENTITY torbirdy.prefs.automatic.label "בדוק עבור הודעות חדשות אוטומטית עבור כל החשבונות [ברירת מחדל: מנוטרלת]">
+<!ENTITY torbirdy.prefs.automatic.label "בדוק עבור הודעות חדשות אוטומטית עבור כל החשבונות [ברירת מחדל: מנוטרל]">
 <!ENTITY torbirdy.prefs.automatic.key "f">
 <!ENTITY torbirdy.prefs.renegotiation.label "הרשה חיבורית לשרתים שאינם תומכים בSSL/TLS עם חידוש משא ומתן מאובטח [ברירת מחדל: לא להרשות]">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">

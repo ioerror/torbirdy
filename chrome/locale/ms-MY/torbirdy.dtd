@@ -1,0 +1,63 @@
+<!ENTITY torbirdy.accountprefs.title "Akaun konfigurasi">
+<!ENTITY torbirdy.accountprefs.startup.label "Semak mesej baru setiap kali aplikasi dijalankan.">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Semak mesej baru setiap">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "minit">
+<!ENTITY torbirdy.accountprefs.cancel.button "Batal">
+<!ENTITY torbirdy.accountprefs.save.button "Simpan">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "Tetapan TorBirdy">
+<!ENTITY torbirdy.prefs.save.button "Simpan">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Batal">
+<!ENTITY torbirdy.prefs.extra2.button "Kembalikan tetapan asal">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "Cuba tetapan proksi">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
+<!ENTITY torbirdy.prefs.proxy.label "Proksi">
+<!ENTITY torbirdy.prefs.privacy.label "Privasi">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Keselamatan">
+<!ENTITY torbirdy.prefs.recommended.text "Guna tetapan proksi yang digalakkan untuk TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Pilih servis keselamatan anda">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "Guna tetapan proksi peribadi">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "Hos SOCKS:">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Port:">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "Torification Telus (amaran : memerlukan transproksi peribadi atau Tor router)">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "Global">
+<!ENTITY torbirdy.prefs.imap.label "Membolehkan sokongan e-mel untuk akaun IMAP [default: dimatikan]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "Pilih folder mel terakhir diakses pada setiap kali aplikasi bermula [default: dimatikan]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "Jangan tetapkan zon masa Thunderbird kepada UTC [default: setkan kepada UTC]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Jangan letakkan ID utama penerima ke dalam mesej sulit [default: meletakkan]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
+<!ENTITY torbirdy.prefs.confirmemail.label "Sahkan sebelum menghantar e-mel jika Enigmail diaktifkan [default: tidak mengesahkan]">
+<!ENTITY torbirdy.prefs.confirmemail.key "c">
+<!ENTITY torbirdy.prefs.emailwizard.label "Membolehkan e-mel automatik konfigurasi bagi Thunderbird [default: dimatikan] ">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.automatic.label "Semak mesej baru secara automatik untuk semua akaun [default: dimatikan]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
+<!ENTITY torbirdy.prefs.renegotiation.label "Benarkan sambungan kepada pelayan yang tidak menyokong SSL / TLS dengan rundingan semula selamat [default: tidak membenarkan]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
+<!ENTITY torbirdy.prefs.account_specific "Akaun-spesifik">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Pilih akaun:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Pelayan kunci untuk digunakan:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
+
+<!ENTITY torbirdy.panel.usetor.label "Guna Tor Onion Router">
+<!ENTITY torbirdy.panel.usejondo.label "Guna JonDo (Berbayar)">
+<!ENTITY torbirdy.panel.usewhonix.label "Guna Whonix">
+<!ENTITY torbirdy.panel.preferences.label "Buka tetapan TorBirdy">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy kali pertama">
