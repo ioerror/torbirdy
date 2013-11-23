@@ -3,6 +3,7 @@
     hkp://qdigse2yzvuglcix.onion
   New translations:
     Japanese, Malay
+  Show the Sender header in message pane (closes #10226)
 
 0.1.2, 04 Nov 2013
   New options:
