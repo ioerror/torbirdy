@@ -2,7 +2,7 @@
   The default keyserver (hidden service) has been updated:
     hkp://qdigse2yzvuglcix.onion
   New translations:
-    Japanese, Malay
+    Japanese, Malay, Russian
   Show the Sender header in message pane (closes #10226)
 
 0.1.2, 04 Nov 2013
