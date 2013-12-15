@@ -18,11 +18,14 @@ locale castironthunderbirdclub eu chrome/locale/eu/
 locale castironthunderbirdclub fr chrome/locale/fr/
 locale castironthunderbirdclub he chrome/locale/he/
 locale castironthunderbirdclub it chrome/locale/it/
+locale castironthunderbirdclub ja chrome/locale/ja/
 locale castironthunderbirdclub lv chrome/locale/lv/
+locale castironthunderbirdclub ms-MY chrome/locale/ms-MY/
 locale castironthunderbirdclub nl chrome/locale/nl/
 locale castironthunderbirdclub pa chrome/locale/pa/
 locale castironthunderbirdclub pl chrome/locale/pl/
 locale castironthunderbirdclub pt-BR chrome/locale/pt-BR/
+locale castironthunderbirdclub ru chrome/locale/ru/
 locale castironthunderbirdclub sv chrome/locale/sv/
 locale castironthunderbirdclub tr chrome/locale/tr/
 locale castironthunderbirdclub zh-CN chrome/locale/zh-CN/
