@@ -500,44 +500,49 @@ TorBirdy.prototype = {
 
       for (var i = 0; i < accountLength; i++) {
         var account = (newGecko) ?
-                      accounts.queryElementAt(i, Ci.nsIMsgAccount).incomingServer :
-                      accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
+                      accounts.queryElementAt(i, Ci.nsIMsgAccount) :
+                      accounts.QueryElementAt(i, Ci.nsIMsgAccount);
         allAccounts.push(account);
       }
 
-      // Get the locations of the Draft folder for all identities and save them.
-      var identities = this.acctMgr.allIdentities;
-      var identLength = newGecko ? identities.length : identities.Count();
+      // Save account settings for restoring later.
+      for (var i = 0; i < allAccounts.length; i++) {
+        var identities = allAccounts[i].identities;
+        var account = allAccounts[i].incomingServer;
 
-      for (var ident = 0; ident < identLength; ident++) {
-        var identity = (newGecko) ?
-                       identities.queryElementAt(ident, Ci.nsIMsgIdentity) :
-                       identities.QueryElementAt(ident, Ci.nsIMsgIdentity);
+        // Get the locations of the Draft folder for all identities and save them.
+        // We only need to do this for IMAP accounts.
+        if (account.type === "imap") {
+          // Again ensure we maintain compatibility between different Gecko versions.
+          var identLength = newGecko ? identities.length : identities.Count();
 
-        var key = identity.key;
-        var restorePrefs = ["draft_folder", "drafts_folder_picker_mode"];
+          for (var ident = 0; ident < identLength; ident++) {
+            var identity = (newGecko) ?
+                           identities.queryElementAt(ident, Ci.nsIMsgIdentity) :
+                           identities.QueryElementAt(ident, Ci.nsIMsgIdentity);
 
-        for (var r = 0; r < restorePrefs.length; r++) {
-          var pref = "mail.identity.%id%.".replace("%id%", key);
-          var prefName = pref + restorePrefs[r];
-          if (this.prefs.prefHasUserValue(prefName)) {
-            var typePref = this.prefs.getPrefType(prefName);
-            if (typePref === 32) {
-              var currentPref = this.prefs.getCharPref(prefName);
-              this.prefs.setCharPref(kRestoreBranch + prefName, currentPref);
+            var key = identity.key;
+            var restorePrefs = ["draft_folder", "drafts_folder_picker_mode"];
+
+            for (var i = 0; i < restorePrefs.length; i++) {
+              var pref = "mail.identity.%id%.".replace("%id%", key);
+              var prefName = pref + restorePrefs[i];
+              if (this.prefs.prefHasUserValue(prefName)) {
+                var typePref = this.prefs.getPrefType(prefName);
+                if (typePref === 32) {
+                  var currentPref = this.prefs.getCharPref(prefName);
+                  this.prefs.setCharPref(kRestoreBranch + prefName, currentPref);
+                }
+                TorBirdyOldPrefs.push(prefName);
+              }
             }
-            TorBirdyOldPrefs.push(prefName);
+            // Now apply our setting where we set the Drafts folder to Local Folders.
+            // The user is free to change this as this setting is not enforced.
+            identity.draftFolder = "mailbox://nobody@Local%20Folders/Drafts";
+            identity.draftsFolderPickerMode = 0;
           }
         }
-        // Now apply our setting where we set the Drafts folder to Local Folders.
-        // The user is free to change this as this setting is not enforced.
-        identity.draftFolder = "mailbox://nobody@Local%20Folders/Drafts";
-        identity.draftsFolderPickerMode = 0;
-      }
 
-      for (var i = 0; i < allAccounts.length; i++) {
-        // Save account settings for restoring later.
-        var account = allAccounts[i];
         var key = account.key;
         var restorePrefs = ["check_new_mail", "login_at_startup",
                             "check_time", "download_on_biff",
