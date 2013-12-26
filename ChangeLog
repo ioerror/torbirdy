@@ -4,6 +4,7 @@
   New translations:
     Japanese, Malay, Russian
   Show the Sender header in message pane (closes #10226)
+  Draft messages on IMAP accounts are now saved locally (closes #10309)
 
 0.1.2, 04 Nov 2013
   New options:

@@ -144,22 +144,19 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     var mailAccounts = [];
     var accounts = pub.acctMgr.accounts;
 
-    // Maintain Gecko 17+ and Gecko < 17 compatibility.
-    if (accounts.queryElementAt) {
-      for (var i = 0; i < accounts.length; i++) {
-        var account = accounts.queryElementAt(i, Components.interfaces.nsIMsgAccount).incomingServer;
-        var name = account.prettyName;
-        if (!(name === "Local Folders")) {
-          mailAccounts.push(account);
-        }
-      }
-    } else {
-      for (var i = 0; i < accounts.Count(); i++) {
-        var account = accounts.QueryElementAt(i, Components.interfaces.nsIMsgAccount).incomingServer;
-        var name = account.prettyName;
-        if (!(name === "Local Folders")) {
-          mailAccounts.push(account);
-        }
+    // To maintain compatibility between Gecko 17+ and Gecko < 17.
+    var newGecko = (accounts.queryElementAt) ? true : false;
+
+    var accountLength = newGecko ? accounts.length : accounts.Count();
+
+    for (var i = 0; i < accountLength; i++) {
+      var account = (newGecko) ?
+                    accounts.queryElementAt(i, Components.interfaces.nsIMsgAccount).incomingServer :
+                    accounts.QueryElementAt(i, Components.interfaces.nsIMsgAccount).incomingServer;
+
+      var name = account.prettyName;
+      if (!(name === "Local Folders")) {
+        mailAccounts.push(account);
       }
     }
     return mailAccounts;

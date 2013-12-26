@@ -301,7 +301,7 @@ const TorBirdyPrefs = {
 // when TorBirdy is initialized that should be preserved instead. When TorBirdy
 // is disabled or uninstalled, these preferences are restored to their original
 // value. All such preferences go here.
-const TorBirdyOldPrefs = [
+var TorBirdyOldPrefs = [
   "network.proxy.type",
   "network.proxy.ssl_port",
   "network.proxy.ssl",
@@ -492,18 +492,47 @@ TorBirdy.prototype = {
       //    Iterate through all accounts and disable automatic checking of emails.
       var accounts = this.acctMgr.accounts;
 
-      // To maintain compatibility between Gecko 17+ and Gecko < 17.
       var allAccounts = [];
-      if (accounts.queryElementAt) {
-        for (var i = 0; i < accounts.length; i++) {
-          var account = accounts.queryElementAt(i, Ci.nsIMsgAccount).incomingServer;
-          allAccounts.push(account);
+      // To maintain compatibility between Gecko 17+ and Gecko < 17.
+      var newGecko = (accounts.queryElementAt) ? true : false;
+
+      var accountLength = newGecko ? accounts.length : accounts.Count();
+
+      for (var i = 0; i < accountLength; i++) {
+        var account = (newGecko) ?
+                      accounts.queryElementAt(i, Ci.nsIMsgAccount).incomingServer :
+                      accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
+        allAccounts.push(account);
+      }
+
+      // Get the locations of the Draft folder for all identities and save them.
+      var identities = this.acctMgr.allIdentities;
+      var identLength = newGecko ? identities.length : identities.Count();
+
+      for (var ident = 0; ident < identLength; ident++) {
+        var identity = (newGecko) ?
+                       identities.queryElementAt(ident, Ci.nsIMsgIdentity) :
+                       identities.QueryElementAt(ident, Ci.nsIMsgIdentity);
+
+        var key = identity.key;
+        var restorePrefs = ["draft_folder", "drafts_folder_picker_mode"];
+
+        for (var r = 0; r < restorePrefs.length; r++) {
+          var pref = "mail.identity.%id%.".replace("%id%", key);
+          var prefName = pref + restorePrefs[r];
+          if (this.prefs.prefHasUserValue(prefName)) {
+            var typePref = this.prefs.getPrefType(prefName);
+            if (typePref === 32) {
+              var currentPref = this.prefs.getCharPref(prefName);
+              this.prefs.setCharPref(kRestoreBranch + prefName, currentPref);
+            }
+            TorBirdyOldPrefs.push(prefName);
+          }
         }
-      } else {
-        for (var i = 0; i < accounts.Count(); i++) {
-          var account = accounts.QueryElementAt(i, Ci.nsIMsgAccount).incomingServer;
-          allAccounts.push(account);
-        }
+        // Now apply our setting where we set the Drafts folder to Local Folders.
+        // The user is free to change this as this setting is not enforced.
+        identity.draftFolder = "mailbox://nobody@Local%20Folders/Drafts";
+        identity.draftsFolderPickerMode = 0;
       }
 
       for (var i = 0; i < allAccounts.length; i++) {
