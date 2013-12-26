@@ -489,15 +489,16 @@ TorBirdy.prototype = {
       }
 
       // For only the first run (after that the user can configure the account if need be):
-      //    Iterate through all accounts and disable automatic checking of emails.
+      //    save drafts for IMAP accounts locally
+      //    disable automatic checking of emails and enforce SSL/TLS
       var accounts = this.acctMgr.accounts;
 
       var allAccounts = [];
-      // To maintain compatibility between Gecko 17+ and Gecko < 17.
+      // To maintain compatibility between Gecko 17+ and Gecko < 17, find out
+      // which version we are on.
       var newGecko = (accounts.queryElementAt) ? true : false;
 
       var accountLength = newGecko ? accounts.length : accounts.Count();
-
       for (var i = 0; i < accountLength; i++) {
         var account = (newGecko) ?
                       accounts.queryElementAt(i, Ci.nsIMsgAccount) :
@@ -522,6 +523,7 @@ TorBirdy.prototype = {
                            identities.QueryElementAt(ident, Ci.nsIMsgIdentity);
 
             var key = identity.key;
+            // We need to restore the following preferences after we are uninstalled/disabled.
             var restorePrefs = ["draft_folder", "drafts_folder_picker_mode"];
 
             for (var i = 0; i < restorePrefs.length; i++) {
