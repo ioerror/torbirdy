@@ -83,6 +83,12 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
       var checkNewMailPref = checkNewMail.replace("%serverkey%", serverkey);
       prefs.setBoolPref(checkNewMailPref, false);
 
+      // Make sure that drafts are saved to Local Folders if it is an IMAP account.
+      if (protocol === "imap") {
+        var identity = newAccount.defaultIdentity;
+        identity.draftFolder = "mailbox://nobody@Local%20Folders/Drafts";
+      }
+
       // From comm-release/mailnews/base/prefs/content/accountcreation/emailWizard.js : onAdvancedSetup().
       var windowManager = Cc["@mozilla.org/appshell/window-mediator;1"]
           .getService(Ci.nsIWindowMediator);

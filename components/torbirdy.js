@@ -541,7 +541,6 @@ TorBirdy.prototype = {
             // Now apply our setting where we set the Drafts folder to Local Folders.
             // The user is free to change this as this setting is not enforced.
             identity.draftFolder = "mailbox://nobody@Local%20Folders/Drafts";
-            identity.draftsFolderPickerMode = 0;
           }
         }
 
