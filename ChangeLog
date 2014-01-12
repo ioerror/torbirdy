@@ -1,121 +1,130 @@
 0.1.3,
-  The default keyserver (hidden service) has been updated:
-    hkp://qdigse2yzvuglcix.onion
-  New translations:
-    Japanese, Malay, Russian
-  Show the Sender header in message pane (closes #10226)
-  Draft messages on IMAP accounts are now saved locally (closes #10309)
+
+  * The default keyserver (hidden service) has been updated:
+    - hkp://qdigse2yzvuglcix.onion
+  * New translations:
+    - Japanese, Malay, Russian
+  * Show the Sender header in message pane (closes #10226)
+  * Draft messages on IMAP accounts are now saved locally (closes #10309)
+  * Remove all traces of TorBirdy's installation including restoring all
+    preferences (closes #10588)
 
 0.1.2, 04 Nov 2013
-  New options:
-    restore default TorBirdy settings
-    toggle checking of new messages automatically for all accounts
-  The minimum version of Thunderbird we now support is 10.0 (closes #9569)
-  `--throw-keyids' is now disabled by default (closes #9648)
-  We are no longer forcing Thunderbird updates (closes #8341)
-  Add support for Thunderbird 24 (Gecko 17+) (closes #9673)
-  Enhanced support for Thunderbird chat
-  We have a new TorBirdy logo. Thanks to Nima Fatemi!
-  Improved documentation:
-    https://trac.torproject.org/projects/tor/wiki/torbirdy
-  Add new translations and updated existing ones
-    Please see the Transifex page for more information and credits
+
+  * New options:
+    - restore default TorBirdy settings
+    - toggle checking of new messages automatically for all accounts
+  * The minimum version of Thunderbird we now support is 10.0 (closes #9569)
+  * `--throw-keyids' is now disabled by default (closes #9648)
+  * We are no longer forcing Thunderbird updates (closes #8341)
+  * Add support for Thunderbird 24 (Gecko 17+) (closes #9673)
+  * Enhanced support for Thunderbird chat
+  * We have a new TorBirdy logo. Thanks to Nima Fatemi!
+  * Improved documentation:
+    - https://trac.torproject.org/projects/tor/wiki/torbirdy
+  * Add new translations and updated existing ones
+    - Please see the Transifex page for more information and credits
 
 0.1.1, 20 Mar 2013
-  Add a dialog for new users that is shown during the first-run (closes #8238)
-  Do not confirm before sending an email if Enigmail is enabled; default
+
+  * Add a dialog for new users that is shown during the first-run (closes #8238)
+  * Do not confirm before sending an email if Enigmail is enabled; default
     behavior changed from 0.1.0 (user opt-in allowed through the preferences)
-  Restore all account settings that were changed on uninstall
-  Allow the user to use Thunderbird's automatic configuration wizard in case
+  * Restore all account settings that were changed on uninstall
+  * Allow the user to use Thunderbird's automatic configuration wizard in case
     they don't want to use our manual account configuration wizard
-  Set the SOCKS port to 9150 to reflect the change in the latest TBB
-  Add opt-out from TLS-specific settings (closes #8420)
-  Allow additional keyservers to be used/changed (closes #8332)
-  Add Korean translation (thanks to cwt96)
-  Add Norwegian Bokmål translation (thanks to lateralus)
-  Add Galician translation (thanks to tombouzada)
+  * Set the SOCKS port to 9150 to reflect the change in the latest TBB
+  * Add opt-out from TLS-specific settings (closes #8420)
+  * Allow additional keyservers to be used/changed (closes #8332)
+  * Add Korean translation (thanks to cwt96)
+  * Add Norwegian Bokmål translation (thanks to lateralus)
+  * Add Galician translation (thanks to tombouzada)
 
 0.1.0, 11 Feb 2013
-  Our first release in the Beta release series! Hooray!
-  Translation updates:
-    Add Gujarati translation (Kartik Mistry)
-    Add Dutch translation (thanks to Rejo Zenger)
-    Add Serbian translation (thanks to Nikola Nenadic)
-    Add Hungarian translation (thanks to vargaviktor)
-    Add Italian translation (thanks to spawned76, Michele Orrù and jan)
-    Add Basque translation (thanks to Antxon Baldarra)
-    Add Latvian translation (thanks to Ojārs Balcers)
-    Add Portuguese (BR) translation (thanks to Bruno Geronimo, Rafael Costa)
-    Add Polish translation (thanks to bogdrozd)
-    Add Greek translation (thanks to mitzie, konpas1986)
-    Add Chinese (Simplied) translation (thanks to ln191810)
-    Add Russian translation (thanks to Александр)
-    Add Arabic translation (thanks to alshara3, Fadi Mansour)
-    Update French translation (thanks for arpalord)
-    Update Spanish translation (thanks to Juan Garofalo, strel)
-  Added Transparent Torification mode for TorBirdy
-  Disable all plugins
-  Added opt-out from setting time zone to UTC
-  Add Tor-JonDo-Preferences quick switch (patch by Karsten N)
-  Support for Whonix (http://whonix.sourceforge.net/)
-  Improved security: better SSL enforcement
-  Add Tails support
+
+  * Our first release in the Beta release series! Hooray!
+  * Translation updates:
+    - Add Gujarati translation (Kartik Mistry)
+    - Add Dutch translation (thanks to Rejo Zenger)
+    - Add Serbian translation (thanks to Nikola Nenadic)
+    - Add Hungarian translation (thanks to vargaviktor)
+    - Add Italian translation (thanks to spawned76, Michele Orrù and jan)
+    - Add Basque translation (thanks to Antxon Baldarra)
+    - Add Latvian translation (thanks to Ojārs Balcers)
+    - Add Portuguese (BR) translation (thanks to Bruno Geronimo, Rafael Costa)
+    - Add Polish translation (thanks to bogdrozd)
+    - Add Greek translation (thanks to mitzie, konpas1986)
+    - Add Chinese (Simplied) translation (thanks to ln191810)
+    - Add Russian translation (thanks to Александр)
+    - Add Arabic translation (thanks to alshara3, Fadi Mansour)
+    - Update French translation (thanks for arpalord)
+    - Update Spanish translation (thanks to Juan Garofalo, strel)
+  * Added Transparent Torification mode for TorBirdy
+  * Disable all plugins
+  * Added opt-out from setting time zone to UTC
+  * Add Tor-JonDo-Preferences quick switch (patch by Karsten N)
+  * Support for Whonix (http://whonix.sourceforge.net/)
+  * Improved security: better SSL enforcement
+  * Add Tails support
 
 0.0.13, 28 Sept 2012
-  Translation updates:
-    Add Hebrew translation (thanks to Sharon Dvir)
-    Add French translation (thanks to N3b)
-    Update German translation (thanks to Karsten N)
-    Add Spanish translation (thanks to Juan Garofalo)
-  Code cleanup: prefixed generically-named IDs with TorBirdy namespace
+  * Translation updates:
+    - Add Hebrew translation (thanks to Sharon Dvir)
+    - Add French translation (thanks to N3b)
+    - Update German translation (thanks to Karsten N)
+    -Add Spanish translation (thanks to Juan Garofalo)
+  * Code cleanup: prefixed generically-named IDs with TorBirdy namespace
 
 0.0.12, 27 Sept 2012
-  TorBirdy now has localization support
-    Current languages: English, German (translated by Karsten N.), Punjabi
-  TorBirdy code cleanup: fix global namespace pollution
-  Do not select the last selected account to prevent automatic login
-    (TorBirdy selects 'Local Folders' on startup to prevent this)
-  Restore proxy settings at TorBirdy uninstall
-    (settings prior to installation of TorBirdy)
-  TorBirdy now allows HTTP/SSL connections
-  Users may opt-out from `--throw-keyids'
-  Enhanced TorBirdy JonDo support (thanks to Karsten N.)
-  Fix a bug in 0.0.11 that prevented account preferences from being set
-  Add Screenshots directory
-  TorBirdy no longer requires a configured HTTP proxy for full use with Tor
-  TorBirdy now enforces the safest HTTP proxy usage possible with GnuPG
+  * TorBirdy now has localization support
+  * - Current languages: English, German (translated by Karsten N.), Punjabi
+  * TorBirdy code cleanup: fix global namespace pollution
+  * Do not select the last selected account to prevent automatic login
+  * - (TorBirdy selects 'Local Folders' on startup to prevent this)
+  * Restore proxy settings at TorBirdy uninstall
+  * - (settings prior to installation of TorBirdy)
+  * TorBirdy now allows HTTP/SSL connections
+  * Users may opt-out from `--throw-keyids'
+  * Enhanced TorBirdy JonDo support (thanks to Karsten N.)
+  * Fix a bug in 0.0.11 that prevented account preferences from being set
+  * Add Screenshots directory
+  * TorBirdy no longer requires a configured HTTP proxy for full use with Tor
+  * TorBirdy now enforces the safest HTTP proxy usage possible with GnuPG
     TorBirdy attempts to disable all name resolution in GnuPG due to a serious
     SOCKS5 problem with GnuPG proxy options to how we invoke GnuPG; GnuPG only
-    supports SOCKS5 when it is linked against libcurl (>7.21.7) and hostnames
-    are not used. This is outlined the following bug:
+    supports SOCKS5 when it is linked against libcurl (>7.21.7) and hostnames are
+    not used. This is outlined the following bug:
     https://trac.torproject.org/projects/tor/ticket/2846
 
 0.0.11, 04 Aug 2012
-  Implemented an algorithm to generate time-independent message-ID (apply
-  the patches in patches/ to a custom Thunderbird build)
-  Remove the 'Reference' and 'In-Reply-To' headers when forwarding a message
-  Implemented a preference setting for TorBirdy with support for adjusting:
-    proxy settings
-    account-specific settings
-  Support for testing proxy settings: https://check.torproject.org
-  Disable push email for IMAP
-  Various other stability fixes
+
+  * Implemented an algorithm to generate time-independent message-ID (apply
+    the patches in patches/ to a custom Thunderbird build)
+  * Remove the 'Reference' and 'In-Reply-To' headers when forwarding a message
+  * Implemented a preference setting for TorBirdy with support for adjusting:
+    - proxy settings
+    - account-specific settings
+  * Support for testing proxy settings: https://check.torproject.org
+  * Disable push email for IMAP
+  * Various other stability fixes
 
 0.0.10 Thu, 12 Jul 2012
-  Don't check for messages on start up
-  Now includes patch in source for upstream date header modifications
-    Apply patches/date.patch to a custom Thunderbird compile
-  Use SSL/TLS by default for both outgoing and incoming servers
-  Disable 'Get new account' from loading at startup
-  Set default server ports
-  For already configured email accounts, disable automatic email fetching
-  For accounts created through the manual account configuration, disable
-  automatic email fetching
-  Added support for resetting user preferences on extension uninstall
-  Various privacy fixes as suggested by Karsten N
+
+  * Don't check for messages on start up
+  * Now includes patch in source for upstream date header modifications
+    - Apply patches/date.patch to a custom Thunderbird compile
+  * Use SSL/TLS by default for both outgoing and incoming servers
+  * Disable 'Get new account' from loading at startup
+  * Set default server ports
+  * For already configured email accounts, disable automatic email fetching
+  * For accounts created through the manual account configuration, disable
+    automatic email fetching
+  * Added support for resetting user preferences on extension uninstall
+  * Various privacy fixes as suggested by Karsten N
 
 0.0.9 Fri, 06 Jul 2012
-  Added ChangeLog to document feature progress
-  Implemented basic preferences window
-    Patch by Karsten N from JonDos
-    Supports configuring Thunderbird for Tor or JonDos on the usual ports
+
+  * Added ChangeLog to document feature progress
+  * Implemented basic preferences window
+    - Patch by Karsten N from JonDos
+    - Supports configuring Thunderbird for Tor or JonDos on the usual ports
