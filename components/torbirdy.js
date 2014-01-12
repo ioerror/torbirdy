@@ -449,7 +449,10 @@ TorBirdy.prototype = {
   setAccountPrefs: function() {
     if (this.prefs.getBoolPref("extensions.torbirdy.first_run")) {
       // Save the current proxy settings so that the settings can be restored in case
-      // TorBirdy is uninstalled or disabled. (TorBirdyOldPrefs)
+      // TorBirdy is uninstalled or disabled. (TorBirdyOldPrefs).
+      // First copy TorBirdyPrefs to TorBirdyOldPrefs.
+      TorBirdyOldPrefs.push.apply(TorBirdyOldPrefs, Object.keys(TorBirdyPrefs));
+
       for (var i = 0; i < TorBirdyOldPrefs.length; i++) {
         var oldPref = TorBirdyOldPrefs[i];
         var type = this.prefs.getPrefType(oldPref);
