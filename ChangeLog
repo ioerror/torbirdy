@@ -6,8 +6,8 @@
     - Japanese, Malay, Russian
   * Show the Sender header in message pane (closes #10226)
   * Draft messages on IMAP accounts are now saved locally (closes #10309)
-  * Remove all traces of TorBirdy's installation including restoring all
-    preferences (closes #10588)
+  * Restore preferences to the user's own defaults instead of Thunderbird's
+    (closes #10588)
 
 0.1.2, 04 Nov 2013
 
