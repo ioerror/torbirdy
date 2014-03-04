@@ -8,6 +8,8 @@
   * Draft messages on IMAP accounts are now saved locally (closes #10309)
   * Restore preferences to the user's own defaults instead of Thunderbird's
     (closes #10588)
+  * network.proxy.no_proxies_on is no longer set to "localhost, 127.0.0.1"
+    (thanks for Carsten N.)
 
 0.1.2, 04 Nov 2013
 
