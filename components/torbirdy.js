@@ -45,7 +45,6 @@ const TorBirdyPrefs = {
   "network.proxy.socks": "127.0.0.1",
   "network.proxy.socks_port": 9150,
   "network.proxy.socks_version": 5,
-  "network.proxy.no_proxies_on": "localhost, 127.0.0.1",
 
   // Set DNS proxying through SOCKS5.
   "network.proxy.socks_remote_dns": true,

@@ -89,6 +89,18 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
         identity.draftFolder = "mailbox://nobody@Local%20Folders/Drafts";
       }
 
+      // Do not check for new messages at startup.
+      var loginAtStartup = 'mail.server.%serverkey%.login_at_startup';
+      var loginAtStartupPref = loginAtStartup.replace("%serverkey%", serverkey);
+      prefs.setBoolPref(loginAtStartupPref, false);
+
+      // Do not automatically download new messages.
+      if (protocol === "pop3") {
+        var downloadOnBiff = 'mail.server.%serverkey%.download_on_biff';
+        var downloadOnBiffPref = downloadOnBiff.replace("%serverkey%", serverkey);
+        prefs.setBoolPref(downloadOnBiffPref, false);
+      }
+
       // From comm-release/mailnews/base/prefs/content/accountcreation/emailWizard.js : onAdvancedSetup().
       var windowManager = Cc["@mozilla.org/appshell/window-mediator;1"]
           .getService(Ci.nsIWindowMediator);
