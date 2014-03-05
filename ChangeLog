@@ -3,7 +3,8 @@
   * The default keyserver (hidden service) has been updated:
     - hkp://qdigse2yzvuglcix.onion
   * New translations:
-    - Japanese, Malay, Russian
+    - Japanese, Malay, Russian, French (Canada), Farsi (Persian), Khmer,
+    Korean, Norwegian Bokmål, Ukrainian
   * Show the Sender header in message pane (closes #10226)
   * Draft messages on IMAP accounts are now saved locally (closes #10309)
   * Restore preferences to the user's own defaults instead of Thunderbird's
