@@ -1,0 +1,63 @@
+<!ENTITY torbirdy.accountprefs.title "Конфігурація Аккаунта">
+<!ENTITY torbirdy.accountprefs.startup.label "Перевіряти наявність нових повідомлень під час запуску">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Перевіряти наявність нових повідомлень кожні">
+<!ENTITY torbirdy.accountprefs.minutes.key "r">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "Хвилин">
+<!ENTITY torbirdy.accountprefs.cancel.button "Відміна">
+<!ENTITY torbirdy.accountprefs.save.button "Зберегти">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "Налаштування TorBirdy">
+<!ENTITY torbirdy.prefs.save.button "Зберегти">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Відмова">
+<!ENTITY torbirdy.prefs.extra2.button "За Замовчуванням">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "Тестувати налаштування проксі">
+<!ENTITY torbirdy.prefs.testproxy.key "p">
+<!ENTITY torbirdy.prefs.proxy.label "Проксі">
+<!ENTITY torbirdy.prefs.privacy.label "Приватність">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Захист">
+<!ENTITY torbirdy.prefs.recommended.text "Використовувати рекомендовані параметри проксі-сервера для TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Оберіть сервіс анонімізації">
+<!ENTITY torbirdy.prefs.anonservice.key "а">
+<!ENTITY torbirdy.prefs.customsettings.text "Використовувати звичайні налаштування проксі">
+<!ENTITY torbirdy.prefs.customsettings.key "с">
+<!ENTITY torbirdy.prefs.socks_host.label "Вузол SOCKS:">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Порт:">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "Наскрізна тарифікація (попередження: необхідно спеціальний transproxy або Tor маршрутизатор)">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "Глобальні">
+<!ENTITY torbirdy.prefs.imap.label "Активувати примусову підтримку по електронній пошті IMAP акаунтів [за замовчуванням: відключено]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "Вибір останньої поштової папки, до якої здійснювався доступ при старті [за замовчуванням: відключено]">
+<!ENTITY torbirdy.prefs.startup_folder.key "p">
+<!ENTITY torbirdy.prefs.timezone.label "Не встановлювати часовий пояс Thunderbird по Гринвічу [за замовчуванням: встановити по Гринвічу]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Не вставляти ідентифікатори ключів у зашифровані повідомлення [за замовчуванням: вставляти]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
+<!ENTITY torbirdy.prefs.confirmemail.label "Підтверджувати перед відправкою листа, якщо Enigmail активний [за замовчуванням: не підтверджувати]">
+<!ENTITY torbirdy.prefs.confirmemail.key "c">
+<!ENTITY torbirdy.prefs.emailwizard.label "Активувати автоматичний майстер налаштування пошти Thunderbird [за замовчуванням: неактивований]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.automatic.label "Автоматично перевіряти нові повідомлення для всіх облікових записів [за замовчуванням: відключено]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
+<!ENTITY torbirdy.prefs.renegotiation.label "Дозволити з'єднання з серверами, що не підтримують SSL/TLS з безпечним узгодженням [за замовчуванням: не дозволяти]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
+<!ENTITY torbirdy.prefs.account_specific "Визначається обліковим записом">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Виберіть акаунт:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Сервер(и) ключів для використання:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
+
+<!ENTITY torbirdy.panel.usetor.label "Використовувати Tor Onion маршрутизатор">
+<!ENTITY torbirdy.panel.usejondo.label "Використовувати JonDo ">
+<!ENTITY torbirdy.panel.usewhonix.label "Використовувати Whonix">
+<!ENTITY torbirdy.panel.preferences.label "Відкрити налаштування TorBirdy">
+
+<!ENTITY torbirdy.firstrun.title "Перший запуск TorBirdy">

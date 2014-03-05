@@ -2,7 +2,8 @@
 
 # Script to fetch and update translations. Modified from tor-launcher.
 
-BUNDLE_LOCALES="ar da eu he lv pa pt-BR tr cs de es fr it nl pl sv zh-CN ms-MY ja ru"
+BUNDLE_LOCALES="ar da eu he lv pa pt-BR tr cs de es fr it nl pl sv zh-CN \
+               ms-MY ja ru fa uk ko km fr-CA nb"
 
 if [ -d translation ];
 then

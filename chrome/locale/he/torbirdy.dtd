@@ -1,5 +1,5 @@
-<!ENTITY torbirdy.accountprefs.title "הגדרות החשבון">
-<!ENTITY torbirdy.accountprefs.startup.label "בדוק אם התקבלו הודעות חדשות בעת ההפעלה">
+<!ENTITY torbirdy.accountprefs.title "תצורת החשבון">
+<!ENTITY torbirdy.accountprefs.startup.label "בדוק אם התקבלו הודעות חדשות בעת הפעלה">
 <!ENTITY torbirdy.accountprefs.startup.key "C">
 <!ENTITY torbirdy.accountprefs.minutes.label "בדוק אם התקבלו הודעות חדשות בכל">
 <!ENTITY torbirdy.accountprefs.minutes.key "y">
@@ -8,7 +8,7 @@
 <!ENTITY torbirdy.accountprefs.save.button "שמור">
 <!ENTITY torbirdy.accountprefs.save.key "S">
 
-<!ENTITY torbirdy.prefs.title "הגדדרות עבור TorBirdy">
+<!ENTITY torbirdy.prefs.title "העדפות TorBirdy">
 <!ENTITY torbirdy.prefs.save.button "שמור">
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "ביטול">
@@ -20,13 +20,13 @@
 <!ENTITY torbirdy.prefs.privacy.label "פרטיות">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
 <!ENTITY torbirdy.prefs.security.label "אבטחה">
-<!ENTITY torbirdy.prefs.recommended.text "השתמש בהגדרות המומלצות עבור TorBirdy ‏(Tor)">
+<!ENTITY torbirdy.prefs.recommended.text "השתמש בהגדרות פרוקסי מומלצות עבור TorBirdy ‏(Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
-<!ENTITY torbirdy.prefs.anonservice.text "בחר שרות עבור אלמוניות">
+<!ENTITY torbirdy.prefs.anonservice.text "בחר שרות אלמוניות">
 <!ENTITY torbirdy.prefs.anonservice.key "a">
-<!ENTITY torbirdy.prefs.customsettings.text "השתמש בהגדרות מותאמות אישית עבור שרת הפרוקסי">
+<!ENTITY torbirdy.prefs.customsettings.text "השתמש בהגדרות פרוקסי מותאמות אישית">
 <!ENTITY torbirdy.prefs.customsettings.key "c">
-<!ENTITY torbirdy.prefs.socks_host.label "כתובת שרת פרוקסי מסוג SOCKS: ">
+<!ENTITY torbirdy.prefs.socks_host.label "מארח SOCKS: ">
 <!ENTITY torbirdy.prefs.socks_host.key "h">
 <!ENTITY torbirdy.prefs.socks_port.label "פורט:">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
@@ -35,19 +35,19 @@
 <!ENTITY torbirdy.prefs.global "גלובאלי">
 <!ENTITY torbirdy.prefs.imap.label "אפשר תמיכת דחיפת דוא״ל עבור חשבונות IMAP [ברירת מחדל: מנוטרל]">
 <!ENTITY torbirdy.prefs.imap.key "p">
-<!ENTITY torbirdy.prefs.startup_folder.label "בחר את תיקיית הדואר האחרונה אשר נבחרה [ברירת מחדל: מנוטרל]">
+<!ENTITY torbirdy.prefs.startup_folder.label "בחר את תיקיית הדואר האחרונה אשר נבחרה בעת הפעלה [ברירת מחדל: מנוטרל]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
-<!ENTITY torbirdy.prefs.timezone.label "אל תקבע את איזור הזמן של Thunderbird לUTC [ברירת מחדל: קבע לUTC]">
+<!ENTITY torbirdy.prefs.timezone.label "אל תקבע את אזור הזמן של Thunderbird אל UTC [ברירת מחדל: קבע אל UTC]">
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "אל תשים את מזהי מפתח המקבל בתוך הודעות מוצפנות [ברירת מחדל: השם]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
-<!ENTITY torbirdy.prefs.confirmemail.label "וודא לפני שליחת דוא״ל כאשר Enigmail מופעל [ברירת מחדל: אל תוודא]">
+<!ENTITY torbirdy.prefs.confirmemail.label "וודא טרם שליחת דוא״ל כי Enigmail מאופשר [ברירת מחדל: אל תוודא]">
 <!ENTITY torbirdy.prefs.confirmemail.key "c">
-<!ENTITY torbirdy.prefs.emailwizard.label "הפעל את אשף הגדרות הדוא״ל של Thunderbird [ברירת מחדל: מנוטרל]">
+<!ENTITY torbirdy.prefs.emailwizard.label "הפעל את אשף הגדרות הדוא״ל האוטומטי של Thunderbird [ברירת מחדל: מנוטרל]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
-<!ENTITY torbirdy.prefs.automatic.label "בדוק עבור הודעות חדשות אוטומטית עבור כל החשבונות [ברירת מחדל: מנוטרל]">
+<!ENTITY torbirdy.prefs.automatic.label "בדוק אם התקבלו הודעות חדשות אוטומטית עבור כל החשבונות [ברירת מחדל: מנוטרל]">
 <!ENTITY torbirdy.prefs.automatic.key "f">
-<!ENTITY torbirdy.prefs.renegotiation.label "הרשה חיבורית לשרתים שאינם תומכים בSSL/TLS עם חידוש משא ומתן מאובטח [ברירת מחדל: לא להרשות]">
+<!ENTITY torbirdy.prefs.renegotiation.label "התר חיבורית לשרתים שאינם תומכים בהצפנות SSL/TLS עם חידוש משא ומתן מאובטח [ברירת מחדל: אל תתיר]">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "חשבון ספציפי">
 <!ENTITY torbirdy.prefs.select_account.key "C">
@@ -55,9 +55,9 @@
 <!ENTITY torbirdy.prefs.enigmail.keyserver.label "שרת(י) הפצת מפתחות:">
 <!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
-<!ENTITY torbirdy.panel.usetor.label "תשתמש ב Tor Onion Router">
+<!ENTITY torbirdy.panel.usetor.label "תשתמש בנתב Tor Onion Router">
 <!ENTITY torbirdy.panel.usejondo.label "תשתמש ב  JonDo ‏(Premium)">
 <!ENTITY torbirdy.panel.usewhonix.label "השתמש ב Whonix">
-<!ENTITY torbirdy.panel.preferences.label "פתח עדיפויות TorBirdy">
+<!ENTITY torbirdy.panel.preferences.label "פתח העדפות TorBirdy">
 
 <!ENTITY torbirdy.firstrun.title "הפעלה ראשונה של TorBirdy">

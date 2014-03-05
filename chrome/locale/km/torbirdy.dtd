@@ -1,0 +1,63 @@
+<!ENTITY torbirdy.accountprefs.title "ការ​កំណត់​រចនាសម្ព័ន្ធ​គណនី">
+<!ENTITY torbirdy.accountprefs.startup.label "ពិនិត្យមើល​សារ​ថ្មីៗ​នៅ​ពេល​ចាប់ផ្ដើម">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "ពិនិត្យមើល​រាល់​សារ​ថ្មីៗ">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "នាទី">
+<!ENTITY torbirdy.accountprefs.cancel.button "បោះបង់">
+<!ENTITY torbirdy.accountprefs.save.button "រក្សាទុក">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "ចំណូលចិត្ត TorBirdy">
+<!ENTITY torbirdy.prefs.save.button "រក្សាទុក">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "បោះបង់">
+<!ENTITY torbirdy.prefs.extra2.button "ស្ដារ​លំនាំដើម">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "ការ​កំណត់​ប្រូកស៊ី​សាកល្បង">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
+<!ENTITY torbirdy.prefs.proxy.label "ប្រូកស៊ី">
+<!ENTITY torbirdy.prefs.privacy.label "ភាព​ឯកជន">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "សន្តិសុខ">
+<!ENTITY torbirdy.prefs.recommended.text "ប្រើ​ការ​កំណត់​ប្រូកស៊ី​ដែល​ផ្ដល់​អនុសាសន៍​សម្រាប់ (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "ជ្រើស​សេវាកម្ម anonymization">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "ប្រើ​ការ​កំណត់​ប្រូកស៊ី​ផ្ទាល់ខ្លួន">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "ម៉ាស៊ីន SOCKS ៖">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "ច្រក៖">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "Transparent Torification (ការ​ព្រមាន៖ ទាមទារ transproxy ឬ​រ៉ោតទ័រ​របស់ Tor ផ្ទាល់​ខ្លួន)">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "សកល">
+<!ENTITY torbirdy.prefs.imap.label "អនុញ្ញាត​​ការ​ជំរុញ​ការ​គាំទ្រ​អ៊ីមែល​សម្រាប់​គណនី IMAP [លំនាំដើម៖ បាន​បិទ]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "ជ្រើស​ថត​សំបុត្រ​ដែល​បាន​ចូល​ដំណើរការ​ចុច​ក្រោយ​នៅ​ពេល​ចាប់ផ្ដើម [លំនាំដើម​៖ បាន​បិទ]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "កុំ​កំណត់​តំបន់​ពេលវេលា​របស់ Thunderbird ទៅ UTC [លំនាំដើម៖ កំណត់​ទៅ UTC]">
+<!ENTITY torbirdy.prefs.timezone.key "z">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "កុំ​ដាក់​លេខ​សម្គាល់​ពាក្យ​គន្លឹះ​​អ្នក​ទទួល​ជា​សារ​ដែល​បាន​ដាក់​​លេខ​កូដ  [លំនាំដើម៖ ដាក់]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
+<!ENTITY torbirdy.prefs.confirmemail.label "បញ្ជាក់​មុន​ពេល​ផ្ញើ​អ៊ីមែល​ ប្រសិនបើ Enigmail ត្រូវ​បាន​បើក [លំនាំដើម៖ កុំ​បញ្ជាក់]">
+<!ENTITY torbirdy.prefs.confirmemail.key "c">
+<!ENTITY torbirdy.prefs.emailwizard.label "បើក​អ្នក​ជំនួយការ​ការ​កំណត់​រចនាសម្ព័ន្ធ​អ៊ីមែល​ស្វ័យប្រវត្តិ​របស់ Thunderbird [លំនាំដើម៖ បាន​បិទ]">
+<!ENTITY torbirdy.prefs.emailwizard.key "w">
+<!ENTITY torbirdy.prefs.automatic.label "ពិនិត្យមើល​សារ​ថ្មីៗ​ដោយ​ស្វ័យប្រវត្តិ​សម្រាប់​គណនី​ទាំងអស់ [លំនាំដើម៖ បាន​បិទ]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
+<!ENTITY torbirdy.prefs.renegotiation.label "អនុញ្ញាត​ឲ្យ​​តភ្ជាប់​ទៅ​ម៉ាស៊ីន​មេ​ដែល​មិន​គាំទ្រ SSL/TLS ដោយ​ប្រើ​កិច្ច​ពិភាក្សា​សុវត្ថិភាព [លំនាំដើម៖ មិន​អនុញ្ញាត]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
+<!ENTITY torbirdy.prefs.account_specific "គណនី​ជាក់លាក់">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "ជ្រើស​គណនី៖">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "សោ​ម៉ាស៊ីន​មេ​ត្រូវ​ប្រើ៖">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
+
+<!ENTITY torbirdy.panel.usetor.label "ប្រើ Tor Onion Router">
+<!ENTITY torbirdy.panel.usejondo.label "ប្រើ JonDo (Premium)">
+<!ENTITY torbirdy.panel.usewhonix.label "ប្រើ Whonix">
+<!ENTITY torbirdy.panel.preferences.label "បើក​ចំណូលចិត្ត TorBirdy">
+
+<!ENTITY torbirdy.firstrun.title "ការ​ដំណើរការ​ដំបូង​សម្រាប់ TorBirdy">
