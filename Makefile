@@ -8,14 +8,14 @@ clean:
 	rm -f ../torbirdy-$(VERSION).xpi
 
 git-tag:
-	git tag -u 0xD81D840E -s $(VERSION)
+	git tag -u 0xD255D3F5C868227F -s $(VERSION)
 
 git-push:
 	git push --tags
 	git push
 
 sign-release:
-	gpg -u 0xD81D840E -abs ../torbirdy-${VERSION}.xpi$
+	gpg -u 0xD255D3F5C868227F -abs ../torbirdy-${VERSION}.xpi$
 	sha1sum ../torbirdy-${VERSION}.xpi$
 
 push-release:
