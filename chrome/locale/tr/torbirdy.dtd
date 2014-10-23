@@ -4,14 +4,14 @@
 <!ENTITY torbirdy.accountprefs.minutes.label "Yeni ileti denetleme süresi">
 <!ENTITY torbirdy.accountprefs.minutes.key "y">
 <!ENTITY torbirdy.accountprefs.minutes.trail.label "dakika">
-<!ENTITY torbirdy.accountprefs.cancel.button "İptal">
+<!ENTITY torbirdy.accountprefs.cancel.button "Vazgeç">
 <!ENTITY torbirdy.accountprefs.save.button "Kaydet">
 <!ENTITY torbirdy.accountprefs.save.key "S">
 
 <!ENTITY torbirdy.prefs.title "TorBirdy Seçenekleri">
 <!ENTITY torbirdy.prefs.save.button "Kaydet">
 <!ENTITY torbirdy.prefs.save.key "s">
-<!ENTITY torbirdy.prefs.cancel.button "İptal
+<!ENTITY torbirdy.prefs.cancel.button "Vazgeç
             ">
 <!ENTITY torbirdy.prefs.extra2.button "Varsayılan Ayarlar">
 <!ENTITY torbirdy.prefs.extra2.key "d">
@@ -21,20 +21,20 @@
 <!ENTITY torbirdy.prefs.privacy.label "Gizlilik">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
 <!ENTITY torbirdy.prefs.security.label "Güvenlik">
-<!ENTITY torbirdy.prefs.recommended.text "TorBirdy(Tor)  için önerilen proxy ayarlarını kullan">
+<!ENTITY torbirdy.prefs.recommended.text "TorBirdy (Tor) için önerilen vekil sunucu ayarlarını kullan">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Anonimleştirme servisi seçin. ">
 <!ENTITY torbirdy.prefs.anonservice.key "a">
-<!ENTITY torbirdy.prefs.customsettings.text "Özel proxy ayarları kullan">
+<!ENTITY torbirdy.prefs.customsettings.text "Özel vekil sunucu ayarları kullan">
 <!ENTITY torbirdy.prefs.customsettings.key "c">
 <!ENTITY torbirdy.prefs.socks_host.label "SOCKS Konuğu:">
 <!ENTITY torbirdy.prefs.socks_host.key "h">
-<!ENTITY torbirdy.prefs.socks_port.label "Port: ">
+<!ENTITY torbirdy.prefs.socks_port.label "Bağl. Nok.:">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
-<!ENTITY torbirdy.prefs.torification.label "Transparan Tor Bildirimleri (uyarı: özel olarak ayarlanmış Transproxy ya da Tor router gerekir)">
+<!ENTITY torbirdy.prefs.torification.label "Şeffaf Tor Bildirimleri (uyarı: özel olarak ayarlanmış Transproxy ya da Tor yönlendirici gerekir)">
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "Küresel">
-<!ENTITY torbirdy.prefs.imap.label "IMAP hesapları için Push E-mail teknolojisini aktifleştir [varsayılan: pasif]">
+<!ENTITY torbirdy.prefs.imap.label "IMAP hesapları için Push (İtme) e-posta desteğini etkinleştir [varsayılan: devre dışı]">
 <!ENTITY torbirdy.prefs.imap.key "p">
 <!ENTITY torbirdy.prefs.startup_folder.label "Başlangıçta en son erişilen posta klasörünü seç [öntanımlı: devre dışı]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
@@ -42,9 +42,9 @@
 <!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Şifrelenmiş iletiye alıcı anahtar kimliğini koyma [öntanımlı: koy]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "p">
-<!ENTITY torbirdy.prefs.confirmemail.label "Eğer Enigmail etkin ise email yollamadan önce onayla [default: do not confirm]">
+<!ENTITY torbirdy.prefs.confirmemail.label "Eğer Enigmail etkin ise e-posta yollamadan önce onayla [varsayılan: onaylama]">
 <!ENTITY torbirdy.prefs.confirmemail.key "c">
-<!ENTITY torbirdy.prefs.emailwizard.label "Thunderbird'ün otomatik eposta ayarı sihirbazını aktifleştir [varsayılan: pasif]">
+<!ENTITY torbirdy.prefs.emailwizard.label "Thunderbird'ün otomatik e-posta ayarı sihirbazını etkinleştir [varsayılan: devre dışı]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.automatic.label "Tüm hesaplar için iletileri otomatik olarak denetle [öntanımlı: devre dışı]">
 <!ENTITY torbirdy.prefs.automatic.key "f">

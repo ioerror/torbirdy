@@ -1,0 +1,63 @@
+<!ENTITY torbirdy.accountprefs.title "Configuració del compte">
+<!ENTITY torbirdy.accountprefs.startup.label "En iniciar, comprova si hi ha missatges nous">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Comprova si hi ha missatges nous cada">
+<!ENTITY torbirdy.accountprefs.minutes.key "r">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "minuts">
+<!ENTITY torbirdy.accountprefs.cancel.button "Cancel·la">
+<!ENTITY torbirdy.accountprefs.save.button "Desa">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "Preferències TorBirdy">
+<!ENTITY torbirdy.prefs.save.button "Desa">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Cancel·la">
+<!ENTITY torbirdy.prefs.extra2.button "Reestableix predeterminats">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "Configuració del servidor intermediari de prova">
+<!ENTITY torbirdy.prefs.testproxy.key "p">
+<!ENTITY torbirdy.prefs.proxy.label "Servidor intermedi">
+<!ENTITY torbirdy.prefs.privacy.label "Privadesa">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Seguretat">
+<!ENTITY torbirdy.prefs.recommended.text "Utilitzar la configuració del servidor intermediari recomanat per TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Tria un servei de forma anònima">
+<!ENTITY torbirdy.prefs.anonservice.key "p">
+<!ENTITY torbirdy.prefs.customsettings.text "Utilitza una configuració del proxy personalitzada">
+<!ENTITY torbirdy.prefs.customsettings.key "p">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Amfitrió: ">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Port:">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "Torificació Transparent (alerta: requereix un router Tor o un proxy transparent ambdós personalitzats)">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "Global">
+<!ENTITY torbirdy.prefs.imap.label "Activa el suport de correu push per a comptes IMAP [per defecte: desactivat]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "Selecciona la carpeta de l'últim correu obert a l'inici [per defecte: desactivat]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "No configuris Thunderbird amb el time zone de UTC [per defecte: si]">
+<!ENTITY torbirdy.prefs.timezone.key "p">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "No posis les claus ID dels destinataris en els missatges xifrats [per defecte: si]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
+<!ENTITY torbirdy.prefs.confirmemail.label "Abans d'enviar el mail, confirmar si Enigmail es troba activat [Predeterminat: No confirmar]">
+<!ENTITY torbirdy.prefs.confirmemail.key "c">
+<!ENTITY torbirdy.prefs.emailwizard.label "Activa l'ajuda de configuració automàtica per Thunderbird [per defecte: desactivat]">
+<!ENTITY torbirdy.prefs.emailwizard.key "p">
+<!ENTITY torbirdy.prefs.automatic.label "Revisa els nous missatges automàticament per a tots els comptes [per defecte: desactivat]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
+<!ENTITY torbirdy.prefs.renegotiation.label "Permetre connexions a servidors que no suporten SSL/TLS amb renegociació segura [per defecte: no permès]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
+<!ENTITY torbirdy.prefs.account_specific "Per compte">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Trieu un compte:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Keyserver(s) a utilitzar:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
+
+<!ENTITY torbirdy.panel.usetor.label "Utilitzar Tor Onion Router">
+<!ENTITY torbirdy.panel.usejondo.label "Utilitza JonDo (Premium)">
+<!ENTITY torbirdy.panel.usewhonix.label "Utilitzar Whonix">
+<!ENTITY torbirdy.panel.preferences.label "Obre Opcions de TorBirdy">
+
+<!ENTITY torbirdy.firstrun.title "Primer inici de TorBirdy">

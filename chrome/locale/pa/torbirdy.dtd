@@ -1,18 +1,18 @@
-<!ENTITY torbirdy.accountprefs.title "ਅਕਾਊਂਟਸ ਸੇਟਿਂਗ">
-<!ENTITY torbirdy.accountprefs.startup.label "ਸ਼ੁਰੂ ਕਰਨ ਸਮੇਂ ਨਵੇਂ ਸੁਨੇਹੇ ਲਈ ਚੈੱਕ ਕਰੋ">
+<!ENTITY torbirdy.accountprefs.title "ਖਾਤਾ ਸੰਰਚਨਾ">
+<!ENTITY torbirdy.accountprefs.startup.label "ਸ਼ੁਰੂ ਕਰਨ ਸਮੇਂ ਨਵੇਂ ਸੁਨੇਹੇ ਲਈ ਜਾਂਚ ਕਰੋ">
 <!ENTITY torbirdy.accountprefs.startup.key "C">
-<!ENTITY torbirdy.accountprefs.minutes.label "ਨਵੇਂ ਸੁਨੇਹੇ ਦੀ ਹਰ">
-<!ENTITY torbirdy.accountprefs.minutes.key "k">
-<!ENTITY torbirdy.accountprefs.minutes.trail.label "ਮਿੰਟ ਬਾਅਦ ਜਾਂਚ ਕਰੋ">
+<!ENTITY torbirdy.accountprefs.minutes.label "ਨਵੇਂ ਸੁਨੇਹਿਆਂ ਲਈ ਜਾਂਚ ਕਰੋ ਹਰੇਕ">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "ਮਿੰਟ">
 <!ENTITY torbirdy.accountprefs.cancel.button "ਰੱਦ ਕਰੋ">
 <!ENTITY torbirdy.accountprefs.save.button "ਠੀਕ ਹੈ">
 <!ENTITY torbirdy.accountprefs.save.key "S">
 
-<!ENTITY torbirdy.prefs.title "ਮੇਰੀ ਪਸੰਦ">
-<!ENTITY torbirdy.prefs.save.button "ਠੀਕ ਹੈ">
-<!ENTITY torbirdy.prefs.save.key "S">
+<!ENTITY torbirdy.prefs.title "ਟੋਰਬਰਡੀ ਮੇਰੀ ਪਸੰਦ">
+<!ENTITY torbirdy.prefs.save.button "ਸੰਭਾਲੋ">
+<!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "ਰੱਦ ਕਰੋ">
-<!ENTITY torbirdy.prefs.extra2.button "Restore Defaults">
+<!ENTITY torbirdy.prefs.extra2.button "ਮੂਲ ਮੁੜ-ਸਟੋਰ ਕਰੋ">
 <!ENTITY torbirdy.prefs.extra2.key "d">
 <!ENTITY torbirdy.prefs.testproxy.button "ਪਰਾਕਸੀ ਟੈਸਟ ਕਰੋ">
 <!ENTITY torbirdy.prefs.testproxy.key "n">
@@ -20,15 +20,15 @@
 <!ENTITY torbirdy.prefs.privacy.label "ਪਰਾਈਵੇਸੀ">
 <!ENTITY torbirdy.prefs.enigmail.label "ਏਨਿਗਮੇਲ">
 <!ENTITY torbirdy.prefs.security.label "ਸੁਰੱਖਿਆ">
-<!ENTITY torbirdy.prefs.recommended.text "ਟੌਰਬਰਡੀ ਲਈ ਆਖੀ ਹੋਈ ਪਰਾਕਸੀ ਸੈਟਿੰਗ ਵਰਤੋ ਕਰੋ (ਟੌਰ)">
+<!ENTITY torbirdy.prefs.recommended.text "ਟੋਰਬਰਡੀ ਲਈ ਆਖੀ ਹੋਈ ਪਰਾਕਸੀ ਸੈਟਿੰਗ ਵਰਤੋਂ ਕਰੋ (ਟੋਰ)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
-<!ENTITY torbirdy.prefs.anonservice.text "ਗੁਪਤ ਸਰਵਿਸ ਚੁਣ ਕਰੋ">
+<!ENTITY torbirdy.prefs.anonservice.text "ਅਗਿਆਤ ਸੇਵਾ ਚੁਣੋ">
 <!ENTITY torbirdy.prefs.anonservice.key "a">
-<!ENTITY torbirdy.prefs.customsettings.text "ਖੁਦ ਪਰਾਕਸੀ ਸੇਟਿਂਗ ਦਿਓ">
+<!ENTITY torbirdy.prefs.customsettings.text "ਆਪਣੀ ਪਰਾਕਸੀ ਸੈਟਿੰਗ ਵਰਤੋਂ">
 <!ENTITY torbirdy.prefs.customsettings.key "c">
 <!ENTITY torbirdy.prefs.socks_host.label "SOCKS ਹੋਸਟ: ">
 <!ENTITY torbirdy.prefs.socks_host.key "h">
-<!ENTITY torbirdy.prefs.socks_port.label "ਪੋਰਟ">
+<!ENTITY torbirdy.prefs.socks_port.label "ਪੋਰਟ:">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
 <!ENTITY torbirdy.prefs.torification.label "Transparent Torification">
 <!ENTITY torbirdy.prefs.torification.key "t">
@@ -50,15 +50,15 @@
 <!ENTITY torbirdy.prefs.automatic.key "f">
 <!ENTITY torbirdy.prefs.renegotiation.label "ਜੇ ਸਰਵਰ ਤੇ  SSL /TLS Secure  Regontiation ਦੀ ਸਹਾਇਤਾ ਨਹੀਂ ਹੈ ਤਾਂ ਵੀ ਕਨੇਕਟ ਕਰੋ">
 <!ENTITY torbirdy.prefs.renegotiation.key "r">
-<!ENTITY torbirdy.prefs.account_specific "ਅਕਾਊਂਟ-ਵਿਸ਼ਿਸ਼ਟ">
+<!ENTITY torbirdy.prefs.account_specific "ਖਾਤਾ-ਖਾਸ">
 <!ENTITY torbirdy.prefs.select_account.key "C">
-<!ENTITY torbirdy.prefs.select_account.label "ਅਕਾਊਂਟ ਚੁਣੋ">
+<!ENTITY torbirdy.prefs.select_account.label "ਖਾਤਾ ਚੁਣੋ:">
 <!ENTITY torbirdy.prefs.enigmail.keyserver.label "ਕਿਹੜਾ ਕੀਸਰਵਰ ਵਰਤੋ:">
 <!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
-<!ENTITY torbirdy.panel.usetor.label "ਟੌਰ ਦੀ ਵਰਤੋ ਕਰੋ">
-<!ENTITY torbirdy.panel.usejondo.label "ਜੋਨ ਦੋ ਦੀ ਵਰਤੋ ਕਰੋ (ਪ੍ਰੀਮੀਅਮ)">
+<!ENTITY torbirdy.panel.usetor.label "ਟੋਰ ਓਨੀਅਨ ਰਾਊਟਰ ਵਰਤੋਂ">
+<!ENTITY torbirdy.panel.usejondo.label "ਜੋਨ-ਡੂ ਵਰਤੋ (ਪ੍ਰੀਮੀਅਮ)">
 <!ENTITY torbirdy.panel.usewhonix.label "ਹੁਨਿਕਸ ਦੀ ਵਰਤੋ ਕਰੋ">
-<!ENTITY torbirdy.panel.preferences.label "ਟੌਰਬਰਡੀ ਸੈਟਿੰਗ">
+<!ENTITY torbirdy.panel.preferences.label "ਟੋਰਬਰਡੀ ਪਸੰਦ ਖੋਲ੍ਹੋ">
 
 <!ENTITY torbirdy.firstrun.title "ਟੌਰਬਰਡੀ ਪਹਿਲੀ ਵਾਰ">

@@ -1,0 +1,68 @@
+<!ENTITY torbirdy.accountprefs.title "Подешавање налога">
+<!ENTITY torbirdy.accountprefs.startup.label "Провјери нове поруке одмах након покретања">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Провјери нове поруке сваких">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "минута">
+<!ENTITY torbirdy.accountprefs.cancel.button "Откажи">
+<!ENTITY torbirdy.accountprefs.save.button "Запамти">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "TorBirdy подешавања">
+<!ENTITY torbirdy.prefs.save.button "Запамти">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Откажи">
+<!ENTITY torbirdy.prefs.extra2.button "Поврати подразумевано">
+<!ENTITY torbirdy.prefs.extra2.key "д">
+<!ENTITY torbirdy.prefs.testproxy.button "Testirajte proxy podesavanja">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Privatnost">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Sigurnost">
+<!ENTITY torbirdy.prefs.recommended.text "Користите препоручена прокси подешавања за TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Изаберите сервис заштите (анонимности)">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "Кориштење не стандардних прокси подешавања">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Host: ">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Port: ">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "транспарентан Torification">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "Globalno">
+<!ENTITY torbirdy.prefs.imap.label "Укључите просљеђивање порука према вашем IMAP налогу [стандардно: искључено]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "Odaberite poslednji pristupljeni folder za mail pri pokretanju.
+[standardno podesavanje: iskljuceno]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "Ne postavljaj UTC kao vremensku zonu za Thunderbird">
+<!ENTITY torbirdy.prefs.timezone.key "s">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Не стављајте кључена ИД примаоца у кодирану порука [дефаулт: пут]
+">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
+<!ENTITY torbirdy.prefs.confirmemail.label "Potvrdi pre slanja ukoliko je Enigmail omogućen ">
+<!ENTITY torbirdy.prefs.confirmemail.key "c">
+<!ENTITY torbirdy.prefs.emailwizard.label "Ukljucite Thunderbird-ov carobnjak za automatsku email konfiguraciju.
+[standardno podesavanje: iskljuceno]">
+<!ENTITY torbirdy.prefs.emailwizard.key "a">
+<!ENTITY torbirdy.prefs.automatic.label "Проверите за нове поруке се аутоматски за све рачуне [дефаулт: искључен]
+">
+<!ENTITY torbirdy.prefs.automatic.key "ф">
+<!ENTITY torbirdy.prefs.renegotiation.label "Dozvolite povezivanje na servere koji ne podrzavaju SSL/TLS sa sigurnom rekonfiguracijom
+[standardn podesavanje: ne dozvoljavaj]">
+<!ENTITY torbirdy.prefs.renegotiation.key "r">
+<!ENTITY torbirdy.prefs.account_specific "Специјално-за налог">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Изабери налог: ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Kljucni server(i) za upotrebu:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "s">
+
+<!ENTITY torbirdy.panel.usetor.label "Koristi Tor Onion Router">
+<!ENTITY torbirdy.panel.usejondo.label "Koristi JonDo (Premium)">
+<!ENTITY torbirdy.panel.usewhonix.label "Koristi Whonix">
+<!ENTITY torbirdy.panel.preferences.label "Otvori TorBirdy Preferences">
+
+<!ENTITY torbirdy.firstrun.title "Torbirdy Prvi ">

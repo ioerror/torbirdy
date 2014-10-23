@@ -1,0 +1,63 @@
+<!ENTITY torbirdy.accountprefs.title "Fiók beállítások">
+<!ENTITY torbirdy.accountprefs.startup.label "Új üzenetek keresése indításkor">
+<!ENTITY torbirdy.accountprefs.startup.key "S">
+<!ENTITY torbirdy.accountprefs.minutes.label "Új üzenetek keresése">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "percenként">
+<!ENTITY torbirdy.accountprefs.cancel.button "Mégsem">
+<!ENTITY torbirdy.accountprefs.save.button "Ment">
+<!ENTITY torbirdy.accountprefs.save.key "M">
+
+<!ENTITY torbirdy.prefs.title "TorBirdy Beállítások">
+<!ENTITY torbirdy.prefs.save.button "Mentés">
+<!ENTITY torbirdy.prefs.save.key "m">
+<!ENTITY torbirdy.prefs.cancel.button "Mégsem">
+<!ENTITY torbirdy.prefs.extra2.button "Alapértékek visszaállítása">
+<!ENTITY torbirdy.prefs.extra2.key "a">
+<!ENTITY torbirdy.prefs.testproxy.button "Proxy beállítások tesztelése">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Adatvédelem">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Biztonság">
+<!ENTITY torbirdy.prefs.recommended.text "Az ajánlott proxy beállítások használata a TorBirdy (Tor) használatához">
+<!ENTITY torbirdy.prefs.recommended.key "a">
+<!ENTITY torbirdy.prefs.anonservice.text "Névtelenné tevő szerver választása">
+<!ENTITY torbirdy.prefs.anonservice.key "n">
+<!ENTITY torbirdy.prefs.customsettings.text "Egyéni proxy beállítások használata">
+<!ENTITY torbirdy.prefs.customsettings.key "p">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS gép:">
+<!ENTITY torbirdy.prefs.socks_host.key "g">
+<!ENTITY torbirdy.prefs.socks_port.label "Port: ">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "Átlátszó Torosítás">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "Globális">
+<!ENTITY torbirdy.prefs.imap.label "A push támogatás bekapcsolása az IMAP fiókokhoz [alapértelmezett: kikapcsolva]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "A legutóbbi megnyitott email mappa megnyitása indításkor [Alapértelmezett: kikapcsolva] ">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "Ne állítsa be a Thunderbird időzónáját UTC-re [alapértelmezett: beállítás UTC-re]">
+<!ENTITY torbirdy.prefs.timezone.key "m">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Ne tedd a fogadó kulcs ID-et a titkosított üzenetbe [alapértelemezett: tedd]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "a">
+<!ENTITY torbirdy.prefs.confirmemail.label "Email küldése előtt rákérdezés, ha Enigmail engedélyezett [alapértelmezés: ne egyen rákérdezés]">
+<!ENTITY torbirdy.prefs.confirmemail.key "p">
+<!ENTITY torbirdy.prefs.emailwizard.label "A Thunderbird automatikus email beállítási varázslójának engedélyezése [alapértelmezés: tiltott]">
+<!ENTITY torbirdy.prefs.emailwizard.key "n">
+<!ENTITY torbirdy.prefs.automatic.label "Új üzenetek ellenőrzése minden felhasználónál [Alapértelmezés: kikapcsolva]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
+<!ENTITY torbirdy.prefs.renegotiation.label "Csatlakozás engedélyezése olyan szerverekhez amelyek nem támogatják az SSL/TLS protokoll secure renegotiation funkcióját [alapértelmezett: ne engedélyezze]">
+<!ENTITY torbirdy.prefs.renegotiation.key "a">
+<!ENTITY torbirdy.prefs.account_specific "Fiók-specifikus">
+<!ENTITY torbirdy.prefs.select_account.key "V">
+<!ENTITY torbirdy.prefs.select_account.label "Válasszon egy fiókot:">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Használandó kulcsszerver(ek):">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "m">
+
+<!ENTITY torbirdy.panel.usetor.label "Tor Onion Router használata">
+<!ENTITY torbirdy.panel.usejondo.label "JonDo használata (Prémium)">
+<!ENTITY torbirdy.panel.usewhonix.label "Whonix használata">
+<!ENTITY torbirdy.panel.preferences.label "TorBirdy Beállítások megnyitása">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy Első futtatás">

@@ -1,0 +1,63 @@
+<!ENTITY torbirdy.accountprefs.title "Ρύθμιση λογαριασμού">
+<!ENTITY torbirdy.accountprefs.startup.label "Έλεγχος για νέα μηνύματα κατά την εκκίνηση">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Έλεγχος για νέα μηνύματα κάθε">
+<!ENTITY torbirdy.accountprefs.minutes.key "y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "λεπτά">
+<!ENTITY torbirdy.accountprefs.cancel.button "Ακύρωση">
+<!ENTITY torbirdy.accountprefs.save.button "Αποθήκευση">
+<!ENTITY torbirdy.accountprefs.save.key "S">
+
+<!ENTITY torbirdy.prefs.title "Ρυθμίσεις TorBirdy ">
+<!ENTITY torbirdy.prefs.save.button "Αποθήκευση">
+<!ENTITY torbirdy.prefs.save.key "s">
+<!ENTITY torbirdy.prefs.cancel.button "Ακύρωση">
+<!ENTITY torbirdy.prefs.extra2.button "Αποκατάσταση αρχικών ρυθμίσεων">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "Έλεγχος Ρυθμίσεων Proxy">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
+<!ENTITY torbirdy.prefs.proxy.label "Proxy">
+<!ENTITY torbirdy.prefs.privacy.label "Ιδιωτικότητα">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
+<!ENTITY torbirdy.prefs.security.label "Ασφάλεια">
+<!ENTITY torbirdy.prefs.recommended.text "Χρήση των προτεινόμενων ρυθμίσεων Proxy για το TorBirdy (Tor)">
+<!ENTITY torbirdy.prefs.recommended.key "r">
+<!ENTITY torbirdy.prefs.anonservice.text "Επιλογή μιας υπηρεσίας ανωνυμίας">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
+<!ENTITY torbirdy.prefs.customsettings.text "Χρήση προσαρμοσμένων ρυθμίσεων proxy">
+<!ENTITY torbirdy.prefs.customsettings.key "c">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Host: ">
+<!ENTITY torbirdy.prefs.socks_host.key "h">
+<!ENTITY torbirdy.prefs.socks_port.label "Θύρα">
+<!ENTITY torbirdy.prefs.socks_port.key "p">
+<!ENTITY torbirdy.prefs.torification.label "Ξεχωριστό Torification">
+<!ENTITY torbirdy.prefs.torification.key "t">
+<!ENTITY torbirdy.prefs.global "Παγκόσμια">
+<!ENTITY torbirdy.prefs.imap.label "Ενεργοποίηση push email για υποστήριξη IMAP λογαριασμών [προεπιλογή: απενεργοποιημένο]">
+<!ENTITY torbirdy.prefs.imap.key "p">
+<!ENTITY torbirdy.prefs.startup_folder.label "Επιλογή του τελευταίου ανοιγμένου φακέλου αλληλλογραφίας κατά την εκκίνηση [προεπιλογή : απενεργοποιημένο]">
+<!ENTITY torbirdy.prefs.startup_folder.key "l">
+<!ENTITY torbirdy.prefs.timezone.label "Μην ορίσετε τη ζώνη ώρας του Thunderbird σε UTC [προεπιλογή: ορίστηκε σε UTC]">
+<!ENTITY torbirdy.prefs.timezone.key "ζ">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Να μην τοποθετητούν τα key ID του παραλήπτη στα κρυπτογραφημένα μηνήματα [προεπιλογή : τοποθέτηση]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "ρ">
+<!ENTITY torbirdy.prefs.confirmemail.label "Επιβεβαιωση πριν την αποστολη του email αν το Enigmail ειναι ενεργοποιημενο [προκαθορισμος: καμμια επιβεβαιωση]">
+<!ENTITY torbirdy.prefs.confirmemail.key "c">
+<!ENTITY torbirdy.prefs.emailwizard.label "Ενεργοποίηση αυτόματης ρύθμισης παραμέτρων ηλεκτρονικού ταχυδρομείου Thunderbird του οδηγού [προεπιλογή: απενεργοποιημένο]">
+<!ENTITY torbirdy.prefs.emailwizard.key "β">
+<!ENTITY torbirdy.prefs.automatic.label "Αυτόματος έλεγχος νέων μηνυμάτων για όλους τους λογαριασμούς [προεπιλογή: απενεργοποιημένο]">
+<!ENTITY torbirdy.prefs.automatic.key "f">
+<!ENTITY torbirdy.prefs.renegotiation.label "Να επιτρέπονται συνδέσεις σε διακομιστές που δεν υποστηρίζουν SSL / TLS με ασφαλή επαναδιαπραγμάτευση [προεπιλογή: να μην επιτρέπονται] ">
+<!ENTITY torbirdy.prefs.renegotiation.key "ρ">
+<!ENTITY torbirdy.prefs.account_specific "Ειδικός λογαριασμός">
+<!ENTITY torbirdy.prefs.select_account.key "C">
+<!ENTITY torbirdy.prefs.select_account.label "Επιλογή ενός λογαριασμού">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Keyserver(s) για χρησιμοποιηση: ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.key "κ">
+
+<!ENTITY torbirdy.panel.usetor.label "Χρησιμοποιηση του Tor Onion Router">
+<!ENTITY torbirdy.panel.usejondo.label "Χρησιμοποιηση του JonDo (Premium)">
+<!ENTITY torbirdy.panel.usewhonix.label "Χρησιμοποιηση του Whonix">
+<!ENTITY torbirdy.panel.preferences.label "Ανοιγμα των TorBirdy ρυθμισεων">
+
+<!ENTITY torbirdy.firstrun.title "TorBirdy πρωτη εκκινηση">

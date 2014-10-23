@@ -1,23 +1,48 @@
-0.1.3,
+0.1.3, 23 Oct 2014
 
   * The default keyserver (hidden service) has been updated:
     - hkp://qdigse2yzvuglcix.onion
-  * New translations:
-    - Japanese
-    - Malay
-    - Russian
-    - French (Canada)
-    - Farsi (Persian)
-    - Khmer
-    - Korean
-    - Norwegian Bokmål
-    - Ukrainian
   * Show the Sender header in message pane (closes #10226)
   * Draft messages on IMAP accounts are now saved locally (closes #10309)
   * Restore preferences to the user's own defaults instead of Thunderbird's
     (closes #10588)
   * network.proxy.no_proxies_on is no longer set to "localhost, 127.0.0.1"
     (thanks to Carsten N.)
+  * Disable automatic downloading of new messages for POP3 accounts
+    (closes #11188)
+  * Update the reply_header author behaviour (closes #13480)
+  * TorBirdy is now available in 31 languages:
+    * Arabic
+    * Catalan
+    * Czech
+    * Danish
+    * German
+    * Greek
+    * English (US)
+    * English (Great Britain)
+    * Spanish
+    * Basque
+    * French
+    * Hebrew
+    * Hungarian
+    * Indonesian
+    * Italian
+    * Korean
+    * Latvian
+    * Norwegian Bokmål 
+    * Norwegian Nynorsk	
+    * Punjabi
+    * Polish
+    * Portuguese	 
+    * Portuguese (Brazil)
+    * Romanian
+    * Russian
+    * Slovak
+    * Slovenian
+    * Serbian
+    * Swedish
+    * Turkish
+    * Ukrainian
 
 0.1.2, 04 Nov 2013
 
