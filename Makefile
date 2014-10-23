@@ -19,10 +19,10 @@ sign-release:
 	sha1sum ../torbirdy-${VERSION}.xpi$
 
 push-release:
-	chmod 664 ../torbirdy-${VERSION}.xpi*$
-	scp ../torbirdy-${VERSION}.xpi* vescum.torproject.org:/srv/www-master.torproject.org/htdocs/dist/torbirdy/$
-	scp ../torbirdy-${VERSION}.xpi vescum.torproject.org:/srv/www-master.torproject.org/htdocs/dist/torbirdy/torbirdy-current.xpi$
-	scp ../torbirdy-${VERSION}.xpi.asc vescum.torproject.org:/srv/www-master.torproject.org/htdocs/dist/torbirdy/torbirdy-current.xpi.asc$
-	ssh vescum.torproject.org ~mirroradm/bin/trigger-mirrors
+	chmod 664 ../torbirdy-${VERSION}.xpi*
+	scp ../torbirdy-${VERSION}.xpi* staticiforme.torproject.org:/srv/dist-master.torproject.org/htdocs/torbirdy/
+	scp ../torbirdy-${VERSION}.xpi staticiforme.torproject.org:/srv/dist-master.torproject.org/htdocs/torbirdy/torbirdy-current.xpi
+	scp ../torbirdy-${VERSION}.xpi.asc staticiforme.torproject.org:/srv/dist-master.torproject.org/htdocs/torbirdy/torbirdy-current.xpi.asc
+	ssh staticiforme.torproject.org static-update-component dist.torproject.org
 	
 release: sign-release push-release
