@@ -155,6 +155,7 @@ const TorBirdyPrefs = {
   // https://lists.torproject.org/pipermail/tor-talk/2012-May/024395.html
   "mailnews.reply_header_type": 1,
   "mailnews.reply_header_authorwrote": "%s",
+  "mailnews.reply_header_authorwrotesingle": "#1:",
   // Show Sender header in message pane (#10226).
   // http://heise.de/-2044405
   // https://bugzilla.mozilla.org/show_bug.cgi?id=332639
