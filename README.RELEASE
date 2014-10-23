@@ -1,0 +1,20 @@
+To perform a release for TorBirdy:
+
+  Perform substantial development effort or patch security issues
+  Review all changes with at least one other person
+  Update ChangeLog to refelect all changes and add a release date
+  Run `make` and test the resulting xpi
+  Confirm that there are no issues with normal use on The Big Three platforms
+  Confirm that the error console does not have any errors related to TorBirdy
+  Tag, sign and push the signatures to git:
+    Run `make git-tag` and sign a tag for this release
+    Run `make git-push` and push the tag upstream
+  Make detached signature for non-git users:
+    Run `make sign-release` and sign the .xpi file
+  Upload packages to the Tor Project webserver:
+    Run `push-release` and the packages are uploaded
+  Upload the package to Mozilla's AddOn site manually
+  Write a blog post anouncing the release on the Tor Project blog
+  Write an email anouncing the release to tor-talk
+  Announce the release widely in whatever format is reasonable or desired
+ 
