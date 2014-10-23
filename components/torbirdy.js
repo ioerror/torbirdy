@@ -413,7 +413,6 @@ TorBirdy.prototype = {
   },
 
   setPrefs: function() {
-    dump("Setting TorBirdy preferences\n");
     // If custom values are set for specific preferences, override the defaults with them.
     // For each preference, get the type and then set the property.
     for (var i = 0; i < this.customPrefs.length; i++) {
