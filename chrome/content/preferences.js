@@ -252,7 +252,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
   pub.setProxyWhonix = function() {
     pub.resetAll();
 
-    pub.setPreferences("network.proxy.socks", "192.168.0.10");
+    pub.setPreferences("network.proxy.socks", "10.152.152.10");
     pub.setPreferences("network.proxy.socks_port", 9102);
 
     pub.setPanelSettings(pub.strBundle.GetStringFromName("torbirdy.enabled.whonix"), "green");
