@@ -92,7 +92,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
   pub.clearCustomPrefs = function() {
     var customPrefs = pub.torBirdyPref.getChildList("", {});
-    for (var i = 0; i < customPrefs.length; i++) {
+    for (var i = 0, l=customPrefs.length ; i < l; i++) {
       pub.prefs.clearUserPref(pub.customBranch + customPrefs[i]);
     }
   };
