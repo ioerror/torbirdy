@@ -1,3 +1,8 @@
+0.1.4, 09 March 2015
+  * Fix bug that prevented Thunderbird with TorBirdy 0.1.3 from starting
+  in profiles with more than three IMAP accounts (closes #14099, #13982,
+  #13722, #14007, #14130)
+
 0.1.3, 23 Oct 2014
 
   * The default keyserver (hidden service) has been updated:

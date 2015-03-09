@@ -528,9 +528,9 @@ TorBirdy.prototype = {
             // We need to restore the following preferences after we are uninstalled/disabled.
             var restorePrefs = ["draft_folder", "drafts_folder_picker_mode"];
 
-            for (var i = 0; i < restorePrefs.length; i++) {
+            for (var p = 0; p < restorePrefs.length; p++) {
               var pref = "mail.identity.%id%.".replace("%id%", key);
-              var prefName = pref + restorePrefs[i];
+              var prefName = pref + restorePrefs[p];
               if (this.prefs.prefHasUserValue(prefName)) {
                 var typePref = this.prefs.getPrefType(prefName);
                 if (typePref === 32) {
