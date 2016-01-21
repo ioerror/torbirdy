@@ -166,7 +166,7 @@ const TorBirdyPrefs = {
   */
 
   // Prevent hostname leaks.
-  "mail.smtpserver.default.hello_argument": "127.0.0.1",
+  "mail.smtpserver.default.hello_argument": "[127.0.0.1]",
   // Compose messages in plain text (by default).
   "mail.html_compose": false,
   "mail.identity.default.compose_html": false,
