@@ -124,12 +124,9 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
   pub.onLoad = function() {
     if (disableWizard) {
       document.getElementById("torbirdy-protocol-box").collapsed = true;
-      document.getElementById("provisioner_button").disabled = false;
-      document.getElementById("provisioner_button").hidden = false;
-    } else {
-      document.getElementById("provisioner_button").disabled = true;
-      document.getElementById("provisioner_button").hidden = true;
     }
+    document.getElementById("provisioner_button").disabled = true;
+    document.getElementById("provisioner_button").hidden = true;
   };
 
   return pub;
