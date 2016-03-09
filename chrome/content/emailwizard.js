@@ -12,7 +12,7 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
     disableWizard = true;
   }
 
-  pub.disableAutoWizard = function() {
+  pub.adjustAutoWizard = function() {
     if (!disableWizard) {
       var realname = document.getElementById("realname").value;
       var email = document.getElementById("email").value;
@@ -117,7 +117,7 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
     if (keycode == 13) {
       if (document.getElementById("next_button").disabled === false) {
         if (!disableWizard) {
-          pub.disableAutoWizard();
+          pub.adjustAutoWizard();
         }
         else {
           gEmailConfigWizard.onNext();
