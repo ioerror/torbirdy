@@ -81,10 +81,6 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
       config.incoming.auth = 3;
       config.outgoing.auth = 3;
 
-      // Set default values to disable automatic email fetching.
-      config.incoming.loginAtStartup = false;
-      config.incoming.downloadOnBiff = false;
-
       // Default the outgoing SMTP port.
       config.outgoing.port = 465;
 
