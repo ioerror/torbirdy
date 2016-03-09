@@ -1,3 +1,5 @@
+Components.utils.import("resource://gre/modules/Preferences.jsm");
+
 if (!org) var org = {};
 if (!org.torbirdy) org.torbirdy = {};
 
@@ -17,28 +19,26 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
     var serverkey = account.incomingServer.key;
     var protocol = account.incomingServer.type;
 
+    var pref_spec = [
+        ['mail.server.%serverkey%.check_new_mail', false],
+        ['mail.server.%serverkey%.login_at_startup', false]
+    ];
+
     // Make sure that drafts are saved to Local Folders if it is an IMAP account.
     if (protocol === "imap") {
-      var draftFolder = 'mail.identity.%idkey%.draft_folder';
-      var draftFolderPref = draftFolder.replace("%idkey%", idkey);
-      prefs.setCharPref(draftFolderPref, "mailbox://nobody@Local%20Folders/Drafts");
+        pref_spec.push(['mail.identity.%idkey%.draft_folder',
+                        'mailbox://nobody@Local%20Folders/Drafts']);
     }
 
-    // Set check_new_mail to false. We can't do this through the account setup, so let's do it here.
-    var checkNewMail = 'mail.server.%serverkey%.check_new_mail';
-    var checkNewMailPref = checkNewMail.replace("%serverkey%", serverkey);
-    prefs.setBoolPref(checkNewMailPref, false);
-
-    // Do not check for new messages at startup.
-    var loginAtStartup = 'mail.server.%serverkey%.login_at_startup';
-    var loginAtStartupPref = loginAtStartup.replace("%serverkey%", serverkey);
-    prefs.setBoolPref(loginAtStartupPref, false);
-
-    // Do not automatically download new messages.
+    // Do not automatically download new messages in POP accounts.
     if (protocol === "pop3") {
-      var downloadOnBiff = 'mail.server.%serverkey%.download_on_biff';
-      var downloadOnBiffPref = downloadOnBiff.replace("%serverkey%", serverkey);
-      prefs.setBoolPref(downloadOnBiffPref, false);
+        pref_spec.push(['mail.server.%serverkey%.download_on_biff', false]);
+    }
+
+    for each (var [pref_template, value] in pref_spec) {
+        var pref = pref_template.replace("%idkey%", idkey);
+        pref = pref.replace("%serverkey%", serverkey);
+        Preferences.set(pref, value);
     }
   }
 
