@@ -6,11 +6,8 @@ if (!org.torbirdy) org.torbirdy = {};
 if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
   var pub = {};
 
-  var prefs = Cc["@mozilla.org/preferences-service;1"]
-                .getService(Ci.nsIPrefBranch);
-
   var disableWizard = false;
-  if (prefs.getBoolPref("extensions.torbirdy.emailwizard")) {
+  if (Preferences.get("extensions.torbirdy.emailwizard", false)) {
     disableWizard = true;
   }
 
