@@ -6,7 +6,10 @@ if (!org.torbirdy) org.torbirdy = {};
 if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
   var pub = {};
 
-  var disableWizard = !Preferences.get("extensions.torbirdy.emailwizard", false);
+  var disableAutoConfiguration = false;
+  if (Preferences.get("extensions.torbirdy.emailwizard", false)) {
+    disableAutoConfiguration = true;
+  }
 
   fixupTorbirdySettingsOnNewAccount = function(account) {
     var idkey = account.defaultIdentity.key;
@@ -37,7 +40,7 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
   }
 
   pub.adjustAutoWizard = function() {
-    if (!disableWizard) {
+    if (!disableAutoConfiguration) {
       var realname = document.getElementById("realname").value;
       var email = document.getElementById("email").value;
       var password = document.getElementById("password").value;
@@ -134,7 +137,7 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
   };
 
   pub.onLoad = function() {
-    if (disableWizard) {
+    if (disableAutoConfiguration) {
       document.getElementById("torbirdy-protocol-box").collapsed = true;
     }
     document.getElementById("provisioner_button").disabled = true;
