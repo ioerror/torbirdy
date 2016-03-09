@@ -6,10 +6,7 @@ if (!org.torbirdy) org.torbirdy = {};
 if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
   var pub = {};
 
-  var disableWizard = false;
-  if (Preferences.get("extensions.torbirdy.emailwizard", false)) {
-    disableWizard = true;
-  }
+  var disableWizard = !Preferences.get("extensions.torbirdy.emailwizard", false);
 
   fixupTorbirdySettingsOnNewAccount = function(account) {
     var idkey = account.defaultIdentity.key;
