@@ -12,6 +12,36 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
     disableWizard = true;
   }
 
+  fixupTorbirdySettingsOnNewAccount = function(account) {
+    var idkey = account.defaultIdentity.key;
+    var serverkey = account.incomingServer.key;
+    var protocol = account.incomingServer.type;
+
+    // Make sure that drafts are saved to Local Folders if it is an IMAP account.
+    if (protocol === "imap") {
+      var draftFolder = 'mail.identity.%idkey%.draft_folder';
+      var draftFolderPref = draftFolder.replace("%idkey%", idkey);
+      prefs.setCharPref(draftFolderPref, "mailbox://nobody@Local%20Folders/Drafts");
+    }
+
+    // Set check_new_mail to false. We can't do this through the account setup, so let's do it here.
+    var checkNewMail = 'mail.server.%serverkey%.check_new_mail';
+    var checkNewMailPref = checkNewMail.replace("%serverkey%", serverkey);
+    prefs.setBoolPref(checkNewMailPref, false);
+
+    // Do not check for new messages at startup.
+    var loginAtStartup = 'mail.server.%serverkey%.login_at_startup';
+    var loginAtStartupPref = loginAtStartup.replace("%serverkey%", serverkey);
+    prefs.setBoolPref(loginAtStartupPref, false);
+
+    // Do not automatically download new messages.
+    if (protocol === "pop3") {
+      var downloadOnBiff = 'mail.server.%serverkey%.download_on_biff';
+      var downloadOnBiffPref = downloadOnBiff.replace("%serverkey%", serverkey);
+      prefs.setBoolPref(downloadOnBiffPref, false);
+    }
+  }
+
   pub.adjustAutoWizard = function() {
     if (!disableWizard) {
       var realname = document.getElementById("realname").value;
@@ -66,31 +96,8 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
       replaceVariables(config, realname, email, password);
       config.rememberPassword = rememberPassword && !!password;
 
-      var newAccount = createAccountInBackend(config);
-
-      // Set check_new_mail to false. We can't do this through the account setup, so let's do it here.
-      var checkNewMail = 'mail.server.%serverkey%.check_new_mail';
-      var serverkey = newAccount.incomingServer.key;
-      var checkNewMailPref = checkNewMail.replace("%serverkey%", serverkey);
-      prefs.setBoolPref(checkNewMailPref, false);
-
-      // Make sure that drafts are saved to Local Folders if it is an IMAP account.
-      if (protocol === "imap") {
-        var identity = newAccount.defaultIdentity;
-        identity.draftFolder = "mailbox://nobody@Local%20Folders/Drafts";
-      }
-
-      // Do not check for new messages at startup.
-      var loginAtStartup = 'mail.server.%serverkey%.login_at_startup';
-      var loginAtStartupPref = loginAtStartup.replace("%serverkey%", serverkey);
-      prefs.setBoolPref(loginAtStartupPref, false);
-
-      // Do not automatically download new messages.
-      if (protocol === "pop3") {
-        var downloadOnBiff = 'mail.server.%serverkey%.download_on_biff';
-        var downloadOnBiffPref = downloadOnBiff.replace("%serverkey%", serverkey);
-        prefs.setBoolPref(downloadOnBiffPref, false);
-      }
+      var new_account = createAccountInBackend(config);
+      fixupTorbirdySettingsOnNewAccount(new_account);
 
       // From comm-release/mailnews/base/prefs/content/accountcreation/emailWizard.js : onAdvancedSetup().
       var windowManager = Cc["@mozilla.org/appshell/window-mediator;1"]
@@ -102,12 +109,23 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
       } else {
         window.openDialog("chrome://messenger/content/AccountManager.xul",
                           "AccountManager", "chrome,centerscreen,modal,titlebar",
-                          { server: newAccount.incomingServer,
+                          { server: new_account.incomingServer,
                             selectPage: "am-server.xul" });
       }
       window.close();
     }
     else {
+      // From comm-release/mailnews/base/prefs/content/accountcreation/emailWizard.js : finish().
+      // We need somewhere to hook in, so we can access the new
+      // account object created through the autoconfig wizard, and
+      // apply Torbirdy's settings on it.
+      gEmailConfigWizard.finish = function() {
+        gEmailWizardLogger.info("creating account in backend");
+        var account = createAccountInBackend(this.getConcreteConfig());
+        fixupTorbirdySettingsOnNewAccount(account);
+        window.close();
+      }
+
       gEmailConfigWizard.onNext();
     }
   };
