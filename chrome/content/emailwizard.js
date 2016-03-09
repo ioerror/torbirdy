@@ -7,16 +7,7 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
   var prefs = Cc["@mozilla.org/preferences-service;1"]
                 .getService(Ci.nsIPrefBranch);
 
-  // Check if we are running Tails. If yes, disable the manual account
-  // configuration wizard since Tails handles that on its own. See:
-  // https://tails.boum.org/todo/Return_of_Icedove__63__/#index6h2
-  // This is also disabled if "extensions.torbirdy.emailwizard" is true.
   var disableWizard = false;
-  if (prefs.prefHasUserValue("vendor.name")) {
-    if (prefs.getCharPref("vendor.name") === "Tails") {
-      disableWizard = true;
-    }
-  }
   if (prefs.getBoolPref("extensions.torbirdy.emailwizard")) {
     disableWizard = true;
   }
