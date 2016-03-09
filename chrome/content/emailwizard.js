@@ -116,12 +116,7 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
     var keycode = event.keyCode;
     if (keycode == 13) {
       if (document.getElementById("next_button").disabled === false) {
-        if (!disableWizard) {
-          pub.adjustAutoWizard();
-        }
-        else {
-          gEmailConfigWizard.onNext();
-        }
+        pub.adjustAutoWizard();
       }
     }
   };
