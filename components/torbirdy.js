@@ -181,6 +181,14 @@ const TorBirdyPrefs = {
   "mail.inline_attachments": false,
   // Do not IDLE (disable push mail).
   "mail.server.default.use_idle": false,
+  // Thunderbird's autoconfig wizard is designed to enable an initial
+  // mail fetch (by setting login_at_start) for the first account it
+  // creates (which will become the "default" account, see
+  // msgMail3PaneWindow.js for details) which side-steps the settings
+  // we apply in fixupTorbirdySettingsOnNewAccount(). Hence, fool
+  // Thunderbird to think that this initial mail fetch has already
+  // been done so we get the settings we want.
+  "mail.startup.enabledMailCheckOnce": true,
 
   /*
     Browser
