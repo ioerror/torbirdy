@@ -41,7 +41,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     if (pub.prefs.getBoolPref("extensions.torbirdy.enigmail.throwkeyid")) {
       opts += "--throw-keyids ";
     }
-    var proxy = "http-proxy=http://127.0.0.1:8118";
+    var proxy = "socks5h://127.0.0.1:9050";
     if (anonService === "jondo") {
       proxy = "http://127.0.0.1:4001";
     }
