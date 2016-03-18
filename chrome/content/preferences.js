@@ -37,36 +37,20 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
   };
 
   pub.setEnigmailPrefs = function(anonService) {
+    var opts = "";
     if (pub.prefs.getBoolPref("extensions.torbirdy.enigmail.throwkeyid")) {
-      if (anonService === "tor") {
-        return "--no-emit-version " +
-               "--no-comments " +
-               "--throw-keyids " +
-               "--display-charset utf-8 " +
-               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:8118";
-      }
-      if (anonService === "jondo") {
-        return "--no-emit-version " +
-               "--no-comments " +
-               "--throw-keyids " +
-               "--display-charset utf-8 " +
-               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:4001";
-      }
+      opts += "--throw-keyids ";
     }
-    else {
-      if (anonService === "tor") {
-        return "--no-emit-version " +
-               "--no-comments " +
-               "--display-charset utf-8 " +
-               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:8118";
-      }
-      if (anonService === "jondo") {
-        return "--no-emit-version " +
-               "--no-comments " +
-               "--display-charset utf-8 " +
-               "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=http://127.0.0.1:4001";
-      }
+    var proxy = "http-proxy=http://127.0.0.1:8118";
+    if (anonService === "jondo") {
+      proxy = "http://127.0.0.1:4001";
     }
+    return opts +
+           "--no-emit-version " +
+           "--no-comments " +
+           "--display-charset utf-8 " +
+           "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=" +
+           proxy;
   };
 
   pub.updateKeyserver = function(anonService) {
