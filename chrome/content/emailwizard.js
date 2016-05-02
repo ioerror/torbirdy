@@ -144,6 +144,9 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
       document.getElementById("provisioner_button").disabled = true;
       document.getElementById("provisioner_button").hidden = true;
     }
+    // 0 is for POP3 (default), 1 is for IMAP. See emailwizard.xul and prefs.js.
+    var selectProtocol = prefs.getIntPref("extensions.torbirdy.defaultprotocol")
+    document.getElementById("torbirdy-protocol").selectedIndex = selectProtocol;
   };
 
   return pub;
