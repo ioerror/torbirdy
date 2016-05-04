@@ -181,6 +181,14 @@ const TorBirdyPrefs = {
   "mail.inline_attachments": false,
   // Do not IDLE (disable push mail).
   "mail.server.default.use_idle": false,
+  // Thunderbird's autoconfig wizard is designed to enable an initial
+  // mail fetch (by setting login_at_start) for the first account it
+  // creates (which will become the "default" account, see
+  // msgMail3PaneWindow.js for details) which side-steps the settings
+  // we apply in fixupTorbirdySettingsOnNewAccount(). Hence, fool
+  // Thunderbird to think that this initial mail fetch has already
+  // been done so we get the settings we want.
+  "mail.startup.enabledMailCheckOnce": true,
 
   /*
     Browser
@@ -215,7 +223,7 @@ const TorBirdyPrefs = {
                                               // We want to force UTF-8 everywhere
                                               "--display-charset utf-8 " +
                                               // We want to ensure that Enigmail is proxy aware even when it runs gpg in a shell
-                                              "--keyserver-options http-proxy=http://127.0.0.1:8118 ",
+                                              "--keyserver-options http-proxy=socks5h://127.0.0.1:9050 ",
                                             
   // The default key server should be a hidden service and this is the only known one (it's part of the normal SKS network)
   "extensions.enigmail.keyserver": "hkp://qdigse2yzvuglcix.onion",
