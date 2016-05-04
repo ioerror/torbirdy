@@ -166,7 +166,7 @@ const TorBirdyPrefs = {
   */
 
   // Prevent hostname leaks.
-  "mail.smtpserver.default.hello_argument": "127.0.0.1",
+  "mail.smtpserver.default.hello_argument": "[127.0.0.1]",
   // Compose messages in plain text (by default).
   "mail.html_compose": false,
   "mail.identity.default.compose_html": false,
@@ -320,6 +320,25 @@ var TorBirdyOldPrefs = [
   "network.proxy.http",
 ]
 
+// sanitizeDateHeaders()
+// Run this function to make sure that the Date header in a new message
+// is rounded down to the nearest minute.
+function sanitizeDateHeaders() {
+  // Import the jsmime module that is used to generate mail headers.
+  let { jsmime } = Components.utils.import("resource:///modules/jsmime.jsm");
+  // Inject our own structured encoder to the default header emitter,
+  // to override the default Date encoder with a rounded-down version.
+  jsmime.headeremitter.addStructuredEncoder("Date", function (date) {
+    // Copy date
+    let roundedDate = new Date(date.getTime());
+    // Round down to the nearest minute.
+    roundedDate.setSeconds(0);
+    // Use the headeremitter's addDate function to format it properly.
+    // `this` magically refers to the headeremitter object.
+    this.addDate(roundedDate);
+  });
+}
+
 function TorBirdy() {
   this._uninstall = false;
   this.wrappedJSObject = this;
@@ -347,6 +366,7 @@ function TorBirdy() {
 
   this.setAccountPrefs();
   this.setPrefs();
+  sanitizeDateHeaders();
 
   dump("TorBirdy registered!\n");
 }

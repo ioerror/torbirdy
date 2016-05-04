@@ -10,3 +10,4 @@ pref("extensions.torbirdy.whonix_run", true);
 pref("extensions.torbirdy.info_run", false);
 pref("extensions.torbirdy.emailwizard", false);
 pref("extensions.torbirdy.fetchall", false);
+pref("extensions.torbirdy.defaultprotocol", 0); // 0 - POP3, 1 - IMAP
