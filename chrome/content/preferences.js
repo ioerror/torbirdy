@@ -321,30 +321,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.prefs.setBoolPref(pub.prefBranch + 'startup_folder', false);
     }
 
-    // Time zone.
-    // default: true
-    var timezone = pub.timezone.checked;
-    // Only update pub if required.
-    if (timezone === pub.prefs.getBoolPref(pub.prefBranch + 'timezone')) {
-        var env = Components.classes["@mozilla.org/process/environment;1"]
-                                      .getService(Components.interfaces.nsIEnvironment);
-        if (timezone) {
-          pub.prefs.setBoolPref(pub.prefBranch + 'timezone', false);
-          env.set('TZ', '');
-        } else {
-          pub.prefs.setBoolPref(pub.prefBranch + 'timezone', true);
-          env.set('TZ', 'UTC');
-        }
-
-        // Ask the user to restart Thunderbird. We can't do pub for the user
-        // because the environment variables are not reset without quitting
-        // Thunderbird and starting it again.
-        var prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
-                                        .getService(Components.interfaces.nsIPromptService);
-        prompts.alert(null, pub.strBundle.GetStringFromName("torbirdy.name"),
-                            pub.strBundle.GetStringFromName("torbirdy.restart"));
-    }
-
     // Fetch all messages for all accounts.
     // default: false
     // Only change the state if it is required.
@@ -435,7 +411,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     pub.mailAccount = document.getElementById('torbirdy-mail-accounts');
     pub.imapIdle = document.getElementById('torbirdy-idle');
     pub.startupFolder = document.getElementById('torbirdy-startup-folder');
-    pub.timezone = document.getElementById('torbirdy-timezone');
     pub.emailWizard = document.getElementById('torbirdy-email-wizard');
     pub.fetchAllMails = document.getElementById('torbirdy-email-automatic');
     // Enigmail.
@@ -524,14 +499,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.startupFolder.checked = true;
     }
 
-    // Time zone settings.
-    // default: true
-    if (pub.prefs.getBoolPref(pub.prefBranch + 'timezone')) {
-      pub.timezone.checked = false;
-    } else {
-      pub.timezone.checked = true;
-    }
-
     // Fetch all messages for all accounts.
     // default: false
     if (pub.prefs.getBoolPref(pub.prefBranch + 'fetchall')) {
@@ -618,7 +585,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
   pub.restoreDefaults = function() {
     // Set the values to their default state.
     pub.anonService.selectedIndex = 0;
-    pub.timezone.checked = false;
     pub.enigmailKeyId.checked = false;
     pub.enigmailConfirmEmail.checked = false;
     pub.emailWizard.checked = false;

@@ -37,8 +37,6 @@
 <!ENTITY torbirdy.prefs.imap.key "p">
 <!ENTITY torbirdy.prefs.startup_folder.label "Select last accessed mail folder on startup [default: disabled]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
-<!ENTITY torbirdy.prefs.timezone.label "Do not set Thunderbird's time zone to UTC [default: set to UTC]">
-<!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Do not put the recipient key IDs into encrypted messages [default: put]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "Confirm before sending email if Enigmail is enabled [default: do not confirm]">

@@ -23,11 +23,6 @@
         prefs.setBoolPref(infoRun, false);
       }
 
-      // Set the time zone to UTC if the preference is true.
-      if (prefs.getBoolPref("extensions.torbirdy.timezone")) {
-        env.set('TZ', 'UTC');
-      }
-
       // Check if we are running Whonix.
       var whonix = false;
       if (env.exists("WHONIX")) {

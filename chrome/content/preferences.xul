@@ -99,7 +99,6 @@
             <vbox>
               <checkbox accesskey="&torbirdy.prefs.imap.key;" id="torbirdy-idle" label="&torbirdy.prefs.imap.label;"/>
               <checkbox accesskey="&torbirdy.prefs.startup_folder.key;" id="torbirdy-startup-folder" label="&torbirdy.prefs.startup_folder.label;"/>
-              <checkbox accesskey="&torbirdy.prefs.timezone.key;" id="torbirdy-timezone" label="&torbirdy.prefs.timezone.label;"/>
               <checkbox accesskey="&torbirdy.prefs.emailwizard.key;" id="torbirdy-email-wizard" label="&torbirdy.prefs.emailwizard.label;"/>
               <checkbox accesskey="&torbirdy.prefs.automatic.key;" id="torbirdy-email-automatic" label="&torbirdy.prefs.automatic.label;" oncommand="org.torbirdy.prefs.fetchAllMessages();"/>
             </vbox>
