@@ -13,6 +13,7 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
 
   fixupTorbirdySettingsOnNewAccount = function(account) {
     var idkey = account.defaultIdentity.key;
+    var outgoing = account.defaultIdentity.smtpServerKey;
     var serverkey = account.incomingServer.key;
     var protocol = account.incomingServer.type;
 
@@ -20,6 +21,12 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
         ['mail.server.%serverkey%.check_new_mail', false],
         ['mail.server.%serverkey%.login_at_startup', false]
     ];
+
+    // 10 specifies OAuth2 as the authentication method (used for Gmail).
+    if (pub.isGmail) {
+      pref_spec.push(['mail.smtpserver.%outgoing%.authMethod', 10]);
+      pref_spec.push(['mail.server.%serverkey%.authMethod', 10]);
+    }
 
     // Make sure that drafts are saved to Local Folders if it is an IMAP account.
     if (protocol === "imap") {
@@ -35,6 +42,7 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
     for each (var [pref_template, value] in pref_spec) {
         var pref = pref_template.replace("%idkey%", idkey);
         pref = pref.replace("%serverkey%", serverkey);
+        pref = pref.replace("%outgoing%", outgoing);
         Preferences.set(pref, value);
     }
   }
@@ -78,8 +86,16 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
       config.outgoing.socketType = 2;
 
       // Set the authentication to 'Normal' (connection is already encrypted).
+      // This is true for all providers except Gmail, which uses OAuth2.
       config.incoming.auth = 3;
       config.outgoing.auth = 3;
+
+      // We will deal with Gmail later because it makes it easier to handle
+      // OAuth2 with the manual configuration.
+      let emailDomain = email.split("@")[1];
+      if (emailDomain === "gmail.com") {
+        pub.isGmail = true;
+      }
 
       // Default the outgoing SMTP port.
       config.outgoing.port = 465;

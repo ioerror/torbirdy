@@ -85,8 +85,8 @@ const TorBirdyPrefs = {
   // We don't want user's of Thunderbird to even come close to such a bypass
   // issue and so we have disabled websockets out of an abundance of caution.
   "network.websocket.enabled": false,
-  // No cookies are allowed.
-  "network.cookie.cookieBehavior": 2,
+  // Cookies are allowed, but not third-party cookies. For Gmail and Twitter.
+  "network.cookie.cookieBehavior": 1,
   // Disable link prefetching.
   "network.prefetch-next": false,
 
