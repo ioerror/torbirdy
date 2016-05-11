@@ -231,8 +231,11 @@ const TorBirdyPrefs = {
   // Force GnuPG to use SHA512.
   "extensions.enigmail.mimeHashAlgorithm": 5,
 
-  // Prefer plain text for RSS.
+  // RSS.
   "rss.display.prefer_plaintext": true,
+  // These are similar to the mailnews.* settings.
+  "rss.display.disallow_mime_handlers": 3,
+  "rss.display.html_as": 1,
 
   // Override the user agent by setting it to an empty string.
   "general.useragent.override": "",
