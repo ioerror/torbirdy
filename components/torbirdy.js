@@ -227,7 +227,6 @@ const TorBirdyPrefs = {
                                             
   // The default key server should be a hidden service and this is the only known one (it's part of the normal SKS network)
   "extensions.enigmail.keyserver": "hkp://qdigse2yzvuglcix.onion",
-
   // Force GnuPG to use SHA512.
   "extensions.enigmail.mimeHashAlgorithm": 5,
 
@@ -301,7 +300,9 @@ const TorBirdyPrefs = {
 
   // Mozilla Lightning.
   "calendar.useragent.extra": "",
-  "calendar.timezone.local": "",
+  // We have to set a timezone otherwise the system time is used. "UTC" or
+  // "GMT" is not an option so we set it to Europe/London.
+  "calendar.timezone.local": "Europe/London",
 
   // All preferences have been set: now enable TorBirdy.
   "extensions.torbirdy.protected": true,
