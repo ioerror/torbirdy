@@ -15,8 +15,8 @@ if (!org.torbirdy.feedwizard) org.torbirdy.feedwizard = new function() {
     ];
 
     for each (var [pref_template, value] in pref_spec) {
-        let pref = pref_template.replace("%serverkey%", accountKey);
-        Preferences.set(pref, value);
+      let pref = pref_template.replace("%serverkey%", accountKey);
+      Preferences.set(pref, value);
     }
   };
 
