@@ -90,17 +90,23 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
       config.incoming.auth = 3;
       config.outgoing.auth = 3;
 
-      // We will deal with Gmail later because it makes it easier to handle
-      // OAuth2 with the manual configuration.
-      let emailDomain = email.split("@")[1];
-      if (emailDomain === "gmail.com") {
-        pub.isGmail = true;
-      }
-
       // Default the outgoing SMTP port.
       config.outgoing.port = 465;
 
       config.outgoing.hostname = "smtp.%EMAILDOMAIN%";
+
+      let emailDomain = email.split("@")[1];
+      // Gmail and Riseup settings.
+      switch (emailDomain) {
+        case "gmail.com":
+          // Gmail uses OAuth2, which we deal with later.
+          pub.isGmail = true;
+          break;
+        case "riseup.net":
+          config.incoming.hostname = "mail.%EMAILDOMAIN%";
+          config.outgoing.hostname = "mail.%EMAILDOMAIN%";
+          break;
+      }
 
       replaceVariables(config, realname, email, password);
       config.rememberPassword = rememberPassword && !!password;
