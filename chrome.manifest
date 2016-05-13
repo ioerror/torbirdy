@@ -4,6 +4,7 @@ overlay chrome://messenger/content/messenger.xul chrome://castironthunderbirdclu
 overlay chrome://messenger/content/messengercompose/messengercompose.xul chrome://castironthunderbirdclub/content/composeoverlay.xul
 overlay chrome://messenger/content/accountcreation/emailWizard.xul chrome://castironthunderbirdclub/content/emailwizard.xul
 overlay chrome://messenger-newsblog/content/feedAccountWizard.xul chrome://castironthunderbirdclub/content/feedwizard.xul
+overlay chrome://messenger/content/AccountWizard.xul chrome://castironthunderbirdclub/content/nntpwizard.xul
 
 component {ebd85413-18c8-4265-a708-a8890ec8d1ed} components/torbirdy.js
 contract @torproject.org/torbirdy;1 {ebd85413-18c8-4265-a708-a8890ec8d1ed}

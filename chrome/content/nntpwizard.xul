@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://messenger/skin/accountWizard.css" type="text/css"?>
+
+<wizard id="castironthunderbirdclub-nntpwizard-overlay"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/javascript" src="chrome://castironthunderbirdclub/content/nntpwizard.js" />
+
+</wizard>
