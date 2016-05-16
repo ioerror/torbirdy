@@ -107,14 +107,9 @@ const TorBirdyPrefs = {
     Security
   */
 
-  // Default is always false for OCSP - it's broken crap
-  // Why is it broken, you might ask?
-  // Moxie Marlinspike, a hero to all humans everywhere, defeated it with the
-  // number '3' at Defcon/Blackhat 2009 His paper:
-  // http://www.thoughtcrime.org/papers/ocsp-attack.pdf His software to perform
-  // the attack is here: http://thoughtcrime.org/software/sslsniff/ Furthermore
-  // - OCSP servers may log information about a user as they use the internet
-  // generally; it's everything we hate about CRLs and more
+  // Default is always false for OCSP.
+  // OCSP servers may log information about a user as they use the internet
+  // generally; it's everything we hate about CRLs and more.
   "security.OCSP.enabled": 1,
   "security.OCSP.GET.enabled": false,
   "security.OCSP.require": false,
@@ -260,11 +255,6 @@ const TorBirdyPrefs = {
   */
 
   // We hope the user has Enigmail and if so, we believe these improve security.
-  // We would like these options to be a single shared option we can toggle but
-  // we require some discussions with upstream and then they would need a new
-  // release. It's not actually clear how we could or even if we should then
-  // depend on a specific Enigmail version. Either way, we want to save the
-  // user who would shoot themselves in the privacy-foot.
 
   // Disable X-Enigmail headers.
   // We don't want to obviously disclose that we're using Enigmail as it may
@@ -365,6 +355,7 @@ const TorBirdyPrefs = {
   /*
    Finish
   */
+
   // All preferences have been set: now enable TorBirdy.
   "extensions.torbirdy.protected": true,
 }
@@ -591,13 +582,10 @@ TorBirdy.prototype = {
       var allAccounts = [];
       // To maintain compatibility between Gecko 17+ and Gecko < 17, find out
       // which version we are on.
-      var newGecko = (accounts.queryElementAt) ? true : false;
 
-      var accountLength = newGecko ? accounts.length : accounts.Count();
+      var accountLength = accounts.length;
       for (var i = 0; i < accountLength; i++) {
-        var account = (newGecko) ?
-                      accounts.queryElementAt(i, Ci.nsIMsgAccount) :
-                      accounts.QueryElementAt(i, Ci.nsIMsgAccount);
+        var account = accounts.queryElementAt(i, Ci.nsIMsgAccount);
         allAccounts.push(account);
       }
 
@@ -609,13 +597,10 @@ TorBirdy.prototype = {
         // Get the locations of the Draft folder for all identities and save them.
         // We only need to do this for IMAP accounts.
         if (account.type === "imap") {
-          // Again ensure we maintain compatibility between different Gecko versions.
-          var identLength = newGecko ? identities.length : identities.Count();
+          var identLength = identities.length;
 
           for (var ident = 0; ident < identLength; ident++) {
-            var identity = (newGecko) ?
-                           identities.queryElementAt(ident, Ci.nsIMsgIdentity) :
-                           identities.QueryElementAt(ident, Ci.nsIMsgIdentity);
+            var identity = identities.queryElementAt(ident, Ci.nsIMsgIdentity);
 
             var key = identity.key;
             // We need to restore the following preferences after we are uninstalled/disabled.
