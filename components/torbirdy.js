@@ -1,18 +1,18 @@
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
 Components.utils.import("resource://gre/modules/AddonManager.jsm");
 
-const Ci = Components.interfaces;
-const Cc = Components.classes;
-const Cr = Components.results;
+var Ci = Components.interfaces;
+var Cc = Components.classes;
+var Cr = Components.results;
 
-const SERVICE_CTRID = "@torproject.org/torbirdy;1";
-const SERVICE_ID    = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
-const SERVICE_NAME  = "Main TorBirdy Component";
-const TB_ID         = "castironthunderbirdclub@torproject.org";
+var SERVICE_CTRID = "@torproject.org/torbirdy;1";
+var SERVICE_ID    = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
+var SERVICE_NAME  = "Main TorBirdy Component";
+var TB_ID         = "castironthunderbirdclub@torproject.org";
 
-const kPrefBranch     = "extensions.torbirdy.custom.";
-const kRestoreBranch  = "extensions.torbirdy.restore.";
-const kTorBirdyBranch = "extensions.torbirdy.";
+var kPrefBranch     = "extensions.torbirdy.custom.";
+var kRestoreBranch  = "extensions.torbirdy.restore.";
+var kTorBirdyBranch = "extensions.torbirdy.";
 
 // Default preference values for TorBirdy.
 // These preferences values will be "enforced": even if the user decides to
@@ -23,7 +23,7 @@ const kTorBirdyBranch = "extensions.torbirdy.";
 // the secure default when Thunderbird starts.
 // There are some preferences that can be overwritten using TorBirdy's
 // preferences dialog. See `preferences.js'.
-const TorBirdyPrefs = {
+var TorBirdyPrefs = {
   "extensions.torbirdy.protected": false,
   // When the preferences below have been set, enable TorBirdy.
 
@@ -211,7 +211,6 @@ const TorBirdyPrefs = {
   "browser.cache.memory.enable": false,
   "browser.cache.offline.enable": false,
   "browser.formfill.enable": false,
-  "signon.rememberSignons": false,
   "signon.autofillForms": false,
 
   // https://bugs.torproject.org/10367
@@ -675,4 +674,4 @@ TorBirdy.prototype = {
 
 }
 
-const NSGetFactory = XPCOMUtils.generateNSGetFactory([TorBirdy]);
+var NSGetFactory = XPCOMUtils.generateNSGetFactory([TorBirdy]);
