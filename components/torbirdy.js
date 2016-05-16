@@ -1,9 +1,8 @@
-Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
-Components.utils.import("resource://gre/modules/AddonManager.jsm");
+var { interfaces: Ci, utils: Cu, classes: Cc } = Components;
 
-var Ci = Components.interfaces;
-var Cc = Components.classes;
-var Cr = Components.results;
+Cu.import("resource://gre/modules/XPCOMUtils.jsm");
+Cu.import("resource://gre/modules/imXPCOMUtils.jsm");
+Cu.import("resource://gre/modules/AddonManager.jsm");
 
 var SERVICE_CTRID = "@torproject.org/torbirdy;1";
 var SERVICE_ID    = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
@@ -13,6 +12,10 @@ var TB_ID         = "castironthunderbirdclub@torproject.org";
 var kPrefBranch     = "extensions.torbirdy.custom.";
 var kRestoreBranch  = "extensions.torbirdy.restore.";
 var kTorBirdyBranch = "extensions.torbirdy.";
+
+XPCOMUtils.defineLazyGetter(this, "_", () =>
+  l10nHelper("chrome://castironthunderbirdclub/locale/torbirdy.properties")
+);
 
 // Default preference values for TorBirdy.
 // These preferences values will be "enforced": even if the user decides to
@@ -380,7 +383,7 @@ var TorBirdyOldPrefs = [
 // is rounded down to the nearest minute.
 function sanitizeDateHeaders() {
   // Import the jsmime module that is used to generate mail headers.
-  let { jsmime } = Components.utils.import("resource:///modules/jsmime.jsm");
+  let { jsmime } = Cu.import("resource:///modules/jsmime.jsm");
   // Inject our own structured encoder to the default header emitter,
   // to override the default Date encoder with a rounded-down version.
   jsmime.headeremitter.addStructuredEncoder("Date", function (date) {
@@ -438,7 +441,22 @@ TorBirdy.prototype = {
   // This is a hack to cause Thunderbird to instantiate us ASAP!
   _xpcom_categories: [{ category: "profile-after-change"}, ],
 
+  onStateChange: function() {
+    let panel = Cc['@mozilla.org/appshell/window-mediator;1']
+             .getService(Ci.nsIWindowMediator)
+             .getMostRecentWindow('mail:3pane').document.getElementById("torbirdy-my-panel");
+    if (this._uninstall) {
+      panel.label = _("torbirdy.enabled");
+      panel.style.color = "green";
+    }
+    else {
+      panel.label = _("torbirdy.disabled");
+      panel.style.color = "red";
+    }
+  },
+
   onUninstalling: function(addon, needsRestart) {
+    this.onStateChange();
     if (addon.id == TB_ID) {
       dump("Nooo! TorBirdy uninstall requested\n");
       this._uninstall = true;
@@ -447,6 +465,7 @@ TorBirdy.prototype = {
   },
 
   onOperationCancelled: function(addon) {
+    this.onStateChange();
     if (addon.id == TB_ID) {
       dump("Uninstall requested cancelled. Yayay!\n");
       this._uninstall = false;

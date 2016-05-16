@@ -67,7 +67,7 @@
         prefs.setBoolPref("extensions.torbirdy.whonix_run", false);
       }
       else {
-        myPanel.label = strbundle.getString("torbirdy.enabled.disabled");
+        myPanel.label = strbundle.getString("torbirdy.disabled");
         myPanel.style.color = "red";
       }
     }
