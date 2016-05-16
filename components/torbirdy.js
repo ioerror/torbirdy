@@ -25,12 +25,7 @@ const kTorBirdyBranch = "extensions.torbirdy.";
 // preferences dialog. See `preferences.js'.
 const TorBirdyPrefs = {
   "extensions.torbirdy.protected": false,
-  // When the preferences below have been set, then only enable TorBirdy.
-  // Generate our own custom time-independent message-ID.
-  "mailnews.custom_message_id": true,
-  "mailnews.header.custom_message_id": "",
-  // Remove the date header.
-  "mailnews.local_date_header_generation": false,
+  // When the preferences below have been set, enable TorBirdy.
 
   /*
     Network
@@ -38,6 +33,10 @@ const TorBirdyPrefs = {
 
   // Use a manual proxy configuration.
   "network.proxy.type": 1,
+  // https://bugs.torproject.org/10419
+  "network.proxy.no_proxies_on": "",
+  // Restrict TBB ports.
+  "network.security.ports.banned": "9050,9051,9150,9151",
   // Number of seconds to wait before attempting to recontact an unresponsive proxy server.
   "network.proxy.failover_timeout": 1800,
 
@@ -48,6 +47,8 @@ const TorBirdyPrefs = {
 
   // Set DNS proxying through SOCKS5.
   "network.proxy.socks_remote_dns": true,
+  // Disable DNS prefetching.
+  "network.dns.disablePrefetch": true,
 
   // https://lists.torproject.org/pipermail/tor-talk/2011-September/021398.html
   // "Towards a Tor-safe Mozilla Thunderbird"
@@ -62,8 +63,15 @@ const TorBirdyPrefs = {
 
   // Likely privacy violations
   // https://blog.torproject.org/blog/experimental-defense-website-traffic-fingerprinting
-  // https://trac.torproject.org/projects/tor/ticket/3914
+  // https://bugs.torproject.org/3914
   "network.http.pipelining": true,
+  "network.http.pipelining.aggressive": true,
+  "network.http.pipelining.maxrequests": 12,
+  "network.http.connection-retry-timeout": 0,
+  "network.http.max-persistent-connections-per-proxy": 256,
+  "network.http.pipelining.reschedule-timeout": 15000,
+  "network.http.pipelining.read-timeout": 60000,
+
   // We do not fully understand the privacy issues of the SPDY protocol
   // We have no reason to believe that anyone would actually use it with
   // Thunderbird but we fail closed to keep users safe out of an abundance of
@@ -74,8 +82,10 @@ const TorBirdyPrefs = {
   // author Mike Perry.
   "network.http.pipelining.ssl": true,
   "network.http.proxy.pipelining": true,
-  "network.http.pipelining.maxrequests": 12,
-  "network.http.sendRefererHeader": 0,
+  "network.http.sendRefererHeader": 2,
+  // https://bugs.torproject.org/16673
+  "network.http.altsvc.enabled": false,
+  "network.http.altsvc.oe": false,
 
   // Disable proxy bypass issue.
   // Websockets have no use in Thunderbird over Tor; some versions of the
@@ -87,6 +97,9 @@ const TorBirdyPrefs = {
   "network.websocket.enabled": false,
   // Cookies are allowed, but not third-party cookies. For Gmail and Twitter.
   "network.cookie.cookieBehavior": 1,
+  // http://kb.mozillazine.org/Network.cookie.lifetimePolicy
+  // 2: cookie expires at the end of the session.
+  "network.cookie.lifetimePolicy": 2,
   // Disable link prefetching.
   "network.prefetch-next": false,
 
@@ -103,6 +116,7 @@ const TorBirdyPrefs = {
   // - OCSP servers may log information about a user as they use the internet
   // generally; it's everything we hate about CRLs and more
   "security.OCSP.enabled": 1,
+  "security.OCSP.GET.enabled": false,
   "security.OCSP.require": false,
   // Disable TLS Session Ticket.
   // See https://trac.torproject.org/projects/tor/ticket/4099
@@ -111,7 +125,9 @@ const TorBirdyPrefs = {
   // We do not want to enable a known weak protocol; users should use only use TLS
   "security.enable_ssl3": false,
   // Thunderbird 23.0 uses the following preference.
+  // https://bugs.torproject.org/11253
   "security.tls.version.min": 1,
+  "security.tls.version.max": 3,
   // Display a dialog warning the user when entering an insecure site from a secure one.
   "security.warn_entering_weak": true,
   // Display a dialog warning the user when submtting a form to an insecure site.
@@ -126,6 +142,8 @@ const TorBirdyPrefs = {
   // Disable 'extension blocklist' which might leak the OS information.
   // See https://trac.torproject.org/projects/tor/ticket/6734
   "extensions.blocklist.enabled": false,
+  // Strict: certificate pinning is always enforced.
+  "security.cert_pinning.enforcement_level": 2,
 
   /*
     Mailnews
@@ -196,6 +214,46 @@ const TorBirdyPrefs = {
   // Disable caching.
   "browser.cache.disk.enable": false,
   "browser.cache.memory.enable": false,
+  "browser.cache.offline.enable": false,
+  "browser.formfill.enable": false,
+  "signon.rememberSignons": false,
+  "signon.autofillForms": false,
+
+  // https://bugs.torproject.org/10367
+  "datareporting.healthreport.service.enabled": false,
+  "datareporting.healthreport.uploadEnabled": false,
+  "datareporting.policy.dataSubmissionEnabled": false,
+  "datareporting.healthreport.about.reportUrl": "data:text/plain,",
+
+  // https://bugs.torproject.org/16256
+  "browser.search.countryCode": "US",
+  "browser.search.region": "US",
+  "browser.search.geoip.url": "",
+
+  // These have been copied from Tor Browser and don't apply to Thunderbird
+  // since the browser surface is limited (Gmail/Twitter) but we set them
+  // nevertheless.
+  // Disable client-side session and persistent storage.
+  "dom.storage.enabled": false,
+  // https://bugs.torproject.org/15758
+  "device.sensors.enabled": false,
+  // https://bugs.torproject.org/5293
+  "dom.battery.enabled": false,
+  // https://bugs.torproject.org/6204
+  "dom.enable_performance": false,
+  // https://bugs.torproject.org/13023
+  "dom.gamepad.enabled": false,
+  // https://bugs.torproject.org/8382
+  "dom.indexedDB.enabled": false,
+  // https://bugs.torproject.org/13024
+  "dom.enable_resource_timing": false,
+  // https://bugs.torproject.org/16336
+  "dom.enable_user_timing": false,
+  // https://bugs.torproject.org/17046
+  "dom.event.highrestimestamp.enabled": true,
+
+  // https://bugs.torproject.org/11817
+  "extensions.getAddons.cache.enabled": false,
 
   /*
     Enigmail
@@ -230,48 +288,9 @@ const TorBirdyPrefs = {
   // Force GnuPG to use SHA512.
   "extensions.enigmail.mimeHashAlgorithm": 5,
 
-  // RSS.
-  "rss.display.prefer_plaintext": true,
-  // These are similar to the mailnews.* settings.
-  "rss.display.disallow_mime_handlers": 3,
-  "rss.display.html_as": 1,
-
-  // Override the user agent by setting it to an empty string.
-  "general.useragent.override": "",
-
-  // Disable WebGL.
-  "webgl.disabled": true,
-
-  // Disable Telemetry completely.
-  "toolkit.telemetry.enabled": false,
-
-  // Disable Geolocation.
-  "geo.enabled": false,
-
-  // Disable JavaScript (email).
-  "javascript.enabled": false,
-
-  // Disable client-side session and persistent storage.
-  "dom.storage.enabled": false,
-  // Do not run plugins out-of-process.
-  "dom.ipc.plugins.java.enabled": false,
-  // Disable changing of images via JavaScript.
-  "dom.disable_image_src_set": true,
-
-  // Disable WebM, WAV, Ogg, PeerConnection.
-  "media.webm.enabled": false,
-  "media.wave.enabled": false,
-  "media.ogg.enabled": false,
-  "media.peerconnection.enabled": false,
-
-  // Disable CSS :visited selector.
-  "layout.css.visited_links_enabled": false,
-
-  // Disable downloadable fonts.
-  "gfx.downloadable_fonts.enabled": false,
-
-  // Disable remote images.
-  "permissions.default.image": 2,
+  /*
+    Chat and Calendar
+  */
 
   // Thunderbird 15 introduces the chat feature so disable the preferences below.
   "purple.logging.log_chats": false,
@@ -304,6 +323,48 @@ const TorBirdyPrefs = {
   // "GMT" is not an option so we set it to Europe/London.
   "calendar.timezone.local": "Europe/London",
 
+  /*
+   Other Settings
+  */
+
+  // RSS.
+  "rss.display.prefer_plaintext": true,
+  // These are similar to the mailnews.* settings.
+  "rss.display.disallow_mime_handlers": 3,
+  "rss.display.html_as": 1,
+
+  // Override the user agent by setting it to an empty string.
+  "general.useragent.override": "",
+
+  // Disable WebGL.
+  "webgl.disabled": true,
+
+  // Disable Telemetry completely.
+  "toolkit.telemetry.enabled": false,
+
+  // Disable Geolocation.
+  "geo.enabled": false,
+
+  // Disable JavaScript (email).
+  "javascript.enabled": false,
+
+  // Disable WebM, WAV, Ogg, PeerConnection.
+  "media.navigator.enabled": false,
+  "media.peerconnection.enabled": false,
+  "media.cache_size": 0,
+
+  // Disable CSS :visited selector.
+  "layout.css.visited_links_enabled": false,
+
+  // Disable downloadable fonts.
+  "gfx.downloadable_fonts.enabled": false,
+
+  // Disable remote images.
+  "permissions.default.image": 2,
+
+  /*
+   Finish
+  */
   // All preferences have been set: now enable TorBirdy.
   "extensions.torbirdy.protected": true,
 }
