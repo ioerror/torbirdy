@@ -4,11 +4,11 @@ VERSION := $(shell cat install.rdf|grep '<em:version>'|cut -d\> -f2|cut -d\< -f1
 FAKETIME := 200001010000
 
 make-xpi:
-	zip -r ../torbirdy-$(VERSION).xpi * -x "debian/*" -x "patches/*" -x "ChangeLog" -x "Makefile" -x "gpg.conf" -x "import-translations.sh" -x "README.RELEASE"
+	zip -r ../torbirdy-$(VERSION).xpi * -x "debian/*" -x "ChangeLog" -x "Makefile" -x "gpg.conf" -x "import-translations.sh" -x "README.RELEASE"
 
 make-reproducible:
 	find . -print0 | xargs -0 touch -t $(FAKETIME)
-	zip -X ../torbirdy-$(VERSION).xpi `find . | sort` -x "debian/*" -x "patches/*" -x "ChangeLog" -x "Makefile" -x "gpg.conf" -x "import-translations.sh" -x "README.RELEASE" -x *.git*
+	zip -X ../torbirdy-$(VERSION).xpi `find . | sort` -x "debian/*" -x "ChangeLog" -x "Makefile" -x "gpg.conf" -x "import-translations.sh" -x "README.RELEASE" -x *.git*
 
 clean:
 	rm -f ../torbirdy-$(VERSION).xpi

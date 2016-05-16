@@ -19,7 +19,6 @@
         <li resource="chrome://global/content/customizeToolbar.xul"/>
         <!-- thunderbird -->
         <li resource="chrome://messenger/content/messenger.xul"/>
-        <li resource="chrome://messenger/content/messengercompose/messengercompose.xul"/>
     </Seq>
 
     <Seq about="chrome://global/content/customizeToolbar.xul">
@@ -28,9 +27,6 @@
 
     <!-- thunderbird -->
     <Seq about="chrome://messenger/content/messenger.xul">
-        <li>chrome://castironthunderbirdclub/skin/castironthunderbirdclub.css</li>
-    </Seq>
-    <Seq about="chrome://messenger/content/messengercompose/messengercompose.xul">
         <li>chrome://castironthunderbirdclub/skin/castironthunderbirdclub.css</li>
     </Seq>
 
