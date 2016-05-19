@@ -45,6 +45,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     if (anonService === "jondo") {
       proxy = "http://127.0.0.1:4001";
     }
+
     return opts +
            "--no-emit-version " +
            "--no-comments " +
@@ -363,18 +364,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       pub.prefs.setBoolPref(pub.prefBranch + 'emailwizard', false);
     }
 
-    // Insecure renegotiation - default: false (opt-out for mailservers that do
-    // not support secure renegotiation yet)
-    var securityRenegotiation = 'security.ssl.require_safe_negotiation';
-    var securityWarn = 'security.ssl.treat_unsafe_negotiation_as_broken';
-    if (pub.secureRenegotiation.checked) {
-      pub.setPreferences(securityRenegotiation, false);
-      pub.setPreferences(securityWarn, false);
-    } else {
-      pub.clearSinglePref(securityRenegotiation);
-      pub.clearSinglePref(securityWarn);
-    }
-
     if (index === 1) {
       // JonDo.
       if (pub.anonCustomService.selectedIndex === 0) {
@@ -535,12 +524,6 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     /*
      Security
     */
-    // Allow insecure renegotiation - default: false
-    if (pub.prefs.prefHasUserValue(pub.customBranch + 'security.ssl.require_safe_negotiation')) {
-      pub.secureRenegotiation.checked = true;
-    } else {
-      pub.secureRenegotiation.checked = false;
-    }
 
     // Load the email accounts.
     var accounts = pub.getAccount();

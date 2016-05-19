@@ -28,7 +28,6 @@
       <tab label="&torbirdy.prefs.proxy.label;"/>
       <tab label="&torbirdy.prefs.privacy.label;"/>
       <tab label="&torbirdy.prefs.enigmail.label;"/>
-      <tab label="&torbirdy.prefs.security.label;"/>
     </tabs>
 
     <tabpanels>
@@ -148,15 +147,6 @@
       </tabpanel>
 
       <!-- Security Settings -->
-      <tabpanel>
-        <vbox>
-
-          <vbox>
-              <checkbox accesskey="&torbirdy.prefs.renegotiation.key;" id="torbirdy-renegotiation" label="&torbirdy.prefs.renegotiation.label;"/>
-          </vbox>
-
-        </vbox>
-      </tabpanel>
 
     </tabpanels>
 
