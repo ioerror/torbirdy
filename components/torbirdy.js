@@ -351,7 +351,7 @@ var TorBirdyPrefs = {
   // Disable downloadable fonts.
   "gfx.downloadable_fonts.enabled": false,
 
-  // Disable remote images.
+  // Disable third-party images.
   "permissions.default.image": 3,
 
   /*
