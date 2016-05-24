@@ -130,6 +130,39 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
       window.close();
     }
     else {
+      var prefer_pop = Preferences.get("extensions.torbirdy.defaultprotocol") != 1;
+      // Both of these monkeypatches hook in only to change the
+      // selection default (POP vs IMAP according to our pref) at
+      // suitable times, i.e. when the page has been pre-filled and is
+      // finally presented to user action.
+      var result_imappop_hacks_run_once = false;
+      var old_displayConfigResult = gEmailConfigWizard.displayConfigResult;
+      gEmailConfigWizard.displayConfigResult = function(config) {
+        old_displayConfigResult.call(this, config);
+        var radiogroup = document.getElementById("result_imappop");
+        if (radiogroup.hidden) return;
+        // We can only run the monkeypatch code below once -- this
+        // method is called every time we change selection, preventing
+        // us from changing the selection away from POP.
+        if (result_imappop_hacks_run_once) return;
+        result_imappop_hacks_run_once = true;
+        var imap_element = document.getElementById("result_select_imap");
+        var pop_element = document.getElementById("result_select_pop3");
+        if (prefer_pop && imap_element.selected && pop_element) {
+          radiogroup.selectedItem = pop_element;
+          gEmailConfigWizard.onResultIMAPOrPOP3();
+        }
+      }
+      var old_fillManualEditFields = gEmailConfigWizard._fillManualEditFields;
+      gEmailConfigWizard._fillManualEditFields = function(config) {
+        old_fillManualEditFields.call(this, config);
+        if (prefer_pop) {
+          // In this itemlist, POP is located at index 1.
+          document.getElementById("incoming_protocol").selectedIndex = 1;
+          gEmailConfigWizard.onChangedProtocolIncoming();
+        }
+      }
+
       // From comm-release/mailnews/base/prefs/content/accountcreation/emailWizard.js : finish().
       // We need somewhere to hook in, so we can access the new
       // account object created through the autoconfig wizard, and
