@@ -77,7 +77,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
   pub.clearCustomPrefs = function() {
     var customPrefs = pub.torBirdyPref.getChildList("", {});
-    for (var i = 0; i < customPrefs.length; i++) {
+    for (let i = 0; i < customPrefs.length; i++) {
       pub.prefs.clearUserPref(pub.customBranch + customPrefs[i]);
     }
   };
@@ -131,7 +131,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
 
     var accountLength = accounts.length;
 
-    for (var i = 0; i < accountLength; i++) {
+    for (let i = 0; i < accountLength; i++) {
       var account = accounts.queryElementAt(i, Components.interfaces.nsIMsgAccount).incomingServer;
 
       var name = account.prettyName;
@@ -149,7 +149,7 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       // For email accounts, configure accordingly.
       var sAccount = null;
       var account = pub.getAccount();
-      for (var i = 0; i < account.length; i++) {
+      for (let i = 0; i < account.length; i++) {
         if (account[i].key === pub.mailAccount.value) {
           sAccount = i;
         }
@@ -324,14 +324,14 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
       var accounts = pub.getAccount();
       if (pub.fetchAllMails.checked) {
         pub.prefs.setBoolPref(pub.prefBranch + 'fetchall', true);
-        for (var i = 0; i < accounts.length; i++) {
+        for (let i = 0; i < accounts.length; i++) {
           accounts[i].loginAtStartUp = true;
           accounts[i].doBiff = true;
         }
       }
       else {
         pub.prefs.setBoolPref(pub.prefBranch + 'fetchall', false);
-        for (var i = 0; i < accounts.length; i++) {
+        for (let i = 0; i < accounts.length; i++) {
           accounts[i].loginAtStartUp = false;
           accounts[i].doBiff = false;
         }

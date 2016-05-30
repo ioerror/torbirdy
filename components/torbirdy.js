@@ -480,13 +480,13 @@ TorBirdy.prototype = {
   resetUserPrefs: function() {
     dump("Resetting user preferences to default\n");
     // Clear the Thunderbird preferences we changed.
-    for (var each in TorBirdyPrefs) {
+    for (let each in TorBirdyPrefs) {
       this.prefs.clearUserPref(each);
     }
 
     // Restore the older proxy preferences that were set prior to TorBirdy's install.
     dump("Restoring proxy settings\n");
-    for (var i = 0; i < TorBirdyOldPrefs.length; i++) {
+    for (let i = 0; i < TorBirdyOldPrefs.length; i++) {
       var oldPref = TorBirdyOldPrefs[i];
       var setValue = kRestoreBranch + oldPref;
       var type = this.prefs.getPrefType(setValue);
@@ -502,14 +502,14 @@ TorBirdy.prototype = {
     }
 
     // Enable plugins.
-    for(var i = 0; i < this.plugins.length; i++) {
+    for(let i = 0; i < this.plugins.length; i++) {
         this.plugins[i].disabled = false;
     }
 
     // Now clear all TorBirdy preferences.
     var clearPrefs = Cc["@mozilla.org/preferences-service;1"]
                              .getService(Ci.nsIPrefService).getBranch(kTorBirdyBranch).getChildList("", {});
-    for (var i = 0; i < clearPrefs.length; i++) {
+    for (let i = 0; i < clearPrefs.length; i++) {
         this.prefs.clearUserPref(kTorBirdyBranch + clearPrefs[i]);
     }
   },
@@ -517,7 +517,7 @@ TorBirdy.prototype = {
   setPrefs: function() {
     // If custom values are set for specific preferences, override the defaults with them.
     // For each preference, get the type and then set the property.
-    for (var i = 0; i < this.customPrefs.length; i++) {
+    for (let i = 0; i < this.customPrefs.length; i++) {
       var typePref = this.prefs.getPrefType(this.customPrefs[i]);
       // String.
       if (typePref === 32) {
@@ -534,7 +534,7 @@ TorBirdy.prototype = {
       TorBirdyPrefs[this.customPrefs[i]] = value;
     }
 
-    for (var each in TorBirdyPrefs) {
+    for (let each in TorBirdyPrefs) {
       if (typeof TorBirdyPrefs[each] === "boolean") {
         this.prefs.setBoolPref(each, TorBirdyPrefs[each]);
       }
@@ -554,7 +554,7 @@ TorBirdy.prototype = {
       // First copy TorBirdyPrefs to TorBirdyOldPrefs.
       TorBirdyOldPrefs.push.apply(TorBirdyOldPrefs, Object.keys(TorBirdyPrefs));
 
-      for (var i = 0; i < TorBirdyOldPrefs.length; i++) {
+      for (let i = 0; i < TorBirdyOldPrefs.length; i++) {
         var oldPref = TorBirdyOldPrefs[i];
         var type = this.prefs.getPrefType(oldPref);
         // String.
@@ -588,7 +588,7 @@ TorBirdy.prototype = {
       this.prefs.setIntPref("network.proxy.ssl_port", 0);
 
       // Disable all plugins.
-      for (var i = 0; i < this.plugins.length; i++) {
+      for (let i = 0; i < this.plugins.length; i++) {
           this.plugins[i].disabled = true;
       }
 
@@ -602,13 +602,13 @@ TorBirdy.prototype = {
       // which version we are on.
 
       var accountLength = accounts.length;
-      for (var i = 0; i < accountLength; i++) {
+      for (let i = 0; i < accountLength; i++) {
         var account = accounts.queryElementAt(i, Ci.nsIMsgAccount);
         allAccounts.push(account);
       }
 
       // Save account settings for restoring later.
-      for (var i = 0; i < allAccounts.length; i++) {
+      for (let i = 0; i < allAccounts.length; i++) {
         var identities = allAccounts[i].identities;
         var account = allAccounts[i].incomingServer;
 
@@ -617,14 +617,14 @@ TorBirdy.prototype = {
         if (account.type === "imap") {
           var identLength = identities.length;
 
-          for (var ident = 0; ident < identLength; ident++) {
+          for (let ident = 0; ident < identLength; ident++) {
             var identity = identities.queryElementAt(ident, Ci.nsIMsgIdentity);
 
             var key = identity.key;
             // We need to restore the following preferences after we are uninstalled/disabled.
             var restorePrefs = ["draft_folder", "drafts_folder_picker_mode"];
 
-            for (var p = 0; p < restorePrefs.length; p++) {
+            for (let p = 0; p < restorePrefs.length; p++) {
               var pref = "mail.identity.%id%.".replace("%id%", key);
               var prefName = pref + restorePrefs[p];
               if (this.prefs.prefHasUserValue(prefName)) {
@@ -646,7 +646,7 @@ TorBirdy.prototype = {
         var restorePrefs = ["check_new_mail", "login_at_startup",
                             "check_time", "download_on_biff",
                             "socketType", "port", "authMethod"];
-        for (var j = 0; j < restorePrefs.length; j++) {
+        for (let j = 0; j < restorePrefs.length; j++) {
           var pref = "mail.server.%serverkey%.".replace("%serverkey%", key);
           var prefName = restorePrefs[j];
           var prefToCall = pref + prefName;
