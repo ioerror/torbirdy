@@ -130,11 +130,12 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
       window.close();
     }
     else {
+      // If the autoconfig wizard is enabled, or we are running in Tails.
       var prefer_pop = Preferences.get("extensions.torbirdy.defaultprotocol") != 1;
-      // Both of these monkeypatches hook in only to change the
-      // selection default (POP vs IMAP according to our pref) at
-      // suitable times, i.e. when the page has been pre-filled and is
-      // finally presented to user action.
+      // Both of these monkeypatches hook in only to change the selection
+      // default (POP vs IMAP according to our pref) at suitable times, i.e.
+      // when the page has been pre-filled and is finally presented to user
+      // action.
       var result_imappop_hacks_run_once = false;
       var old_displayConfigResult = gEmailConfigWizard.displayConfigResult;
       gEmailConfigWizard.displayConfigResult = function(config) {
@@ -143,9 +144,9 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
         if (radiogroup.hidden) {
           return;
         }
-        // We can only run the monkeypatch code below once -- this
-        // method is called every time we change selection, preventing
-        // us from changing the selection away from POP.
+        // We can only run the monkeypatch code below once -- this method is
+        // called every time we change selection, preventing us from changing
+        // the selection away from POP.
         if (result_imappop_hacks_run_once) {
           return;
         }
@@ -161,7 +162,7 @@ if(!org.torbirdy.emailwizard) org.torbirdy.emailwizard = new function() {
       gEmailConfigWizard._fillManualEditFields = function(config) {
         old_fillManualEditFields.call(this, config);
         if (prefer_pop) {
-          // In this itemlist, POP is located at index 1.
+          // In this itemlist, POP3 is located at index 1.
           document.getElementById("incoming_protocol").selectedIndex = 1;
           gEmailConfigWizard.onChangedProtocolIncoming();
         }
