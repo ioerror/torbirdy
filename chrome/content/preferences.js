@@ -19,6 +19,10 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
   pub.acctMgr = Components.classes["@mozilla.org/messenger/account-manager;1"]
                     .getService(Components.interfaces.nsIMsgAccountManager);
 
+  var env = Components.classes["@mozilla.org/process/environment;1"]
+                     .getService(Components.interfaces.nsIEnvironment);
+  pub.whonix = env.exists("WHONIX") ? true : false;
+
   var bundles = Components.classes["@mozilla.org/intl/stringbundle;1"]
                         .getService(Components.interfaces.nsIStringBundleService);
   pub.strBundle = bundles.createBundle("chrome://castironthunderbirdclub/locale/torbirdy.properties");
@@ -45,13 +49,16 @@ if (!org.torbirdy.prefs) org.torbirdy.prefs = new function() {
     if (anonService === "jondo") {
       proxy = "http://127.0.0.1:4001";
     }
+    var proxyOptions = "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=" + proxy;
+    if (pub.whonix) {
+      var proxyOptions = "";
+    }
 
     return opts +
            "--no-emit-version " +
            "--no-comments " +
            "--display-charset utf-8 " +
-           "--keyserver-options no-auto-key-retrieve,no-try-dns-srv,http-proxy=" +
-           proxy;
+           proxyOptions;
   };
 
   pub.updateKeyserver = function(anonService) {
