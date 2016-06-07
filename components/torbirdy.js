@@ -3,6 +3,7 @@ var { interfaces: Ci, utils: Cu, classes: Cc } = Components;
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/imXPCOMUtils.jsm");
 Cu.import("resource://gre/modules/AddonManager.jsm");
+Cu.import("resource://gre/modules/Preferences.jsm");
 
 var SERVICE_CTRID = "@torproject.org/torbirdy;1";
 var SERVICE_ID    = Components.ID("{ebd85413-18c8-4265-a708-a8890ec8d1ed}");
@@ -686,6 +687,30 @@ TorBirdy.prototype = {
         account.socketType = 3;
         // Set the authentication to normal, connection is already encrypted.
         account.authMethod = 3;
+      }
+
+      // We need to set safe defaults for the outgoing servers in case there
+      // are accounts using insecure configurations. One other way way of
+      // accessing the server list can be through nsIMsgIdentity but multiple
+      // identities can share the same server so fetching the preference value
+      // mail.smtpservers seems a better way to do it.
+      let smtpAccounts = this.prefs.getCharPref("mail.smtpservers").split(",");
+      let smtpPrefs = [
+        ["mail.smtpserver.%smtp%.port", 465], // SMTP over TLS
+        ["mail.smtpserver.%smtp%.authMethod", 3], // Normal password
+        ["mail.smtpserver.%smtp%.try_ssl", 3], // SSL/TLS
+      ];
+      for (let i = 0; i < smtpAccounts.length; i++) {
+        for each (var [pref_template, value] in smtpPrefs) {
+          let pref = pref_template.replace("%smtp%", smtpAccounts[i]);
+          if (this.prefs.prefHasUserValue(pref)) {
+            let currentPref = Preferences.get(pref);
+            // Save the values so that we can restore them later.
+            Preferences.set(kRestoreBranch + pref, currentPref);
+            TorBirdyOldPrefs.push(pref);
+            Preferences.set(pref, value);
+          }
+        }
       }
     }
     this.prefs.setBoolPref("extensions.torbirdy.first_run", false);
