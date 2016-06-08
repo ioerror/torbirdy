@@ -12,14 +12,13 @@
 <!ENTITY torbirdy.prefs.save.button "저장">
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "취소">
-<!ENTITY torbirdy.prefs.extra2.button "설정 초기화">
+<!ENTITY torbirdy.prefs.extra2.button "기본값으로 복구">
 <!ENTITY torbirdy.prefs.extra2.key "d">
-<!ENTITY torbirdy.prefs.testproxy.button "테스트 프록시 설정">
+<!ENTITY torbirdy.prefs.testproxy.button "프록시 설정 테스트">
 <!ENTITY torbirdy.prefs.testproxy.key "n">
-<!ENTITY torbirdy.prefs.proxy.label "프록시 설정">
-<!ENTITY torbirdy.prefs.privacy.label "개인 정보 설정">
-<!ENTITY torbirdy.prefs.enigmail.label "Enigmail 설정">
-<!ENTITY torbirdy.prefs.security.label " 보안 설정">
+<!ENTITY torbirdy.prefs.proxy.label "프록시">
+<!ENTITY torbirdy.prefs.privacy.label "개인 정보">
+<!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
 <!ENTITY torbirdy.prefs.recommended.text "Tor버디(Tor)에게 권장하는 프록시 설정을 사용합니다.">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "익명 서비스 선택">
@@ -37,8 +36,6 @@
 <!ENTITY torbirdy.prefs.imap.key "p">
 <!ENTITY torbirdy.prefs.startup_folder.label "시작시 마지막으로 액세스 된 메일 폴더를 선택합니다 [기본값 : 사용 안 함]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
-<!ENTITY torbirdy.prefs.timezone.label "썬더버드의 타임존을 UTC로 설정하지 마십시오 [기본값 : UTC로 설정]">
-<!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "수취인의 키 ID를 암호화된 메시지에 넣기 [기본값 : 비활성화]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "Enigmail이 활성화되었을 경우 메일을 보내기 전에 확인하기 [기본값 : 확인하지 않음]">
@@ -47,9 +44,7 @@
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.automatic.label "모든 계정에 대해 자동으로 새 메시지를 확인 [기본값 : 사용 안 함]">
 <!ENTITY torbirdy.prefs.automatic.key "f">
-<!ENTITY torbirdy.prefs.renegotiation.label "SSL/TLS가 호환되지 않는 사이트에의 비보호 접근을 허용 [기본 설정: 비허용]">
-<!ENTITY torbirdy.prefs.renegotiation.key "r">
-<!ENTITY torbirdy.prefs.account_specific "계정-특징적">
+<!ENTITY torbirdy.prefs.account_specific "계정별">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "계정 선택 : ">
 <!ENTITY torbirdy.prefs.enigmail.keyserver.label "사용할 키서버:">

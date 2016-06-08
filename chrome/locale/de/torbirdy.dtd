@@ -1,9 +1,9 @@
-<!ENTITY torbirdy.accountprefs.title "Kontokonfiguration">
+<!ENTITY torbirdy.accountprefs.title "Lokale Proxy-Konfiguration">
 <!ENTITY torbirdy.accountprefs.startup.label "Beim Start auf neue Nachrichten prüfen">
-<!ENTITY torbirdy.accountprefs.startup.key "B">
-<!ENTITY torbirdy.accountprefs.minutes.label "Auf neue Nachrichten alle">
-<!ENTITY torbirdy.accountprefs.minutes.key "A">
-<!ENTITY torbirdy.accountprefs.minutes.trail.label "Minuten prüfen">
+<!ENTITY torbirdy.accountprefs.startup.key "C">
+<!ENTITY torbirdy.accountprefs.minutes.label "Überprüfungsintervall für neue Nachrichten">
+<!ENTITY torbirdy.accountprefs.minutes.key "Y">
+<!ENTITY torbirdy.accountprefs.minutes.trail.label "Minuten">
 <!ENTITY torbirdy.accountprefs.cancel.button "Abbrechen">
 <!ENTITY torbirdy.accountprefs.save.button "Speichern">
 <!ENTITY torbirdy.accountprefs.save.key "S">
@@ -13,17 +13,16 @@
 <!ENTITY torbirdy.prefs.save.key "s">
 <!ENTITY torbirdy.prefs.cancel.button "Abbrechen">
 <!ENTITY torbirdy.prefs.extra2.button "Auf Vorgaben zurücksetzen">
-<!ENTITY torbirdy.prefs.extra2.key "z">
-<!ENTITY torbirdy.prefs.testproxy.button "Vermittlungsservereinstellungen testen">
-<!ENTITY torbirdy.prefs.testproxy.key "t">
+<!ENTITY torbirdy.prefs.extra2.key "d">
+<!ENTITY torbirdy.prefs.testproxy.button "Einstellungen des Vermittlungsserver prüfen">
+<!ENTITY torbirdy.prefs.testproxy.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Vermittlungsserver">
 <!ENTITY torbirdy.prefs.privacy.label "Privatsphäre">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
-<!ENTITY torbirdy.prefs.security.label "Sicherheit">
 <!ENTITY torbirdy.prefs.recommended.text "Die empfohlenen Vermittlungsservereinstellungen für TorBirdy (Tor) benutzen">
-<!ENTITY torbirdy.prefs.recommended.key "D">
+<!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Anonymisierungsdienst auswählen">
-<!ENTITY torbirdy.prefs.anonservice.key "A">
+<!ENTITY torbirdy.prefs.anonservice.key "a">
 <!ENTITY torbirdy.prefs.customsettings.text "Benutzerdefinierte Vermittlungsservereinstellungen benutzen">
 <!ENTITY torbirdy.prefs.customsettings.key "B">
 <!ENTITY torbirdy.prefs.socks_host.label "SOCKS-Rechner:">
@@ -37,8 +36,6 @@
 <!ENTITY torbirdy.prefs.imap.key "P">
 <!ENTITY torbirdy.prefs.startup_folder.label "Beim Start zum letzten aktiven Nachrichtenordner wechseln [Vorgabe: deaktiviert]">
 <!ENTITY torbirdy.prefs.startup_folder.key "B">
-<!ENTITY torbirdy.prefs.timezone.label "Thunderbirds Zeitzone nicht auf UTC einstellen [Vorgabe: auf UTC eingestellt]">
-<!ENTITY torbirdy.prefs.timezone.key "T">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Die Empfängerschlüsselkennung nicht in verschlüsselte Nachrichten einbinden [Vorgabe: mit einbinden]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "D">
 <!ENTITY torbirdy.prefs.confirmemail.label "Vor dem Versenden einer E-Mail überprüfen, ob Enigmail aktiviert ist [Vorgabe: nicht überprüfen]">
@@ -47,8 +44,6 @@
 <!ENTITY torbirdy.prefs.emailwizard.key "T">
 <!ENTITY torbirdy.prefs.automatic.label "Automatisch auf neue Nachrichten für alle Konten prüfen [Vorgabe: deaktiviert]">
 <!ENTITY torbirdy.prefs.automatic.key "A">
-<!ENTITY torbirdy.prefs.renegotiation.label "Verbindungen zu Servern erlauben, die kein SSL/TLS mit sicherer Neuverhandlung unterstützen [Vorgabe: nicht erlauben]">
-<!ENTITY torbirdy.prefs.renegotiation.key "V">
 <!ENTITY torbirdy.prefs.account_specific "Bestimmtes Konto">
 <!ENTITY torbirdy.prefs.select_account.key "K">
 <!ENTITY torbirdy.prefs.select_account.label "Konto auswählen: ">

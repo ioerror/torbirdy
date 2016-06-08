@@ -19,7 +19,6 @@
 <!ENTITY torbirdy.prefs.proxy.label "Proxy">
 <!ENTITY torbirdy.prefs.privacy.label "Súkromie">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
-<!ENTITY torbirdy.prefs.security.label "Bezpečnosť">
 <!ENTITY torbirdy.prefs.recommended.text "Použiť odporúčané nastavenie proxy pre TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Použiť anonymizačnú službu">
@@ -37,8 +36,6 @@
 <!ENTITY torbirdy.prefs.imap.key "p">
 <!ENTITY torbirdy.prefs.startup_folder.label "Zvoliť posledne navštívenú mailovú zložku pri štarte [štandardne: vypnuté]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
-<!ENTITY torbirdy.prefs.timezone.label "Nenastavovať časovú zónu aplikácie Thunderbird na koordinovaný svetový čas UTC [štandardne: nastavené na UTC]">
-<!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Nevkladať ID kľúčov príjemcu do zašifrovaných správ [štandardné: vkladať]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "Potvrdiť pred zaslaním emailu v prípade, že je Enigmail povolený [štandardne: nepotvrdzovať]">
@@ -47,8 +44,6 @@
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.automatic.label "Skontrolovať nové správy automaticky pre všetky účty [štandardne: vypnuté]">
 <!ENTITY torbirdy.prefs.automatic.key "f">
-<!ENTITY torbirdy.prefs.renegotiation.label "Umožniť pripojenia k serverom nepodporujúcim SSL/TLS s bezpečným prehodnocovaním [štandardne: neumožniť]">
-<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Špecifické pre účet">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Vyberte účet:">

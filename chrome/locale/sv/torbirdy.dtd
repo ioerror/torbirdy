@@ -19,7 +19,6 @@
 <!ENTITY torbirdy.prefs.proxy.label "Proxy">
 <!ENTITY torbirdy.prefs.privacy.label "Integritet">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
-<!ENTITY torbirdy.prefs.security.label "Säkerhet">
 <!ENTITY torbirdy.prefs.recommended.text "Använd rekommenderade proxyinställningar för TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Välj en anonymiseringstjänst">
@@ -37,8 +36,6 @@
 <!ENTITY torbirdy.prefs.imap.key "p">
 <!ENTITY torbirdy.prefs.startup_folder.label "Välj senast besökta mail katalog vid uppstart [standard: inaktiverat]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
-<!ENTITY torbirdy.prefs.timezone.label "Sätt inte Thunderbirds tidzon till UTC [standard: sätt till UTC]">
-<!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Lägg inte till mottagarnas nyckel-IDn i krypterade meddelanden [standard: lägg till]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "Bekräfta innan e-post skickas om Enigmail är aktiverat [standard: bekräfta inte]">
@@ -47,8 +44,6 @@
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.automatic.label "Kolla efter nya meddelanden automatiskt för alla konton [standard: inaktiverat]">
 <!ENTITY torbirdy.prefs.automatic.key "f">
-<!ENTITY torbirdy.prefs.renegotiation.label "Tillåt anslutningar till servrar som inte stöder SSL/TLS med säker omförhandling [standard: tillåt inte]">
-<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Konto-specifikt">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Välj ett konto:">

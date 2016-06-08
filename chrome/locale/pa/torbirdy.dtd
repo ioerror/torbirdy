@@ -19,7 +19,6 @@
 <!ENTITY torbirdy.prefs.proxy.label "ਪਰਾਕਸੀ">
 <!ENTITY torbirdy.prefs.privacy.label "ਪਰਾਈਵੇਸੀ">
 <!ENTITY torbirdy.prefs.enigmail.label "ਏਨਿਗਮੇਲ">
-<!ENTITY torbirdy.prefs.security.label "ਸੁਰੱਖਿਆ">
 <!ENTITY torbirdy.prefs.recommended.text "ਟੋਰਬਰਡੀ ਲਈ ਆਖੀ ਹੋਈ ਪਰਾਕਸੀ ਸੈਟਿੰਗ ਵਰਤੋਂ ਕਰੋ (ਟੋਰ)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "ਅਗਿਆਤ ਸੇਵਾ ਚੁਣੋ">
@@ -37,8 +36,6 @@
 <!ENTITY torbirdy.prefs.imap.key "p">
 <!ENTITY torbirdy.prefs.startup_folder.label "ਸ਼ੁਰੂ ਹੋਣ ਤੇ ਆਖਰੀ ਈਮੇਲ ਫੋਲਡਰ ਚੋਣਵਾਂ ਕਰੋ">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
-<!ENTITY torbirdy.prefs.timezone.label "ਥੰਡਰਬਰਡ ਦੇ ਟਾਇਮ ਜ਼ੋਨ ਨੂੰ UTC ਨਾ ਤੈਅ ਕਰੋ">
-<!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "GPG '--throw-keyids' ਰੱਦ ਕਰੋ
 ">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "p">
@@ -48,8 +45,6 @@
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.automatic.label "ਨਵੇਂ ਸੰਦੇਸ਼ਾਂ ਵਾਸਤੇ ਚੇਕ ਕਰੋ ਸਾਰੇ ਅਕਾਊਂਟਸ ਲਈ">
 <!ENTITY torbirdy.prefs.automatic.key "f">
-<!ENTITY torbirdy.prefs.renegotiation.label "ਜੇ ਸਰਵਰ ਤੇ  SSL /TLS Secure  Regontiation ਦੀ ਸਹਾਇਤਾ ਨਹੀਂ ਹੈ ਤਾਂ ਵੀ ਕਨੇਕਟ ਕਰੋ">
-<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "ਖਾਤਾ-ਖਾਸ">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "ਖਾਤਾ ਚੁਣੋ:">

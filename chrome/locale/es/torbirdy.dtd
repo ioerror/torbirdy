@@ -19,7 +19,6 @@
 <!ENTITY torbirdy.prefs.proxy.label "Proxy">
 <!ENTITY torbirdy.prefs.privacy.label "Privacidad">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
-<!ENTITY torbirdy.prefs.security.label "Seguridad">
 <!ENTITY torbirdy.prefs.recommended.text "Usar la configuración de proxy recomendada para TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "y">
 <!ENTITY torbirdy.prefs.anonservice.text "Escoger un servicio de anonimización">
@@ -37,8 +36,6 @@
 <!ENTITY torbirdy.prefs.imap.key "h">
 <!ENTITY torbirdy.prefs.startup_folder.label "En el arranque seleccionar la última carpeta de correo a la que se accedió [predeterminado: deshabilitado]">
 <!ENTITY torbirdy.prefs.startup_folder.key "u">
-<!ENTITY torbirdy.prefs.timezone.label "No establecer la zona horaria de Thunderbird a UTC [por defecto: establecer a UTC]">
-<!ENTITY torbirdy.prefs.timezone.key "n">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "No ponga la clave de identificación del receptor en los mensajes cifrados [por defecto: poner]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "f">
 <!ENTITY torbirdy.prefs.confirmemail.label "Confirmar antes de enviar el correo si Enigmail está habilitado [predeterminado: no confirmar]">
@@ -48,8 +45,6 @@
 <!ENTITY torbirdy.prefs.automatic.label "Buscar mensajes nuevos automáticamente para todas 
 las cuentas [por defecto: dehabilitado]">
 <!ENTITY torbirdy.prefs.automatic.key "t">
-<!ENTITY torbirdy.prefs.renegotiation.label "Permitir conexiones a servidores que no soporten SSL/TLS con renegociación segura [predeterminado: no permitir]">
-<!ENTITY torbirdy.prefs.renegotiation.key "x">
 <!ENTITY torbirdy.prefs.account_specific "Configuración específica de la cuenta">
 <!ENTITY torbirdy.prefs.select_account.key "e">
 <!ENTITY torbirdy.prefs.select_account.label "Elegir una cuenta">

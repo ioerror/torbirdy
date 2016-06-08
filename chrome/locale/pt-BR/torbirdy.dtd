@@ -19,7 +19,6 @@
 <!ENTITY torbirdy.prefs.proxy.label "Proxy">
 <!ENTITY torbirdy.prefs.privacy.label "Privacidade">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
-<!ENTITY torbirdy.prefs.security.label "Segurança">
 <!ENTITY torbirdy.prefs.recommended.text "Use as configurações de proxy recomendadas para o TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Escolher um serviço de anonimato">
@@ -33,13 +32,11 @@
 <!ENTITY torbirdy.prefs.torification.label "Utilização transparente do Tor (aviso: requer transproxy personalizado ou o roteador Tor)">
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "Global">
-<!ENTITY torbirdy.prefs.imap.label "Ativar o suporte de e-mail para contas de IMAP [padrão: desativado]">
+<!ENTITY torbirdy.prefs.imap.label "Habilitar suporte de e-mail para contas de IMAP [padrão: desativado]">
 <!ENTITY torbirdy.prefs.imap.key "p">
 <!ENTITY torbirdy.prefs.startup_folder.label "Selecionar a última pasta de e-mail acessada ao iniciar [padrão: desativado]">
 <!ENTITY torbirdy.prefs.startup_folder.key "I">
-<!ENTITY torbirdy.prefs.timezone.label "Não definir o fuso horário do Thunderbird como UTC [padrão: definido como UTC]">
-<!ENTITY torbirdy.prefs.timezone.key "z">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Não pôr as identidades dos destinatários em mensagens criptografadas [padrão: pôr]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Não incluir as identidades dos destinatários em mensagens criptografadas [padrão: incluir]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "Confirmar se Enigmail está ativado antes de enviar um e-mail [padrão: não confirmar]">
 <!ENTITY torbirdy.prefs.confirmemail.key "c">
@@ -47,8 +44,6 @@
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.automatic.label "Verificar automaticamente as novas mensagens em todas as contas [padrão: desabilitado]">
 <!ENTITY torbirdy.prefs.automatic.key "f">
-<!ENTITY torbirdy.prefs.renegotiation.label "Permitir conexões a provedores que não possuem suporte para SSL/TLS com renegociação segura [padrão: não permitir]">
-<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Conta Específica">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Escolher uma conta:">

@@ -19,7 +19,6 @@
 <!ENTITY torbirdy.prefs.proxy.label "Proxy">
 <!ENTITY torbirdy.prefs.privacy.label "Privatliv">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
-<!ENTITY torbirdy.prefs.security.label "Sikkerhed">
 <!ENTITY torbirdy.prefs.recommended.text "Brug de anbefalede proxyindstillinger til TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Vælg en anonymiserings-service">
@@ -37,8 +36,6 @@
 <!ENTITY torbirdy.prefs.imap.key "p">
 <!ENTITY torbirdy.prefs.startup_folder.label "Vælg sidst anvendte e-mail mappe ved opstart [standard: ikke aktiv]">
 <!ENTITY torbirdy.prefs.startup_folder.key "p">
-<!ENTITY torbirdy.prefs.timezone.label "Sæt ikke Thunderbirds tidszone til UTC [standard: sæt til UTC]">
-<!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Tilføj ikke modtagerens nøgle-id i de krypterede meddelelser [standard: tilføj]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "Bekræft før afsendelse af e-mail hvis Enigmail er aktiv [standard: bekræft ikke]">
@@ -47,8 +44,6 @@
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.automatic.label "Hent automatisk nye beskeder for alle konti [standardindstilling: slået fra]">
 <!ENTITY torbirdy.prefs.automatic.key "f">
-<!ENTITY torbirdy.prefs.renegotiation.label "Tillad forbindelser til servere der ikke understøtter SSL/TLS med sikker genforhandling [standard: tillad ikke]">
-<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Kontospecifik">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Vælg en konto:">

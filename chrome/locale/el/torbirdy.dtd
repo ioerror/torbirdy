@@ -19,7 +19,6 @@
 <!ENTITY torbirdy.prefs.proxy.label "Proxy">
 <!ENTITY torbirdy.prefs.privacy.label "Ιδιωτικότητα">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
-<!ENTITY torbirdy.prefs.security.label "Ασφάλεια">
 <!ENTITY torbirdy.prefs.recommended.text "Χρήση των προτεινόμενων ρυθμίσεων Proxy για το TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Επιλογή μιας υπηρεσίας ανωνυμίας">
@@ -37,8 +36,6 @@
 <!ENTITY torbirdy.prefs.imap.key "p">
 <!ENTITY torbirdy.prefs.startup_folder.label "Επιλογή του τελευταίου ανοιγμένου φακέλου αλληλλογραφίας κατά την εκκίνηση [προεπιλογή : απενεργοποιημένο]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
-<!ENTITY torbirdy.prefs.timezone.label "Μην ορίσετε τη ζώνη ώρας του Thunderbird σε UTC [προεπιλογή: ορίστηκε σε UTC]">
-<!ENTITY torbirdy.prefs.timezone.key "ζ">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Να μην τοποθετητούν τα key ID του παραλήπτη στα κρυπτογραφημένα μηνήματα [προεπιλογή : τοποθέτηση]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "ρ">
 <!ENTITY torbirdy.prefs.confirmemail.label "Επιβεβαιωση πριν την αποστολη του email αν το Enigmail ειναι ενεργοποιημενο [προκαθορισμος: καμμια επιβεβαιωση]">
@@ -47,12 +44,10 @@
 <!ENTITY torbirdy.prefs.emailwizard.key "β">
 <!ENTITY torbirdy.prefs.automatic.label "Αυτόματος έλεγχος νέων μηνυμάτων για όλους τους λογαριασμούς [προεπιλογή: απενεργοποιημένο]">
 <!ENTITY torbirdy.prefs.automatic.key "f">
-<!ENTITY torbirdy.prefs.renegotiation.label "Να επιτρέπονται συνδέσεις σε διακομιστές που δεν υποστηρίζουν SSL / TLS με ασφαλή επαναδιαπραγμάτευση [προεπιλογή: να μην επιτρέπονται] ">
-<!ENTITY torbirdy.prefs.renegotiation.key "ρ">
 <!ENTITY torbirdy.prefs.account_specific "Ειδικός λογαριασμός">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Επιλογή ενός λογαριασμού">
-<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Keyserver(s) για χρησιμοποιηση: ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Βασικός δίσκος για χρησιμοποίηση">
 <!ENTITY torbirdy.prefs.enigmail.keyserver.key "κ">
 
 <!ENTITY torbirdy.panel.usetor.label "Χρησιμοποιηση του Tor Onion Router">

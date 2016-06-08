@@ -1,64 +1,58 @@
 <!ENTITY torbirdy.accountprefs.title "Hesap Yapılandırması">
 <!ENTITY torbirdy.accountprefs.startup.label "Başlangıçta yeni iletileri denetle">
 <!ENTITY torbirdy.accountprefs.startup.key "C">
-<!ENTITY torbirdy.accountprefs.minutes.label "Yeni ileti denetleme süresi">
+<!ENTITY torbirdy.accountprefs.minutes.label "Yeni ileti denetleme sıklığı">
 <!ENTITY torbirdy.accountprefs.minutes.key "y">
 <!ENTITY torbirdy.accountprefs.minutes.trail.label "dakika">
 <!ENTITY torbirdy.accountprefs.cancel.button "Vazgeç">
 <!ENTITY torbirdy.accountprefs.save.button "Kaydet">
 <!ENTITY torbirdy.accountprefs.save.key "S">
 
-<!ENTITY torbirdy.prefs.title "TorBirdy Seçenekleri">
+<!ENTITY torbirdy.prefs.title "TorBirdy Ayarları">
 <!ENTITY torbirdy.prefs.save.button "Kaydet">
 <!ENTITY torbirdy.prefs.save.key "s">
-<!ENTITY torbirdy.prefs.cancel.button "Vazgeç
-            ">
-<!ENTITY torbirdy.prefs.extra2.button "Varsayılan Ayarlar">
+<!ENTITY torbirdy.prefs.cancel.button "Vazgeç">
+<!ENTITY torbirdy.prefs.extra2.button "Varsayılanları Yükle">
 <!ENTITY torbirdy.prefs.extra2.key "d">
-<!ENTITY torbirdy.prefs.testproxy.button "Vekil Ayarlarını Sına">
+<!ENTITY torbirdy.prefs.testproxy.button "Vekil Sunucu Ayarlarını Sına">
 <!ENTITY torbirdy.prefs.testproxy.key "n">
 <!ENTITY torbirdy.prefs.proxy.label "Vekil Sunucu">
 <!ENTITY torbirdy.prefs.privacy.label "Gizlilik">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
-<!ENTITY torbirdy.prefs.security.label "Güvenlik">
-<!ENTITY torbirdy.prefs.recommended.text "TorBirdy (Tor) için önerilen vekil sunucu ayarlarını kullan">
+<!ENTITY torbirdy.prefs.recommended.text "TorBirdy (Tor) için önerilen vekil sunucu ayarları kullanılsın">
 <!ENTITY torbirdy.prefs.recommended.key "r">
-<!ENTITY torbirdy.prefs.anonservice.text "Anonimleştirme servisi seçin. ">
+<!ENTITY torbirdy.prefs.anonservice.text "Anonimleştirme hizmetini seçin">
 <!ENTITY torbirdy.prefs.anonservice.key "a">
 <!ENTITY torbirdy.prefs.customsettings.text "Özel vekil sunucu ayarları kullan">
 <!ENTITY torbirdy.prefs.customsettings.key "c">
-<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Konuğu:">
+<!ENTITY torbirdy.prefs.socks_host.label "SOCKS Sunucusu: ">
 <!ENTITY torbirdy.prefs.socks_host.key "h">
-<!ENTITY torbirdy.prefs.socks_port.label "Bağl. Nok.:">
+<!ENTITY torbirdy.prefs.socks_port.label "Bağlantı noktası: ">
 <!ENTITY torbirdy.prefs.socks_port.key "p">
-<!ENTITY torbirdy.prefs.torification.label "Şeffaf Tor Bildirimleri (uyarı: özel olarak ayarlanmış Transproxy ya da Tor yönlendirici gerekir)">
+<!ENTITY torbirdy.prefs.torification.label "Şeffaf Tor İletişimi (uyarı: özel olarak ayarlanmış Transproxy ya da Tor yönlendiricisi gerekir)">
 <!ENTITY torbirdy.prefs.torification.key "t">
-<!ENTITY torbirdy.prefs.global "Küresel">
-<!ENTITY torbirdy.prefs.imap.label "IMAP hesapları için Push (İtme) e-posta desteğini etkinleştir [varsayılan: devre dışı]">
+<!ENTITY torbirdy.prefs.global "Genel">
+<!ENTITY torbirdy.prefs.imap.label "IMAP hesapları için itme (push) e-posta desteği kullanılsın [varsayılan: devre dışı]">
 <!ENTITY torbirdy.prefs.imap.key "p">
-<!ENTITY torbirdy.prefs.startup_folder.label "Başlangıçta en son erişilen posta klasörünü seç [öntanımlı: devre dışı]">
+<!ENTITY torbirdy.prefs.startup_folder.label "Başlangıçta en son erişilen posta klasörü açılsın [varsayılan: devre dışı]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
-<!ENTITY torbirdy.prefs.timezone.label "Thunderbird'ün zaman dilimi olarak UTC'yi ayarlama [varsayılan: UTC]">
-<!ENTITY torbirdy.prefs.timezone.key "z">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Şifrelenmiş iletiye alıcı anahtar kimliğini koyma [öntanımlı: koy]">
-<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "p">
-<!ENTITY torbirdy.prefs.confirmemail.label "Eğer Enigmail etkin ise e-posta yollamadan önce onayla [varsayılan: onaylama]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Şifrelenmiş iletiye alıcı anahtar kodu konulmasın [varsayılan: etkin]">
+<!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
+<!ENTITY torbirdy.prefs.confirmemail.label "Enigmail kullanılıyorsa, e-posta gönderilmeden önce onaylansın [varsayılan: devre dışı]">
 <!ENTITY torbirdy.prefs.confirmemail.key "c">
-<!ENTITY torbirdy.prefs.emailwizard.label "Thunderbird'ün otomatik e-posta ayarı sihirbazını etkinleştir [varsayılan: devre dışı]">
+<!ENTITY torbirdy.prefs.emailwizard.label "Thunderbird otomatik e-posta ayarlama yardımcısı kullanılsın [varsayılan: devre dışı]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
-<!ENTITY torbirdy.prefs.automatic.label "Tüm hesaplar için iletileri otomatik olarak denetle [öntanımlı: devre dışı]">
+<!ENTITY torbirdy.prefs.automatic.label "Tüm hesaplar için iletiler otomatik olarak denetlensin [varsayılan: devre dışı]">
 <!ENTITY torbirdy.prefs.automatic.key "f">
-<!ENTITY torbirdy.prefs.renegotiation.label "Güvenli renegotiation ile SSL/TLS desteklemeyen sunuculara erişime izin ver [varsayılan: izin verme]">
-<!ENTITY torbirdy.prefs.renegotiation.key "p">
-<!ENTITY torbirdy.prefs.account_specific "Hesaba özgü">
+<!ENTITY torbirdy.prefs.account_specific "Hesaba Özgü">
 <!ENTITY torbirdy.prefs.select_account.key "C">
-<!ENTITY torbirdy.prefs.select_account.label "Hesap Seç:">
-<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Kullanılacak anahtar sunucu(lar):">
+<!ENTITY torbirdy.prefs.select_account.label "Bir hesap seçin: ">
+<!ENTITY torbirdy.prefs.enigmail.keyserver.label "Kullanılacak anahtar sunucusu/sunucuları: ">
 <!ENTITY torbirdy.prefs.enigmail.keyserver.key "k">
 
-<!ENTITY torbirdy.panel.usetor.label "Tor Onion yönlendirici kullan">
-<!ENTITY torbirdy.panel.usejondo.label "JonDo(Premium) Kullan">
-<!ENTITY torbirdy.panel.usewhonix.label "Whonix Kullan">
-<!ENTITY torbirdy.panel.preferences.label "TorBirdy Seçeneklerini Aç">
+<!ENTITY torbirdy.panel.usetor.label "Tor Onion Yönlendiricisi Kullanılsın">
+<!ENTITY torbirdy.panel.usejondo.label "JonDo (Premium) Kullanılsın">
+<!ENTITY torbirdy.panel.usewhonix.label "Whonix Kullanılsın">
+<!ENTITY torbirdy.panel.preferences.label "TorBirdy Ayarlarını Aç">
 
-<!ENTITY torbirdy.firstrun.title "TorBirdy ilk çalıştırma">
+<!ENTITY torbirdy.firstrun.title "TorBirdy İlk Çalıştırma">

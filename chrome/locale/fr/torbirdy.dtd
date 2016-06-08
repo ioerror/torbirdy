@@ -19,7 +19,6 @@
 <!ENTITY torbirdy.prefs.proxy.label "Proxy">
 <!ENTITY torbirdy.prefs.privacy.label "Vie privée">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
-<!ENTITY torbirdy.prefs.security.label "Sécurité">
 <!ENTITY torbirdy.prefs.recommended.text "Utiliser les paramètres proxy recommandés pour TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Choisir un service d'anonymisation">
@@ -33,22 +32,18 @@
 <!ENTITY torbirdy.prefs.torification.label "Torification transparente (avertissement : nécessite un transproxy personnalisé ou un routeur Tor)">
 <!ENTITY torbirdy.prefs.torification.key "t">
 <!ENTITY torbirdy.prefs.global "Global">
-<!ENTITY torbirdy.prefs.imap.label "Activer la gestion du mail « push » pour les comptes IMAP [défaut : désactivé]">
+<!ENTITY torbirdy.prefs.imap.label "Activer la prise en charge des courriels poussés pour les comptes IMAP [par défaut : désactivé]">
 <!ENTITY torbirdy.prefs.imap.key "p">
 <!ENTITY torbirdy.prefs.startup_folder.label "Sélectionner le dernier répertoire ouvert lors du démarrage [défaut : désactivé]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
-<!ENTITY torbirdy.prefs.timezone.label "Ne pas paramétrer le fuseau horaire de Thunderbird à UTC (temps universel) [défaut : configurer en UTC]">
-<!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Ne pas insérer dans les messages chiffrés les identifiants des clés des destinataires [défaut : les mettre]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
-<!ENTITY torbirdy.prefs.confirmemail.label "Confirmer avant d'envoyer un e-mail si Enigmail est activé [défaut : ne pas confirmer]">
+<!ENTITY torbirdy.prefs.confirmemail.label "Avant d'envoyer un courriel, confirmer Enigmail est activé [par défaut : ne pas confirmer]">
 <!ENTITY torbirdy.prefs.confirmemail.key "c">
-<!ENTITY torbirdy.prefs.emailwizard.label "Activer l'assistant de configuration automatique d'e-mail de Thunderbird [défaut : désactivé]">
+<!ENTITY torbirdy.prefs.emailwizard.label "Activer l'assistant automatique de configuration de courriel de Thunderbird [par défaut : désactivé]">
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.automatic.label "Relever automatiquement les nouveaux messages de tous les comptes [par défaut : désactivé]">
 <!ENTITY torbirdy.prefs.automatic.key "f">
-<!ENTITY torbirdy.prefs.renegotiation.label "Autoriser les connexions aux serveurs qui ne gèrent pas SSL/TLS avec renégociation sécurisée [défaut : ne pas autoriser]">
-<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Propre à un compte">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Choisir un compte : ">

@@ -19,7 +19,6 @@
 <!ENTITY torbirdy.prefs.proxy.label "Starpnieks">
 <!ENTITY torbirdy.prefs.privacy.label "Privātums">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
-<!ENTITY torbirdy.prefs.security.label "Drošība">
 <!ENTITY torbirdy.prefs.recommended.text "Lietot ieteiktos starpnieka iestatījumus TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Izvēlieties anonimizācijas pakalpojumu">
@@ -37,8 +36,6 @@
 <!ENTITY torbirdy.prefs.imap.key "p">
 <!ENTITY torbirdy.prefs.startup_folder.label "Sākot darbu, izvēlēties pēdējo apmeklēto pasta mapi [noklusēti: atspējots]">
 <!ENTITY torbirdy.prefs.startup_folder.key "l">
-<!ENTITY torbirdy.prefs.timezone.label "Neiestatīt Thunderbird'a laika zonu uz UTC [noklusēti: iestatīt uz UTC]">
-<!ENTITY torbirdy.prefs.timezone.key "z">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Nelikt saņēmēju atslēgu identifikatorus šifrētajos ziņojumos [pēc noklusējuma: likt]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "Apstiprināt pirms e-pasta nosūtīšanas, ja iespējota Enigmail [noklusējumvērtība: neapstiprināt]">
@@ -47,8 +44,6 @@
 <!ENTITY torbirdy.prefs.emailwizard.key "w">
 <!ENTITY torbirdy.prefs.automatic.label "Automātiski pārbaudīt visos kontos vai ir jauni ziņojumi [noklusējumvērtība: atspējots]">
 <!ENTITY torbirdy.prefs.automatic.key "f">
-<!ENTITY torbirdy.prefs.renegotiation.label "Atļaut tādu serveru savienojumus, kuri nenodrošina SSL/TLS ar drošu atkārtotu vienošanos [noklusējuma vērtība: neatļaut]">
-<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Kontam-piemītošs">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Izvēlēties kontu:">

@@ -19,7 +19,6 @@
 <!ENTITY torbirdy.prefs.proxy.label "Proxy">
 <!ENTITY torbirdy.prefs.privacy.label "Intimitate">
 <!ENTITY torbirdy.prefs.enigmail.label "Enigmail">
-<!ENTITY torbirdy.prefs.security.label "Securitate">
 <!ENTITY torbirdy.prefs.recommended.text "Folosește setările proxy recomandate pentru TorBirdy (Tor)">
 <!ENTITY torbirdy.prefs.recommended.key "r">
 <!ENTITY torbirdy.prefs.anonservice.text "Alege un serviciu de anonimizare">
@@ -37,8 +36,6 @@
 <!ENTITY torbirdy.prefs.imap.key "p">
 <!ENTITY torbirdy.prefs.startup_folder.label "Alegeți ultimul folder de mail accesat la pornire [implicit: dezactivat]">
 <!ENTITY torbirdy.prefs.startup_folder.key "p">
-<!ENTITY torbirdy.prefs.timezone.label "Nu seta fusul orar în Thunderbird la UTC [implicit: setează la UTC]">
-<!ENTITY torbirdy.prefs.timezone.key "p">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.label "Nu puneți IDul cheii destinatarului în mesajul criptat [implicit: pune]">
 <!ENTITY torbirdy.prefs.enigmail_throwkeyid.key "r">
 <!ENTITY torbirdy.prefs.confirmemail.label "Confirmă înainte de trimiterea emailului dacă Enigmail este activat [implicit: nu confirma]">
@@ -47,8 +44,6 @@
 <!ENTITY torbirdy.prefs.emailwizard.key "p">
 <!ENTITY torbirdy.prefs.automatic.label "Verifică pentru mesaje noi automat pentru toate conturile [implicit: dezactivat]">
 <!ENTITY torbirdy.prefs.automatic.key "f">
-<!ENTITY torbirdy.prefs.renegotiation.label "Permite conexiunile către servere care nu suportă SSL/TLS cu renegociere sigură [implicit: nu permite]">
-<!ENTITY torbirdy.prefs.renegotiation.key "r">
 <!ENTITY torbirdy.prefs.account_specific "Specific contului">
 <!ENTITY torbirdy.prefs.select_account.key "C">
 <!ENTITY torbirdy.prefs.select_account.label "Alege un cont:">
