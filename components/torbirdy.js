@@ -459,7 +459,7 @@ TorBirdy.prototype = {
   onUninstalling: function(addon, needsRestart) {
     this.onStateChange();
     if (addon.id == TB_ID) {
-      dump("Nooo! TorBirdy uninstall requested\n");
+      dump("TorBirdy uninstall requested\n");
       this._uninstall = true;
       this.resetUserPrefs();
     }
@@ -468,7 +468,7 @@ TorBirdy.prototype = {
   onOperationCancelled: function(addon) {
     this.onStateChange();
     if (addon.id == TB_ID) {
-      dump("Uninstall requested cancelled. Yayay!\n");
+      dump("Uninstall requested cancelled\n");
       this._uninstall = false;
       this.setPrefs();
     }
