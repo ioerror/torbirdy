@@ -1,3 +1,24 @@
+0.2.0, 
+
+ * Bug 6314: Prevent local timestamp disclosure via Date header
+ * Bug 6315: Prevent local timestamp disclosure via Message-ID header
+ * Bug 13721: Fix usage of wrong locale
+ * Bug 17426: Allow configuration of default email protocol
+ * Bug 15459: Add support for deterministic XPI generation
+ * Bug 11387, 13006: Fix non-standard EHLO argument
+ * Bug 17118: Allow manual account configuration for Gmail with OAuth2
+ * Bug 19031: Add and audit support for RSS reader
+ * Bug 7847: Audit and update support for NNTP
+ * Bug 10683: Update Thunderbird UI to reflect TorBirdy's state
+ * Bug 19330: Set secure defaults for outgoing mail servers
+ * Removed compatibility for older versions of Thunderbird and added support
+ for Thunderbird 37+.
+ * Added support for automatic configuration of Riseup email accounts.
+ * Updated various privacy and security settings (see commit 2bdeffbb for a
+ list of the changes)
+ * Update translations for existing languages
+ * Many thanks to Arthur Edelstein and the Tails Developers for this release
+
 0.1.4, 09 March 2015
   * Fix bug that prevented Thunderbird with TorBirdy 0.1.3 from starting
   in profiles with more than three IMAP accounts (closes #14099, #13982,
@@ -35,10 +56,10 @@
     * Korean
     * Latvian
     * Norwegian Bokmål 
-    * Norwegian Nynorsk	
+    * Norwegian Nynorsk
     * Punjabi
     * Polish
-    * Portuguese	 
+    * Portuguese
     * Portuguese (Brazil)
     * Romanian
     * Russian
