@@ -392,9 +392,11 @@ function sanitizeDateHeaders() {
     let roundedDate = new Date(date.getTime());
     // Round down to the nearest minute.
     roundedDate.setSeconds(0);
-    // Use the headeremitter's addDate function to format it properly.
-    // `this` magically refers to the headeremitter object.
-    this.addDate(roundedDate);
+    // Use the headeremitter's internal `addText` function to inject the
+    // Date header. `this` magically refers to the headeremitter object.
+    // Date.toUTCString() produces an RFC 1123-formatted date string.
+    // We replace the "GMT" symbol with "+0000" because it is preferred.
+    this.addText(roundedDate.toUTCString().replace(/GMT$/, "+0000"), false);
   });
 }
 
